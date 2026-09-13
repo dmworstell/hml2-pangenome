@@ -1,4 +1,4 @@
-source(Sys.getenv("HML2_CONFIG", file.path("R", "config.R")))
+source(Sys.getenv("HML2_CONFIG", file.path("manuscript_figures", "R", "config.R")))
 # >>> Generates: Figures 3B, S4A, S4B <<<
 
 # HML-2 Tandem Duplication & ORF Integrity Analysis
@@ -166,7 +166,7 @@ plot_fig1 <- plot_A + plot_B +
 # --- 6. Analyze Positional ORF Integrity (Figure 2) ---
 cat("Analyzing ORF integrity by position within tandem arrays...\n")
 
-# Define intact criteria
+# Historical permissive criteria, not Intact-only. Undetermined calls are excluded.
 intact_criteria <- c("intact", "no_stop", "no_stop_fs_end", "frameshift_at_end", "intact_fs_end", "intact_fs_end_premature_stop")
 
 # Process the duplication data to get ORF status for each part
@@ -240,7 +240,7 @@ plot_positional <- positional_freq_summary %>%
   theme_pub(base_size = 16) +
   labs(
     x = "Position in tandem array (part number)",
-    y = "Frequency of intact ORF"
+    y = "Frequency meeting ORF criteria"
   )
 
 # Figure 3: Relative array-size makeup of the duplicated alleles at each locus.

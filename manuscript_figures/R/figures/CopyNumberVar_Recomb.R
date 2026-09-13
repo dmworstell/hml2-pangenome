@@ -1,4 +1,4 @@
-source(Sys.getenv("HML2_CONFIG", file.path("R", "config.R")))
+source(Sys.getenv("HML2_CONFIG", file.path("manuscript_figures", "R", "config.R")))
 # >>> Generates: Figure 3A (hml2_cnv_distribution), S15D (hml2_signature_sharing_heatmap) <<<
 
 # HML-2 Copy Number Variation & Recombination Analyzer

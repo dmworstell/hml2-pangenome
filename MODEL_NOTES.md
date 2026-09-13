@@ -1,4 +1,13 @@
-# Retained conditional models
+# Retained analysis definitions
+
+## Positional ORF criterion in Supplementary Figure S4A
+
+The positional tandem-array panel accepts the historical status values
+`intact`, `no_stop`, `no_stop_fs_end`, `frameshift_at_end`, `intact_fs_end` and
+`intact_fs_end_premature_stop`, after lowercasing. `Undetermined` calls are
+excluded from each mean. This is the plotted frequency meeting ORF criteria,
+not an Intact-only frequency or a measured functional fraction. It is distinct
+from the three-category sequence-compatible burden used in the Np9 refit.
 
 ## Helper availability
 

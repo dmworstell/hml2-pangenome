@@ -1,9 +1,8 @@
 # =============================================================================
 # 00_config.R  --  Shared configuration for the HML-2 / HERV-K figure scripts
 # -----------------------------------------------------------------------------
-# Source this at the top of every plotting script. The repository runner sets
-# HML2_CONFIG automatically; direct invocations should start in the repository
-# root so that file.path("R", "config.R") resolves correctly.
+# Source this at the top of every plotting script. Direct invocations should
+# start in the repository root. HML2_CONFIG can override this configuration.
 #
 # Provides, in one place:
 #   * theme_pub() / theme_pub_heatmap()  -- minimalist high-impact-journal theme
@@ -33,14 +32,14 @@ hml2_path <- function(name, default, must_exist = FALSE) {
   normalizePath(value, winslash = "/", mustWork = FALSE)
 }
 
-# All locations may be overridden without editing source code. By default the
-# repository is self-contained: inputs under data/, generated panels under
-# outputs/panels/, and assembled manuscript figures under outputs/manuscript/.
+# All locations may be overridden without editing source code. Defaults expect
+# additional inputs under data/, with generated panels under outputs/panels/
+# and assembled manuscript figures under outputs/manuscript/.
 HML2_REPO_ROOT       <- hml2_path("HML2_REPO_ROOT", getwd())
 # The out-of-repo project resource root (.../HML2_ProjectResources). When set, HML2_DATA_ROOT
 # derives from it as ${HML2_PROJECT_RESOURCES}/data -- the canonical layout keeps the data tree one
 # level BELOW the project root. An explicitly set HML2_DATA_ROOT still wins; with NEITHER set,
-# HML2_DATA_ROOT falls back to <repo>/data, which is deliberately empty in a clone.
+# HML2_DATA_ROOT falls back to <repo>/data. Full R-panel inputs are not bundled.
 HML2_PROJECT_RESOURCES <- Sys.getenv("HML2_PROJECT_RESOURCES", unset = "")
 .hml2_data_root_default <- if (nzchar(HML2_PROJECT_RESOURCES)) {
   file.path(HML2_PROJECT_RESOURCES, "data")
@@ -90,7 +89,7 @@ hml2_is_reference_id <- function(x) as.character(x) %in% HML2_REFERENCE_IDS
 
 hml2_require_file <- function(path, label = basename(path)) {
   if (!file.exists(path)) {
-    stop(sprintf("Missing %s: %s\nSet the corresponding HML2_* environment variable; see .Renviron.example.",
+    stop(sprintf("Missing %s: %s\nSet the corresponding HML2_* environment variable; see DATA_REQUIREMENTS.md.",
                  label, path), call. = FALSE)
   }
   invisible(path)

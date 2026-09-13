@@ -1,4 +1,4 @@
-source(Sys.getenv("HML2_CONFIG", file.path("R", "config.R")))
+source(Sys.getenv("HML2_CONFIG", file.path("manuscript_figures", "R", "config.R")))
 # >>> Generates: Figures S3A, S3B <<<
 
 # HML-2 Locus-Specific Mutation Lollipop Plot Generator

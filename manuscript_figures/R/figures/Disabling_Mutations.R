@@ -1,4 +1,4 @@
-source(Sys.getenv("HML2_CONFIG", file.path("R", "config.R")))
+source(Sys.getenv("HML2_CONFIG", file.path("manuscript_figures", "R", "config.R")))
 # >>> Generates: Figure S10A <<<
 
 # HML-2 Disabling Mutations Stacked Bar Chart Generator

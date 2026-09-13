@@ -30,6 +30,9 @@ def main():
     for path in sources:
         if '.git' not in path.parts:
             ast.parse(path.read_text(),filename=str(path))
+    inventory=read_tsv(ROOT/'source_inventory.tsv')
+    for row in inventory:
+        assert hashlib.sha256((ROOT/row['release_path']).read_bytes()).hexdigest()==row['release_sha256'],row['release_path']
     tables=read_tsv(ROOT/'Supplementary_Data/source_manifest.tsv')
     assert len(tables)==18
     for row in tables:
@@ -77,7 +80,7 @@ def main():
             float(row['focal_ascertainment_odds_low']),float(row['focal_ascertainment_odds_high']),
             int(row['focal_count']),row['model'])
         assert math.isclose(log_evidence,float(row['log_marginal_likelihood']),rel_tol=1e-11,abs_tol=1e-10),row
-    print(f'PASS: Python syntax, {len(tables)} supplementary table hashes, compact denominators, helper formulas, and {len(comparisons)} marginal-evidence calculations')
+    print(f'PASS: Python syntax, {len(inventory)} source hashes, {len(tables)} supplementary table hashes, compact denominators, helper formulas, and {len(comparisons)} marginal-evidence calculations')
 
 
 if __name__=='__main__':

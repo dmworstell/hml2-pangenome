@@ -16,6 +16,8 @@
   plotted as a nonzero point on a logarithmic axis.
 - Changed Figure 5 and S14A labels to Bayes factor, matching marginal-evidence
   integration. Changed S14D to model weight under equal priors.
+- Changed the S4A axis to frequency meeting ORF criteria. Its original six
+  accepted status categories and exclusion of Undetermined calls are unchanged.
 - Added a compact, directly runnable helper-sensitivity calculation instead of
   a dependency on the former broader simulation workflow.
 - Retained the completed targeted ONT copy validation and published short-read
@@ -23,3 +25,4 @@
 - Converted source roots and installation-specific metadata to repository-
   relative or explicit example paths. Updated the figure-style description to
   the current manuscript target without altering the retained color scheme.
+- Updated R configuration loading to work from the new repository root.

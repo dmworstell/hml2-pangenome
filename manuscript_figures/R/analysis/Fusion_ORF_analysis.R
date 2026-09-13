@@ -1,4 +1,4 @@
-source(Sys.getenv("HML2_CONFIG", file.path("R", "config.R")))
+source(Sys.getenv("HML2_CONFIG", file.path("manuscript_figures", "R", "config.R")))
 # Fusion ORFs — MODEL 1: WITH the canonical HML-2 -1 ribosomal frameshifts.
 # gag(fr0) -(-1 FS)-> pro(fr2) -(-1 FS)-> pol(fr1) is the natural Gag-Pro-Pol
 # polyprotein, so a provirus can translate it whenever gag, pro AND pol are intact
