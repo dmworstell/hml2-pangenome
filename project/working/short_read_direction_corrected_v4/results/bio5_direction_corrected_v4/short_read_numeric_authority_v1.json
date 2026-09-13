@@ -1,0 +1,401 @@
+{
+  "cluster_weighted_empirical_diagnostics": {
+    "E2": {
+      "by_correlated_truth_source_label": {
+        "assembly": {
+          "cluster_weight_sum": 3135.0,
+          "cluster_weighted_error_fraction": 0.04736842105263158,
+          "fractional_error_sum": 148.5,
+          "sample_locus_clusters": 3135
+        }
+      },
+      "by_locus": {
+        "11q22.1": {
+          "cluster_weight_sum": 180.0,
+          "cluster_weighted_error_fraction": 0.37222222222222223,
+          "fractional_error_sum": 67.0,
+          "record_rows": 180,
+          "sample_locus_clusters": 180
+        },
+        "11q23.3": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "12q24.33": {
+          "cluster_weight_sum": 222.0,
+          "cluster_weighted_error_fraction": 0.06306306306306306,
+          "fractional_error_sum": 14.0,
+          "record_rows": 222,
+          "sample_locus_clusters": 222
+        },
+        "1p34.3": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "1p36.21c": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.03139013452914798,
+          "fractional_error_sum": 7.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "1q24.1": {
+          "cluster_weight_sum": 222.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 222,
+          "sample_locus_clusters": 222
+        },
+        "3q24_hg38": {
+          "cluster_weight_sum": 12.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 12,
+          "sample_locus_clusters": 12
+        },
+        "3q27.2": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.004484304932735426,
+          "fractional_error_sum": 1.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "4p16.1a": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "4p16.3b": {
+          "cluster_weight_sum": 222.0,
+          "cluster_weighted_error_fraction": 0.013513513513513514,
+          "fractional_error_sum": 3.0,
+          "record_rows": 222,
+          "sample_locus_clusters": 222
+        },
+        "4p16.3c": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "4q35.2_hg38": {
+          "cluster_weight_sum": 49.0,
+          "cluster_weighted_error_fraction": 0.6122448979591837,
+          "fractional_error_sum": 30.0,
+          "record_rows": 49,
+          "sample_locus_clusters": 49
+        },
+        "5q33.3": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "6q14.1": {
+          "cluster_weight_sum": 222.0,
+          "cluster_weighted_error_fraction": 0.013513513513513514,
+          "fractional_error_sum": 3.0,
+          "record_rows": 222,
+          "sample_locus_clusters": 222
+        },
+        "8q24.3c": {
+          "cluster_weight_sum": 222.0,
+          "cluster_weighted_error_fraction": 0.06756756756756757,
+          "fractional_error_sum": 15.0,
+          "record_rows": 222,
+          "sample_locus_clusters": 222
+        },
+        "9q34.3": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.03811659192825112,
+          "fractional_error_sum": 8.5,
+          "record_rows": 446,
+          "sample_locus_clusters": 223
+        }
+      },
+      "endpoint_code": "E2",
+      "record_rows": 3358,
+      "sample_locus_clusters": 3135,
+      "truth_state_record_counts": {
+        "PRESENT": 3358
+      },
+      "weighting_rule": "each sample_x_locus endpoint cluster has total weight one; multiple caller records and source labels are correlated, not multiplied"
+    },
+    "E5": {
+      "by_correlated_truth_source_label": {
+        "assembly": {
+          "cluster_weight_sum": 7407.0,
+          "cluster_weighted_error_fraction": 0.09484271634939977,
+          "fractional_error_sum": 702.5000000000041,
+          "sample_locus_clusters": 7407
+        }
+      },
+      "by_locus": {
+        "10p14": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "11q12.1": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.8699551569506726,
+          "fractional_error_sum": 194.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "11q12.3": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "11q23.3": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 446,
+          "sample_locus_clusters": 223
+        },
+        "19p12a": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "19p12e": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0014947683109118085,
+          "fractional_error_sum": 0.3333333333333333,
+          "record_rows": 669,
+          "sample_locus_clusters": 223
+        },
+        "19p13.3": {
+          "cluster_weight_sum": 221.0,
+          "cluster_weighted_error_fraction": 0.528657616892911,
+          "fractional_error_sum": 116.83333333333334,
+          "record_rows": 662,
+          "sample_locus_clusters": 221
+        },
+        "19q13.41": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "19q13.42": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.4484304932735426,
+          "fractional_error_sum": 100.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "1p31.1b": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.011210762331838564,
+          "fractional_error_sum": 2.5,
+          "record_rows": 445,
+          "sample_locus_clusters": 223
+        },
+        "1p36.21a": {
+          "cluster_weight_sum": 208.0,
+          "cluster_weighted_error_fraction": 0.5480769230769231,
+          "fractional_error_sum": 114.0,
+          "record_rows": 208,
+          "sample_locus_clusters": 208
+        },
+        "1p36.21c": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "1q22": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "1q23.3": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 669,
+          "sample_locus_clusters": 223
+        },
+        "1q32.2": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "21q21.1": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 446,
+          "sample_locus_clusters": 223
+        },
+        "22q11.23": {
+          "cluster_weight_sum": 222.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 222,
+          "sample_locus_clusters": 222
+        },
+        "2q21.1": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.004484304932735426,
+          "fractional_error_sum": 1.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "3q12.3": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 669,
+          "sample_locus_clusters": 223
+        },
+        "3q13.2": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 446,
+          "sample_locus_clusters": 223
+        },
+        "3q21.2": {
+          "cluster_weight_sum": 222.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 222,
+          "sample_locus_clusters": 222
+        },
+        "3q27.2": {
+          "cluster_weight_sum": 219.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 219,
+          "sample_locus_clusters": 219
+        },
+        "4p16.3b": {
+          "cluster_weight_sum": 222.0,
+          "cluster_weighted_error_fraction": 0.16366366366366358,
+          "fractional_error_sum": 36.333333333333314,
+          "record_rows": 666,
+          "sample_locus_clusters": 222
+        },
+        "5p12": {
+          "cluster_weight_sum": 221.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 221,
+          "sample_locus_clusters": 221
+        },
+        "5p13.3": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "5q33.3": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 446,
+          "sample_locus_clusters": 223
+        },
+        "6p21.1": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 446,
+          "sample_locus_clusters": 223
+        },
+        "7q11.21": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.004484304932735426,
+          "fractional_error_sum": 1.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "7q22.2": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 223,
+          "sample_locus_clusters": 223
+        },
+        "8q24.3a": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.5,
+          "fractional_error_sum": 111.5,
+          "record_rows": 446,
+          "sample_locus_clusters": 223
+        },
+        "8q24.3c": {
+          "cluster_weight_sum": 222.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 222,
+          "sample_locus_clusters": 222
+        },
+        "9q34.11": {
+          "cluster_weight_sum": 222.0,
+          "cluster_weighted_error_fraction": 0.11261261261261261,
+          "fractional_error_sum": 25.0,
+          "record_rows": 222,
+          "sample_locus_clusters": 222
+        },
+        "9q34.3": {
+          "cluster_weight_sum": 223.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 446,
+          "sample_locus_clusters": 223
+        },
+        "Xq28b": {
+          "cluster_weight_sum": 76.0,
+          "cluster_weighted_error_fraction": 0.0,
+          "fractional_error_sum": 0.0,
+          "record_rows": 76,
+          "sample_locus_clusters": 76
+        }
+      },
+      "endpoint_code": "E5",
+      "record_rows": 11413,
+      "sample_locus_clusters": 7407,
+      "truth_state_record_counts": {
+        "PRESENT": 11413
+      },
+      "weighting_rule": "each sample_x_locus endpoint cluster has total weight one; multiple caller records and source labels are correlated, not multiplied"
+    },
+    "E7": {
+      "by_correlated_truth_source_label": {},
+      "by_locus": {},
+      "endpoint_code": "E7",
+      "record_rows": 0,
+      "sample_locus_clusters": 0,
+      "truth_state_record_counts": {},
+      "weighting_rule": "each sample_x_locus endpoint cluster has total weight one; multiple caller records and source labels are correlated, not multiplied"
+    }
+  }
+}

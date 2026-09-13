@@ -1,0 +1,25 @@
+effective_population_size	starting_copies	starting_fraction	target_fraction	martingale_upper_bound_probability_ever_reach_target	note
+10	1	0.1	0.625	0.16	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+10	1	0.1	0.7391304347826086	0.13529411764705884	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+10	5	0.5	0.625	0.8	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+10	5	0.5	0.7391304347826086	0.6764705882352942	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+50	1	0.02	0.625	0.032	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+50	1	0.02	0.7391304347826086	0.027058823529411767	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+50	5	0.1	0.625	0.16	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+50	5	0.1	0.7391304347826086	0.13529411764705884	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+100	1	0.01	0.625	0.016	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+100	1	0.01	0.7391304347826086	0.013529411764705884	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+100	5	0.05	0.625	0.08	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+100	5	0.05	0.7391304347826086	0.06764705882352942	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+1000	1	0.001	0.625	0.0016	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+1000	1	0.001	0.7391304347826086	0.0013529411764705884	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+1000	5	0.005	0.625	0.008	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+1000	5	0.005	0.7391304347826086	0.006764705882352942	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+10000	1	0.0001	0.625	0.00016	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+10000	1	0.0001	0.7391304347826086	0.00013529411764705884	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+10000	5	0.0005	0.625	0.0008	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+10000	5	0.0005	0.7391304347826086	0.0006764705882352942	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+100000	1	1e-05	0.625	1.6000000000000003e-05	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+100000	1	1e-05	0.7391304347826086	1.3529411764705885e-05	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+100000	5	5e-05	0.625	8e-05	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.
+100000	5	5e-05	0.7391304347826086	6.764705882352942e-05	Upper bound for an unbiased neutral-frequency martingale; persistence across later epochs would reduce the probability further.

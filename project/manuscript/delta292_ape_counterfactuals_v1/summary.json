@@ -1,0 +1,8 @@
+{
+  "counterfactuals": {
+    "non_delta_with_6331T_6492T": 4,
+    "typeII_non_delta_with_6331T_6492T": 3,
+    "delta292_without_6331T_6492T": 1,
+    "non_delta_with_full_TTTAC": 0
+  }
+}

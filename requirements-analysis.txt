@@ -1,0 +1,6 @@
+-r requirements.txt
+pandas==2.2.3
+scipy==1.17.1
+statsmodels==0.14.4
+biopython>=1.78
+pysam

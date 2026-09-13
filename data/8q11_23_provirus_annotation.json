@@ -1,0 +1,11 @@
+{
+  "ID_Full": "HG03098_pat_hprc_r2_v1.0.1_HML-2_8q11.23_new",
+  "ID": "HG03098",
+  "Locus": "HML-2_8q11.23_new",
+  "Structure": "Provirus",
+  "analysis_include": "1",
+  "5_prime_TSD": "CACAC",
+  "3_prime_TSD": "CACAC",
+  "np9": "Nonsense",
+  "source": "project/results/biological_orf_annotation_20260802/combined_hml2_orf_analysis.CNV_WEIGHTED.BIOLOGICALLY_ANNOTATED.v3.tsv"
+}
