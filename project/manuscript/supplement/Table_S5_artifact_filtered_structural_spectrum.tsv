@@ -1,106 +1,106 @@
-locus	Absent	Solo-LTR	Fragment	Provirus	Multi-copy	Unknown	known_haplotypes	variability_score
-HML-2_10p12.1	0	25	0	558	1	0	584	0.044520547945205435
-HML-2_10p14	0	1	0	582	0	1	583	0.0017152658662092923
-HML-2_10q24.2	0	0	2	582	0	0	584	0.003424657534246589
-HML-2_11p15.4	9	0	0	573	0	2	582	0.015463917525773141
-HML-2_11p15.4b	0	462	0	0	0	122	462	0.0
-HML-2_11q12.1	0	0	584	0	0	0	584	0.0
-HML-2_11q12.3	2	0	202	379	1	0	584	0.351027397260274
-HML-2_11q22.1	64	304	0	213	3	0	584	0.4794520547945206
-HML-2_11q23.3	0	9	0	574	1	0	584	0.017123287671232834
-HML-2_12p11.21	0	0	0	584	0	0	584	0.0
-HML-2_12q13.2	195	130	0	258	1	0	584	0.5582191780821918
-HML-2_12q14.1	0	307	0	274	1	2	582	0.4725085910652921
-HML-2_12q24.33	1	20	537	0	13	13	571	0.05954465849387036
-HML-2_13p13	465	0	3	0	0	116	468	0.0064102564102563875
-HML-2_14q11.2	3	0	580	0	1	0	584	0.006849315068493178
-HML-2_14q32.33	32	0	520	0	5	27	557	0.06642728904847395
-HML-2_15p13a	493	0	2	0	0	89	495	0.004040404040404066
-HML-2_15p13b	518	0	0	2	0	64	520	0.0038461538461538325
-HML-2_15q25.2	1	461	0	0	0	122	462	0.0021645021645021467
-HML-2_16p11.2	6	0	571	0	3	4	580	0.01551724137931032
-HML-2_17p13.1_hg38	0	0	122	462	0	0	584	0.20890410958904104
-HML-2_19p12a	0	0	0	584	0	0	584	0.0
-HML-2_19p12b	505	0	0	79	0	0	584	0.13527397260273977
-HML-2_19p12c	319	0	0	265	0	0	584	0.4537671232876712
-HML-2_19p12d	0	583	0	1	0	0	584	0.001712328767123239
-HML-2_19p12e	0	2	582	0	0	0	584	0.003424657534246589
-HML-2_19p13.3	2	9	569	0	0	4	580	0.018965517241379293
-HML-2_19q12	1	0	0	582	1	0	584	0.003424657534246589
-HML-2_19q13.12a	0	0	584	0	0	0	584	0.0
-HML-2_19q13.12b	0	0	0	582	0	2	582	0.0
-HML-2_19q13.41	0	0	583	0	0	1	583	0.0
-HML-2_19q13.42	0	0	583	0	0	1	583	0.0
-HML-2_1p31.1a	0	60	0	523	1	0	584	0.10445205479452058
-HML-2_1p31.1b	0	469	106	0	9	0	584	0.19691780821917804
-HML-2_1p34.3	0	0	584	0	0	0	584	0.0
-HML-2_1p36.21a	17	4	562	1	0	0	584	0.03767123287671237
-HML-2_1p36.21b	23	0	0	558	0	3	581	0.03958691910499135
-HML-2_1p36.21c	8	0	0	576	0	0	584	0.013698630136986356
-HML-2_1q21.3	0	0	584	0	0	0	584	0.0
-HML-2_1q22	0	3	0	581	0	0	584	0.005136986301369828
-HML-2_1q23.3	0	0	0	584	0	0	584	0.0
-HML-2_1q24.1	1	0	583	0	0	0	584	0.001712328767123239
-HML-2_1q32.2	0	0	584	0	0	0	584	0.0
-HML-2_1q43	0	0	584	0	0	0	584	0.0
-HML-2_20q11.22	1	0	580	0	1	2	582	0.0034364261168384758
-HML-2_21p13	492	0	2	0	0	90	494	0.004048582995951455
-HML-2_21q21.1	0	1	0	583	0	0	584	0.001712328767123239
-HML-2_22p13	466	0	4	0	1	113	471	0.010615711252653925
-HML-2_22q11.21	3	25	0	553	0	3	581	0.048192771084337394
-HML-2_22q11.23	1	0	5	573	2	3	581	0.013769363166953541
-HML-2_2q21.1	0	0	583	0	0	1	583	0.0
-HML-2_3p12.3	7	0	0	574	0	3	581	0.012048192771084376
-HML-2_3p25.3	0	0	584	0	0	0	584	0.0
-HML-2_3q12.3	0	5	6	573	0	0	584	0.018835616438356184
-HML-2_3q13.2	0	56	0	525	3	0	584	0.10102739726027399
-HML-2_3q21.2	1	0	0	583	0	0	584	0.001712328767123239
-HML-2_3q24_hg38	450	0	134	0	0	0	584	0.22945205479452058
-HML-2_3q27.2	0	21	0	561	2	0	584	0.03938356164383561
-HML-2_4p16.1a	2	0	48	532	1	1	583	0.08747855917667235
-HML-2_4p16.1b	0	0	0	582	0	2	582	0.0
-HML-2_4p16.3a	458	11	108	0	4	3	581	0.2117039586919105
-HML-2_4p16.3b	1	0	583	0	0	0	584	0.001712328767123239
-HML-2_4p16.3c	1	0	0	583	0	0	584	0.001712328767123239
-HML-2_4q13.2	228	0	314	0	0	42	542	0.4206642066420664
-HML-2_4q32.1	0	0	584	0	0	0	584	0.0
-HML-2_4q32.3	0	0	584	0	0	0	584	0.0
-HML-2_4q35.2_hg38	280	0	182	0	1	121	463	0.3952483801295896
-HML-2_5p12	2	0	0	579	1	2	582	0.005154639175257714
-HML-2_5p13.3	0	8	0	576	0	0	584	0.013698630136986356
-HML-2_5q11.2	0	462	0	0	0	122	462	0.0
-HML-2_5q33.2	5	0	0	578	0	1	583	0.00857632933104635
-HML-2_5q33.3	0	27	0	552	4	1	583	0.053173241852487174
-HML-2_6p21.1	0	0	0	584	0	0	584	0.0
-HML-2_6p22.1	0	0	0	584	0	0	584	0.0
-HML-2_6q11.1	136	0	448	0	0	0	584	0.23287671232876717
-HML-2_6q14.1	3	93	0	482	4	2	582	0.17182130584192434
-HML-2_6q25.1	0	1	583	0	0	0	584	0.001712328767123239
-HML-2_7p22.1	1	2	0	334	247	0	584	0.42808219178082196
-HML-2_7q11.21	0	2	581	0	1	0	584	0.005136986301369828
-HML-2_7q22.2	0	0	584	0	0	0	584	0.0
-HML-2_7q34	0	0	584	0	0	0	584	0.0
-HML-2_8p22	0	0	4	580	0	0	584	0.006849315068493178
-HML-2_8p23.1_duplicate_group_unresolved	578	0	0	6	0	0	584	0.010273972602739767
-HML-2_8p23.1a_hg38	473	0	0	42	0	69	515	0.08155339805825246
-HML-2_8p23.1b	247	0	0	280	0	57	527	0.4686907020872866
-HML-2_8p23.1c	264	0	0	236	0	84	500	0.472
-HML-2_8p23.1d	253	0	0	276	5	50	534	0.4831460674157303
-HML-2_8p23.1e	224	0	0	328	1	31	553	0.40687160940325495
-HML-2_8q11.21	0	0	584	0	0	0	584	0.0
-HML-2_8q11.23_new	0	583	0	1	0	0	584	0.001712328767123239
-HML-2_8q24.3a	0	0	584	0	0	0	584	0.0
-HML-2_8q24.3c	4	0	577	0	1	2	582	0.00859106529209619
-HML-2_9q34.11	1	0	581	0	0	2	582	0.0017182130584192379
-HML-2_9q34.3	2	0	210	370	0	2	582	0.36426116838487976
-HML-2_Xq11.1	115	91	344	0	2	32	552	0.37681159420289856
-HML-2_Xq12	115	0	438	0	0	31	553	0.20795660036166363
-HML-2_Xq21.33	547	0	0	6	0	31	553	0.010849909584086825
-HML-2_Xq28a	335	0	214	0	0	35	549	0.38979963570127507
-HML-2_Xq28b	262	0	286	0	1	35	549	0.47905282331511845
-HML-2_Yp11.2	367	0	125	0	0	92	492	0.25406504065040647
-HML-2_Yq11.23_duplicate_group_unresolved	578	6	0	0	0	0	584	0.010273972602739767
-HML-2_Yq11.23a	424	36	0	0	2	122	462	0.08225108225108224
-HML-2_Yq11.23b	365	91	0	0	6	122	462	0.20995670995671
-HML-2_acro_type1	89	32	106	113	244	0	584	0.5821917808219178
-HML-2_acro_type2	67	0	49	0	468	0	584	0.1986301369863014
+locus	label_scope	Noncarrier call	Solo-LTR	Fragment	Provirus	Multi-copy	Unknown	eligible_haplotypes	known_haplotypes	not_applicable_haplotypes	unknown_ploidy_haplotypes	missing_reassigned	missing_no_retained_record	explicit_technical_unknown	group_record_count	group_observed_haplotypes	maximum_retained_copies_per_eligible_haplotype	variability_score	structural_observations
+HML-2_10p12.1	physical_locus	0	25	0	558	1	0	584	584	0	0	0	0	0	0	0	2	0.044520547945205435	solo-ltr 25/584, provirus 558/584, multi-copy 1/584
+HML-2_10p14	physical_locus	0	1	0	582	0	1	584	583	0	0	0	0	1	0	0	1	0.0017152658662092923	solo-ltr 1/584, provirus 582/584, unknown 1/584
+HML-2_10q24.2	physical_locus	0	0	2	582	0	0	584	584	0	0	0	0	0	0	0	1	0.003424657534246589	fragment 2/584, provirus 582/584
+HML-2_11p15.4	physical_locus	9	0	0	573	0	2	584	582	0	0	0	0	2	0	0	1	0.015463917525773141	noncarrier call 9/584, provirus 573/584, unknown 2/584
+HML-2_11p15.4b	physical_locus	0	462	0	0	0	122	584	462	0	0	0	0	122	0	0	1	0.0	solo-ltr 462/584, unknown 122/584
+HML-2_11q12.1	physical_locus	0	0	584	0	0	0	584	584	0	0	0	0	0	0	0	1	0.0	fragment 584/584
+HML-2_11q12.3	physical_locus	2	0	202	379	1	0	584	584	0	0	0	0	0	0	0	2	0.351027397260274	noncarrier call 2/584, fragment 202/584, provirus 379/584, multi-copy 1/584
+HML-2_11q22.1	physical_locus	64	304	0	213	3	0	584	584	0	0	0	0	0	0	0	2	0.4794520547945206	noncarrier call 64/584, solo-ltr 304/584, provirus 213/584, multi-copy 3/584
+HML-2_11q23.3	physical_locus	0	9	0	574	1	0	584	584	0	0	0	0	0	0	0	2	0.017123287671232834	solo-ltr 9/584, provirus 574/584, multi-copy 1/584
+HML-2_12p11.21	physical_locus	0	0	0	584	0	0	584	584	0	0	0	0	0	0	0	1	0.0	provirus 584/584
+HML-2_12q13.2	physical_locus	195	130	0	258	1	0	584	584	0	0	0	0	0	0	0	2	0.5582191780821918	noncarrier call 195/584, solo-ltr 130/584, provirus 258/584, multi-copy 1/584
+HML-2_12q14.1	physical_locus	0	307	0	274	1	2	584	582	0	0	0	0	2	0	0	2	0.4725085910652921	solo-ltr 307/584, provirus 274/584, multi-copy 1/584, unknown 2/584
+HML-2_12q24.33	physical_locus	1	20	537	0	13	13	584	571	0	0	0	0	13	0	0	4	0.05954465849387036	noncarrier call 1/584, solo-ltr 20/584, fragment 537/584, multi-copy 13/584, unknown 13/584
+HML-2_13p13	physical_locus	260	0	3	0	0	321	584	263	0	0	204	1	116	0	0	1	0.011406844106463865	noncarrier call 260/584, fragment 3/584, unknown 321/584
+HML-2_14q11.2	physical_locus	3	0	580	0	1	0	584	584	0	0	0	0	0	0	0	3	0.006849315068493178	noncarrier call 3/584, fragment 580/584, multi-copy 1/584
+HML-2_14q32.33	physical_locus	31	0	520	0	5	28	584	556	0	0	0	1	27	0	0	2	0.06474820143884896	noncarrier call 31/584, fragment 520/584, multi-copy 5/584, unknown 28/584
+HML-2_15p13a	physical_locus	114	0	2	0	0	468	584	116	0	0	379	0	89	0	0	1	0.017241379310344862	noncarrier call 114/584, fragment 2/584, unknown 468/584
+HML-2_15p13b	physical_locus	62	0	0	2	0	520	584	64	0	0	453	3	64	0	0	1	0.03125	noncarrier call 62/584, provirus 2/584, unknown 520/584
+HML-2_15q25.2	physical_locus	1	461	0	0	0	122	584	462	0	0	0	0	122	0	0	1	0.0021645021645021467	noncarrier call 1/584, solo-ltr 461/584, unknown 122/584
+HML-2_16p11.2	physical_locus	6	0	571	0	3	4	584	580	0	0	0	0	4	0	0	2	0.01551724137931032	noncarrier call 6/584, fragment 571/584, multi-copy 3/584, unknown 4/584
+HML-2_17p13.1_hg38	physical_locus	0	0	122	462	0	0	584	584	0	0	0	0	0	0	0	1	0.20890410958904104	fragment 122/584, provirus 462/584
+HML-2_19p12a	physical_locus	0	0	0	584	0	0	584	584	0	0	0	0	0	0	0	1	0.0	provirus 584/584
+HML-2_19p12b	physical_locus	505	0	0	79	0	0	584	584	0	0	0	0	0	0	0	1	0.13527397260273977	noncarrier call 505/584, provirus 79/584
+HML-2_19p12c	physical_locus	319	0	0	265	0	0	584	584	0	0	0	0	0	0	0	1	0.4537671232876712	noncarrier call 319/584, provirus 265/584
+HML-2_19p12d	physical_locus	0	583	0	1	0	0	584	584	0	0	0	0	0	0	0	1	0.001712328767123239	solo-ltr 583/584, provirus 1/584
+HML-2_19p12e	physical_locus	0	2	582	0	0	0	584	584	0	0	0	0	0	0	0	1	0.003424657534246589	solo-ltr 2/584, fragment 582/584
+HML-2_19p13.3	physical_locus	2	9	569	0	0	4	584	580	0	0	0	0	4	0	0	1	0.018965517241379293	noncarrier call 2/584, solo-ltr 9/584, fragment 569/584, unknown 4/584
+HML-2_19q12	physical_locus	1	0	0	582	1	0	584	584	0	0	0	0	0	0	0	2	0.003424657534246589	noncarrier call 1/584, provirus 582/584, multi-copy 1/584
+HML-2_19q13.12a	physical_locus	0	0	584	0	0	0	584	584	0	0	0	0	0	0	0	1	0.0	fragment 584/584
+HML-2_19q13.12b	physical_locus	0	0	0	582	0	2	584	582	0	0	0	0	2	0	0	1	0.0	provirus 582/584, unknown 2/584
+HML-2_19q13.41	physical_locus	0	0	583	0	0	1	584	583	0	0	0	0	1	0	0	1	0.0	fragment 583/584, unknown 1/584
+HML-2_19q13.42	physical_locus	0	0	583	0	0	1	584	583	0	0	0	0	1	0	0	1	0.0	fragment 583/584, unknown 1/584
+HML-2_1p31.1a	physical_locus	0	60	0	523	1	0	584	584	0	0	0	0	0	0	0	2	0.10445205479452058	solo-ltr 60/584, provirus 523/584, multi-copy 1/584
+HML-2_1p31.1b	physical_locus	0	469	106	0	9	0	584	584	0	0	0	0	0	0	0	4	0.19691780821917804	solo-ltr 469/584, fragment 106/584, multi-copy 9/584
+HML-2_1p34.3	physical_locus	0	0	584	0	0	0	584	584	0	0	0	0	0	0	0	1	0.0	fragment 584/584
+HML-2_1p36.21a	physical_locus	17	4	562	1	0	0	584	584	0	0	0	0	0	0	0	1	0.03767123287671237	noncarrier call 17/584, solo-ltr 4/584, fragment 562/584, provirus 1/584
+HML-2_1p36.21b	physical_locus	23	0	0	558	0	3	584	581	0	0	0	0	3	0	0	1	0.03958691910499135	noncarrier call 23/584, provirus 558/584, unknown 3/584
+HML-2_1p36.21c	physical_locus	8	0	0	576	0	0	584	584	0	0	0	0	0	0	0	1	0.013698630136986356	noncarrier call 8/584, provirus 576/584
+HML-2_1q21.3	physical_locus	0	0	584	0	0	0	584	584	0	0	0	0	0	0	0	1	0.0	fragment 584/584
+HML-2_1q22	physical_locus	0	3	0	581	0	0	584	584	0	0	0	0	0	0	0	1	0.005136986301369828	solo-ltr 3/584, provirus 581/584
+HML-2_1q23.3	physical_locus	0	0	0	584	0	0	584	584	0	0	0	0	0	0	0	1	0.0	provirus 584/584
+HML-2_1q24.1	physical_locus	1	0	583	0	0	0	584	584	0	0	0	0	0	0	0	1	0.001712328767123239	noncarrier call 1/584, fragment 583/584
+HML-2_1q32.2	physical_locus	0	0	584	0	0	0	584	584	0	0	0	0	0	0	0	1	0.0	fragment 584/584
+HML-2_1q43	physical_locus	0	0	584	0	0	0	584	584	0	0	0	0	0	0	0	1	0.0	fragment 584/584
+HML-2_20q11.22	physical_locus	1	0	580	0	1	2	584	582	0	0	0	0	2	0	0	2	0.0034364261168384758	noncarrier call 1/584, fragment 580/584, multi-copy 1/584, unknown 2/584
+HML-2_21p13	physical_locus	40	0	2	0	0	542	584	42	0	0	452	0	90	0	0	1	0.04761904761904767	noncarrier call 40/584, fragment 2/584, unknown 542/584
+HML-2_21q21.1	physical_locus	0	1	0	583	0	0	584	584	0	0	0	0	0	0	0	1	0.001712328767123239	solo-ltr 1/584, provirus 583/584
+HML-2_22p13	physical_locus	198	0	4	0	1	381	584	203	0	0	268	0	113	0	0	2	0.024630541871921152	noncarrier call 198/584, fragment 4/584, multi-copy 1/584, unknown 381/584
+HML-2_22q11.21	physical_locus	3	25	0	553	0	3	584	581	0	0	0	0	3	0	0	1	0.048192771084337394	noncarrier call 3/584, solo-ltr 25/584, provirus 553/584, unknown 3/584
+HML-2_22q11.23	physical_locus	1	0	5	573	2	3	584	581	0	0	0	0	3	0	0	3	0.013769363166953541	noncarrier call 1/584, fragment 5/584, provirus 573/584, multi-copy 2/584, unknown 3/584
+HML-2_2q21.1	physical_locus	0	0	583	0	0	1	584	583	0	0	0	0	1	0	0	1	0.0	fragment 583/584, unknown 1/584
+HML-2_3p12.3	physical_locus	7	0	0	574	0	3	584	581	0	0	0	0	3	0	0	1	0.012048192771084376	noncarrier call 7/584, provirus 574/584, unknown 3/584
+HML-2_3p25.3	physical_locus	0	0	584	0	0	0	584	584	0	0	0	0	0	0	0	1	0.0	fragment 584/584
+HML-2_3q12.3	physical_locus	0	5	6	573	0	0	584	584	0	0	0	0	0	0	0	1	0.018835616438356184	solo-ltr 5/584, fragment 6/584, provirus 573/584
+HML-2_3q13.2	physical_locus	0	56	0	525	3	0	584	584	0	0	0	0	0	0	0	2	0.10102739726027399	solo-ltr 56/584, provirus 525/584, multi-copy 3/584
+HML-2_3q21.2	physical_locus	1	0	0	583	0	0	584	584	0	0	0	0	0	0	0	1	0.001712328767123239	noncarrier call 1/584, provirus 583/584
+HML-2_3q24_hg38	physical_locus	450	0	134	0	0	0	584	584	0	0	0	0	0	0	0	1	0.22945205479452058	noncarrier call 450/584, fragment 134/584
+HML-2_3q27.2	physical_locus	0	21	0	561	2	0	584	584	0	0	0	0	0	0	0	2	0.03938356164383561	solo-ltr 21/584, provirus 561/584, multi-copy 2/584
+HML-2_4p16.1a	physical_locus	2	0	48	532	1	1	584	583	0	0	0	0	1	0	0	2	0.08747855917667235	noncarrier call 2/584, fragment 48/584, provirus 532/584, multi-copy 1/584, unknown 1/584
+HML-2_4p16.1b	physical_locus	0	0	0	582	0	2	584	582	0	0	0	0	2	0	0	1	0.0	provirus 582/584, unknown 2/584
+HML-2_4p16.3a	physical_locus	449	11	108	0	4	12	584	572	0	0	0	9	3	0	0	2	0.215034965034965	noncarrier call 449/584, solo-ltr 11/584, fragment 108/584, multi-copy 4/584, unknown 12/584
+HML-2_4p16.3b	physical_locus	1	0	583	0	0	0	584	584	0	0	0	0	0	0	0	1	0.001712328767123239	noncarrier call 1/584, fragment 583/584
+HML-2_4p16.3c	physical_locus	1	0	0	583	0	0	584	584	0	0	0	0	0	0	0	1	0.001712328767123239	noncarrier call 1/584, provirus 583/584
+HML-2_4q13.2	physical_locus	228	0	314	0	0	42	584	542	0	0	0	0	42	0	0	1	0.4206642066420664	noncarrier call 228/584, fragment 314/584, unknown 42/584
+HML-2_4q32.1	physical_locus	0	0	584	0	0	0	584	584	0	0	0	0	0	0	0	1	0.0	fragment 584/584
+HML-2_4q32.3	physical_locus	0	0	584	0	0	0	584	584	0	0	0	0	0	0	0	1	0.0	fragment 584/584
+HML-2_4q35.2_hg38	physical_locus	272	0	182	0	1	129	584	455	0	0	4	4	121	0	0	2	0.4021978021978022	noncarrier call 272/584, fragment 182/584, multi-copy 1/584, unknown 129/584
+HML-2_5p12	physical_locus	2	0	0	579	1	2	584	582	0	0	0	0	2	0	0	2	0.005154639175257714	noncarrier call 2/584, provirus 579/584, multi-copy 1/584, unknown 2/584
+HML-2_5p13.3	physical_locus	0	8	0	576	0	0	584	584	0	0	0	0	0	0	0	1	0.013698630136986356	solo-ltr 8/584, provirus 576/584
+HML-2_5q11.2	physical_locus	0	462	0	0	0	122	584	462	0	0	0	0	122	0	0	1	0.0	solo-ltr 462/584, unknown 122/584
+HML-2_5q33.2	physical_locus	5	0	0	578	0	1	584	583	0	0	0	0	1	0	0	1	0.00857632933104635	noncarrier call 5/584, provirus 578/584, unknown 1/584
+HML-2_5q33.3	physical_locus	0	27	0	552	4	1	584	583	0	0	0	0	1	0	0	3	0.053173241852487174	solo-ltr 27/584, provirus 552/584, multi-copy 4/584, unknown 1/584
+HML-2_6p21.1	physical_locus	0	0	0	584	0	0	584	584	0	0	0	0	0	0	0	1	0.0	provirus 584/584
+HML-2_6p22.1	physical_locus	0	0	0	584	0	0	584	584	0	0	0	0	0	0	0	1	0.0	provirus 584/584
+HML-2_6q11.1	physical_locus	136	0	448	0	0	0	584	584	0	0	0	0	0	0	0	1	0.23287671232876717	noncarrier call 136/584, fragment 448/584
+HML-2_6q14.1	physical_locus	3	93	0	482	4	2	584	582	0	0	0	0	2	0	0	3	0.17182130584192434	noncarrier call 3/584, solo-ltr 93/584, provirus 482/584, multi-copy 4/584, unknown 2/584
+HML-2_6q25.1	physical_locus	0	1	583	0	0	0	584	584	0	0	0	0	0	0	0	1	0.001712328767123239	solo-ltr 1/584, fragment 583/584
+HML-2_7p22.1	physical_locus	0	2	0	334	247	1	584	583	0	0	0	1	0	0	0	6	0.42710120068610635	solo-ltr 2/584, provirus 334/584, multi-copy 247/584, unknown 1/584
+HML-2_7q11.21	physical_locus	0	2	581	0	1	0	584	584	0	0	0	0	0	0	0	2	0.005136986301369828	solo-ltr 2/584, fragment 581/584, multi-copy 1/584
+HML-2_7q22.2	physical_locus	0	0	584	0	0	0	584	584	0	0	0	0	0	0	0	1	0.0	fragment 584/584
+HML-2_7q34	physical_locus	0	0	584	0	0	0	584	584	0	0	0	0	0	0	0	1	0.0	fragment 584/584
+HML-2_8p22	physical_locus	0	0	4	580	0	0	584	584	0	0	0	0	0	0	0	1	0.006849315068493178	fragment 4/584, provirus 580/584
+HML-2_8p23.1_duplicate_group_unresolved	unlocalized_record_bucket	0	0	0	6	0	0	0	0	0	0	0	0	0	6	6	1	0	Unlocalized records in 6 haplotypes, provirus 6. Not a single-locus frequency.
+HML-2_8p23.1a_hg38	physical_locus	473	0	0	42	0	69	584	515	0	0	0	0	69	0	0	1	0.08155339805825246	noncarrier call 473/584, provirus 42/584, unknown 69/584
+HML-2_8p23.1b	physical_locus	247	0	0	280	0	57	584	527	0	0	0	0	57	0	0	1	0.4686907020872866	noncarrier call 247/584, provirus 280/584, unknown 57/584
+HML-2_8p23.1c	physical_locus	252	0	0	236	0	96	584	488	0	0	0	12	84	0	0	1	0.48360655737704916	noncarrier call 252/584, provirus 236/584, unknown 96/584
+HML-2_8p23.1d	physical_locus	215	0	0	276	5	88	584	496	0	0	5	33	50	0	0	2	0.44354838709677424	noncarrier call 215/584, provirus 276/584, multi-copy 5/584, unknown 88/584
+HML-2_8p23.1e	physical_locus	221	0	0	328	1	34	584	550	0	0	1	2	31	0	0	2	0.4036363636363637	noncarrier call 221/584, provirus 328/584, multi-copy 1/584, unknown 34/584
+HML-2_8q11.21	physical_locus	0	0	584	0	0	0	584	584	0	0	0	0	0	0	0	1	0.0	fragment 584/584
+HML-2_8q11.23_new	physical_locus	0	583	0	1	0	0	584	584	0	0	0	0	0	0	0	1	0.001712328767123239	solo-ltr 583/584, provirus 1/584
+HML-2_8q24.3a	physical_locus	0	0	584	0	0	0	584	584	0	0	0	0	0	0	0	1	0.0	fragment 584/584
+HML-2_8q24.3c	physical_locus	4	0	577	0	1	2	584	582	0	0	0	0	2	0	0	2	0.00859106529209619	noncarrier call 4/584, fragment 577/584, multi-copy 1/584, unknown 2/584
+HML-2_9q34.11	physical_locus	1	0	581	0	0	2	584	582	0	0	0	0	2	0	0	1	0.0017182130584192379	noncarrier call 1/584, fragment 581/584, unknown 2/584
+HML-2_9q34.3	physical_locus	2	0	210	370	0	2	584	582	0	0	0	0	2	0	0	1	0.36426116838487976	noncarrier call 2/584, fragment 210/584, provirus 370/584, unknown 2/584
+HML-2_Xq11.1	physical_locus	0	91	339	0	0	2	432	430	144	8	0	0	2	0	0	1	0.21162790697674416	solo-ltr 91/432, fragment 339/432, unknown 2/432. Outside denominator: 144 inapplicable partitions, 8 unknown-sex partitions.
+HML-2_Xq12	physical_locus	0	0	431	0	0	1	432	431	144	8	0	0	1	0	0	1	0.0	fragment 431/432, unknown 1/432. Outside denominator: 144 inapplicable partitions, 8 unknown-sex partitions.
+HML-2_Xq21.33	physical_locus	425	0	0	6	0	1	432	431	144	8	0	0	1	0	0	1	0.0139211136890951	noncarrier call 425/432, provirus 6/432, unknown 1/432. Outside denominator: 144 inapplicable partitions, 8 unknown-sex partitions.
+HML-2_Xq28a	physical_locus	217	0	210	0	0	5	432	427	144	8	0	0	5	0	0	1	0.4918032786885246	noncarrier call 217/432, fragment 210/432, unknown 5/432. Outside denominator: 144 inapplicable partitions, 8 unknown-sex partitions.
+HML-2_Xq28b	physical_locus	145	0	281	0	1	5	432	427	144	8	0	0	5	0	0	2	0.34192037470726	noncarrier call 145/432, fragment 281/432, multi-copy 1/432, unknown 5/432. Outside denominator: 144 inapplicable partitions, 8 unknown-sex partitions.
+HML-2_Yp11.2	physical_locus	20	0	124	0	0	0	144	144	432	8	0	0	0	0	0	1	0.13888888888888884	noncarrier call 20/144, fragment 124/144. Outside denominator: 432 inapplicable partitions, 8 unknown-sex partitions.
+HML-2_Yq11.23_duplicate_group_unresolved	unlocalized_record_bucket	0	6	0	0	0	0	0	0	0	0	0	0	0	6	6	1	0	Unlocalized records in 6 haplotypes, solo-ltr 6. Not a single-locus frequency.
+HML-2_Yq11.23a	physical_locus	74	32	0	0	2	36	144	108	432	8	0	6	30	0	0	2	0.31481481481481477	noncarrier call 74/144, solo-ltr 32/144, multi-copy 2/144, unknown 36/144. Outside denominator: 432 inapplicable partitions, 8 unknown-sex partitions.
+HML-2_Yq11.23b	physical_locus	14	88	0	0	6	36	144	108	432	8	6	0	30	0	0	3	0.18518518518518523	noncarrier call 14/144, solo-ltr 88/144, multi-copy 6/144, unknown 36/144. Outside denominator: 432 inapplicable partitions, 8 unknown-sex partitions.
+HML-2_acro_type1	unlocalized_record_bucket	0	32	106	113	244	0	0	0	0	0	0	0	0	820	495	5	0	Unlocalized records in 495 haplotypes, solo-ltr 32, fragment 106, provirus 113, multiple records 244. Not a single-locus frequency.
+HML-2_acro_type2	unlocalized_record_bucket	0	0	49	0	468	0	0	0	0	0	0	0	0	2018	517	8	0	Unlocalized records in 517 haplotypes, fragment 49, multiple records 468. Not a single-locus frequency.

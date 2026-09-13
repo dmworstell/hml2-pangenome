@@ -19,6 +19,7 @@ class RetainedSourceTests(unittest.TestCase):
     def test_figure_and_s5_are_identical_observations(self):
         figure = read(ROOT / "data/Figure_1_structural_source_data.tsv")
         table = read(ROOT / "Supplementary_Data/Table_S5_artifact_filtered_structural_spectrum.tsv")
+        self.assertEqual(table, read(ROOT / "project/manuscript/supplement/Table_S5_artifact_filtered_structural_spectrum.tsv"))
         self.assertEqual(len(figure), 105)
         self.assertEqual([{key: value for key, value in row.items() if key != "shown_in_figure_1"}
                           for row in figure], table)

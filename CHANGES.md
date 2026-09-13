@@ -6,6 +6,7 @@
   single loci. The descriptive panel uses 584 autosomal, 432 X and 144 Y
   copies, with unknown-sex donors excluded only from sex-chromosome counts.
   Added compact sex/partition inputs and focused conservation tests.
+  The bundled source-path copy of S5 is checked against the distributed table.
 - Recovered the original NucFreq reducer and documented its >=3 secondary
   reads and >=0.15 top-two base-fraction rule. Added executable checks of all
   416 regional depth-reliability flags and 351 numeric site fractions. The
