@@ -18,6 +18,10 @@
   integration. Changed S14D to model weight under equal priors.
 - Changed the S4A axis to frequency meeting ORF criteria. Its original six
   accepted status categories and exclusion of Undetermined calls are unchanged.
+- Clarified Figure 2A/B as locus copy counts and frequencies. Preserved every
+  count and observed color, removing only the unused five-copy legend entry.
+  Documented the separate 14q11.2 fragment and S4B's reference-inclusive
+  array-bearing-haplotype denominator, without changing S4B values.
 - Added a compact, directly runnable helper-sensitivity calculation instead of
   a dependency on the former broader simulation workflow.
 - Retained the completed targeted ONT copy validation and published short-read

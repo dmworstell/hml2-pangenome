@@ -15,6 +15,10 @@ def read_tsv(path):
         return list(csv.DictReader(stream, delimiter='\t'))
 
 
+def observed_multicopy_numbers(per_locus):
+    return sorted({cn for counts in per_locus.values() for cn in counts if cn >= 2})
+
+
 def save(fig, path):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)

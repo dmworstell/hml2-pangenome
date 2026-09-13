@@ -39,6 +39,34 @@ def main():
         assert hashlib.sha256((ROOT/'Supplementary_Data'/row['file']).read_bytes()).hexdigest()==row['sha256'],row['file']
     for row in read_tsv(ROOT/'data/additional_manifest.tsv'):
         assert hashlib.sha256((ROOT/row['file']).read_bytes()).hexdigest()==row['sha256'],row['file']
+    scope=json.loads((ROOT/'data/figure_2_s4_array_scope.json').read_text())
+    panels=load_module('retained_panels',ROOT/'project/manuscript/retained_panels.py')
+    locus_counts={locus:{int(cn):n for cn,n in counts.items()}
+                  for locus,counts in scope['figure_2_locus_copy_counts'].items()}
+    s4_counts={locus:{int(cn):n for cn,n in counts.items()}
+               for locus,counts in scope['figure_s4b_array_counts'].items()}
+    assert scope['population_haplotypes']==584
+    assert all(sum(counts.values())==584 for counts in locus_counts.values())
+    assert panels.observed_multicopy_numbers(locus_counts)==[2,3,4,6]
+    assert panels.observed_multicopy_numbers(s4_counts)==[2,3,4,6]
+    fourteenq=scope['fourteenq11_2_NA20282_h2_entries']
+    assert len(fourteenq)==3
+    assert Counter(row['Structure'] for row in fourteenq)=={'Fragment':1,'Provirus_from_Multi':2}
+    assert all(row['expected_biological_copy_count']=='3' for row in fourteenq)
+    assert locus_counts['HML-2_14q11.2'][3]==1 and s4_counts['HML-2_14q11.2']=={2:1}
+    tandem_ids={row['ID_Full'] for row in fourteenq if '_part' in row['ID_Full']}
+    assert len(tandem_ids)==2 and tandem_ids==set(scope['figure_2_CF_fourteenq_entry_ids'])
+    assert scope['figure_2_CF_resolved_arrays']==290
+    assert {row['sample'] for row in scope['s4b_reference_arrays']}=={'GCA','chm13v2.0'}
+    assert len(scope['s4b_reference_arrays'])==2
+    assert all(row['locus']=='HML-2_7p22.1' and row['array_size']==2 for row in scope['s4b_reference_arrays'])
+    assert sum(s4_counts['HML-2_7p22.1'].values())==249
+    assert sum(n for cn,n in locus_counts['HML-2_7p22.1'].items() if cn>=2)==247
+    for locus,counts in locus_counts.items():
+        expected={cn:n for cn,n in counts.items() if cn>=2}
+        if locus=='HML-2_7p22.1':expected[2]+=2
+        if locus=='HML-2_14q11.2':expected={2:1}
+        assert expected==s4_counts[locus],locus
     seven=read_tsv(ROOT/'Supplementary_Data/Figure_S7_donor_categories.tsv')
     assert len(seven)==len({r['donor'] for r in seven})==292
     assert Counter(r['category'] for r in seven)=={
@@ -80,7 +108,7 @@ def main():
             float(row['focal_ascertainment_odds_low']),float(row['focal_ascertainment_odds_high']),
             int(row['focal_count']),row['model'])
         assert math.isclose(log_evidence,float(row['log_marginal_likelihood']),rel_tol=1e-11,abs_tol=1e-10),row
-    print(f'PASS: Python syntax, {len(inventory)} source hashes, {len(tables)} supplementary table hashes, compact denominators, helper formulas, and {len(comparisons)} marginal-evidence calculations')
+    print(f'PASS: Python syntax, {len(inventory)} source hashes, {len(tables)} supplementary table hashes, array-scope regression, compact denominators, helper formulas, and {len(comparisons)} marginal-evidence calculations')
 
 
 if __name__=='__main__':

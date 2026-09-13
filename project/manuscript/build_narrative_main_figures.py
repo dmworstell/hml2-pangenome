@@ -20,7 +20,7 @@ from Bio import Phylo, SeqIO
 from Bio.Phylo.TreeConstruction import DistanceMatrix, DistanceTreeConstructor
 from PIL import Image, ImageChops, ImageDraw, ImageFont, ImageOps
 
-from retained_panels import draw_eightq_network, draw_type_state_counts, draw_duplicated_groups
+from retained_panels import draw_eightq_network, draw_type_state_counts, draw_duplicated_groups, observed_multicopy_numbers
 
 from figure_style import (
     BLUE,
@@ -497,16 +497,17 @@ def build_figure_2(rows, roster) -> Path:
         rotation=42,
         ha="right",
     )
-    ax_a.set_ylabel("Copies")
-    finding_title(ax_a, "A", "Array copy number per haplotype")
+    ax_a.set_ylabel("Locus copies")
+    finding_title(ax_a, "A", "Locus copy number per haplotype")
     finish_axis(ax_a, grid="y")
 
     ax_b_high = fig.add_axes([0.075, 0.405, 0.515, 0.075])
     ax_b = fig.add_axes([0.075, 0.145, 0.515, 0.225], sharex=ax_b_high)
     x = np.arange(len(order))
     bottom = np.zeros(len(order))
-    palette = {2: SKY, 3: GREEN, 4: GOLD, 5: ORANGE, 6: TYPE_II}
-    for cn in range(2, 7):
+    palette = {2: SKY, 3: GREEN, 4: GOLD, 6: TYPE_II}
+    copy_numbers = observed_multicopy_numbers(per_locus)
+    for cn in copy_numbers:
         values = np.array([
             sum(value == cn for value in per_locus[locus]) / len(roster)
             for locus in order
@@ -545,8 +546,8 @@ def build_figure_2(rows, roster) -> Path:
         ha="right",
     )
     ax_b.set_ylabel("Frequency")
-    ax_b_high.legend(title="Copies", ncol=5, loc="upper right")
-    finding_title(ax_b_high, "B", "Expanded haplotype frequency")
+    ax_b_high.legend(title="Locus copies", ncol=len(copy_numbers), loc="upper right")
+    finding_title(ax_b_high, "B", "Locus copy-number frequency")
     finish_axis(ax_b_high, grid="y")
     finish_axis(ax_b, grid="y")
 

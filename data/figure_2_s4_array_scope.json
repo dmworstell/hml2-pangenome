@@ -1,0 +1,182 @@
+{
+  "figure_2_CF_fourteenq_entry_ids": [
+    "NA20282_hap2_hprc_r2_v1.0.1_HML-2_14q11.2_alt2_MULTI_part1",
+    "NA20282_hap2_hprc_r2_v1.0.1_HML-2_14q11.2_alt2_MULTI_part2"
+  ],
+  "figure_2_CF_resolved_arrays": 290,
+  "figure_2_locus_copy_counts": {
+    "HML-2_10p12.1": {
+      "1": 583,
+      "2": 1
+    },
+    "HML-2_11q22.1": {
+      "0": 64,
+      "1": 517,
+      "2": 3
+    },
+    "HML-2_11q23.3": {
+      "1": 583,
+      "2": 1
+    },
+    "HML-2_12q13.2": {
+      "0": 195,
+      "1": 388,
+      "2": 1
+    },
+    "HML-2_12q14.1": {
+      "0": 2,
+      "1": 581,
+      "2": 1
+    },
+    "HML-2_12q24.33": {
+      "0": 14,
+      "1": 557,
+      "2": 12,
+      "4": 1
+    },
+    "HML-2_14q11.2": {
+      "0": 3,
+      "1": 580,
+      "3": 1
+    },
+    "HML-2_1p31.1b": {
+      "0": 469,
+      "1": 106,
+      "2": 2,
+      "3": 4,
+      "4": 3
+    },
+    "HML-2_3q13.2": {
+      "1": 581,
+      "2": 3
+    },
+    "HML-2_3q27.2": {
+      "1": 582,
+      "2": 2
+    },
+    "HML-2_5q33.3": {
+      "0": 1,
+      "1": 579,
+      "2": 2,
+      "3": 2
+    },
+    "HML-2_6q14.1": {
+      "0": 5,
+      "1": 575,
+      "2": 3,
+      "3": 1
+    },
+    "HML-2_7p22.1": {
+      "0": 3,
+      "1": 334,
+      "2": 230,
+      "3": 12,
+      "4": 4,
+      "6": 1
+    }
+  },
+  "figure_s4b_array_counts": {
+    "HML-2_10p12.1": {
+      "2": 1
+    },
+    "HML-2_11q22.1": {
+      "2": 3
+    },
+    "HML-2_11q23.3": {
+      "2": 1
+    },
+    "HML-2_12q13.2": {
+      "2": 1
+    },
+    "HML-2_12q14.1": {
+      "2": 1
+    },
+    "HML-2_12q24.33": {
+      "2": 12,
+      "4": 1
+    },
+    "HML-2_14q11.2": {
+      "2": 1
+    },
+    "HML-2_1p31.1b": {
+      "2": 2,
+      "3": 4,
+      "4": 3
+    },
+    "HML-2_3q13.2": {
+      "2": 3
+    },
+    "HML-2_3q27.2": {
+      "2": 2
+    },
+    "HML-2_5q33.3": {
+      "2": 2,
+      "3": 2
+    },
+    "HML-2_6q14.1": {
+      "2": 3,
+      "3": 1
+    },
+    "HML-2_7p22.1": {
+      "2": 232,
+      "3": 12,
+      "4": 4,
+      "6": 1
+    }
+  },
+  "fourteenq11_2_NA20282_h2_entries": [
+    {
+      "Haplotype": "h2",
+      "ID": "NA20282",
+      "ID_Full": "NA20282_hap2_hprc_r2_v1.0.1_HML-2_14q11.2_alt1",
+      "Locus": "HML-2_14q11.2",
+      "Structure": "Fragment",
+      "analysis_include": "1",
+      "cnv_support_class": "AUTHENTICATED_ARRAY_MULTICOPY",
+      "expected_biological_copy_count": "3",
+      "observation_state": "PRESENT"
+    },
+    {
+      "Haplotype": "h2",
+      "ID": "NA20282",
+      "ID_Full": "NA20282_hap2_hprc_r2_v1.0.1_HML-2_14q11.2_alt2_MULTI_part1",
+      "Locus": "HML-2_14q11.2",
+      "Structure": "Provirus_from_Multi",
+      "analysis_include": "1",
+      "cnv_support_class": "AUTHENTICATED_ARRAY_MULTICOPY",
+      "expected_biological_copy_count": "3",
+      "observation_state": "PRESENT"
+    },
+    {
+      "Haplotype": "h2",
+      "ID": "NA20282",
+      "ID_Full": "NA20282_hap2_hprc_r2_v1.0.1_HML-2_14q11.2_alt2_MULTI_part2",
+      "Locus": "HML-2_14q11.2",
+      "Structure": "Provirus_from_Multi",
+      "analysis_include": "1",
+      "cnv_support_class": "AUTHENTICATED_ARRAY_MULTICOPY",
+      "expected_biological_copy_count": "3",
+      "observation_state": "PRESENT"
+    }
+  ],
+  "population_haplotypes": 584,
+  "s4b_reference_arrays": [
+    {
+      "array_size": 2,
+      "haplotype": "ref",
+      "locus": "HML-2_7p22.1",
+      "sample": "GCA"
+    },
+    {
+      "array_size": 2,
+      "haplotype": "ref",
+      "locus": "HML-2_7p22.1",
+      "sample": "chm13v2.0"
+    }
+  ],
+  "source_sha256": {
+    "project/results/biological_orf_annotation_20260802/combined_hml2_orf_analysis.CNV_WEIGHTED.BIOLOGICALLY_ANNOTATED.v3.tsv": "c760b8a5d84fe666377a076dd462110917f6812b935878ac77697b0a605aac5a",
+    "project/working/onep31b_array_recovery_agent/haplotype_array_reconciliation.tsv": "4d7bcbaa91a63514ce0cbb263f7ff6c9d054211663004127ce23a1dafe4c6637",
+    "project/working/sevenp22_proxy_resolution_agent/haplotype_copy_number_truth.tsv": "3a8e8fb15182195197f5b979442870f21a033d67b473ee110130331f5ed2f365"
+  }
+}

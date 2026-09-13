@@ -1,5 +1,24 @@
 # Retained analysis definitions
 
+## Locus counts and tandem-array sizes in Figures 2 and S4B
+
+Figure 2A shows locus copy counts among carrier haplotypes. Figure 2B divides
+the count in each displayed multicopy class by all 584 population haplotypes.
+The observed multicopy classes are 2, 3, 4 and 6. No five-copy class is observed.
+At 14q11.2, NA20282 h2 has three locus copies: one separate fragment and two
+tandem proviruses. Its Figure 2A/B locus count is three, not a three-provirus
+tandem. The separate fragment does not enter Figure 2C–F, whose array-unit
+filter includes only the two `_part` proviruses. Their 290-array denominator
+and within-array results are unchanged.
+
+Figure S4B instead shows the distribution of tandem-array sizes among
+array-bearing haplotypes at each locus, using the maximum `_part` index. Its
+7p22.1 denominator is 249 array-bearing haplotypes, including the GCA and CHM13
+reference arrays. These two two-copy arrays are not population observations.
+The corresponding population-only count in Figure 2 is 247 arrays. At 14q11.2,
+S4B shows the two-copy tandem in its one array-bearing haplotype, excluding the
+separate fragment from the array-size count. S4B source values are preserved.
+
 ## Positional ORF criterion in Supplementary Figure S4A
 
 The positional tandem-array panel accepts the historical status values

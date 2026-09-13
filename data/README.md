@@ -11,6 +11,10 @@ an individual site heterozygous is not established by this summary table alone.
 check the two CACAC target-site duplications in Figure 7. Its full catalog input
 is identified in `external_inputs.tsv`.
 
+`figure_2_s4_array_scope.json` records the checked copy-count summaries and
+specific catalog entries needed to test the Figure 2/S4B definition difference.
+It includes the exact input identities used for this derived regression fixture.
+
 `additional_manifest.tsv` identifies the supplementary compact model and CNV
 inputs. Extracted JSON blocks contain only the fields consumed by retained
 figure builders. Original source checksums are recorded separately from the
