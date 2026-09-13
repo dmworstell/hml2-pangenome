@@ -13,6 +13,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
+from structural_catalog_summary import structural_summary, write_structural_tables
 
 from figure_style import (
     BLUE,
@@ -73,7 +74,7 @@ PUBLIC_ID = re.compile(r"^(?:HG|NA)\d+$")
 COMPATIBLE = {"Intact", "Frameshift_at_end", "Intact_FS_End"}
 PROVIRUS_STRUCTURES = {"Provirus", "Provirus_from_Multi"}
 COLORS = {
-    "Absent": LIGHT,
+    "Noncarrier call": LIGHT,
     "Solo-LTR": ORANGE,
     "Fragment": SKY,
     "Provirus": GREEN,
@@ -143,66 +144,29 @@ def load_catalog() -> tuple[list[dict[str, str]], list[tuple[str, str]]]:
     return rows, roster
 
 
-def structural_state(rows: list[dict[str, str]]) -> str:
-    present = [row for row in rows if row["observation_state"] == "PRESENT"]
-    if len(present) > 1:
-        return "Multi-copy"
-    if present:
-        structure = present[0]["Structure"]
-        if structure == "Solo-LTR":
-            return "Solo-LTR"
-        if structure == "Fragment":
-            return "Fragment"
-        if structure in PROVIRUS_STRUCTURES:
-            return "Provirus"
-        return "Fragment"
-    if any(row["observation_state"] == "UNKNOWN_TECHNICAL" for row in rows):
-        return "Unknown"
-    return "Absent"
-
-
 def build_structural_figure(
     rows: list[dict[str, str]], roster: list[tuple[str, str]]
 ) -> Path:
-    cells: dict[tuple[str, str, str], list[dict[str, str]]] = defaultdict(list)
-    loci = sorted({row["Locus"] for row in rows})
-    for row in rows:
-        cells[(row["Locus"], row["ID"], row["Haplotype"])].append(row)
-
-    summary = []
+    summary, observations, sex_evidence = structural_summary(rows, roster)
     states = list(COLORS)
-    for locus in loci:
-        counts = Counter(
-            structural_state(cells.get((locus, sample, hap), []))
-            for sample, hap in roster
-        )
-        known = len(roster) - counts["Unknown"]
-        biological = [counts[state] for state in states if state != "Unknown"]
-        variability = 0 if not known else 1 - max(biological) / known
-        summary.append(
-            {
-                "locus": locus,
-                **{state: counts[state] for state in states},
-                "known_haplotypes": known,
-                "variability_score": variability,
-            }
-        )
-    selected = sorted(summary, key=lambda row: row["variability_score"], reverse=True)[:30]
+    selected = sorted(
+        (row for row in summary if row["label_scope"] == "physical_locus"),
+        key=lambda row: row["variability_score"], reverse=True,
+    )[:30]
     selected.reverse()
-    fields = ["locus", *states, "known_haplotypes", "variability_score"]
-    write_tsv(SUPPLEMENT / "Table_S5_artifact_filtered_structural_spectrum.tsv", summary, fields)
+    write_structural_tables(summary, observations, sex_evidence, SUPPLEMENT)
 
     apply_style()
     fig, ax = plt.subplots(figsize=(7.1, 7.0), constrained_layout=True)
     left = np.zeros(len(selected))
     y = np.arange(len(selected))
     for state in states:
-        values = np.array([row[state] / len(roster) for row in selected])
+        values = np.array([row[state] / row["eligible_haplotypes"] for row in selected])
         ax.barh(y, values, left=left, color=COLORS[state], label=state, height=0.78)
         left += values
     ax.set_yticks(y, [display_locus_name(row["locus"]) for row in selected])
     ax.set_xlim(0, 1)
-    ax.set_xlabel("Fraction of 584 long-read haplotypes")
+    ax.set_xlabel("Fraction of eligible chromosome copies")
     panel_title(ax, "A", "Structural variation is concentrated at a subset of loci")
     ax.legend(ncol=3, loc="lower center", bbox_to_anchor=(0.5, 1.01))
     finish_axis(ax, grid="x")

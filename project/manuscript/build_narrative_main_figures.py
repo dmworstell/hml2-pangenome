@@ -16,6 +16,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import numpy as np
+from structural_catalog_summary import structural_summary, write_structural_tables
 from Bio import Phylo, SeqIO
 from Bio.Phylo.TreeConstruction import DistanceMatrix, DistanceTreeConstructor
 from PIL import Image, ImageChops, ImageDraw, ImageFont, ImageOps
@@ -135,7 +136,7 @@ PUBLIC_ID = re.compile(r"^(?:HG|NA)\d+$")
 COMPATIBLE = {"Intact", "Frameshift_at_end", "Intact_FS_End"}
 PROVIRUS = {"Provirus", "Provirus_from_Multi"}
 STATE_COLORS = {
-    "Absent": "#E8ECEF",
+    "Noncarrier call": "#E8ECEF",
     "Solo-LTR": ORANGE,
     "Fragment": SKY,
     "Provirus": GREEN,
@@ -239,22 +240,6 @@ def load_catalog() -> tuple[list[dict[str, str]], list[tuple[str, str]]]:
     return rows, roster
 
 
-def structural_state(rows: list[dict[str, str]]) -> str:
-    present = [row for row in rows if row["observation_state"] == "PRESENT"]
-    if len(present) > 1:
-        return "Multi-copy"
-    if present:
-        structure = present[0]["Structure"]
-        if structure in {"Solo-LTR", "Fragment"}:
-            return structure
-        if structure in PROVIRUS:
-            return "Provirus"
-        return "Fragment"
-    if any(row["observation_state"] == "UNKNOWN_TECHNICAL" for row in rows):
-        return "Unknown"
-    return "Absent"
-
-
 def gene_call(row: dict[str, str], feature: str) -> tuple[bool, bool]:
     if feature == "gag_pro_route":
         values = [row["gag"], row["pro"]]
@@ -273,21 +258,17 @@ def gene_call(row: dict[str, str], feature: str) -> tuple[bool, bool]:
 
 
 def build_figure_1(rows, roster) -> Path:
-    cells: dict[tuple[str, str, str], list[dict[str, str]]] = defaultdict(list)
-    loci = sorted({row["Locus"] for row in rows})
-    for row in rows:
-        cells[(row["Locus"], row["ID"], row["Haplotype"])].append(row)
-    summary = []
-    for locus in loci:
-        counts = Counter(
-            structural_state(cells.get((locus, sample, hap), []))
-            for sample, hap in roster
-        )
-        known = len(roster) - counts["Unknown"]
-        biological = [counts[state] for state in STATE_COLORS if state != "Unknown"]
-        variability = 0 if not known else 1 - max(biological) / known
-        summary.append((locus, counts, variability))
-    selected = sorted(summary, key=lambda item: item[2], reverse=True)[:24][::-1]
+    summary, observations, sex_evidence = structural_summary(rows, roster)
+    write_structural_tables(summary, observations, sex_evidence, PROJECT / "manuscript/supplement")
+    selected = sorted(
+        (row for row in summary if row["label_scope"] == "physical_locus"),
+        key=lambda row: row["variability_score"], reverse=True,
+    )[:24][::-1]
+    with (OUT / "Figure_1_structural_source_data.tsv").open("w", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(summary[0]) + ["shown_in_figure_1"], delimiter="\t", lineterminator="\n")
+        writer.writeheader()
+        selected_loci = {row["locus"] for row in selected}
+        writer.writerows({**row, "shown_in_figure_1": int(row["locus"] in selected_loci)} for row in summary)
 
     apply_style()
     fig = plt.figure(figsize=(7.1, 8.0), constrained_layout=True)
@@ -300,12 +281,12 @@ def build_figure_1(rows, roster) -> Path:
     left = np.zeros(len(selected))
     y = np.arange(len(selected))
     for state, color in STATE_COLORS.items():
-        values = np.array([counts[state] / len(roster) for _, counts, _ in selected])
+        values = np.array([row[state] / row["eligible_haplotypes"] for row in selected])
         ax.barh(y, values, left=left, color=color, label=state, height=0.78)
         left += values
-    ax.set_yticks(y, [display_locus_name(locus) for locus, _, _ in selected])
+    ax.set_yticks(y, [display_locus_name(row["locus"]) for row in selected])
     ax.set_xlim(0, 1)
-    ax.set_xlabel("Haplotype frequency")
+    ax.set_xlabel("Fraction of eligible chromosome copies")
     ax.set_title(
         "Structural states vary among haplotypes",
         loc="center",
@@ -317,7 +298,7 @@ def build_figure_1(rows, roster) -> Path:
         -0.105, 1.14, "b", transform=ax.transAxes, fontsize=11.5,
         fontweight="bold", color=INK, va="bottom",
     )
-    ax.legend(ncol=6, loc="lower center", bbox_to_anchor=(0.5, 1.015))
+    ax.legend(ncol=3, loc="lower center", bbox_to_anchor=(0.5, 1.015))
     finish_axis(ax, grid="x")
     path = OUT / "Figure_1_long_read_structural_pangenome.png"
     save_figure(fig, path)

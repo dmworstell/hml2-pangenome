@@ -15,8 +15,9 @@ python scripts/check_release.py
 python scripts/reproduce_compact_panels.py --output outputs/retained_panels
 ```
 
-The first command verifies the bundled tables, factual denominators, retained
-model formulas, deterministic model evidence, and Python syntax. The second
+The first command verifies the bundled tables, chromosome denominators,
+structural-state tests, recovered NucFreq method, retained model formulas,
+deterministic model evidence, and Python syntax. The second
 regenerates Figure 7, Supplementary Figures S7, S13, S14, S17 and S20, and the
 duplicated-group schematic from the bundled compact data. It does not download
 data or run a cluster job.

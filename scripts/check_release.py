@@ -8,6 +8,7 @@ import importlib.util
 import json
 import math
 import sys
+import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -89,6 +90,22 @@ def main():
     for row in numeric:
         actual=int(row['nucfreq_het_sites'])/int(row['nucfreq_total_sites'])
         assert abs(actual-float(row['nucfreq_het_frac']))<=.00005000001
+    cnv_source=ROOT/'project/cluster_workflows/cnv_v2/src'
+    sys.path.insert(0,str(cnv_source))
+    nucfreq=load_module('nucfreq_summary',cnv_source/'nucfreq_summary.py')
+    assert nucfreq.check_retained_summary(ROOT/'data/cnv_depth_summary.tsv')=={
+        'rows':416,'low_baseline_rows':68,'nucfreq_available_rows':381,
+        'numeric_nucfreq_rows':351,'numeric_nucfreq_rows_with_low_baseline':36,
+        'maximum_recorded_nucfreq_fraction':.0135}
+    sys.path.insert(0,str(ROOT/'project/manuscript'))
+    suite=unittest.TestSuite()
+    for name,path in (
+        ('test_structural_catalog_summary',ROOT/'project/manuscript/test_structural_catalog_summary.py'),
+        ('test_retained_structural_source_data',ROOT/'project/manuscript/test_retained_structural_source_data.py'),
+        ('test_nucfreq_summary',ROOT/'project/cluster_workflows/cnv_v2/tests/test_nucfreq_summary.py')):
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromModule(load_module(name,path)))
+    tested=unittest.TextTestRunner(verbosity=1).run(suite)
+    assert tested.wasSuccessful() and tested.testsRun==19
     helper=load_module('helper',ROOT/'project/manuscript/build_helper_sensitivity.py')
     for name,computed,key in [
         ('helper_equilibrium_requirements.tsv',helper.helper_rows(),'minimum_replication_gain_for_equilibrium'),

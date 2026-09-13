@@ -1,0 +1,734 @@
+{
+  "schema": "hml2.figure1-sex-partitions.v1",
+  "copy_assignment_contract": {
+    "male_partition_assignments": [
+      {
+        "sample_id": "HG00096",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "HG00126",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "HG00140",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "HG00280",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "HG00290",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "HG00321",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "HG00329",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "HG00358",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "HG00512",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "HG00609",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG00621",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG00642",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG00658",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG00673",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG00706",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG00731",
+        "X_partition": "h1",
+        "Y_partition": "h2"
+      },
+      {
+        "sample_id": "HG00738",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG01074",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG01099",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG01106",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG01109",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG01167",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "HG01192",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG01243",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG01252",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG01255",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG01258",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG01261",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG01358",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG01433",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG01457",
+        "X_partition": "h1",
+        "Y_partition": "h2"
+      },
+      {
+        "sample_id": "HG01505",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "HG01530",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "HG01596",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "HG01890",
+        "X_partition": "h1",
+        "Y_partition": "h2"
+      },
+      {
+        "sample_id": "HG01928",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG01934",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG01943",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG01952",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02011",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "HG02015",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02027",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02040",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "HG02055",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02056",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02071",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02074",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02083",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02129",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02132",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02135",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02145",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02258",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02391",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "HG02392",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "HG02486",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02492",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "HG02514",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02554",
+        "X_partition": "h1",
+        "Y_partition": "h2"
+      },
+      {
+        "sample_id": "HG02572",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02602",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02647",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02666",
+        "X_partition": "h1",
+        "Y_partition": "h2"
+      },
+      {
+        "sample_id": "HG02668",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02698",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02717",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02735",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02738",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG02953",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "HG02965",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "HG02984",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG03009",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "HG03017",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG03050",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG03065",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "HG03098",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG03130",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "HG03139",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "HG03209",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "HG03225",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "HG03248",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "HG03371",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "HG03456",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "HG03471",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "HG03521",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "HG03579",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG03654",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG03688",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG03710",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG03732",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "HG03742",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "HG03942",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG04115",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG04157",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG04160",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG04187",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG04199",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG04204",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "HG04228",
+        "X_partition": "mat",
+        "Y_partition": "pat"
+      },
+      {
+        "sample_id": "NA18522",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA18534",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "NA18608",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA18620",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA18747",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA18879",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA18940",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA18943",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA18944",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA18945",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA18948",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA18952",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA18959",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA18960",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA18967",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA18970",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA18971",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA18974",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA18982",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA18983",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA18989",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "NA19043",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA19239",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "NA19317",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "NA19331",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "NA19347",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "NA19384",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "NA19443",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA19650",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "NA19682",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA19700",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA19705",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "NA20346",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA20509",
+        "X_partition": "h2",
+        "Y_partition": "h1"
+      },
+      {
+        "sample_id": "NA20752",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA20762",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA20805",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA20806",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA20809",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA20827",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA20850",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA20870",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA20905",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA21093",
+        "X_partition": "hap2",
+        "Y_partition": "hap1"
+      },
+      {
+        "sample_id": "NA24385",
+        "X_partition": "h1",
+        "Y_partition": "h2"
+      }
+    ]
+  },
+  "provenance": {
+    "sample_sex_source": "inputs/sampling_frame/human_sample_frame.tsv",
+    "sample_sex_source_sha256": "bf76a069efbd12ceb674dec6d27ec863a0154b9c1a512ea1e4a2732b3d66385a",
+    "partition_source": "inputs/population_authority/xy_longread_named_observation_v1.manifest.json",
+    "partition_source_sha256": "adc121b34b8d552d11ac88ccb6e25f39d609fb275d567ad400fd6d6cecd645b9",
+    "scope": "Full descriptive catalog roster, no pedigree-based exclusion. Partition assignments only, not the original structural-state or likelihood model."
+  }
+}

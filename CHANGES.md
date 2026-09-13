@@ -1,5 +1,16 @@
 # Publication snapshot changes
 
+- Corrected Figure 1 and Tables S1/S5 using one shared observation summary.
+  Empty physical-locus cells are Unknown. Pipeline noncarrier sentinels are
+  labelled Noncarrier call, and unlocalized copy groups are not ranked as
+  single loci. The descriptive panel uses 584 autosomal, 432 X and 144 Y
+  copies, with unknown-sex donors excluded only from sex-chromosome counts.
+  Added compact sex/partition inputs and focused conservation tests.
+- Recovered the original NucFreq reducer and documented its >=3 secondary
+  reads and >=0.15 top-two base-fraction rule. Added executable checks of all
+  416 regional depth-reliability flags and 351 numeric site fractions. The
+  frozen regional counts are unchanged. Historical numeric-window semantics
+  are retained explicitly rather than silently shifted.
 - Preserved retained analysis source from the local research workspaces in a
   new repository, without copying their Git history or operational logs.
 - Updated the main figure builder to retain only the structure and measured
