@@ -1,5 +1,5 @@
-source(Sys.getenv("HML2_CONFIG", file.path("manuscript_figures", "R", "config.R")))
-# >>> Generates: Figures 3B, S4A, S4B <<<
+source(Sys.getenv("HML2_CONFIG", file.path("R", "config.R")))
+# Generates the tandem-array positional ORF and conditional array-size panels.
 
 # HML-2 Tandem Duplication & ORF Integrity Analysis
 #
@@ -31,7 +31,35 @@ full_data <- read_tsv(
 )
 full_data <- full_data %>% rename(locus = Locus)
 
-cleaned_data <- full_data %>% filter(!is.na(locus) & !is.na(ID_Full))
+required_columns <- c("analysis_include", "analysis_exclusion_reason", "ID", "Haplotype",
+                      "ID_Full", "locus", "Structure", "gag", "pro", "pol", "env", "np9", "rec")
+missing_columns <- setdiff(required_columns, names(full_data))
+if (length(missing_columns)) {
+  stop("The retained analysis catalog is required. Missing columns: ",
+       paste(missing_columns, collapse = ", "))
+}
+public_data <- full_data %>% filter(str_detect(ID, "^(HG|NA)[0-9]+$"))
+if (any(is.na(public_data$analysis_include)) ||
+    any(!public_data$analysis_include %in% c("0", "1"))) {
+  stop("Every public catalog row must explicitly declare analysis_include as 0 or 1.")
+}
+cleaned_data <- public_data %>%
+  filter(analysis_include == "1", !is.na(locus), !is.na(ID_Full))
+dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
+write_tsv(
+  public_data %>% filter(analysis_include == "0") %>%
+    count(analysis_exclusion_reason, name = "excluded_rows"),
+  file.path(output_dir, "hml2_tandem_excluded_public_rows.tsv")
+)
+write_tsv(tibble(
+  input_catalog = normalizePath(input_file_path),
+  input_sha256 = digest::digest(file = input_file_path, algo = "sha256"),
+  input_rows = nrow(full_data),
+  nonpublic_rows_excluded = nrow(full_data) - nrow(public_data),
+  public_rows = nrow(public_data),
+  included_rows = nrow(cleaned_data),
+  included_haplotypes = nrow(distinct(cleaned_data, ID, Haplotype))
+), file.path(output_dir, "hml2_tandem_input_provenance.tsv"))
 
 cleaned_data <- cleaned_data %>%
   mutate(
@@ -72,6 +100,23 @@ total_haplotypes_per_locus <- cleaned_data %>%
 duplication_data <- cleaned_data %>%
   filter(str_detect(ID_Full, "_part\\d")) %>%
   mutate(part_num = as.integer(str_extract(ID_Full, "(?<=_part)\\d+")))
+if (any(!duplication_data$Structure %in% c("Provirus", "Provirus_from_Multi"))) {
+  stop("A retained tandem part is not a proviral unit. Inspect its structural record.")
+}
+array_membership <- duplication_data %>%
+  group_by(locus, ID, Haplotype) %>%
+  summarise(member_count = n(), distinct_positions = n_distinct(part_num),
+            first_position = min(part_num), last_position = max(part_num), .groups = "drop")
+if (any(array_membership$member_count != array_membership$distinct_positions) ||
+    any(array_membership$first_position != 1L) ||
+    any(array_membership$last_position != array_membership$member_count)) {
+  stop("Tandem positions must be unique and contiguous within each locus-haplotype array.")
+}
+write_tsv(
+  duplication_data %>% select(locus, ID, Haplotype, ID_Full, Structure, part_num,
+                             provirus_type, gag, pro, pol, env, np9, rec),
+  file.path(output_dir, "hml2_tandem_retained_members.tsv")
+)
 
 # Find the size of each tandem array.
 array_size_summary <- duplication_data %>%
@@ -166,7 +211,7 @@ plot_fig1 <- plot_A + plot_B +
 # --- 6. Analyze Positional ORF Integrity (Figure 2) ---
 cat("Analyzing ORF integrity by position within tandem arrays...\n")
 
-# Historical permissive criteria, not Intact-only. Undetermined calls are excluded.
+# Define intact criteria
 intact_criteria <- c("intact", "no_stop", "no_stop_fs_end", "frameshift_at_end", "intact_fs_end", "intact_fs_end_premature_stop")
 
 # Process the duplication data to get ORF status for each part
@@ -201,7 +246,10 @@ positional_orf_data <- duplication_data %>%
 positional_freq_summary <- positional_orf_data %>%
   group_by(locus, orf, part_num) %>%
   summarise(
-    intact_freq = mean(is_intact, na.rm = TRUE),
+    compatible_copies = sum(is_intact, na.rm = TRUE),
+    assessed_copies = sum(!is.na(is_intact)),
+    unassessed_copies = sum(is.na(is_intact)),
+    intact_freq = ifelse(assessed_copies > 0, compatible_copies / assessed_copies, NA_real_),
     .groups = 'drop'
   )
 
@@ -217,6 +265,11 @@ total_duplicated_haplotypes <- array_size_counts %>%
 relative_freq_data <- array_size_counts %>%
   left_join(total_duplicated_haplotypes, by = "locus") %>%
   mutate(relative_frequency = count / total_duplicated)
+write_tsv(array_size_summary, file.path(output_dir, "hml2_tandem_array_sizes.tsv"))
+write_tsv(relative_freq_data, file.path(output_dir, "hml2_tandem_relative_size_summary.tsv"))
+write_tsv(positional_freq_summary, file.path(output_dir, "hml2_tandem_positional_orf_summary.tsv"))
+write_tsv(tibble(compatible_status = intact_criteria),
+          file.path(output_dir, "hml2_tandem_positional_orf_criteria.tsv"))
 
 # --- 8. Build the three figures ---
 # Figure 1 (plot_fig1) was built in Section 5. Here we build Figure 2 (positional
@@ -232,15 +285,20 @@ plot_positional <- positional_freq_summary %>%
   filter(locus %in% top_loci_with_duplications) %>%
   mutate(locus = factor(locus, levels = top_loci_with_duplications)) %>%
   ggplot(aes(x = factor(part_num), y = intact_freq, group = orf, color = orf)) +
-  geom_line(linewidth = 1) +
-  geom_point(size = 2.6) +
+  geom_line(linewidth = 0.6, na.rm = TRUE) +
+  geom_point(size = 1.7, na.rm = TRUE) +
   facet_wrap(~ locus, labeller = labeller(locus = function(x) str_replace(x, "HML-2_", ""))) +
   scale_y_continuous(labels = scales::percent_format(), limits = c(0, 1)) +
-  scale_color_manual(name = "ORF", values = unname(okabe_ito[c("blue", "orange", "bluish_green", "vermillion", "reddish_purple", "sky_blue")])) +
-  theme_pub(base_size = 16) +
+  scale_color_manual(name = "ORF", values = c(
+    gag = okabe_ito[["blue"]], pro = okabe_ito[["orange"]], pol = okabe_ito[["bluish_green"]],
+    env = okabe_ito[["vermillion"]], np9 = okabe_ito[["reddish_purple"]],
+    `K-rev` = okabe_ito[["sky_blue"]])) +
+  theme_pub(base_size = 11) +
+  theme(legend.position = "bottom", strip.text = element_text(size = 11),
+        axis.text = element_text(size = 10)) +
   labs(
-    x = "Position in tandem array (part number)",
-    y = "Frequency meeting ORF criteria"
+    x = "Position in tandem array",
+    y = "Copies meeting ORF criterion"
   )
 
 # Figure 3: Relative array-size makeup of the duplicated alleles at each locus.
@@ -249,20 +307,25 @@ plot_relsize <- relative_freq_data %>%
   filter(locus %in% loci_with_duplications) %>%
   mutate(locus = factor(locus, levels = locus_order_fig1)) %>%
   ggplot(aes(x = locus, y = relative_frequency, fill = category)) +
-  geom_col() +
-  scale_y_continuous(labels = scales::percent_format()) +
-  scale_x_discrete(labels = function(x) str_replace(x, "HML-2_", "")) +
+  geom_col(width = 0.7) +
+  scale_y_continuous(labels = scales::percent_format(), limits = c(0, 1),
+                     expand = expansion(mult = c(0, 0.01))) +
+  scale_x_discrete(limits = rev(locus_order_fig1), labels = function(x) {
+    counts <- total_duplicated_haplotypes$total_duplicated[match(x, total_duplicated_haplotypes$locus)]
+    paste0(str_replace(x, "HML-2_", ""), " (n = ", counts, ")")
+  }) +
   scale_fill_manual(name = "Tandem array size", values = color_palette, limits = names(color_palette), drop = FALSE) +
-  theme_pub(base_size = 16) +
+  coord_flip() +
+  theme_pub(base_size = 11) +
   labs(
-    x = "HML-2 locus",
-    y = "Relative frequency"
+    x = NULL,
+    y = "Fraction of array-bearing haplotypes"
   ) +
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+  theme(legend.position = "bottom", axis.text = element_text(size = 10))
 
 # --- 9. Save all figures (PNG + PDF) ---
 save_fig(plot_fig1,      "hml2_duplication_landscape_ONLY",     width = 14, height = 8)
-save_fig(plot_positional,"hml2_positional_orf_integrity",       width = 12, height = 10)
-save_fig(plot_relsize,   "hml2_duplication_relative_frequency", width = 14, height = 8)
+save_fig(plot_positional,"hml2_positional_orf_integrity",       width = 7.1, height = 5.4, dpi = 450)
+save_fig(plot_relsize,   "hml2_duplication_relative_frequency", width = 7.1, height = 4.8, dpi = 450)
 
 cat("--- Script Finished ---\n")

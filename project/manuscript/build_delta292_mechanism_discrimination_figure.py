@@ -41,15 +41,17 @@ def main() -> None:
         ("inclusive_ceiling", "broad", "17/23 broad", RED, "s"),
     ]
     for obs, asc, label, color, marker in keys:
+        if obs == "orthology_aware_floor" and asc == "narrow":
+            continue  # This single primary curve is shown in main Figure 5D.
         rows = [r for r in source if r["observation"] == obs and r["ascertainment_scenario"] == asc and r["model"] == "source_plus_focal_effect"]
         rows.sort(key=lambda r: float(r["source_opportunity_cv"]), reverse=True)
         ax_a.plot([float(r["source_opportunity_cv"]) for r in rows], [float(r["likelihood_ratio_effect_vs_source_only"]) for r in rows], marker=marker, color=color, label=label)
     ax_a.axhline(1, color="#172A3A", lw=0.8)
     ax_a.set_yscale("log")
-    ax_a.set_xlabel("Source variation")
-    ax_a.set_ylabel("Bayes factor")
-    ax_a.legend(ncol=2)
-    panel_title(ax_a, "A", "Spread versus source production")
+    ax_a.set_xlabel("Source-weight coefficient of variation")
+    ax_a.set_ylabel("Bayes factor for an\nadded Δ292 advantage")
+    ax_a.legend(ncol=1, fontsize=8)
+    panel_title(ax_a, "A", "Δ292 effect under alternative\ncounts and ascertainment")
     finish_axis(ax_a, grid="both")
 
     for obs, asc, label, color, marker in keys:
@@ -57,9 +59,9 @@ def main() -> None:
         rows.sort(key=lambda r: float(r["source_opportunity_cv"]))
         ax_b.plot([float(r["source_opportunity_cv"]) for r in rows], [float(r["posterior_source_ratio_median"]) for r in rows], marker=marker, color=color, label=label)
     ax_b.axhline(1, color="#172A3A", lw=0.8)
-    ax_b.set_xlabel("Source variation")
-    ax_b.set_ylabel("Relative Type-I source production")
-    panel_title(ax_b, "B", "Required source advantage")
+    ax_b.set_xlabel("Source-weight coefficient of variation")
+    ax_b.set_ylabel("Δ292 source contribution /\nother sources")
+    panel_title(ax_b, "B", "Δ292 source contribution\nwithout an added effect")
     finish_axis(ax_b, grid="both")
 
     model_order = ["length_only", "rna_redirection", "producer_cost_avoidance", "packaging_per_genomic_rna", "rna_plus_producer", "rna_plus_packaging", "producer_plus_packaging", "all_three"]
@@ -73,7 +75,7 @@ def main() -> None:
     ax_c.set_xscale("log")
     ax_c.set_yticks(y, labels)
     ax_c.set_xlabel("Support relative to length alone")
-    panel_title(ax_c, "C", "Possible spread components")
+    panel_title(ax_c, "C", "RNA supply, producer cost\nand packaging")
     finish_axis(ax_c, grid="x")
 
     categories = {
@@ -82,7 +84,7 @@ def main() -> None:
         "Two components": ["rna_plus_producer", "rna_plus_packaging", "producer_plus_packaging"],
         "All three": ["all_three"],
     }
-    scenarios = [("conservative", "orthology_aware_floor", "Conservative\n10/16"), ("conservative", "inclusive_ceiling", "Conservative\n17/23"), ("broad", "orthology_aware_floor", "Broad\n10/16"), ("broad", "inclusive_ceiling", "Broad\n17/23")]
+    scenarios = [("conservative", "orthology_aware_floor", "Conserv.\n10/16"), ("conservative", "inclusive_ceiling", "Conserv.\n17/23"), ("broad", "orthology_aware_floor", "Broad\n10/16"), ("broad", "inclusive_ceiling", "Broad\n17/23")]
     x = np.arange(len(scenarios))
     bottom = np.zeros(len(scenarios))
     cat_colors = [LIGHT, BLUE, PURPLE, RED]
@@ -95,7 +97,7 @@ def main() -> None:
         bottom += vals
     ax_d.set_xticks(x, [s[2] for s in scenarios])
     ax_d.set_ylim(0, 1)
-    ax_d.set_ylabel("Model weight under equal priors")
+    ax_d.set_ylabel("Model weight under\nequal model priors")
     # Keep the category key outside the stacked bars.  The former in-panel
     # legend obscured both the bar heights and its own labels.
     ax_d.legend(
@@ -104,7 +106,7 @@ def main() -> None:
         bbox_to_anchor=(0.5, -0.22),
         borderaxespad=0,
     )
-    panel_title(ax_d, "D", "Supported component combinations")
+    panel_title(ax_d, "D", "Model weights by\ncomponent combination")
     finish_axis(ax_d, grid="y")
 
     save_figure(fig, PNG, PDF)

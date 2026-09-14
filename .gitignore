@@ -19,3 +19,10 @@ outputs/
 *.xlsx
 *.docx
 *.log
+project/results/resolved_manuscript_catalog_20260914/combined_hml2_orf_analysis.RESOLVED.tsv
+HML2_project_data/
+Supplementary_Data/Table_S13/reproduced/
+Supplementary_Data/Table_S13/recomputed_results/
+project/manuscript/figures/comment_corrections_20260914/
+!Supplementary_Data/Phylogeny/selected_sequence_clusters.fasta
+!project/results/acroc_resolved_20260914/phylogeny/selected_sequence_clusters.fasta

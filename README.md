@@ -1,6 +1,7 @@
-# HERV-K (HML-2) variation in human pangenomes
+# Structural polymorphism and population-variable coding capacity of HERV-K(HML-2) in human pangenomes
 
-Source code and compact result tables for the HML-2 pangenome manuscript.
+Source code and result tables for the HML-2 pangenome manuscript. Release 0.2.0
+is frozen from the corrected manuscript inputs on 14 September 2026.
 
 The analysis covers structural variation, tandem-copy validation, coding
 potential, phylogenetic relationships, Type-I cassette variation, target-site
@@ -13,14 +14,19 @@ With Python 3.12, install `requirements.txt`, then run:
 ```sh
 python scripts/check_release.py
 python scripts/reproduce_compact_panels.py --output outputs/retained_panels
+python project/manuscript/restore_figure3_20260914.py
+python Supplementary_Data/Table_S13/analysis_code/type1_observed_loci_uniformity_20260914.py
 ```
 
 The first command verifies the bundled tables, chromosome denominators,
 structural-state tests, recovered NucFreq method, retained model formulas,
 deterministic model evidence, and Python syntax. The second
-regenerates Figure 7, Supplementary Figures S7, S13, S14, S17 and S20, and the
-duplicated-group schematic from the bundled compact data. It does not download
-data or run a cluster job.
+regenerates Figure 7, Supplementary Figures S6 and S13, and supporting model
+plots. The third command reproduces the current Figure 3, including all-locus
+trees, exact nucleotide sharing and the chromosome-4 connection. Use this
+command for Figure 3, not the historical general-purpose compositor.
+The final command reproduces the 54 recurrent-conversion and drift scenarios
+in Table S13. These commands do not download data or run a cluster job.
 
 ## Code map
 
@@ -35,36 +41,29 @@ data or run a cluster job.
 | `manuscript_figures/python/analysis/` | Type-I cassette/backbone comparison and matched long-read/short-read comparison |
 | `manuscript_figures/R/` | Source for mutation, duplication, fusion-ORF and Fiber-seq panels |
 | `HML2_ProjectResources/cluster_pipeline_source/shared/` | Upstream ORF and flank-anchoring source |
-| `Supplementary_Data/` | The 18 manuscript source tables and checksum manifest |
+| `Supplementary_Data/` | Current manuscript source tables, alignments, trees, Table S13 analysis code and checksums |
 | `data/` | Additional compact model and copy-validation evidence |
 
-The current plot builders use 292 donor IDs. Reference assemblies are not
-additional donors. A sequence-compatible coding call can include a terminal
-frameshift where the stated analysis includes that category. It is not evidence
-of protein expression or biological activity.
+The current plot builders use 292 donor IDs.
 
 ## Full analysis inputs
 
-This repository is not a self-contained archive of the genomic inputs.
-`DATA_REQUIREMENTS.md` lists the additional inputs needed for the full analysis.
-The large ORF tables, assembly/graph FASTAs, sequencing alignments and raw
-collaborator data are not bundled. Figure source code is included even where
-those inputs are still needed.
+The [archived data](https://doi.org/10.5281/zenodo.22759511),
+`HML2_derived_data_2026-09-14.zip`, contain the corrected catalog,
+extracted HML-2 sequences, current supplementary tables and retained analysis
+inputs. Extract it at the repository root to restore the relative paths.
+Its `file_manifest.tsv` records the archived file identities.
+
+See `DATA_REQUIREMENTS.md` for workflow inputs and `DATA_SOURCES.md` for
+the source datasets and accessions.
 
 Additional Python packages for full-input analyses are in
 `requirements-analysis.txt`. The R sources declare their own package imports.
 External executables such as MAFFT, minimap2, samtools, bedtools and odgi are
 required by the relevant sequence workflows, not by the compact reproduction.
 
-The targeted CNV workflow source retains its original manifest-driven design.
-Paths shown as `/path/to/...` are installation examples, not an available
-cluster. These workflows require their frozen manifests, sequencing inputs and
-an explicitly configured compute allocation. They have not been rerun as part
-of this source release.
-
-The Type-I source-versus-effect and helper analyses are conditional sensitivity
-models. They do not estimate a measured fitness effect. Their exact assumptions
-and reproduction checks are in `MODEL_NOTES.md`.
+The targeted CNV workflows use input manifests and a configured compute
+allocation. Model assumptions and reproduction checks are in `MODEL_NOTES.md`.
 
 ## Provenance
 
@@ -74,6 +73,5 @@ manifest records both the original source checksum and the distributed checksum
 where line endings or local-path metadata were normalized. Numeric values were
 not changed by that normalization.
 
-No third-party license has been added to collaborator data or figure artwork.
-This repository does not include such artwork or assert redistribution rights
-over the original external datasets.
+Original code is MIT-licensed and original derived data are CC BY 4.0.
+Third-party sources retain their existing terms.

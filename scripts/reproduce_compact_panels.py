@@ -19,10 +19,9 @@ def main():
     out.mkdir(parents=True,exist_ok=True)
     data=ROOT/'Supplementary_Data'
     retained_panels.draw_eightq_network(data/'Figure_7_solo_LTR_haplotype_counts.tsv',out/'Figure_7.png')
-    retained_panels.draw_sevenp_donors(data/'Figure_S7_donor_categories.tsv',out/'Figure_S7.png')
-    retained_panels.draw_type_state_counts(data/'Table_S11_direct_TypeI_locus_calls.tsv',out/'Figure_S20.png')
-    retained_panels.draw_duplicated_groups(out/'Figure_3_duplicated_groups.png')
-    for module,name in [(helper,'Figure_S13'),(mechanisms,'Figure_S14'),(lesions,'Figure_S17')]:
+    retained_panels.draw_sevenp_donors(data/'Figure_S6_donor_categories.tsv',out/'Figure_S6.png')
+    retained_panels.draw_type_state_counts(data/'Table_S11_direct_TypeI_locus_calls.tsv',out/'Type_I_state_counts.png')
+    for module,name in [(helper,'Helper_sensitivity'),(mechanisms,'Figure_S13'),(lesions,'Type_I_lesion_context')]:
         module.OUT=out
         module.PNG=out/(name+'.png')
         module.PDF=out/(name+'.pdf')

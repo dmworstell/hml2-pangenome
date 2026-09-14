@@ -1,5 +1,5 @@
-source(Sys.getenv("HML2_CONFIG", file.path("manuscript_figures", "R", "config.R")))
-# >>> Generates: Figures S3A, S3B <<<
+source(Sys.getenv("HML2_CONFIG", file.path("R", "config.R")))
+# Generates the supplemental amino-acid substitution and frameshift-position panels.
 
 # HML-2 Locus-Specific Mutation Lollipop Plot Generator
 #
@@ -33,7 +33,7 @@ output_dir <- HML2_FIG_DIR
 
 # (MODIFIED) Define the loci you want to visualize
 target_loci <- c("HML-2_7p22.1", "HML-2_19p12b", "HML-2_10p12.1", "HML-2_5q33.3","HML-2_1q22",
-                 "HML-2_22q11.21","HML-2_6q14.1a","HML-2_19q12")
+                 "HML-2_22q11.21","HML-2_6q14.1","HML-2_19q12")
 
 # --- 3. Helper Functions ---
 # Parses the amino acid position from a mutation string (e.g., P108L -> 108)
@@ -52,6 +52,31 @@ full_data <- read_tsv(
   col_types = cols(.default = "c"),
   show_col_types = FALSE
 ) %>% rename(locus = Locus)
+
+required_columns <- c("analysis_include", "analysis_exclusion_reason", "ID", "ID_Full",
+                      "locus", "Structure", "missense_gag", "missense_pro", "missense_pol",
+                      "missense_env", "missense_np9", "np9", "rec")
+missing_columns <- setdiff(required_columns, names(full_data))
+if (length(missing_columns)) {
+  stop("The retained analysis catalog is required. Missing columns: ",
+       paste(missing_columns, collapse = ", "))
+}
+public_data <- full_data %>% filter(str_detect(ID, "^(HG|NA)[0-9]+$"))
+if (any(is.na(public_data$analysis_include)) ||
+    any(!public_data$analysis_include %in% c("0", "1"))) {
+  stop("Every public catalog row must explicitly declare analysis_include as 0 or 1.")
+}
+input_row_count <- nrow(full_data)
+full_data <- public_data %>% filter(analysis_include == "1")
+dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
+write_tsv(tibble(
+  input_catalog = normalizePath(input_file_path),
+  input_sha256 = digest::digest(file = input_file_path, algo = "sha256"),
+  input_rows = input_row_count,
+  nonpublic_rows_excluded = input_row_count - nrow(public_data),
+  public_rows_excluded = sum(public_data$analysis_include == "0"),
+  retained_public_rows = nrow(full_data)
+), file.path(output_dir, "hml2_variant_position_input_provenance.tsv"))
 
 full_data <- full_data %>%
   mutate(
@@ -84,24 +109,31 @@ cat("Removed", n_before - n_after, "rows where all missense columns were 'Compar
 
 cleaned_data <- full_data_filtered %>%
   filter(!is.na(locus) & !is.na(ID_Full)) %>%
-  mutate(locus = if_else(locus == "HML-2_7p22.1a", "HML-2_7p22.1", locus))
+  mutate(locus = if_else(locus %in% c("HML-2_7p22.1a", "HML-2_7p22.1b"),
+                         "HML-2_7p22.1", locus))
 
-analysis_data <- cleaned_data %>% filter(locus %in% target_loci)
+analysis_data <- cleaned_data %>%
+  filter(locus %in% target_loci, Structure %in% c("Provirus", "Provirus_from_Multi"))
+if (nrow(analysis_data) != nrow(distinct(analysis_data, locus, ID_Full))) {
+  stop("A retained proviral copy occurs more than once in a plotted locus.")
+}
 cat("Filtered data to", nrow(analysis_data), "rows for target loci.\n")
+write_tsv(analysis_data %>% select(locus, ID, Haplotype, ID_Full, Structure,
+                                  starts_with("missense_")),
+          file.path(output_dir, "hml2_variant_position_retained_members.tsv"))
 
 # --- 5. Calculate Denominator for Frequencies ---
 # Denominator is now the number of PROVIRUS alleles per locus.
 total_provirus_alleles_per_locus <- analysis_data %>%
-  # (MODIFIED) Handle NA in 'Structure' just in case
-  filter(tolower(replace_na(Structure, "")) == "provirus") %>%
   count(locus, name = "total_alleles")
+write_tsv(total_provirus_alleles_per_locus,
+          file.path(output_dir, "hml2_variant_position_denominators.tsv"))
 cat("Calculated provirus allele counts for frequency denominator.\n")
 
 # --- 6. Parse, Classify, and Summarize Mutations ---
 cat("--- Starting Mutation Analysis ---\n")
 cat("Step 1: Pivoting data to long format...\n")
 mutations_long <- analysis_data %>%
-  filter(tolower(replace_na(Structure, "")) == "provirus") %>%
   select(locus, ID_Full, provirus_type, starts_with("missense_")) %>%
   pivot_longer(
     cols = starts_with("missense_"),
@@ -121,7 +153,7 @@ mutations_long <- analysis_data %>%
 mutations_long <- mutations_long %>%
   mutate(mutation_count = str_count(mutation_list, ",") + 1)
 
-cat("Step 2: Classifying mutations and detecting missed frameshifts...\n")
+cat("Step 2: Parsing explicit substitutions and frameshift annotations...\n")
 
 all_classified_mutations <- mutations_long %>%
   separate_rows(mutation_list, sep = ",\\s*") %>%
@@ -130,6 +162,10 @@ all_classified_mutations <- mutations_long %>%
   # Skip masked-region markers ('Undetermined:START-END' / 'Undetermined:full'):
   # these are unresolved spans, not real mutations, so drop them before parsing/plotting.
   filter(!str_starts(str_to_lower(mutation), "undetermined")) %>%
+  # These panels plot substitutions and explicitly annotated frameshift starts.
+  # In-frame indel annotations remain in the exported source-member table.
+  filter(str_detect(mutation, "^[A-Z*][0-9]+[A-Z*]$") |
+           str_detect(mutation, "^Frameshift_at_[0-9]+(-Premature_Stop)?$")) %>%
   mutate(
     position = case_when(
       str_detect(mutation, "^Frameshift_at_") ~ as.integer(str_extract(mutation, "(?<=Frameshift_at_)\\d+")),
@@ -137,7 +173,7 @@ all_classified_mutations <- mutations_long %>%
     ),
     type = case_when(
       str_detect(mutation, "^Frameshift_at_") ~ "Frameshift",
-      str_detect(mutation, fixed("*"))        ~ "Nonsense",
+      str_detect(mutation, "\\*$")           ~ "Nonsense",
       TRUE                                    ~ "Missense"
     ),
     mutation = if_else(
@@ -146,75 +182,8 @@ all_classified_mutations <- mutations_long %>%
       mutation
     )
   ) %>%
-  filter(!is.na(position))
-
-# Fallback heuristic: for any ID_Full+orf combo with no explicit Frameshift_at_ tag,
-# check for a dense cluster of mutations as a proxy for an untagged frameshift.
-cat("Step 2b: Applying fallback frameshift heuristic to untagged ORFs...\n")
-
-already_tagged <- all_classified_mutations %>%
-  filter(type == "Frameshift") %>%
-  distinct(ID_Full, orf)
-
-untagged_orfs <- all_classified_mutations %>%
-  anti_join(already_tagged, by = c("ID_Full", "orf")) %>%
-  group_by(ID_Full, orf, locus) %>%
-  summarise(mutation_list = paste(mutation, collapse = ","), .groups = "drop")
-
-detect_frameshift_sequential_heuristic <- function(mutation_list_str) {
-  if (is.na(mutation_list_str) || mutation_list_str == "") {
-    return(list(is_frameshift = FALSE, frameshift_start_position = NA_integer_))
-  }
-  mutations <- str_split(mutation_list_str, ",\\s*")[[1]]
-  mutations <- mutations[mutations != ""]
-  positions <- as.integer(str_extract(mutations, "\\d+"))
-  df <- tibble(mutation = mutations, position = positions) %>%
-    filter(!is.na(position)) %>%
-    arrange(position)
-  if (nrow(df) < 12) return(list(is_frameshift = FALSE, frameshift_start_position = NA_integer_))
-  for (i in 1:(nrow(df) - 11)) {
-    window_end <- df$position[i] + 14
-    if (sum(df$position >= df$position[i] & df$position <= window_end) >= 12) {
-      return(list(is_frameshift = TRUE, frameshift_start_position = df$position[i]))
-    }
-  }
-  return(list(is_frameshift = FALSE, frameshift_start_position = NA_integer_))
-}
-
-heuristic_results <- untagged_orfs %>%
-  mutate(fs_info = map(mutation_list, detect_frameshift_sequential_heuristic)) %>%
-  unnest_wider(fs_info) %>%
-  filter(is_frameshift) %>%
-  select(ID_Full, orf, frameshift_start_position)
-
-cat("Heuristic detected", nrow(heuristic_results), "additional untagged frameshifts.\n")
-
-# Inject synthetic frameshift markers into all_classified_mutations
-synthetic_fs <- heuristic_results %>%
-  mutate(
-    mutation = paste0(frameshift_start_position, "_fs"),
-    position = frameshift_start_position,
-    type = "Frameshift"
-  )
-
-# Add locus and orf_group to synthetic rows by joining back
-synthetic_fs <- synthetic_fs %>%
-  left_join(distinct(all_classified_mutations, ID_Full, orf, locus, orf_group),
-            by = c("ID_Full", "orf"))
-
-# NEW: remove stop codons that coincide with heuristic frameshift starts
-all_classified_mutations <- all_classified_mutations %>%
-  anti_join(
-    heuristic_results %>%
-      rename(position = frameshift_start_position) %>%
-      select(ID_Full, orf, position),
-    by = c("ID_Full", "orf", "position")
-  )
-
-all_classified_mutations <- bind_rows(
-  all_classified_mutations,
-  synthetic_fs %>% select(-frameshift_start_position)
-)
+  filter(!is.na(position)) %>%
+  distinct(locus, ID_Full, orf, mutation, position, type, .keep_all = TRUE)
 
 cat("Step 3: Filtering mutations downstream of explicit frameshifts...\n")
 frameshift_positions <- all_classified_mutations %>%
@@ -234,6 +203,12 @@ mutation_summary <- mutations_filtered %>%
   count(locus, orf_group, orf, mutation, position, type, name = "count") %>%
   left_join(total_provirus_alleles_per_locus, by = "locus") %>%
   mutate(frequency = count / total_alleles)
+if (any(mutation_summary$count > mutation_summary$total_alleles)) {
+  stop("A variant numerator exceeds its retained proviral-copy denominator.")
+}
+write_tsv(mutations_filtered %>% select(locus, ID_Full, orf, mutation, position, type),
+          file.path(output_dir, "hml2_variant_position_observations.tsv"))
+write_tsv(mutation_summary, file.path(output_dir, "hml2_variant_position_summary.tsv"))
 
 cat("Mutation parsing and frequency calculation complete.\n")
 
@@ -257,10 +232,13 @@ cat("Generating plots...\n")
 facet_order <- c("gag", "pro", "pol", "env") # Removed np9/K-rev
 label_threshold <- 0.01
 
-# (NEW) Create dummy data to force axis scales from 0 to max length
+# Display a common origin and the maximum observed coordinate for each ORF.
+# These are annotation coordinates, not approximate asserted protein lengths.
 orf_max_lengths <- tibble(
-  orf = c("gag", "pro", "pol", "env"),
-  max_pos = c(560, 150, 950, 580) # Approximate full lengths
+  orf = facet_order
+) %>% left_join(
+  mutation_summary %>% group_by(orf) %>% summarise(max_pos = max(position), .groups = "drop"),
+  by = "orf"
 )
 # Create a data frame with 0 and max_pos for every panel in the grid
 orf_scale_data <- crossing(locus = target_loci, orf = facet_order) %>%
@@ -284,11 +262,11 @@ plot_missense <- missense_data %>%
   geom_blank(data = orf_scale_data, aes(x = position, y = 0)) +
   geom_segment(aes(xend = position, yend = 0), color = "#0072B2", linewidth = 0.45) +
   geom_point(color = "#0072B2", size = 2.1) +
-  # Individual missense labels aren't biologically meaningful here, so the panels
-  # show the mutation *landscape* (position vs frequency) without per-point labels.
+  # Exact substitution labels are retained in the source table. Labeling every
+  # dense point in these panels would obscure their positions and frequencies.
   facet_grid(locus ~ factor(orf, levels = facet_order), scales = "free_x") +
   scale_y_continuous(labels = scales::percent_format(), breaks = c(0, 0.5, 1), expand = expansion(mult = c(0.05, 0.12))) +
-  labs(title = "Missense mutations", x = "Amino-acid position", y = "Allele frequency") +
+  labs(title = "Amino-acid substitutions", x = "KCON amino-acid position", y = "Fraction of proviral copies") +
   theme_pub(base_size = 18) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 15),
         axis.text.y = element_text(size = 15),
@@ -321,9 +299,11 @@ plot_disabling <- disabling_data %>%
   ) +
   facet_grid(locus ~ factor(orf, levels = facet_order), scales = "free_x") +
   scale_y_continuous(labels = scales::percent_format(), breaks = c(0, 0.5, 1), expand = expansion(mult = c(0.05, 0.12))) +
-  scale_color_manual(name = "Mutation type",
-                     values = c("Nonsense" = "#D55E00", "Frameshift" = "#CC79A7", "Missense" = "#009E73")) +
-  labs(title = "Disabling mutations", x = "Amino-acid position", y = "Allele frequency") +
+  scale_color_manual(name = NULL,
+                     values = c("Nonsense" = "#D55E00", "Frameshift" = "#CC79A7", "Missense" = "#009E73"),
+                     breaks = c("Frameshift", "Missense", "Nonsense"),
+                     labels = c("Annotated frameshift", "Pol Y195C", "Stop-gain")) +
+  labs(title = "Frameshift positions and Pol Y195C", x = "KCON amino-acid position", y = "Fraction of proviral copies") +
   # Full-width supplement panel (scaled ~0.67); bump base + the in-panel mutation labels
   # (*_fs / nonsense) which were flagged as the smallest text, ~5 pt / below.
   theme_pub(base_size = 17, legend = "bottom") +

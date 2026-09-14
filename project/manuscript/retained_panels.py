@@ -96,7 +96,7 @@ def draw_eightq_network(source_table, path):
 def draw_type_state_counts(source_table, path):
     rows = sorted((r for r in read_tsv(source_table) if r['locus'] != 'TOTAL'),
                   key=lambda r: int(r['callable_typeI']), reverse=True)
-    if len(rows) != 20 or sum(int(r['callable_typeI']) for r in rows) != 9697:
+    if len(rows) != 20 or sum(int(r['callable_typeI']) for r in rows) != 9733:
         raise ValueError('Unexpected Type-I denominator')
     if any(int(r['callable_typeII']) != 0 for r in rows):
         raise ValueError('A Type-II call is present, review the figure')

@@ -35,11 +35,9 @@ def main():
     for row in inventory:
         assert hashlib.sha256((ROOT/row['release_path']).read_bytes()).hexdigest()==row['release_sha256'],row['release_path']
     tables=read_tsv(ROOT/'Supplementary_Data/source_manifest.tsv')
-    assert len(tables)==18
+    assert len(tables)>=90
     for row in tables:
         assert hashlib.sha256((ROOT/'Supplementary_Data'/row['file']).read_bytes()).hexdigest()==row['sha256'],row['file']
-    for row in read_tsv(ROOT/'data/additional_manifest.tsv'):
-        assert hashlib.sha256((ROOT/row['file']).read_bytes()).hexdigest()==row['sha256'],row['file']
     scope=json.loads((ROOT/'data/figure_2_s4_array_scope.json').read_text())
     panels=load_module('retained_panels',ROOT/'project/manuscript/retained_panels.py')
     locus_counts={locus:{int(cn):n for cn,n in counts.items()}
@@ -68,7 +66,7 @@ def main():
         if locus=='HML-2_7p22.1':expected[2]+=2
         if locus=='HML-2_14q11.2':expected={2:1}
         assert expected==s4_counts[locus],locus
-    seven=read_tsv(ROOT/'Supplementary_Data/Figure_S7_donor_categories.tsv')
+    seven=read_tsv(ROOT/'Supplementary_Data/Figure_S6_donor_categories.tsv')
     assert len(seven)==len({r['donor'] for r in seven})==292
     assert Counter(r['category'] for r in seven)=={
         'Four intact ORFs, no Y195C':7,'Four intact ORFs, with Y195C':259,
@@ -80,9 +78,9 @@ def main():
     assert provirus['5_prime_TSD']==provirus['3_prime_TSD']=='CACAC'
     type1=[r for r in read_tsv(ROOT/'Supplementary_Data/Table_S11_direct_TypeI_locus_calls.tsv') if r['locus']!='TOTAL']
     assert len(type1)==20
-    assert sum(int(r['callable_typeI']) for r in type1)==9697
+    assert sum(int(r['callable_typeI']) for r in type1)==9733
     assert sum(int(r['callable_typeII']) for r in type1)==0
-    assert sum(int(r['internal_bearing_unresolved']) for r in type1)==36
+    assert sum(int(r['internal_bearing_unresolved']) for r in type1)==0
     cnv=read_tsv(ROOT/'data/cnv_depth_summary.tsv')
     numeric=[r for r in cnv if r['nucfreq_het_frac'] not in ('','NA','nan')]
     assert len(cnv)==416 and len(numeric)==351

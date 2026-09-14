@@ -16,12 +16,12 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import numpy as np
-from structural_catalog_summary import structural_summary, write_structural_tables
 from Bio import Phylo, SeqIO
 from Bio.Phylo.TreeConstruction import DistanceMatrix, DistanceTreeConstructor
 from PIL import Image, ImageChops, ImageDraw, ImageFont, ImageOps
+from structural_catalog_summary import structural_summary, write_structural_tables
 
-from retained_panels import draw_eightq_network, draw_type_state_counts, draw_duplicated_groups, observed_multicopy_numbers
+from retained_panels import draw_eightq_network, draw_type_state_counts, draw_duplicated_groups
 
 from figure_style import (
     BLUE,
@@ -46,10 +46,11 @@ from figure_style import (
 PROJECT = Path(__file__).resolve().parents[1]
 WORKSPACE = PROJECT.parent
 OUT = PROJECT / "manuscript/figures/narrative"
+SUPPLEMENT = PROJECT / "manuscript/supplement"
 CATALOG = (
     PROJECT
-    / "results/biological_orf_annotation_20260802/"
-    "combined_hml2_orf_analysis.CNV_WEIGHTED.BIOLOGICALLY_ANNOTATED.v3.tsv"
+    / "results/resolved_manuscript_catalog_20260914/"
+    "combined_hml2_orf_analysis.RESOLVED.tsv"
 )
 SEVENP22 = PROJECT / "working/sevenp22_proxy_resolution_agent/haplotype_copy_number_truth.tsv"
 ONEP31 = PROJECT / "working/onep31b_array_recovery_agent/haplotype_array_reconciliation.tsv"
@@ -59,7 +60,7 @@ PHY_SOURCE = (
     PROJECT
     / "manuscript/source_snapshot/figures/Main/Fig6_Phylogeny_recombination"
 )
-PROCESSED_LOCI = WORKSPACE.parent / "HML2_project_data/processed_loci"
+PROCESSED_LOCI = WORKSPACE / "HML2_project_data/processed_loci"
 SUBFAMILY_AUTHORITY = (
     PROJECT
     / "working/type1_ltr_authority_resolution_agent/subfamily_authority.tsv"
@@ -229,13 +230,14 @@ def load_catalog() -> tuple[list[dict[str, str]], list[tuple[str, str]]]:
             "alias_duplicate_of_8q24.3c": 584,
             "assembly_artifact_not_supported_by_CNV_depth": 35,
             "duplicate_catalog_label_for_same_assembled_interval": 78,
+            "non_HML2_HML11_sequence_identity": 1168,
         }
     )
     if excluded != expected_exclusions:
         raise ValueError(f"unexpected biological exclusions: {excluded}")
     rows = [row for row in public_rows if row["analysis_include"] == "1"]
     roster = sorted({(row["ID"], row["Haplotype"]) for row in rows})
-    if len(rows) != 60_824 or len(roster) != 584:
+    if len(rows) != 59_656 or len(roster) != 584:
         raise ValueError(f"unexpected current catalog dimensions: {len(rows)}, {len(roster)}")
     return rows, roster
 
@@ -259,7 +261,7 @@ def gene_call(row: dict[str, str], feature: str) -> tuple[bool, bool]:
 
 def build_figure_1(rows, roster) -> Path:
     summary, observations, sex_evidence = structural_summary(rows, roster)
-    write_structural_tables(summary, observations, sex_evidence, PROJECT / "manuscript/supplement")
+    write_structural_tables(summary, observations, sex_evidence, SUPPLEMENT)
     selected = sorted(
         (row for row in summary if row["label_scope"] == "physical_locus"),
         key=lambda row: row["variability_score"], reverse=True,
@@ -281,21 +283,29 @@ def build_figure_1(rows, roster) -> Path:
     left = np.zeros(len(selected))
     y = np.arange(len(selected))
     for state, color in STATE_COLORS.items():
-        values = np.array([row[state] / row["eligible_haplotypes"] for row in selected])
+        if state == "Unknown":
+            continue
+        values = np.array([row[state] / row["known_haplotypes"] for row in selected])
         ax.barh(y, values, left=left, color=color, label=state, height=0.78)
         left += values
+    if not np.allclose(left, 1):
+        raise ValueError("Structural-state fractions do not sum to one over recovered calls")
+    for index, row in enumerate(selected):
+        ax.text(1.015, index, f'{row["known_haplotypes"]}/{row["eligible_haplotypes"]}',
+                transform=ax.get_yaxis_transform(), va="center", ha="left", fontsize=8.5, clip_on=False)
+    ax.text(1.015, 1.015, "Calls / total", transform=ax.transAxes, ha="left", fontsize=8.5)
     ax.set_yticks(y, [display_locus_name(row["locus"]) for row in selected])
     ax.set_xlim(0, 1)
-    ax.set_xlabel("Fraction of eligible chromosome copies")
+    ax.set_xlabel("Fraction of recovered locus-level calls")
     ax.set_title(
-        "Structural states vary among haplotypes",
+        "Structural states among recovered haplotypes",
         loc="center",
         fontsize=10.5,
         fontweight="normal",
         y=1.14,
     )
     ax.text(
-        -0.105, 1.14, "b", transform=ax.transAxes, fontsize=11.5,
+        -0.105, 1.14, "B", transform=ax.transAxes, fontsize=11.5,
         fontweight="bold", color=INK, va="bottom",
     )
     ax.legend(ncol=3, loc="lower center", bbox_to_anchor=(0.5, 1.015))
@@ -478,17 +488,16 @@ def build_figure_2(rows, roster) -> Path:
         rotation=42,
         ha="right",
     )
-    ax_a.set_ylabel("Locus copies")
-    finding_title(ax_a, "A", "Locus copy number per haplotype")
+    ax_a.set_ylabel("Copies")
+    finding_title(ax_a, "A", "Array copy number per haplotype")
     finish_axis(ax_a, grid="y")
 
     ax_b_high = fig.add_axes([0.075, 0.405, 0.515, 0.075])
     ax_b = fig.add_axes([0.075, 0.145, 0.515, 0.225], sharex=ax_b_high)
     x = np.arange(len(order))
     bottom = np.zeros(len(order))
-    palette = {2: SKY, 3: GREEN, 4: GOLD, 6: TYPE_II}
-    copy_numbers = observed_multicopy_numbers(per_locus)
-    for cn in copy_numbers:
+    palette = {2: SKY, 3: GREEN, 4: GOLD, 5: ORANGE, 6: TYPE_II}
+    for cn in range(2, 7):
         values = np.array([
             sum(value == cn for value in per_locus[locus]) / len(roster)
             for locus in order
@@ -527,8 +536,8 @@ def build_figure_2(rows, roster) -> Path:
         ha="right",
     )
     ax_b.set_ylabel("Frequency")
-    ax_b_high.legend(title="Locus copies", ncol=len(copy_numbers), loc="upper right")
-    finding_title(ax_b_high, "B", "Locus copy-number frequency")
+    ax_b_high.legend(title="Copies", ncol=5, loc="upper right")
+    finding_title(ax_b_high, "B", "Expanded haplotype frequency")
     finish_axis(ax_b_high, grid="y")
     finish_axis(ax_b, grid="y")
 
@@ -1866,7 +1875,7 @@ def draw_upset(ax_bar, ax_matrix, rows, type_name: str, color: str, letter: str)
     ax_bar.bar(x, heights, color=color, width=0.72)
     ax_bar.set_xlim(-0.5, len(patterns) - 0.5)
     ax_bar.set_ylim(0, max(heights) * 1.16)
-    ax_bar.set_ylabel("Haplotype count")
+    ax_bar.set_ylabel("Proviral observations")
     ax_bar.set_xticks([])
     for xi, height in zip(x, heights):
         ax_bar.text(
@@ -2645,22 +2654,22 @@ def draw_type_schematic(ax) -> None:
     ax.axis("off")
     finding_title(ax, "A", "Type-I cassette")
     genes = [
-        ("5′ LTR", 0, 970, 3.8, 2.0, "#8A949E"),
-        ("gag", 1110, 1850, 5.0, 1.65, GREEN),
-        ("pro", 2960, 930, 5.0, 1.65, GOLD),
-        ("pol", 3890, 2760, 5.0, 1.65, PURPLE),
-        ("env", 6000, 2580, 2.75, 1.65, BLUE),
-        ("3′ LTR", 8530, 970, 3.8, 2.0, "#8A949E"),
+        ("5′ LTR", 0, 968, 3.8, 2.0, "#8A949E"),
+        ("gag", 1111, 2001, 5.0, 1.65, GREEN),
+        ("pro", 2913, 1005, 5.0, 1.65, GOLD),
+        ("pol", 3878, 2871, 5.0, 1.65, PURPLE),
+        ("env", 6450, 2100, 2.75, 1.65, BLUE),
+        ("3′ LTR", 8504, 968, 3.8, 2.0, "#8A949E"),
     ]
     ax.plot([970, 8530], [4.8, 4.8], color=INK, lw=1.0, zorder=0)
     for gene, x, width, y, height, color in genes:
         ax.add_patch(patches.Rectangle((x, y), width, height, color=color, alpha=0.9))
         ax.text(
             x + width / 2, y + height / 2, gene, ha="center", va="center",
-            color="white", fontsize=7.3, fontweight="bold",
+            color="white", fontsize=9.0, fontweight="bold",
         )
 
-    cassette_start, deletion_start, deletion_end, cassette_end = 5850, 6501, 6793, 7450
+    cassette_start, deletion_start, deletion_end, cassette_end = 6000, 6501, 6793, 7293
     cassette_polygon = [
         (cassette_start, 2.42),
         (cassette_start + 90, 3.05),
@@ -2713,7 +2722,7 @@ def draw_type_schematic(ax) -> None:
         ha="center",
         va="bottom",
         color=TYPE_I,
-        fontsize=8.4,
+        fontsize=9.0,
         fontweight="normal",
     )
     ax.annotate(
@@ -2724,7 +2733,7 @@ def draw_type_schematic(ax) -> None:
         va="top",
         arrowprops=dict(arrowstyle="-|>", color=RED, lw=1.1),
         color=RED,
-        fontsize=8.2,
+        fontsize=9.0,
         fontweight="normal",
     )
 
@@ -2753,7 +2762,7 @@ def build_figure_5() -> Path:
     effect_rows.sort(key=lambda row: float(row["source_opportunity_cv"]))
 
     apply_style()
-    fig = plt.figure(figsize=(7.1, 4.35), constrained_layout=True)
+    fig = plt.figure(figsize=(7.1, 4.75), constrained_layout=True)
     gs = fig.add_gridspec(2, 3, height_ratios=[0.72, 0.80])
     draw_type_schematic(fig.add_subplot(gs[0, :]))
 
@@ -2792,18 +2801,18 @@ def build_figure_5() -> Path:
     ax_c.set_xlabel("Genome window")
     ax_c.set_ylim(0.02, 0.16)
     ax_c.legend(
-        ncol=3,
-        loc="upper center",
-        bbox_to_anchor=(0.50, 0.995),
+        ncol=1,
+        loc="upper right",
+        bbox_to_anchor=(1.02, 1.02),
         columnspacing=0.8,
         handlelength=1.0,
-        fontsize=6.9,
+        fontsize=8.5,
     )
     finding_title(ax_c, "C", "Regional divergence")
     finish_axis(ax_c, grid="y")
 
     ax_d = fig.add_subplot(gs[1, 2])
-    x = np.arange(len(effect_rows))
+    x = np.array([float(row["source_opportunity_cv"]) for row in effect_rows])
     y = np.array([
         float(row["likelihood_ratio_effect_vs_source_only"])
         for row in effect_rows
@@ -2811,22 +2820,21 @@ def build_figure_5() -> Path:
     ax_d.plot(x, y, color=TYPE_I, marker="o", lw=1.8, ms=4)
     ax_d.axhline(1, color=INK, lw=0.9, ls="--")
     ax_d.set_yscale("log")
-    ax_d.set_xticks(
-        [0, len(x) // 2, len(x) - 1],
-        ["Low", "Moderate", "High"],
-    )
-    ax_d.set_xlabel("Source-production variation")
+    ax_d.set_xscale("log")
+    ax_d.set_xticks([x[0], 1.0, x[-1]], ["0.224", "1", "3.16"])
+    ax_d.minorticks_off()
+    ax_d.set_xlabel("Source-weight\ncoefficient of variation")
     ax_d.set_ylabel("Bayes factor")
     ax_d.text(
-        0.08,
+        x[0] * 1.06,
         1.12,
         "Equal support",
         ha="left",
         va="bottom",
-        fontsize=7.2,
+        fontsize=8.5,
         color=INK,
     )
-    finding_title(ax_d, "D", "Spread versus production")
+    finding_title(ax_d, "D", "Added Δ292 effect")
     finish_axis(ax_d, grid="y")
     path = OUT / "Figure_5_type1_persistent_recombining_cassette.png"
     save_figure(fig, path)
@@ -2991,102 +2999,7 @@ def solo_ltr_diversity(rows) -> list[dict[str, object]]:
 
 
 def build_figure_7(rows) -> Path:
-    """Show the verified 8q11.23 structure and solo-LTR variation."""
-    locus_rows = [
-        row
-        for row in rows
-        if row["Locus"] == "HML-2_8q11.23_new"
-        and row["observation_state"] == "PRESENT"
-    ]
-    states = Counter(row["Structure"] for row in locus_rows)
-    if states["Provirus"] != 1 or states["Solo-LTR"] != 583:
-        raise ValueError(f"unexpected 8q11.23_new state counts: {states}")
-    diversity = solo_ltr_diversity(rows)
-    eightq = next(row for row in diversity if row["locus"] == "8q11.23_new")
-
-    sample_superpopulation = {}
-    with IGSR_SAMPLES.open(newline="") as handle:
-        for sample_row in csv.DictReader(handle, delimiter="\t"):
-            sample_superpopulation[sample_row["Sample name"]] = (
-                sample_row["Superpopulation code"]
-            )
-    solo_observations = []
-    for row in locus_rows:
-        if row["Structure"] != "Solo-LTR" or not PUBLIC_ID.fullmatch(row["ID"]):
-            continue
-        sequence_path = PROCESSED_LOCI / row["Locus"] / f"{row['ID_Full']}.fa"
-        if sequence_path.is_file():
-            solo_observations.append(
-                (
-                    read_fasta_sequence(sequence_path),
-                    sample_superpopulation.get(row["ID"], "Unknown"),
-                )
-            )
-    equal_length = Counter(
-        len(sequence) for sequence, _ in solo_observations
-    ).most_common(1)[0][0]
-    equal_length_observations = [
-        (sequence, superpopulation)
-        for sequence, superpopulation in solo_observations
-        if len(sequence) == equal_length
-    ]
-    haplotype_counts = Counter(
-        sequence for sequence, _ in equal_length_observations
-    )
-    haplotype_populations: dict[str, Counter] = defaultdict(Counter)
-    for sequence, superpopulation in equal_length_observations:
-        haplotype_populations[sequence][superpopulation] += 1
-    if sum(haplotype_counts.values()) != int(eightq["n"]):
-        raise ValueError("8q11.23_new equal-length solo-LTR denominator changed")
-
-    ordered_haplotypes = haplotype_counts.most_common()
-    dominant_sequence = ordered_haplotypes[0][0]
-    hamming_from_dominant = {
-        sequence: sum(
-            first != second
-            for first, second in zip(sequence, dominant_sequence)
-        )
-        for sequence, _ in ordered_haplotypes
-    }
-    source_table = OUT / "Figure_7_8q11_structure_variation_source_data.tsv"
-    with source_table.open("w", newline="") as handle:
-        writer = csv.writer(handle, delimiter="\t")
-        writer.writerow(
-            [
-                "haplotype_rank",
-                "observations",
-                "fraction",
-                "substitutions_from_dominant",
-                "AFR",
-                "AMR",
-                "EAS",
-                "EUR",
-                "SAS",
-                "Unknown",
-            ]
-        )
-        for rank, (sequence, count) in enumerate(ordered_haplotypes, start=1):
-            writer.writerow(
-                [
-                    rank,
-                    count,
-                    count / sum(haplotype_counts.values()),
-                    hamming_from_dominant[sequence],
-                    *[
-                        haplotype_populations[sequence][superpopulation]
-                        for superpopulation in (
-                            "AFR",
-                            "AMR",
-                            "EAS",
-                            "EUR",
-                            "SAS",
-                            "Unknown",
-                        )
-                    ],
-                ]
-            )
-
-    return draw_eightq_network(source_table, OUT / "Figure_7_8q11_structure_variation.png")
+    return draw_eightq_network(WORKSPACE / "Supplementary_Data/Figure_7_solo_LTR_haplotype_counts.tsv", OUT / "Figure_7_8q11_structure_variation.png")
 
 
 def build_type_state_counts() -> Path:

@@ -181,6 +181,10 @@ haplotype_summary <- primary_runs %>%
     .groups = "drop"
   )
 
+if (any(haplotype_summary$total_fire_coverage > haplotype_summary$total_coverage)) {
+  stop("Primary-haplotype FIRE coverage exceeds total coverage.")
+}
+
 individual_summary <- haplotype_summary %>%
   group_by(locus, Individual_ID) %>%
   summarise(
@@ -300,6 +304,55 @@ write_tsv(individual_summary, file.path(out_dir, "fiberseq_individual_summary.ts
 write_tsv(locus_summary, file.path(out_dir, "fiberseq_locus_summary.tsv"))
 write_tsv(replicate_pairs, file.path(out_dir, "fiberseq_technical_replicate_pairs.tsv"))
 write_tsv(replicate_statistics, file.path(out_dir, "fiberseq_technical_replicate_statistics.tsv"))
+
+# The manuscript supplement needs one distribution panel, using one point for
+# each primary haplotype rather than treating peak tiles or technical runs as
+# independent observations.
+manuscript_locus_order <- locus_summary %>%
+  arrange(median_haplotype_actuation, locus) %>%
+  pull(locus)
+manuscript_labels <- locus_summary %>%
+  transmute(locus, label = paste0(locus, " (", n_haplotypes, ")"))
+manuscript_panel <- haplotype_summary %>%
+  left_join(manuscript_labels, by = "locus") %>%
+  mutate(locus = factor(locus, levels = manuscript_locus_order)) %>%
+  ggplot(aes(pooled_actuation, locus)) +
+  geom_boxplot(
+    width = 0.56, outlier.shape = NA, linewidth = 0.35,
+    fill = "grey94", colour = "grey40"
+  ) +
+  geom_point(
+    position = position_jitter(height = 0.13, width = 0, seed = 20260914),
+    alpha = 0.55, size = 0.9, colour = "#426779"
+  ) +
+  scale_y_discrete(labels = setNames(manuscript_labels$label, manuscript_labels$locus)) +
+  scale_x_continuous(
+    breaks = seq(0, 1, 0.2), limits = c(0, 1),
+    labels = function(x) paste0(round(x * 100), "%"),
+    expand = expansion(mult = c(0.005, 0.01))
+  ) +
+  labs(
+    title = "HML-2 chromatin accessibility",
+    x = "FIRE coverage / total coverage per haplotype", y = NULL
+  ) +
+  theme_minimal(base_size = 11.5) +
+  theme(
+    text = element_text(colour = "black", family = "sans"),
+    axis.text = element_text(colour = "black", size = 10),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.major.x = element_line(colour = "grey90", linewidth = 0.3),
+    plot.title = element_text(size = 12.5, face = "plain", hjust = 0.5),
+    plot.margin = margin(6, 9, 6, 6)
+  )
+ggsave(
+  file.path(out_dir, "hml2_fiberseq_locus_accessibility.png"),
+  manuscript_panel, width = 7.1, height = 5.8, dpi = 450, bg = "white"
+)
+ggsave(
+  file.path(out_dir, "hml2_fiberseq_locus_accessibility.pdf"),
+  manuscript_panel, width = 7.1, height = 5.8, device = cairo_pdf, bg = "white"
+)
 
 # ---- Figure -----------------------------------------------------------------
 theme_manuscript <- theme_minimal(base_size = 12.5) +

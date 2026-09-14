@@ -122,11 +122,11 @@ def load_cnv_decisions(
 
 
 def load_exact_source_decisions(path: Path) -> dict[str, tuple[str, str]]:
-    """Resolve exact duplicate labels only when host alignments distinguish them."""
+    """Resolve duplicate-family records when host alignments distinguish them."""
     rows_by_source: dict[str, list[dict[str, str]]] = defaultdict(list)
     with path.open(newline="", encoding="utf-8") as handle:
         for row in csv.DictReader(handle, delimiter="\t"):
-            if "," in row["same_source_loci"]:
+            if "," in row["same_source_loci"] or row["raw_locus"] in ACRO_FAMILY:
                 rows_by_source[row["Source_Identifier"]].append(row)
 
     decisions = {}
@@ -156,6 +156,52 @@ def load_exact_source_decisions(path: Path) -> dict[str, tuple[str, str]]:
                     "right_flank": int(match.group(8)),
                 }
             )
+
+        if len(loci) == 1 and loci <= ACRO_FAMILY.keys():
+            # A single catalog label is not evidence of placement, but it must
+            # not suppress the exact host-flank evidence collected for it.
+            if any(
+                row["same_source_loci"] != rows[0]["same_source_loci"]
+                or row["all_candidates"] != rows[0]["all_candidates"]
+                for row in rows
+            ):
+                raise ValueError(f"conflicting acrocentric source audit: {source}")
+            if len(candidates) != int(rows[0]["candidate_count"]):
+                raise ValueError(f"incomplete acrocentric candidate audit: {source}")
+            primary_anchors = [
+                candidate
+                for candidate in candidates
+                if candidate["primary"]
+                and candidate["mapq"] >= 20
+            ]
+            long_anchors = [
+                candidate for candidate in primary_anchors if candidate["interior100"]
+            ]
+            local_anchors = [candidate for candidate in primary_anchors if candidate["both5"]]
+            resolved = None
+            if len(long_anchors) == 1:
+                resolved = long_anchors[0]
+                # A terminal/deleted distal flank does not erase a direct
+                # element-to-chromosome-interior alignment. Its long host
+                # anchor still must be unique across the complete candidate set.
+                evidence = (
+                    "one_alignment_links_element_both_host_flanks_and_80_to_100kb_interior_to_"
+                    if resolved["both5"] else
+                    "one_alignment_links_element_to_80_to_100kb_locus_specific_interior_without_distal_host_flank_at_"
+                )
+            elif not long_anchors and len(candidates) == 1 and len(local_anchors) == 1:
+                if local_anchors[0]["locus"] != FOURQ:
+                    resolved = local_anchors[0]
+                    evidence = "exact_CIGAR_unique_primary_MAPQ20_element_and_both_5kb_host_flanks_to_"
+            if resolved is not None:
+                target = str(resolved["locus"])
+                family = ACRO_FAMILY[next(iter(loci))]
+                target_family = ACRO_FAMILY.get(target)
+                if target == FOURQ:
+                    target_family = "HML-2_acro_type2"
+                if target_family == family:
+                    decisions[source] = (target, evidence + locus_name(target))
+            continue
 
         if all("8p23.1" in locus for locus in loci):
             long_anchors = [

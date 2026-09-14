@@ -38,10 +38,10 @@ PROJECT = Path(__file__).resolve().parents[1]
 WORKSPACE = PROJECT.parent
 CATALOG = (
     PROJECT
-    / "results/biological_orf_annotation_20260802/"
-    "combined_hml2_orf_analysis.CNV_WEIGHTED.BIOLOGICALLY_ANNOTATED.v3.tsv"
+    / "results/resolved_manuscript_catalog_20260914/"
+    "combined_hml2_orf_analysis.RESOLVED.tsv"
 )
-CATALOG_SUMMARY = CATALOG.with_suffix(".summary.json")
+CATALOG_SUMMARY = CATALOG.parent / "verification.json"
 SHORT_READ = (
     PROJECT
     / "working/short_read_direction_corrected_v4/results/"
@@ -104,7 +104,7 @@ def display_locus_name(value: str) -> str:
     return {
         "acro_type1": "Acrocentric Type I",
         "acro_type2": "Acrocentric Type II",
-        "8p23.1_duplicate_group_unresolved": "8p23.1 duplicate group",
+        "8p23.1_duplicate_group_unresolved": "8p23.1 copy group",
     }.get(label, label)
 
 
@@ -133,13 +133,14 @@ def load_catalog() -> tuple[list[dict[str, str]], list[tuple[str, str]]]:
             "alias_duplicate_of_8q24.3c": 584,
             "assembly_artifact_not_supported_by_CNV_depth": 35,
             "duplicate_catalog_label_for_same_assembled_interval": 78,
+            "non_HML2_HML11_sequence_identity": 1168,
         }
     )
     if excluded != expected_exclusions:
         raise ValueError(f"unexpected biological exclusions: {excluded}")
     rows = [row for row in public_rows if row["analysis_include"] == "1"]
     roster = sorted({(row["ID"], row["Haplotype"]) for row in rows})
-    if len(rows) != 60_824 or len(roster) != 584:
+    if len(rows) != 59_656 or len(roster) != 584:
         raise ValueError(f"unexpected filtered catalog dimensions: {len(rows)}, {len(roster)}")
     return rows, roster
 
@@ -455,12 +456,12 @@ def build_orf_figure(rows: list[dict[str, str]]) -> Path:
                     f"{value:.2f}",
                     ha="center",
                     va="center",
-                    fontsize=6.4,
+                    fontsize=7.5,
                     color="white" if value > 0.66 else INK,
                 )
     cbar = fig.colorbar(image, ax=ax, pad=0.02)
     cbar.set_label("Fraction sequence-compatible among evaluable proviral copies")
-    panel_title(ax, "A", "Sequence-compatible coding potential varies by locus")
+    ax.set_title("ORF annotations at 30 selected HML-2 loci and copy groups", loc="left", pad=6)
     path = OUTDIR / "Figure_4_orf_coding_potential.png"
     save_figure(fig, path)
     plt.close(fig)
@@ -603,10 +604,11 @@ def build_apparent_copy_review_figure() -> Path:
     )
 
     apply_style()
-    fig, (ax_a, ax_b) = plt.subplots(
-        1, 2, figsize=(7.1, 5.2), gridspec_kw={"width_ratios": [0.8, 1.5]},
-        constrained_layout=True,
-    )
+    fig = plt.figure(figsize=(7.1, 6.8), constrained_layout=True)
+    grid = fig.add_gridspec(2, 2, width_ratios=[1.1, 1.3])
+    ax_a = fig.add_subplot(grid[0, 0])
+    ax_b = fig.add_subplot(grid[:, 1])
+    ax_c = fig.add_subplot(grid[1, 0])
     x = np.arange(len(state_order))
     values = [totals[state] for state in state_order]
     ax_a.bar(x, values, color=[colors[state] for state in state_order])
@@ -635,6 +637,29 @@ def build_apparent_copy_review_figure() -> Path:
     ax_b.legend(loc="lower center", bbox_to_anchor=(0.5, 1.01), ncol=1)
     panel_title(ax_b, "B", "Outcome by locus")
     finish_axis(ax_b, grid="x")
+
+    depth_source = PROJECT / "working/cnv_copy_state_reinterpretation_v1/source_snapshot/cnv_depth_summary.tsv"
+    if sha256(depth_source) != "566cec9fc714c5b3f37f6cd892d800c87bcd46cd9b5b66fbe5a17497d0d12923":
+        raise ValueError("HG00423 source depth table changed")
+    depth = {row["region"]: row for row in read_tsv(depth_source)
+             if row["sample"] == "HG00423" and row["locus"] == "HML-2_1q22"}
+    if set(depth) != {"1", "2"}:
+        raise ValueError("HG00423 1q22 must have exactly two measured candidate regions")
+    body = [float(depth[region]["body_median_all"]) for region in ("1", "2")]
+    flank = [float(depth[region]["flank_median_all"]) for region in ("1", "2")]
+    baseline = {float(row["sample_ref_cov"]) for row in depth.values()}
+    if len(baseline) != 1:
+        raise ValueError("Inconsistent sample-wide depth baseline")
+    x = np.arange(2)
+    ax_c.bar(x - .17, body, .34, label="HML-2 body", color=GREEN)
+    ax_c.bar(x + .17, flank, .34, label="Host flank", color=GOLD)
+    ax_c.axhline(baseline.pop(), color=INK, ls="--", label="Sample baseline")
+    ax_c.set_xticks(x, ["Retained copy", "Excluded copy"], rotation=12, ha="right")
+    ax_c.set_ylabel("Median read depth")
+    ax_c.set_ylim(0, 90)
+    panel_title(ax_c, "C", "HG00423 at 1q22")
+    ax_c.legend(loc="upper right", fontsize=7)
+    finish_axis(ax_c, grid="y")
 
     path = OUTDIR / "Figure_S9_apparent_extra_copy_review.png"
     save_figure(fig, path)

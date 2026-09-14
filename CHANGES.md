@@ -1,5 +1,27 @@
 # Publication snapshot changes
 
+## Release 0.2.0, 14 September 2026
+
+- Updated the manuscript title to specify HERV-K(HML-2).
+- Incorporated the resolved catalog, 2,235 public acrocentric assignments,
+  recovered source calls, and exclusion of the two HML-11 comparator loci.
+  Figure 1 now covers 99 physical loci and four separately counted copy groups.
+- Replaced the distributed supplementary data with the current numbered tables,
+  alignment/tree inputs, direct Type-I calls and source-sequence evidence.
+  The 36 previously unresolved internal-bearing calls are now assigned Type I,
+  giving 9,733 Type-I calls and no Type-II calls at the 20 surveyed Type-I loci.
+- Added the current Figure 3 builder, including chromosome 4 and the distinct
+  exact nucleotide-sharing versus regional host-flank comparisons.
+- Added all 54 recurrent-conversion/drift scenarios and portable reproduction
+  code, with the frozen input table and numerical checks.
+- Updated the retained R analyses for tandem arrays, variant-position counts
+  and Fiber-seq summaries. Fiber-seq data and artwork are not redistributed.
+- Packaged full derived sequence and table inputs separately from Git.
+- Applied MIT to original code and CC BY 4.0 to original derived data, as
+  authorized by the author. Source-specific third-party terms remain intact.
+
+## Earlier snapshot
+
 - Corrected Figure 1 and Tables S1/S5 using one shared observation summary.
   Empty physical-locus cells are Unknown. Pipeline noncarrier sentinels are
   labelled Noncarrier call, and unlocalized copy groups are not ranked as

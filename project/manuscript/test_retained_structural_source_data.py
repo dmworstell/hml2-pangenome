@@ -20,7 +20,7 @@ class RetainedSourceTests(unittest.TestCase):
         figure = read(ROOT / "data/Figure_1_structural_source_data.tsv")
         table = read(ROOT / "Supplementary_Data/Table_S5_artifact_filtered_structural_spectrum.tsv")
         self.assertEqual(table, read(ROOT / "project/manuscript/supplement/Table_S5_artifact_filtered_structural_spectrum.tsv"))
-        self.assertEqual(len(figure), 105)
+        self.assertEqual(len(figure), 103)
         self.assertEqual([{key: value for key, value in row.items() if key != "shown_in_figure_1"}
                           for row in figure], table)
         selected = sorted((row for row in figure if row["label_scope"] == "physical_locus"),
@@ -31,7 +31,7 @@ class RetainedSourceTests(unittest.TestCase):
     def test_all_denominators_conserve_chromosome_units(self):
         summary = read(ROOT / "data/Figure_1_structural_source_data.tsv")
         scopes = Counter(row["label_scope"] for row in summary)
-        self.assertEqual(scopes, {"physical_locus": 101, "unlocalized_record_bucket": 4})
+        self.assertEqual(scopes, {"physical_locus": 99, "unlocalized_record_bucket": 4})
         for row in summary:
             denominator = int(row["eligible_haplotypes"])
             if row["label_scope"] == "unlocalized_record_bucket":

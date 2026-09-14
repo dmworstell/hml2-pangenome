@@ -402,9 +402,12 @@ The observed age-matched count vectors are `[10,1,1,1,1,1,1]` and
 how units are distributed among seven deletion classes rather than modeling
 the absolute number of recovered lesions.
 
-A symmetric Dirichlet distribution with per-class concentration `alpha`
-represents historical source opportunity and recovery heterogeneity. Its
-coefficient of variation is `1/sqrt(alpha)`. The focal-effect model additionally
+Independent Gamma source weights with common shape `alpha` represent
+historical source contribution and recovery heterogeneity. The coefficient
+of variation of these weights is `1/sqrt(alpha)`. Normalizing the seven
+weights gives a symmetric Dirichlet distribution of source shares, whose
+individual-share coefficient of variation is `sqrt(6/(7*alpha+1))`.
+The focal-effect model additionally
 multiplies Delta292 opportunity by a log-uniform 1-to-50 propagation factor.
 Narrow and broad focal ascertainment-odds sensitivities are integrated in both
 models.

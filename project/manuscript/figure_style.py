@@ -1,4 +1,4 @@
-"""Shared manuscript figure styling for the manuscript package."""
+"""Shared readable figure styling for the manuscript package."""
 
 from __future__ import annotations
 
@@ -29,18 +29,18 @@ def apply_style() -> None:
         {
             "font.family": "Arial",
             "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans"],
-            "font.size": 8.4,
+            "font.size": 9.0,
             "axes.titlesize": 10.5,
-            "axes.labelsize": 9.0,
+            "axes.labelsize": 9.5,
             "axes.titleweight": "normal",
             "axes.edgecolor": MUTED,
             "axes.linewidth": 0.7,
             "axes.labelcolor": INK,
             "xtick.color": INK,
             "ytick.color": INK,
-            "xtick.labelsize": 7.7,
-            "ytick.labelsize": 7.7,
-            "legend.fontsize": 7.4,
+            "xtick.labelsize": 9.0,
+            "ytick.labelsize": 9.0,
+            "legend.fontsize": 9.0,
             "legend.frameon": False,
             "figure.facecolor": "white",
             "axes.facecolor": "white",
