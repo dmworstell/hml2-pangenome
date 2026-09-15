@@ -36,6 +36,10 @@ arg_value <- function(flag, env, default = NULL) {
 peaks_dir <- arg_value("--peaks-dir", "HML2_FIBERSEQ_PEAKS_DIR")
 out_dir <- arg_value("--out-dir", "HML2_FIBERSEQ_REANALYSIS_OUT", "outputs/fiberseq_reanalysis")
 focus_locus <- arg_value("--focus-locus", "HML2_FIBERSEQ_FOCUS_LOCUS", "1q22")
+minimum_coverage <- as.numeric(arg_value("--minimum-coverage", "HML2_FIBERSEQ_MINIMUM_COVERAGE", "10"))
+if (!is.finite(minimum_coverage) || minimum_coverage < 1 || minimum_coverage != floor(minimum_coverage)) {
+  stop("--minimum-coverage must be a positive integer.")
+}
 active_threshold <- as.numeric(arg_value(
   "--active-threshold", "HML2_FIBERSEQ_ACTIVE_THRESHOLD", "0.10"
 ))
@@ -115,11 +119,11 @@ write_tsv(input_manifest, file.path(out_dir, "fiberseq_input_manifest.tsv"))
 write_tsv(
   tibble(
     parameter = c(
-      "analysis_version", "focus_locus", "active_haplotype_threshold",
+      "analysis_version", "focus_locus", "active_haplotype_threshold", "minimum_peak_coverage",
       "input_peak_files", "biological_sample_rule", "technical_sample_rule"
     ),
     value = c(
-      "1.0.0", focus_locus, as.character(active_threshold),
+      "1.1.0", focus_locus, as.character(active_threshold), as.character(minimum_coverage),
       as.character(length(files)),
       "collaborator-designated primary runs collapsed peak-to-haplotype-to-individual",
       "non-primary runs excluded from biological counts and used only for concordance"
@@ -131,8 +135,7 @@ write_tsv(
 message("Reading ", length(files), " Fiber-seq peak files...")
 raw <- map_dfr(files, read_peak_file) %>%
   filter(
-    meets_cutoff,
-    is.finite(coverage), coverage > 0,
+    is.finite(coverage), coverage >= minimum_coverage,
     is.finite(fire_coverage), fire_coverage >= 0,
     !is.na(Individual_ID), nzchar(Individual_ID),
     !is.na(Haplotype), nzchar(Haplotype)
