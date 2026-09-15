@@ -587,7 +587,7 @@ def build_apparent_copy_review_figure() -> Path:
     labels = {
         "assembly_artifact": "Assembly artifact",
         "authenticated_segdup": "Segmental duplication",
-        "later_duplication": "Later duplication",
+        "later_duplication": "Other supported copy",
     }
     colors = {
         "assembly_artifact": RED,

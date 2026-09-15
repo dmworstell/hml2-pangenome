@@ -1,5 +1,12 @@
 # Publication snapshot changes
 
+## 15 September 2026
+
+- Matched the copy-review figure label to the current manuscript, using
+  "Other supported copy" in place of "Later duplication". No calls, counts,
+  model results or archived data changed. The archived v0.2.0 release remains
+  available unchanged.
+
 ## Release 0.2.0, 14 September 2026
 
 - Updated the manuscript title to specify HERV-K(HML-2).
