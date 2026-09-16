@@ -7,6 +7,8 @@
 - Retained the previously archived public HML-2 sequence and phenotype inputs.
   Replaced superseded supplementary tables and catalog copies with the current
   release. Version 0.2.0 remains separately accessible as the earlier snapshot.
+- Refreshed three input identity records to match the distributed source files,
+  including normalized provenance and the corrected 7p22.1 missing call.
 
 ## 15 September 2026
 
