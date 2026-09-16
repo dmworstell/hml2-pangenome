@@ -397,7 +397,8 @@ def analyze_orf_structural_integrity(aligned_dna_seq, ref_protein_seq, ref_dna_s
     if start_lost:
         if "Intact" in verdict or verdict == "Fragment_Intact":
             verdict = "Start_Lost"
-    if "Intact" in verdict and verdict != "Intact_FS_End":
+    # A late frameshift does not exempt a short product from the length rule.
+    if verdict in {"Intact", "Intact_FS_End"}:
         eff_len = len(original_protein) - 1 if original_protein.endswith('*') else len(original_protein)
         if eff_len < len(ref_protein_seq) * 0.6:
             verdict = "Fragment_Intact"

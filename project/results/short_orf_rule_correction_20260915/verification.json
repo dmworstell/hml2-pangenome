@@ -1,0 +1,45 @@
+{
+  "source": "project/results/resolved_manuscript_catalog_20260914/combined_hml2_orf_analysis.RESOLVED.tsv",
+  "source_sha256": "16ba52d4152be1f24edc5198dd5fc24bb1404b817dd0c32c961e21a4a81e9dc6",
+  "output": "project/results/short_orf_rule_correction_20260915/combined_hml2_orf_analysis.RESOLVED.SHORT_ORF_CORRECTED.tsv",
+  "output_sha256": "091d142463e2132f8c435301a053aab5124114db0a6e9f1cd014bbf517859dcd",
+  "affected_records": 1074,
+  "public_changes": {
+    "rec": 584,
+    "gag": 482
+  },
+  "nonpublic_changes": {
+    "rec": 4,
+    "gag": 4
+  },
+  "public_expected_copies_before": {
+    "expected_intact_gag_copies": 5746.0,
+    "expected_intact_accessory_copies": 19064.0
+  },
+  "public_expected_copies_after": {
+    "expected_intact_gag_copies": 5264.0,
+    "expected_intact_accessory_copies": 18480.0
+  },
+  "public_weighted_expected_copies_before": {
+    "expected_intact_gag_copies": 5484.0,
+    "expected_intact_accessory_copies": 18259.0
+  },
+  "public_weighted_expected_copies_after": {
+    "expected_intact_gag_copies": 5002.0,
+    "expected_intact_accessory_copies": 17675.0
+  },
+  "mean_copy_decrement_per_292_donors": {
+    "rec": 2.0,
+    "gag": 1.6506849315068493
+  },
+  "proviral_screen_rows_unchanged": 22501,
+  "type1_calls_unchanged": true,
+  "rule": "The <60% translated-product length rule applies to Intact and Intact_FS_End. Short products become Fragment_Intact. Raw alignment and mutation fields are unchanged.",
+  "original_output_sha256": "eed8de7e0c93243507883035b5c9a795b92dc8cd509fbb21dd8b0ae7f677e7d2",
+  "distributed_path_metadata_normalizations": {
+    "row_source_path": 430,
+    "source_record_path_v3": 430,
+    "stable_source_identity_v3": 430
+  },
+  "path_metadata_note": "historical_source labels preserve original source provenance. They are not assertions that these historical files are bundled. All biological and statistical fields are unchanged."
+}

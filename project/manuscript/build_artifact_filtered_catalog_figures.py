@@ -38,8 +38,8 @@ PROJECT = Path(__file__).resolve().parents[1]
 WORKSPACE = PROJECT.parent
 CATALOG = (
     PROJECT
-    / "results/resolved_manuscript_catalog_20260914/"
-    "combined_hml2_orf_analysis.RESOLVED.tsv"
+    / "results/short_orf_rule_correction_20260915/"
+    "combined_hml2_orf_analysis.RESOLVED.SHORT_ORF_CORRECTED.tsv"
 )
 CATALOG_SUMMARY = CATALOG.parent / "verification.json"
 SHORT_READ = (
@@ -252,8 +252,9 @@ def build_cnv_figure(
     rows: list[dict[str, str]], roster: list[tuple[str, str]]
 ) -> Path:
     seven_rows = read_tsv(SEVENP22)
-    seven_counts = Counter(int(row["array_copy_number"]) for row in seven_rows)
-    if sum(seven_counts.values()) != 584:
+    seven_counts = Counter(int(row["array_copy_number"]) for row in seven_rows if row["array_copy_number"] != "")
+    seven_unknown = sum(row["array_copy_number"] == "" for row in seven_rows)
+    if len(seven_rows) != 584 or sum(seven_counts.values()) + seven_unknown != 584:
         raise ValueError("7p22.1 authority is not a complete 584-haplotype panel")
 
     arrays = {
@@ -294,12 +295,14 @@ def build_cnv_figure(
     for locus, counts in (("7p22.1", seven_counts), ("1p31.1b", one_counts)):
         for cn in sorted(counts):
             array_rows.append(
-                {"locus": locus, "copy_number": cn, "haplotypes": counts[cn]}
+                {"locus": locus, "copy_number": cn, "haplotypes": counts[cn], "call_status": "called"}
             )
+    if seven_unknown:
+        array_rows.append({"locus": "7p22.1", "copy_number": "", "haplotypes": seven_unknown, "call_status": "unknown"})
     write_tsv(
         SUPPLEMENT / "Table_S7_array_copy_number_distributions.tsv",
         array_rows,
-        ["locus", "copy_number", "haplotypes"],
+        ["locus", "copy_number", "haplotypes", "call_status"],
     )
 
     apply_style()

@@ -31,9 +31,9 @@
     "internal_frac": 0.0,
     "retained_sequence": "TGCTATCAGTAATCTTTTTGTCTTTCTACAGTTAGATTATAATTGGATTGGTGTGAATATATTCAAGTTTATTCTACTTGGAGTTCATTGAGCTTCTTTGATGTG",
     "retained_sequence_sha256": "43ec83361d5800b0dcc3456d114cc91b832981168e7baf4be17f9cf61165f6ae",
-    "source": "/Users/Daniel/Downloads/hml2_ltr_age/generative/results_2026-07-03/apestate_chimp.json",
-    "source_insert_fasta": "/Users/Daniel/Downloads/hml2_ltr_age/generative/results_2026-07-03/inserts_chimp.fa",
-    "source_flank_paf": "/Users/Daniel/Downloads/hml2_ltr_age/generative/results_2026-07-03/apeflank_chimp.paf",
+    "source": "historical_source/Downloads/hml2_ltr_age/generative/results_2026-07-03/apestate_chimp.json",
+    "source_insert_fasta": "historical_source/Downloads/hml2_ltr_age/generative/results_2026-07-03/inserts_chimp.fa",
+    "source_flank_paf": "historical_source/Downloads/hml2_ltr_age/generative/results_2026-07-03/apeflank_chimp.paf",
     "site_observation": "single five-base TSD, no intervening LTR"
   },
   {
@@ -68,9 +68,9 @@
     "internal_frac": 0.0,
     "retained_sequence": "CACATCAAAGAAGCTCAATGAACTCCAAGTAGAATAAACTTGAATATATTCACACCAATCCAATTATAATCTAACTGTAGAAAGACAAAAAGATTACTGATAGCA",
     "retained_sequence_sha256": "355d92c2be0648870f0393c465b1ee858fe5ef63f9e610f1ab5d91196ba01bc7",
-    "source": "/Users/Daniel/Downloads/hml2_ltr_age/generative/results_2026-07-03/apestate_gorilla.json",
-    "source_insert_fasta": "/Users/Daniel/Downloads/hml2_ltr_age/generative/results_2026-07-03/inserts_gorilla.fa",
-    "source_flank_paf": "/Users/Daniel/Downloads/hml2_ltr_age/generative/results_2026-07-03/apeflank_gorilla.paf",
+    "source": "historical_source/Downloads/hml2_ltr_age/generative/results_2026-07-03/apestate_gorilla.json",
+    "source_insert_fasta": "historical_source/Downloads/hml2_ltr_age/generative/results_2026-07-03/inserts_gorilla.fa",
+    "source_flank_paf": "historical_source/Downloads/hml2_ltr_age/generative/results_2026-07-03/apeflank_gorilla.paf",
     "site_observation": "single five-base TSD, no intervening LTR"
   },
   {
@@ -105,9 +105,9 @@
     "internal_frac": 0.0,
     "retained_sequence": "TCAATAATCTTTTTGTCTTACTACAGTTAGATTATAATTGGATTGGTGTGAATATATTCAAGTTTATTCTACTTGGAGTTCATTGAGCTTCTTTGATGTGTAGATTTATGTCTTTCATCAAAGTCAGGGATTTTTTTTCAAAAGTCTGGGTCTCGGCTGTGCATAGTGGCTCATGCCTGTAATCCCAGCACTTTGGGAGGCTGAGGTAGGAGGATCACCTAAGGTCAGGAGTTGAAGACCAGCCTGGCCAACATGGTGAAATCCCATCTCCACAAAAATACCAAAATTAGCTGGGCATGATGGCGGGTGCCTGTAATTCCAGCTACTCGGGAGGCTGAGGTGGGAGAATCACTTGAACCCGGGAGGCGGAGGTTGCAGTGAGCTAAGATTGTGGCATTGCACTCCAGCCTGGGTGACAAAGTGAGACTCCATCTCAAAAAAAAAAAAGTCTGGGTCTCACGCTGTTGCCCAGGCCAGAGTGAAGTGGCATAATCATGACTCACTGCAGCCTCAAACTACTGGGTTCAAGTGATCAAGTGATCCTCCCATCTCAGCCTCCTGAGTAGCTGGGACTACAGACATGCACCACACACCCAGTGAAGTTTTTACAAATCTTTTTCAGAGACAGTGTATTAATCCATTTTGCATTGCTATAAAGGAATACCTGAGAGTGGGTAATTATTGTTTTTCTTTTTCTTTTTTTTTTTCTTTTTTGAGATGAAGTCTTGCTCTGTCACCCAGACTGGAGTGCGGTGACACAGTCTCAGCTCACTGCAACCTCTGCTTCCCAGGCTTAAGCGATTCTCCTGCCTCAGCCTCTTGAGTGGTTGGGATTAGCCGGGATTAAAGGTGTGTGCCACCATGCCTGGCTAATTTTTGTTTTTTGTTTTTTGCTTTTTTTTGAGACGGAGTTTCTCTCTTGTTGCCCAGGCTGGAGTGCAATGGCACAGTCTCGGCTCACTGCAACCTCTGCCTCCCGGGTTCAAGCGATTCTCCTGCTTCAGCCTCCCGAGTAGCTGGGATTACAGGTGCCCACAACCACGCCCGGCTAATTTTTGTATTTTTAGTAGAAACAAGGTTTCACCATATTGGCCAGGCTGGTCTCAAACTTCTGACCTCAGGTGATTCACCTGCCTCCGCCTCCCAAAGTGCTGGGATTACAGGCGAGAGCCACCTCGCCCGGCCTTAATTTTGTATTTTTAGTAGAGACAGGGTTTCATCATGTTGGCCAGGCTGGTCTCCAACTCCTGACCTCAAGTGATCCACTTGCCTCGGGCTTCCAAGTGCTGGGATTACAGGCGTGAGCCACTGTACCAGCCTGAGGGTGGGTAATTATTTATTAAAAAAAAAAAAAAAACAGGCCGGGTATGGTGGCTCACGCCTATAACCCTAGCACTTTGGGAGGCCAA",
     "retained_sequence_sha256": "8a8b7f10a50f6886b9ae4c33ec865c2f4f38642b713332e148241a1b8374da86",
-    "source": "/Users/Daniel/Downloads/hml2_ltr_age/generative/results_2026-07-03/apestate_orang.json",
-    "source_insert_fasta": "/Users/Daniel/Downloads/hml2_ltr_age/generative/results_2026-07-03/inserts_orang.fa",
-    "source_flank_paf": "/Users/Daniel/Downloads/hml2_ltr_age/generative/results_2026-07-03/apeflank_orang.paf",
+    "source": "historical_source/Downloads/hml2_ltr_age/generative/results_2026-07-03/apestate_orang.json",
+    "source_insert_fasta": "historical_source/Downloads/hml2_ltr_age/generative/results_2026-07-03/inserts_orang.fa",
+    "source_flank_paf": "historical_source/Downloads/hml2_ltr_age/generative/results_2026-07-03/apeflank_orang.paf",
     "site_observation": "ambiguous split left flank, no positive LTR observation"
   }
 ]

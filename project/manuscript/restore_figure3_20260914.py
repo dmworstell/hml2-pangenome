@@ -6,7 +6,7 @@ import csv
 import json
 import os
 import sys
-os.environ.setdefault('MPLCONFIGDIR', '/private/tmp/hml2_restore_mpl')
+os.environ.setdefault('MPLCONFIGDIR', str(Path(__file__).resolve().parents[2] / '.mplconfig'))
 sys.dont_write_bytecode = True
 import matplotlib
 matplotlib.use('Agg')
@@ -37,17 +37,31 @@ manifest={'inputs':{},'trees':{},'edges':edges}
 for path in [PHY/'hml2_pan_ltr_expanded_tree.nwk', PHY/'hml2_pan_orf_pol_tree.nwk', INPUT/'Figure_3C_exact_nucleotide_edges.tsv', PHY/'locus_subfamily.tsv']:
     manifest['inputs'][str(path)]=sha256(path.read_bytes()).hexdigest()
 
+shared_loci = set.intersection(*(
+    {tip.name.split('__')[0] for tip in Phylo.read(PHY/name,'newick').get_terminals()}
+    for name in ('hml2_pan_ltr_expanded_tree.nwk','hml2_pan_orf_pol_tree.nwk')
+))
+manifest['comparison_loci'] = sorted(shared_loci)
+
+
+def select_tree_tips(full):
+    """Keep every modal locus tip and common-locus comparison neighbors."""
+    keep=owner.representative_tip_names(full)
+    for locus in ('19p12c','10q24.2'):
+        query=next((t for t in full.get_terminals() if t.name.startswith(locus+'__hap1')),None)
+        if query is not None and locus in shared_loci:
+            candidates=[t for t in full.get_terminals()
+                        if t.name.split('__')[0] in shared_loci - {locus}]
+            shortest=min(full.distance(query,t) for t in candidates)
+            keep.update(t.name for t in candidates if abs(full.distance(query,t)-shortest)<1e-10)
+    return keep
+
+
 fig=plt.figure(figsize=(6.5,7.25))
 def draw_tree(rect, region, filename):
     ax=fig.add_axes(rect)
     full=Phylo.read(PHY/filename,'newick')
-    keep=owner.representative_tip_names(full)
-    for locus in ('19p12c','10q24.2'):
-        query=next((t for t in full.get_terminals() if t.name.startswith(locus+'__hap1')),None)
-        if query is not None:
-            candidates=[t for t in full.get_terminals() if not t.name.startswith(locus+'__')]
-            shortest=min(full.distance(query,t) for t in candidates)
-            keep.update(t.name for t in candidates if abs(full.distance(query,t)-shortest)<1e-10)
+    keep=select_tree_tips(full)
     tree=deepcopy(full)
     for tip in list(tree.get_terminals()):
         if tip.name not in keep: tree.prune(tip)
@@ -82,7 +96,7 @@ def draw_tree(rect, region, filename):
     ax.set_xticks([0,round(xmax/2,2),round(xmax,2)])
     ax.tick_params(axis='x',labelsize=6.5,pad=1)
     ax.set_xlabel('Substitutions per site',fontsize=7,labelpad=1)
-    manifest['trees'][region]={'loci':len(set(t.name.split('__')[0] for t in tips)),'full_tree_tips':len(full.get_terminals()),'selected_tips':[t.name for t in tips], 'selection':'Most frequent exact sequence cluster at every locus, plus full-tree nearest other-locus neighbors of modal 19p12c and 10q24.2 clusters, pruned from the full tree'}
+    manifest['trees'][region]={'loci':len(set(t.name.split('__')[0] for t in tips)),'full_tree_tips':len(full.get_terminals()),'selected_tips':[t.name for t in tips], 'selection':'Most frequent exact sequence cluster at every locus, plus nearest other-locus neighbors of modal 19p12c and 10q24.2 clusters restricted to loci represented in both LTR and Pol trees. Distances and pruning use the existing full tree without refitting.'}
     return ax
 
 draw_tree([.035,.379,.455,.565],'LTR','hml2_pan_ltr_expanded_tree.nwk')

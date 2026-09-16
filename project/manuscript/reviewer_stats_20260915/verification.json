@@ -1,0 +1,75 @@
+{
+  "functional": {
+    "attempted": 237,
+    "finite_p": 174,
+    "missing_p": 63,
+    "status_counts": {
+      "Houldcroft2014_EBV_qPCR | fit": 54,
+      "Houldcroft2014_EBV_qPCR | underpowered_arm_lt5": 20,
+      "Houldcroft2014_EBV_qPCR | underpowered_n_lt30": 5,
+      "Im2012_intrinsic_growth | fit": 48,
+      "Im2012_intrinsic_growth | invariant": 1,
+      "Im2012_intrinsic_growth | underpowered_arm_lt5": 18,
+      "Im2012_intrinsic_growth | underpowered_n_lt30": 12,
+      "Mandage2017_EBV_in_silico | fit": 72,
+      "Mandage2017_EBV_in_silico | underpowered_arm_lt5": 6,
+      "Mandage2017_EBV_in_silico | underpowered_n_lt30": 1
+    },
+    "max_q_difference": 3.1086244689504383e-15,
+    "significant_q_rows": 2,
+    "deduplication": "No exact-vector deduplication in final combined correction. All finite exposure-outcome rows retained."
+  },
+  "MAGE_discovery": {
+    "candidate_aliases": 1409,
+    "eligible_aliases": 146,
+    "unique_exposure_adjustment_vectors": 64,
+    "genes": 20154,
+    "tests": 1289856,
+    "max_q_difference": 2.0594637106796654e-13,
+    "significant_q_rows": 0,
+    "SLC44A5_lead": {
+      "truth_family_id": "MAGE_TF_0014",
+      "representative_alias": "1p31.1b::internal_fragment_presence::copy_resolved",
+      "locus": "1p31.1b",
+      "endpoint": "internal_fragment_presence",
+      "gene_id": "ENSG00000137968.16",
+      "gene_symbol": "SLC44A5",
+      "n": 39,
+      "beta_per_exposure_sd": 0.862638740966434,
+      "se": 0.118452166911216,
+      "statistic": 7.2825914751987,
+      "p_value": 9.82893291496618e-08,
+      "residual_df": 26,
+      "bh_global_targeted_family": 0.126779080939666
+    }
+  },
+  "GEUVADIS_followup": {
+    "rows": 98,
+    "models": 49,
+    "corrected_population_models": 30,
+    "max_q_difference": 6.973588373426765e-16,
+    "significant_q_rows": 2,
+    "disjoint_replication": {
+      "model_id": "MAGE_nonoverlap_replication",
+      "focal_exposure_id": "HML-2_1p31.1b::internal_fragment_present",
+      "adjustment": NaN,
+      "family": "independent_donor_sensitivity",
+      "ancestry_model": "population",
+      "status": "fit",
+      "n": 28,
+      "beta": 0.519734082414696,
+      "se_hc3": 0.140189497058125,
+      "ci95_low": 0.228998860062841,
+      "ci95_high": 0.810469304766552,
+      "standardized_beta": 0.849267845258363,
+      "statistic_hc3": 3.70736819320499,
+      "p_two_sided_hc3": 0.0012279892553204,
+      "residual_df": 22.0,
+      "p_one_sided_positive": 0.0006139946276602,
+      "q_bh_secondary_family": 0.0184198388298067,
+      "included_in_bh_family": true,
+      "bh_family_size": 30,
+      "bh_exclusion_reason": ""
+    }
+  }
+}

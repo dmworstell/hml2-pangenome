@@ -2,6 +2,24 @@
 
 ## 15 September 2026
 
+- Applied the existing short-product rule to formerly exempt `Intact_FS_End`
+  calls and synchronized coding summaries. Type-I Env calls are unchanged.
+- Refit functional burdens from the current resolved catalog. Corrected q-value
+  reporting to 174 finite P values among 237 attempted models, preserving all
+  missing tests as missing. Added complete MAGE and GEUVADIS testing families.
+- Kept the uncalled 7p22.1 haplotype missing. The array numerator is 247 among
+  583 called haplotypes, from 584 eligible haplotypes. The two known zero-copy
+  haplotypes are solo-LTR calls.
+- Restricted the 10q24.2 regional nearest-neighbor comparison to 64 loci shared
+  between the LTR and Pol trees. Existing phylogenetic trees were not refit.
+- Published the corrected catalog as a compressed derived-data file in GitHub.
+  These changes are not present in the immutable 14 September Zenodo archive.
+- Updated the Fiber-seq source to the collaborator-confirmed minimum of ten
+  reads per peak and removed the redundant peak flag filter. Collaborator data
+  and artwork remain excluded from the public repository.
+- Added the coordinate-matched Figure S17 locus crosswalk. Assay labels and
+  reference intervals are preserved beside the catalog identifiers.
+
 - Matched the copy-review figure label to the current manuscript, using
   "Other supported copy" in place of "Later duplication". No calls, counts,
   model results or archived data changed. The archived v0.2.0 release remains

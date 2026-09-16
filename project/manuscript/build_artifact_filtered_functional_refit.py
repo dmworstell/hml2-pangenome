@@ -18,8 +18,8 @@ from scipy import stats
 PROJECT = Path(__file__).resolve().parents[1]
 CATALOG = (
     PROJECT
-    / "results/biological_orf_annotation_20260802/"
-    "combined_hml2_orf_analysis.CNV_WEIGHTED.BIOLOGICALLY_ANNOTATED.v3.tsv"
+    / "results/short_orf_rule_correction_20260915/"
+    "combined_hml2_orf_analysis.RESOLVED.SHORT_ORF_CORRECTED.tsv"
 )
 OLD_MATRIX = (
     PROJECT
@@ -107,6 +107,7 @@ def load_catalog_rows() -> list[dict[str, str]]:
             if PUBLIC_ID.fullmatch(row["ID"])
         ]
     excluded = {
+        "non_HML2_HML11_sequence_identity": 1168,
         "alias_duplicate_of_8q24.3c": 584,
         "assembly_artifact_not_supported_by_CNV_depth": 35,
         "duplicate_catalog_label_for_same_assembled_interval": 78,
@@ -122,7 +123,7 @@ def load_catalog_rows() -> list[dict[str, str]]:
     if observed != excluded:
         raise ValueError(f"unexpected biological exclusions: {observed}")
     rows = [row for row in public_rows if row["analysis_include"] == "1"]
-    if len(rows) != 60_824:
+    if len(rows) != 59_656:
         raise ValueError(f"unexpected analysis row count: {len(rows)}")
     return rows
 
@@ -215,9 +216,15 @@ def derive_locus_exposures(
         oneq.set_index("sample")["gag_compatible_dosage"].reindex(samples)
     )
     seven = pd.read_csv(SEVENP22, sep="\t")
-    seven["multi"] = (seven["array_copy_number"] >= 2).astype(int)
+    if seven.duplicated(["sample", "haplotype"]).any():
+        raise ValueError("duplicate 7p22.1 sample-haplotype calls")
+    if not seven.groupby("sample").size().eq(2).all():
+        raise ValueError("7p22.1 dosage requires two haplotype records per donor")
+    seven["multi"] = (seven["array_copy_number"] >= 2).astype(float).where(
+        seven["array_copy_number"].notna()
+    )
     result["HML-2_7p22.1::structural::multi_vs_single"] = (
-        seven.groupby("sample")["multi"].sum().reindex(samples)
+        seven.groupby("sample")["multi"].sum(min_count=2).reindex(samples)
     )
     return result.reset_index()[["sample", *LOCUS_FEATURES]]
 
@@ -289,6 +296,8 @@ def cluster_fit(
 def bh(values: pd.Series) -> pd.Series:
     result = pd.Series(np.nan, index=values.index)
     finite = values.dropna().sort_values()
+    if not finite.between(0, 1).all():
+        raise ValueError("BH requires P values in [0, 1] or missing values")
     m = len(finite)
     if not m:
         return result
@@ -467,10 +476,10 @@ def main() -> None:
         locus_models.sort_values(["q_bh_12_model_audit", "p_pedigree_cluster"]),
     )
 
-    # Reinsert every refitted exposure into the complete legacy 79-feature
-    # outcome grids, then recalculate a deliberately conservative BH correction
-    # over all 79 x 3 rows. This avoids presenting a favorable 17- or 12-test
-    # subset correction as if it were the full screen.
+    # Reinsert refitted exposures into the 79-feature x three-outcome grid.
+    # BH uses only finite P values. Unestimable models retain missing P and q.
+    # Unlike the earlier source-specific correction, this combined family
+    # retains exact-vector aliases as separate exposure-outcome rows.
     old_mandage = pd.read_csv(OLD_MANDAGE_MODELS, sep="\t", na_values=["NA"])
     old_mandage = old_mandage.assign(
         outcome="Mandage2017_EBV_in_silico",
@@ -482,10 +491,10 @@ def main() -> None:
     full = pd.concat(
         [
             old_mandage[
-                ["outcome", "exposure_id", "old_p_pedigree_cluster"]
+                ["outcome", "exposure_id", "old_p_pedigree_cluster", "model_status"]
             ],
             old_secondary[
-                ["outcome", "exposure_id", "old_p_pedigree_cluster"]
+                ["outcome", "exposure_id", "old_p_pedigree_cluster", "model_status"]
             ],
         ],
         ignore_index=True,
@@ -534,14 +543,21 @@ def main() -> None:
         full["refit_p_pedigree_cluster"],
         full["old_p_pedigree_cluster"],
     )
-    full["q_bh_conservative_237_model_suite"] = bh(
+    full["analysis_model_status"] = full["refit_model_status"].fillna(full["model_status"])
+    full = full.drop(columns=["model_status"])
+    full["included_in_bh_family"] = np.isfinite(full["analysis_p_pedigree_cluster"])
+    full["bh_family_size"] = int(full["included_in_bh_family"].sum())
+    full["bh_exclusion_reason"] = np.where(
+        full["included_in_bh_family"], "", full["analysis_model_status"]
+    )
+    full["q_bh_finite_model_suite"] = bh(
         full["analysis_p_pedigree_cluster"]
     )
     write_tsv(
         OUTDIR / "complete_three_outcome_refit_multiplicity.tsv",
         full.sort_values(
             [
-                "q_bh_conservative_237_model_suite",
+                "q_bh_finite_model_suite",
                 "analysis_p_pedigree_cluster",
             ]
         ),
@@ -567,8 +583,9 @@ def main() -> None:
     summary = {
         "schema": "hml2.biologically-filtered-functional-refit.v2",
         "analysis_catalog": str(CATALOG),
-        "analysis_rows": 60_824,
+        "analysis_rows": 59_656,
         "excluded_rows": {
+            "non_HML2_HML11_sequence_identity": 1168,
             "assembly_artifact_not_supported_by_CNV_depth": 35,
             "alias_duplicate_of_8q24.3c": 584,
             "duplicate_catalog_label_for_same_assembled_interval": 78,
@@ -592,8 +609,12 @@ def main() -> None:
         "suite_q_lt_0_05": int(
             (models["q_bh_51_model_suite"] < 0.05).fillna(False).sum()
         ),
-        "conservative_237_model_q_lt_0_05": int(
-            (full["q_bh_conservative_237_model_suite"] < 0.05)
+        "combined_attempted_models": len(full),
+        "combined_finite_p_values": int(full["included_in_bh_family"].sum()),
+        "combined_missing_p_values": int((~full["included_in_bh_family"]).sum()),
+        "combined_family_deduplicates_exposure_aliases": False,
+        "combined_finite_model_q_lt_0_05": int(
+            (full["q_bh_finite_model_suite"] < 0.05)
             .fillna(False)
             .sum()
         ),

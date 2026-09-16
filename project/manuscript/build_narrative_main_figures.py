@@ -49,8 +49,8 @@ OUT = PROJECT / "manuscript/figures/narrative"
 SUPPLEMENT = PROJECT / "manuscript/supplement"
 CATALOG = (
     PROJECT
-    / "results/resolved_manuscript_catalog_20260914/"
-    "combined_hml2_orf_analysis.RESOLVED.tsv"
+    / "results/short_orf_rule_correction_20260915/"
+    "combined_hml2_orf_analysis.RESOLVED.SHORT_ORF_CORRECTED.tsv"
 )
 SEVENP22 = PROJECT / "working/sevenp22_proxy_resolution_agent/haplotype_copy_number_truth.tsv"
 ONEP31 = PROJECT / "working/onep31b_array_recovery_agent/haplotype_array_reconciliation.tsv"
@@ -317,7 +317,8 @@ def build_figure_1(rows, roster) -> Path:
 
 
 def load_array_counts(rows, roster):
-    seven = Counter(int(row["array_copy_number"]) for row in read_tsv(SEVENP22))
+    seven_rows = read_tsv(SEVENP22)
+    seven = Counter(int(row["array_copy_number"]) for row in seven_rows if row["array_copy_number"] != "")
     one_authority = {
         (row["sample"], row["haplotype"]): int(row["copy_number"])
         for row in read_tsv(ONEP31)
@@ -337,7 +338,7 @@ def load_array_counts(rows, roster):
             ]
             cn = 1 if any(row["Structure"] == "Fragment" for row in present) else 0
         one[cn] += 1
-    if sum(seven.values()) != 584 or sum(one.values()) != 584:
+    if len(seven_rows) != 584 or sum(seven.values()) != 583 or sum(one.values()) != 584:
         raise ValueError("array authorities do not span 584 haplotypes")
     return seven, one
 

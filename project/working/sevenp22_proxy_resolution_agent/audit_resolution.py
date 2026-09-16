@@ -109,23 +109,27 @@ def main() -> None:
         elif any(row["Structure"] == "Solo-LTR" for row in rows):
             copy_number, state = 0, "solo_ltr"
         else:
-            copy_number, state = 0, ("absent" if not rows else "other_retained")
+            copy_number, state = None, "unknown"
         hap_rows.append({
             "sample": sample,
             "haplotype": hap,
             "array_state": state,
             "array_copy_number": copy_number,
-            "multi_vs_single_binary": int(copy_number >= 2),
-            "high_copy_ge3_binary": int(copy_number >= 3),
+            "multi_vs_single_binary": None if copy_number is None else int(copy_number >= 2),
+            "high_copy_ge3_binary": None if copy_number is None else int(copy_number >= 3),
         })
     write_tsv(OUT / "haplotype_copy_number_truth.tsv", hap_rows)
 
-    hap_distribution = Counter(int(row["array_copy_number"]) for row in hap_rows)
+    called_haps = [row for row in hap_rows if row["array_copy_number"] is not None]
+    incomplete_people = {row["sample"] for row in hap_rows if row["array_copy_number"] is None}
+    hap_distribution = Counter(int(row["array_copy_number"]) for row in called_haps)
     person_copy = defaultdict(int)
     person_multi_haps = defaultdict(int)
     person_high = defaultdict(int)
-    for row in hap_rows:
+    for row in called_haps:
         sample = str(row["sample"])
+        if sample in incomplete_people:
+            continue
         person_copy[sample] += int(row["array_copy_number"])
         person_multi_haps[sample] += int(row["multi_vs_single_binary"])
         person_high[sample] = max(person_high[sample], int(row["high_copy_ge3_binary"]))
@@ -177,8 +181,11 @@ def main() -> None:
         "truth": {
             "people": len(person_copy),
             "haplotypes": len(hap_rows),
+            "called_haplotypes": len(called_haps),
+            "unknown_haplotypes": len(hap_rows) - len(called_haps),
+            "incomplete_people": sorted(incomplete_people),
             "multi_copy_source_rows": multi_source_rows,
-            "multi_copy_haplotypes": sum(int(row["multi_vs_single_binary"]) for row in hap_rows),
+            "multi_copy_haplotypes": sum(int(row["multi_vs_single_binary"]) for row in called_haps),
             "multi_copy_carrier_people": sum(value > 0 for value in person_multi_haps.values()),
             "max_haplotype_copy_number": max(hap_distribution),
             "max_person_total_array_units": max(person_copy.values()),

@@ -1,0 +1,30 @@
+{
+  "analysis_catalog": "project/results/short_orf_rule_correction_20260915/combined_hml2_orf_analysis.RESOLVED.SHORT_ORF_CORRECTED.tsv",
+  "analysis_rows": 59656,
+  "artifact_affected_locus_models": 12,
+  "catalog_rows_used": 22501,
+  "changed_exposures": 17,
+  "combined_attempted_models": 237,
+  "combined_family_deduplicates_exposure_aliases": false,
+  "combined_finite_model_q_lt_0_05": 2,
+  "combined_finite_p_values": 174,
+  "combined_missing_p_values": 63,
+  "excluded_rows": {
+    "alias_duplicate_of_8q24.3c": 584,
+    "assembly_artifact_not_supported_by_CNV_depth": 35,
+    "duplicate_catalog_label_for_same_assembled_interval": 78,
+    "non_HML2_HML11_sequence_identity": 1168
+  },
+  "features_refit": 17,
+  "models": 51,
+  "nominal_p_lt_0_05": 4,
+  "outcomes_refit": [
+    "Mandage2017_EBV_in_silico",
+    "Houldcroft2014_EBV_qPCR",
+    "Im2012_intrinsic_growth"
+  ],
+  "people": 292,
+  "pol_rule": "compatible Pol units require compatible gag, pro, and pol calls on the same proviral copy; pol is not counted as a standalone product",
+  "schema": "hml2.biologically-filtered-functional-refit.v2",
+  "suite_q_lt_0_05": 1
+}

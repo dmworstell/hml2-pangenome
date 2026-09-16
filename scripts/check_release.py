@@ -45,7 +45,10 @@ def main():
     s4_counts={locus:{int(cn):n for cn,n in counts.items()}
                for locus,counts in scope['figure_s4b_array_counts'].items()}
     assert scope['population_haplotypes']==584
-    assert all(sum(counts.values())==584 for counts in locus_counts.values())
+    unknown=scope['unknown_haplotypes_by_locus']
+    assert unknown=={'HML-2_7p22.1':1}
+    assert all(sum(counts.values())+unknown.get(locus,0)==584 for locus,counts in locus_counts.items())
+    assert locus_counts['HML-2_7p22.1'][0]==2
     assert panels.observed_multicopy_numbers(locus_counts)==[2,3,4,6]
     assert panels.observed_multicopy_numbers(s4_counts)==[2,3,4,6]
     fourteenq=scope['fourteenq11_2_NA20282_h2_entries']

@@ -35,6 +35,14 @@ arg_value <- function(flag, env, default = NULL) {
 
 peaks_dir <- arg_value("--peaks-dir", "HML2_FIBERSEQ_PEAKS_DIR")
 out_dir <- arg_value("--out-dir", "HML2_FIBERSEQ_REANALYSIS_OUT", "outputs/fiberseq_reanalysis")
+script_file <- sub("^--file=", "", grep("^--file=", commandArgs(), value = TRUE)[[1]])
+crosswalk_file <- arg_value(
+  "--locus-crosswalk", "HML2_FIBERSEQ_LOCUS_CROSSWALK",
+  file.path(dirname(script_file), "Fiberseq_locus_crosswalk.tsv")
+)
+locus_crosswalk <- read_tsv(crosswalk_file, show_col_types = FALSE, progress = FALSE)
+crosswalk_keys <- paste(locus_crosswalk$assay_label, locus_crosswalk$assay_reference_interval)
+if (anyDuplicated(crosswalk_keys)) stop("Duplicate assay intervals in the locus crosswalk.")
 focus_locus <- arg_value("--focus-locus", "HML2_FIBERSEQ_FOCUS_LOCUS", "1q22")
 minimum_coverage <- as.numeric(arg_value("--minimum-coverage", "HML2_FIBERSEQ_MINIMUM_COVERAGE", "10"))
 if (!is.finite(minimum_coverage) || minimum_coverage < 1 || minimum_coverage != floor(minimum_coverage)) {
@@ -53,10 +61,20 @@ as_flag <- function(x) {
   tolower(trimws(as.character(x))) %in% c("true", "t", "1", "yes", "y")
 }
 
-extract_locus <- function(path) {
+extract_assay_label <- function(path) {
   name <- basename(path)
   locus <- str_match(name, "_HML-2_(.+)_peaks_file\\.tsv$")[, 2]
   ifelse(is.na(locus), sub("_peaks_file\\.tsv$", "", name), locus)
+}
+
+extract_locus <- function(path) {
+  assay_label <- extract_assay_label(path)
+  interval <- str_match(basename(path), "^TestHML_(chr[^_]+)_([0-9]+)-([0-9]+)_")
+  key <- paste(assay_label, paste0(interval[, 2], ":", interval[, 3], "-", interval[, 4]))
+  index <- match(key, crosswalk_keys)
+  if (anyNA(index)) stop("No coordinate-matched locus crosswalk entry for ", path)
+  catalog_locus <- locus_crosswalk$catalog_locus[index]
+  ifelse(is.na(catalog_locus) | !nzchar(catalog_locus), assay_label, catalog_locus)
 }
 
 extract_assay_interval <- function(path) {
@@ -109,6 +127,7 @@ if (!length(files)) stop("No *_peaks_file.tsv inputs found in ", peaks_dir)
 file_info <- file.info(files)
 input_manifest <- tibble(
   input_file = basename(files),
+  assay_label = map_chr(files, extract_assay_label),
   locus = map_chr(files, extract_locus),
   bytes = as.numeric(file_info$size),
   modified_utc = format(file_info$mtime, tz = "UTC", usetz = TRUE),
@@ -116,6 +135,7 @@ input_manifest <- tibble(
 ) %>%
   arrange(locus, input_file)
 write_tsv(input_manifest, file.path(out_dir, "fiberseq_input_manifest.tsv"))
+write_tsv(locus_crosswalk, file.path(out_dir, "Figure_S17_locus_crosswalk.tsv"))
 write_tsv(
   tibble(
     parameter = c(
@@ -123,7 +143,7 @@ write_tsv(
       "input_peak_files", "biological_sample_rule", "technical_sample_rule"
     ),
     value = c(
-      "1.1.0", focus_locus, as.character(active_threshold), as.character(minimum_coverage),
+      "1.2.0", focus_locus, as.character(active_threshold), as.character(minimum_coverage),
       as.character(length(files)),
       "collaborator-designated primary runs collapsed peak-to-haplotype-to-individual",
       "non-primary runs excluded from biological counts and used only for concordance"
@@ -305,6 +325,8 @@ replicate_statistics <- if (nrow(replicate_pairs) >= 3) {
 write_tsv(haplotype_summary, file.path(out_dir, "fiberseq_haplotype_summary.tsv"))
 write_tsv(individual_summary, file.path(out_dir, "fiberseq_individual_summary.tsv"))
 write_tsv(locus_summary, file.path(out_dir, "fiberseq_locus_summary.tsv"))
+write_tsv(haplotype_summary, file.path(out_dir, "Figure_S17_source_haplotype_summary.tsv"))
+write_tsv(locus_summary, file.path(out_dir, "Figure_S17_source_locus_summary.tsv"))
 write_tsv(replicate_pairs, file.path(out_dir, "fiberseq_technical_replicate_pairs.tsv"))
 write_tsv(replicate_statistics, file.path(out_dir, "fiberseq_technical_replicate_statistics.tsv"))
 

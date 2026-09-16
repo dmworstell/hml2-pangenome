@@ -1,12 +1,15 @@
 # Analysis inputs
 
-The code and derived-data archive is at https://doi.org/10.5281/zenodo.22759511.
-Extract `HML2_derived_data_2026-09-14.zip` at the repository root to restore
-the input paths. Its manifest lists each file's size and SHA-256 checksum.
+The 14 September derived-data archive is at https://doi.org/10.5281/zenodo.22759511.
+It predates the review corrections in current GitHub source and tables.
+Extract `HML2_derived_data_2026-09-14.zip` separately and copy only inputs absent
+from this checkout. Do not replace current repository tables with archived
+versions. Run `python scripts/restore_corrected_catalog.py` to extract the
+corrected catalog distributed with this revision.
 
 | Analysis | Inputs |
 |---|---|
-| Structural and coding catalog | `project/results/resolved_manuscript_catalog_20260914/combined_hml2_orf_analysis.RESOLVED.tsv`, source observations, sample metadata and locus assignments |
+| Structural and coding catalog | `project/results/short_orf_rule_correction_20260915/combined_hml2_orf_analysis.RESOLVED.SHORT_ORF_CORRECTED.tsv`, source observations, sample metadata and locus assignments |
 | Phylogenies and nucleotide sharing | Extracted HML-2 sequences, selected sequence clusters, alignments, Newick trees and source witnesses |
 | Type-I cassette and conversion calculations | Direct locus calls and the inputs and analysis code in `Supplementary_Data/Table_S13/` |
 | Functional refits | Retained person-level marker and phenotype inputs, sampling-frame covariates and expression matrices from the sources in `DATA_SOURCES.md` |

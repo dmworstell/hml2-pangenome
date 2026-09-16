@@ -1,12 +1,13 @@
-locus	copy_number	haplotypes
-7p22.1	0	3
-7p22.1	1	334
-7p22.1	2	230
-7p22.1	3	12
-7p22.1	4	4
-7p22.1	6	1
-1p31.1b	0	469
-1p31.1b	1	106
-1p31.1b	2	2
-1p31.1b	3	4
-1p31.1b	4	3
+locus	copy_number	haplotypes	call_status
+7p22.1	0	2	called
+7p22.1	1	334	called
+7p22.1	2	230	called
+7p22.1	3	12	called
+7p22.1	4	4	called
+7p22.1	6	1	called
+1p31.1b	0	469	called
+1p31.1b	1	106	called
+1p31.1b	2	2	called
+1p31.1b	3	4	called
+1p31.1b	4	3	called
+7p22.1		1	unknown
