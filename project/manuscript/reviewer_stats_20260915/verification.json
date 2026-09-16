@@ -1,5 +1,6 @@
 {
   "functional": {
+    "analysis_catalog": "project/results/rec_exon_boundary_correction_20260915/combined_hml2_orf_analysis.RESOLVED.REC_CORRECTED.tsv",
     "attempted": 237,
     "finite_p": 174,
     "missing_p": 63,
@@ -52,7 +53,6 @@
     "disjoint_replication": {
       "model_id": "MAGE_nonoverlap_replication",
       "focal_exposure_id": "HML-2_1p31.1b::internal_fragment_present",
-      "adjustment": NaN,
       "family": "independent_donor_sensitivity",
       "ancestry_model": "population",
       "status": "fit",

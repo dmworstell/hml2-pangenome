@@ -66,8 +66,16 @@ refit builders read that corrected catalog. Complete discovery/follow-up
 testing families, including all 1,289,856 MAGE discovery tests, are in
 `Supplementary_Data/Table_S10*`.
 
+The current catalog is `REC_CORRECTED`, which includes the complete Rec stop
+codon. The older `SHORT_ORF_CORRECTED` catalog is retained only as the input to
+the documented correction. After extracting both catalogs, run
+`python scripts/check_rec_boundary.py` to reproduce all 36,073 Rec-bearing
+records from the retained alignment slices and compare the resulting catalog
+byte-for-byte with the current distribution. This replay also checks paired
+call files for three alignments regenerated after the older catalog snapshot.
+
 Three historical source-provenance fields in the distributed catalog use
-neutral `historical_source/` prefixes instead of local computer paths. These
+neutral `historical_source/` prefixes instead of local or cluster paths. These
 labels identify provenance, not additional bundled files. The catalog
 verification record retains both the original and distributed checksums.
 Biological calls and numerical fields are unchanged by this normalization.

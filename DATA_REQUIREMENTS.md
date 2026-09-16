@@ -9,7 +9,8 @@ corrected catalog distributed with this revision.
 
 | Analysis | Inputs |
 |---|---|
-| Structural and coding catalog | `project/results/short_orf_rule_correction_20260915/combined_hml2_orf_analysis.RESOLVED.SHORT_ORF_CORRECTED.tsv`, source observations, sample metadata and locus assignments |
+| Structural and coding catalog | `project/results/rec_exon_boundary_correction_20260915/combined_hml2_orf_analysis.RESOLVED.REC_CORRECTED.tsv`, source observations, sample metadata and locus assignments |
+| Rec boundary correction | The preceding short-ORF-corrected catalog, KCON reference, retained spliced alignment columns, paired call files and provenance receipts bundled under `project/results/rec_exon_boundary_correction_20260915/` |
 | Phylogenies and nucleotide sharing | Extracted HML-2 sequences, selected sequence clusters, alignments, Newick trees and source witnesses |
 | Type-I cassette and conversion calculations | Direct locus calls and the inputs and analysis code in `Supplementary_Data/Table_S13/` |
 | Functional refits | Retained person-level marker and phenotype inputs, sampling-frame covariates and expression matrices from the sources in `DATA_SOURCES.md` |

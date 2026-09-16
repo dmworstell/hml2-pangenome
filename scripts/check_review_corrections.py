@@ -53,7 +53,7 @@ def main():
     assert sum(int(r['haplotypes']) for r in called if int(r['copy_number'])>=2)==247
     corrected = Counter()
     weighted = Counter()
-    for row in rows(ROOT/'data/combined_hml2_orf_analysis.RESOLVED.SHORT_ORF_CORRECTED.tsv.gz'):
+    for row in rows(ROOT/'data/combined_hml2_orf_analysis.RESOLVED.REC_CORRECTED.tsv.gz'):
         if row['ID'].startswith(('HG', 'NA')) and row['analysis_include']=='1':
             for gene in ('gag', 'rec'):
                 if row[gene]=='Fragment_Intact' and float(row[gene+'_coverage']) < .6:
@@ -62,8 +62,8 @@ def main():
                 weighted[key] += number(row['observation_weight'])*number(row[key]) if row[key] not in ('', 'NA') else 0
             if row['Locus']=='HML-2_8q24.3a' and row['gag']=='Fragment_Intact':
                 assert row['expected_intact_gag_copies']=='0'
-    assert corrected['gag']>=482 and corrected['rec']>=584
-    assert weighted=={'expected_intact_gag_copies':5002.0, 'expected_intact_accessory_copies':17675.0}, weighted
+    assert corrected['gag']>=482
+    assert weighted=={'expected_intact_gag_copies':5002.0, 'expected_intact_accessory_copies':17092.0}, weighted
     print('PASS: catalog weighted copy totals, short-product reclassification and 7p22.1 missing calls')
 
 if __name__=='__main__':

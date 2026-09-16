@@ -2,6 +2,17 @@
 
 ## 15 September 2026
 
+- Corrected the Type-II Rec second-exon endpoint from 8466 to 8467
+  (zero-based, half-open), retaining the complete stop codon. Recalled all
+  36,073 Rec-bearing records from the existing alignments. The unchanged-boundary
+  replay had no unexplained discrepancies. Paired call files account for the
+  three alignments regenerated after the older catalog snapshot.
+- Removed false terminal-frameshift labels while retaining sequence-supported
+  frameshifts and premature stops. Updated Rec counts and Figure 4. Functional
+  exposures and P/q values did not change after the Rec correction.
+- Included minimal alignment slices, reference sequence, paired calls and a
+  complete public replay test. `REC_CORRECTED` is now the analysis catalog.
+  `SHORT_ORF_CORRECTED` remains only as the replay input.
 - Applied the existing short-product rule to formerly exempt `Intact_FS_End`
   calls and synchronized coding summaries. Type-I Env calls are unchanged.
 - Refit functional burdens from the current resolved catalog. Corrected q-value

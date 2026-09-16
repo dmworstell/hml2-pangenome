@@ -2,7 +2,7 @@
   "source": "project/results/resolved_manuscript_catalog_20260914/combined_hml2_orf_analysis.RESOLVED.tsv",
   "source_sha256": "16ba52d4152be1f24edc5198dd5fc24bb1404b817dd0c32c961e21a4a81e9dc6",
   "output": "project/results/short_orf_rule_correction_20260915/combined_hml2_orf_analysis.RESOLVED.SHORT_ORF_CORRECTED.tsv",
-  "output_sha256": "091d142463e2132f8c435301a053aab5124114db0a6e9f1cd014bbf517859dcd",
+  "output_sha256": "820b8d990f2c2913ddb09ed7edcb5a7c3390c67f65b9c08b4673d4783b0350e3",
   "affected_records": 1074,
   "public_changes": {
     "rec": 584,

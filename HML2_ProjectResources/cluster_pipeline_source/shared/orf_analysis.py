@@ -56,6 +56,9 @@ except ImportError as e:
 # itself is still reported. Adjust here if a different floor is preferred.
 COVERAGE_FLOOR_FOR_IDENTITY = 0.3
 
+# Zero-based, half-open coordinates. The second exon includes the full TGA stop.
+REC_EXONS_TYPE2 = ((6450, 6711), (8410, 8467))
+
 # --- Type-I (Delta292) Pol geometry ----------------------------------------------------------
 # Type I is the exact 292-nt deletion at KCON [6501, 6793) (zero-based, half-open) that removes
 # the C-terminus of Pol and shifts the reading frame. Consequences the ORF table MUST encode:
@@ -2354,7 +2357,7 @@ if __name__ == "__main__":
     KCON_FEATURES_TYPE1 = {"gag": (1111, 3112), "pro": (2913, 3918), "pol": (3878, 6501),
                            "env": (6512, 8258), "np9_1": (6450, 6494), "np9_2": (8118, 8299)}
     KCON_FEATURES_TYPE2 = {"gag": (1111, 3112), "pro": (2913, 3918), "pol": (3878, 6749),
-                           "env": (6450, 8550), "rec_1": (6450, 6711), "rec_2": (8410, 8466)}
+                           "env": (6450, 8550), "rec_1": REC_EXONS_TYPE2[0], "rec_2": REC_EXONS_TYPE2[1]}
     KCON_LTRS_TYPE1 = {"5_LTR": (0, 967), "3_LTR": (8213, 9180)}
     KCON_LTRS_TYPE2 = {"5_LTR": (0, 967), "3_LTR": (8504, 9471)}
 

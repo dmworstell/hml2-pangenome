@@ -1,0 +1,34 @@
+{
+  "source_sha256": "820b8d990f2c2913ddb09ed7edcb5a7c3390c67f65b9c08b4673d4783b0350e3",
+  "output_sha256": "456aa8f4b675eb16ce12368aae425bbafed7ed0ddd753189419509363198ba2a",
+  "rows": 61936,
+  "recalled_rows": 36073,
+  "baseline_discrepancies": 0,
+  "older_catalog_annotation_differences": 1764,
+  "changed_cells": 67374,
+  "changes_by_field": {
+    "rec": 10089,
+    "missense_rec": 15821,
+    "rec_dna_identity": 26511,
+    "rec_coverage": 14364,
+    "expected_intact_accessory_copies": 587,
+    "rec_protein_identity": 2
+  },
+  "status_transitions": {
+    "Intact_FS_End -> Intact": 8914,
+    "Start_Lost -> Start_Lost": 954,
+    "Protein_Missing -> Protein_Missing": 6285,
+    "Nonsense -> Nonsense": 6722,
+    "Frameshift -> Frameshift": 10197,
+    "Insertion -> Insertion": 618,
+    "Intact_FS_End -> Nonsense": 587,
+    "Intact_FS_End -> Intact_FS_End": 1208,
+    "Fragment_Intact -> Frameshift": 588
+  },
+  "new_reference_nt": 318,
+  "new_reference_amino_acids": 105,
+  "reference_translation_characters_including_stop": 106,
+  "original_source_sha256": "eed8de7e0c93243507883035b5c9a795b92dc8cd509fbb21dd8b0ae7f677e7d2",
+  "original_output_sha256": "b4ee09e576208177a51d3fa10594ef64781e1972f94822fec86af455922914f0",
+  "path_metadata_note": "Historical source paths are neutral labels, not bundled file guarantees. Sequence, classification and numerical fields are unchanged."
+}

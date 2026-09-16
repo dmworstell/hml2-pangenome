@@ -17,6 +17,9 @@ outputs/
 *.fq
 *.gz
 !data/combined_hml2_orf_analysis.RESOLVED.SHORT_ORF_CORRECTED.tsv.gz
+!data/combined_hml2_orf_analysis.RESOLVED.REC_CORRECTED.tsv.gz
+!project/results/rec_exon_boundary_correction_20260915/cluster_rec_alignment_slices.jsonl.gz
+!project/results/rec_exon_boundary_correction_20260915/local_rec_alignment_slices.jsonl.gz
 !Supplementary_Data/Table_S10e_MAGE_complete_discovery_family.tsv.gz
 *.vcf
 *.xlsx
@@ -24,6 +27,8 @@ outputs/
 *.log
 project/results/resolved_manuscript_catalog_20260914/combined_hml2_orf_analysis.RESOLVED.tsv
 project/results/short_orf_rule_correction_20260915/combined_hml2_orf_analysis.RESOLVED.SHORT_ORF_CORRECTED.tsv
+project/results/rec_exon_boundary_correction_20260915/combined_hml2_orf_analysis.RESOLVED.REC_CORRECTED.tsv
+!HML2_ProjectResources/data/ref/type2_KCON.fa
 HML2_project_data/
 Supplementary_Data/Table_S13/reproduced/
 Supplementary_Data/Table_S13/recomputed_results/

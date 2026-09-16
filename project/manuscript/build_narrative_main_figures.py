@@ -49,8 +49,8 @@ OUT = PROJECT / "manuscript/figures/narrative"
 SUPPLEMENT = PROJECT / "manuscript/supplement"
 CATALOG = (
     PROJECT
-    / "results/short_orf_rule_correction_20260915/"
-    "combined_hml2_orf_analysis.RESOLVED.SHORT_ORF_CORRECTED.tsv"
+    / "results/rec_exon_boundary_correction_20260915/"
+    "combined_hml2_orf_analysis.RESOLVED.REC_CORRECTED.tsv"
 )
 SEVENP22 = PROJECT / "working/sevenp22_proxy_resolution_agent/haplotype_copy_number_truth.tsv"
 ONEP31 = PROJECT / "working/onep31b_array_recovery_agent/haplotype_array_reconciliation.tsv"

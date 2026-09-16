@@ -38,10 +38,10 @@ PROJECT = Path(__file__).resolve().parents[1]
 WORKSPACE = PROJECT.parent
 CATALOG = (
     PROJECT
-    / "results/short_orf_rule_correction_20260915/"
-    "combined_hml2_orf_analysis.RESOLVED.SHORT_ORF_CORRECTED.tsv"
+    / "results/rec_exon_boundary_correction_20260915/"
+    "combined_hml2_orf_analysis.RESOLVED.REC_CORRECTED.tsv"
 )
-CATALOG_SUMMARY = CATALOG.parent / "verification.json"
+CATALOG_SUMMARY = CATALOG.parent / "rec_boundary_verification.json"
 SHORT_READ = (
     PROJECT
     / "working/short_read_direction_corrected_v4/results/"

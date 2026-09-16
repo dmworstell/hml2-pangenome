@@ -1,5 +1,5 @@
 {
-  "analysis_catalog": "project/results/short_orf_rule_correction_20260915/combined_hml2_orf_analysis.RESOLVED.SHORT_ORF_CORRECTED.tsv",
+  "analysis_catalog": "project/results/rec_exon_boundary_correction_20260915/combined_hml2_orf_analysis.RESOLVED.REC_CORRECTED.tsv",
   "analysis_rows": 59656,
   "artifact_affected_locus_models": 12,
   "catalog_rows_used": 22501,

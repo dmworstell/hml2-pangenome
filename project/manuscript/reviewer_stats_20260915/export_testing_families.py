@@ -99,6 +99,7 @@ def main():
     status_counts = final.groupby(["outcome", "analysis_model_status"]).size()
     summary = {
         "functional": {
+            "analysis_catalog": json.loads((PROJECT / "manuscript/artifact_filtered_functional_refit/run_summary.json").read_text())["analysis_catalog"],
             "attempted": len(final), "finite_p": int(final.included_in_bh_family.sum()),
             "missing_p": int((~final.included_in_bh_family).sum()),
             "status_counts": {" | ".join(key): int(value) for key, value in status_counts.items()},
@@ -119,11 +120,11 @@ def main():
             "corrected_population_models": int(mask.sum()), "max_q_difference": geu_delta,
             "significant_q_rows": int((geu.q_bh_secondary_family < 0.05).sum()),
             "disjoint_replication": geu.loc[(geu.model_id == "MAGE_nonoverlap_replication") &
-                (geu.ancestry_model == "population")].iloc[0].to_dict(),
+                (geu.ancestry_model == "population")].iloc[0].dropna().to_dict(),
         },
     }
-    (OUT.parent / "verification.json").write_text(json.dumps(summary, indent=2, default=str) + "\n")
-    print(json.dumps(summary, indent=2, default=str))
+    (OUT.parent / "verification.json").write_text(json.dumps(summary, indent=2, default=str, allow_nan=False) + "\n")
+    print(json.dumps(summary, indent=2, default=str, allow_nan=False))
 
 
 if __name__ == "__main__":

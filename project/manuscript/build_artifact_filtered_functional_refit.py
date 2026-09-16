@@ -18,8 +18,8 @@ from scipy import stats
 PROJECT = Path(__file__).resolve().parents[1]
 CATALOG = (
     PROJECT
-    / "results/short_orf_rule_correction_20260915/"
-    "combined_hml2_orf_analysis.RESOLVED.SHORT_ORF_CORRECTED.tsv"
+    / "results/rec_exon_boundary_correction_20260915/"
+    "combined_hml2_orf_analysis.RESOLVED.REC_CORRECTED.tsv"
 )
 OLD_MATRIX = (
     PROJECT
