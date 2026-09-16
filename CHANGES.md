@@ -1,5 +1,13 @@
 # Publication snapshot changes
 
+## Release 0.3.0, 16 September 2026
+
+- Archived the corrected code, complete testing families and Rec catalog at
+  https://doi.org/10.5281/zenodo.22783894.
+- Retained the previously archived public HML-2 sequence and phenotype inputs.
+  Replaced superseded supplementary tables and catalog copies with the current
+  release. Version 0.2.0 remains separately accessible as the earlier snapshot.
+
 ## 15 September 2026
 
 - Corrected the Type-II Rec second-exon endpoint from 8466 to 8467

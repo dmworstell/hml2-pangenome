@@ -1,8 +1,8 @@
 # Structural polymorphism and population-variable coding capacity of HERV-K(HML-2) in human pangenomes
 
 Source code and result tables for the HML-2 pangenome manuscript. The current
-GitHub revision includes the manuscript-review corrections of 15 September 2026.
-The archived release 0.2.0 remains the earlier 14 September snapshot.
+release 0.3.0 includes the manuscript-review corrections of 15 September 2026,
+including the corrected Rec stop-codon boundary.
 
 The analysis covers structural variation, tandem-copy validation, coding
 potential, phylogenetic relationships, Type-I cassette variation, target-site
@@ -52,16 +52,16 @@ The current plot builders use 292 donor IDs.
 
 ## Full analysis inputs
 
-The [archived data](https://doi.org/10.5281/zenodo.22759511),
-`HML2_derived_data_2026-09-14.zip`, contain the 14 September catalog,
-extracted HML-2 sequences, supplementary tables and retained analysis inputs.
-That immutable archive predates the current review corrections. Its
-`file_manifest.tsv` records the archived file identities.
+The [version 0.3.0 archive](https://doi.org/10.5281/zenodo.22783894),
+`HML2_derived_data_v0.3.0.zip`, contains the corrected catalog, extracted HML-2
+sequences, supplementary tables and retained analysis inputs. Its
+`file_manifest.tsv` records every archived file identity.
 
-For full-input reproduction, extract the archive into a separate directory,
-then copy only files absent from this checkout. Do not overwrite the newer
-repository tables. Run `python scripts/restore_corrected_catalog.py` to extract
-the corrected catalog bundled in `data/`. The current figure and functional
+For full-input reproduction, extract the matching code and derived-data ZIPs
+into the same directory, preserving their relative paths. If using a later
+GitHub revision, do not overwrite its files with an older archive.
+Run `python scripts/restore_corrected_catalog.py` to extract the two catalogs
+bundled in `data/` for the Rec replay. The current figure and functional
 refit builders read that corrected catalog. Complete discovery/follow-up
 testing families, including all 1,289,856 MAGE discovery tests, are in
 `Supplementary_Data/Table_S10*`.

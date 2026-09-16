@@ -1,11 +1,11 @@
 # Analysis inputs
 
-The 14 September derived-data archive is at https://doi.org/10.5281/zenodo.22759511.
-It predates the review corrections in current GitHub source and tables.
-Extract `HML2_derived_data_2026-09-14.zip` separately and copy only inputs absent
-from this checkout. Do not replace current repository tables with archived
-versions. Run `python scripts/restore_corrected_catalog.py` to extract the
-corrected catalog distributed with this revision.
+The version 0.3.0 derived-data archive is at https://doi.org/10.5281/zenodo.22783894.
+It includes the corrected Rec catalog and complete testing families.
+Extract `HML2_derived_data_v0.3.0.zip` at the matching code repository root.
+Do not overwrite a later checkout with an older archive. Run
+`python scripts/restore_corrected_catalog.py` to extract both the current
+catalog and the preceding catalog used only for replay.
 
 | Analysis | Inputs |
 |---|---|
