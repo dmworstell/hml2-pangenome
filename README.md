@@ -96,6 +96,11 @@ allocation. Model assumptions and reproduction checks are in `MODEL_NOTES.md`.
 
 ## Provenance
 
+After v0.3.0, the figure builders label the short-arm HML-2 groups as
+"Telomeric Type I" and "Telomeric Type II" to match the revised manuscript.
+This is a display-label correction. Stored locus identifiers, analysis inputs,
+numerical results and the archived v0.3.0 release are unchanged.
+
 `source_inventory.tsv` records the source-file identity used for this snapshot.
 `CHANGES.md` lists the publication-specific corrections. The supplementary
 manifest records both the original source checksum and the distributed checksum

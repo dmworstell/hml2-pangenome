@@ -143,8 +143,8 @@ def draw_duplicated_groups(path):
     ax.set(xlim=(0,1), ylim=(0,1))
     ax.axis('off')
     ax.text(.52,.97,'Duplicated HML-2 groups',ha='center',va='top',fontsize=16)
-    groups = [('Acrocentric Type I', ['13p13','15p13b']),
-              ('Acrocentric Type II / 4q35.2', ['15p13a','21p13','22p13','4q35.2']),
+    groups = [('Telomeric Type I', ['13p13','15p13b']),
+              ('Telomeric Type II / 4q35.2', ['15p13a','21p13','22p13','4q35.2']),
               ('1p36.21', ['a','b','c']), ('8p23.1', ['b','c','d','e']), ('Xq28', ['a','b'])]
     for i, (title, labels) in enumerate(groups):
         y=.78-i*.165

@@ -26,8 +26,8 @@ plt.rcParams.update({'font.family':'Arial', 'font.size':7, 'svg.fonttype':'none'
 owner.PHY = PHY
 subfamilies = owner.load_subfamily_authority()
 colors={'LTR5_Hs':'#1673AF','LTR5A':'#855BA7','LTR5B':'#C76B16','non-LTR5':'#444444'}
-groups=[('Acrocentric Type I',['13p13','15p13b'],'#197F75'),
-        ('Acrocentric Type II',['15p13a','21p13','22p13'],'#8762A6'),
+groups=[('Telomeric Type I',['13p13','15p13b'],'#197F75'),
+        ('Telomeric Type II',['15p13a','21p13','22p13'],'#8762A6'),
         ('1p36.21',['1p36.21a','1p36.21b','1p36.21c'],'#3179A8'),
         ('8p23.1',['8p23.1b','8p23.1c','8p23.1d','8p23.1e'],'#C5701D'),
         ('Xq28',['Xq28a','Xq28b'],'#B33C49')]
@@ -120,7 +120,7 @@ for (title,loci,color),(cx,cy) in zip(groups,centers):
     else: coords=[(cx-.125,cy+.09),(cx+.125,cy+.09),(cx-.125,cy-.09),(cx+.125,cy-.09)]
     for i,locus in enumerate(loci):
         x,y=coords[i];ax.scatter(x,y,s=15,color=color,zorder=4)
-        label=locus if title.startswith('Acro') else locus[-1]
+        label=locus if title.startswith('Telomeric') else locus[-1]
         ax.text(x,y+(.040 if y>=cy else -.04),label,ha='center',va='bottom' if y>=cy else 'top',fontsize=6.6)
     for i in range(len(loci)):
         for j in range(i+1,len(loci)):
@@ -156,8 +156,8 @@ positions={'1p36.21a':('1',14.2e6),'1p36.21b':('1',14.2e6),'1p36.21c':('1',14.2e
 for title,loci,color in groups:
     for i,locus in enumerate(loci):
         chrom,coord=positions[locus];y=top-coord/owner.CYTOBANDS_HG38[chrom][-1][0]*height
-        if title=='Acrocentric Type I' and chrom=='15':y+=.024
-        if not title.startswith('Acro'): y+=(i-(len(loci)-1)/2)*.017
+        if title=='Telomeric Type I' and chrom=='15':y+=.024
+        if not title.startswith('Telomeric'): y+=(i-(len(loci)-1)/2)*.017
         marks[locus]=(xs[chrom],y)
         ax.plot([xs[chrom]-.03,xs[chrom]+.03],[y,y],color=color,lw=1.4)
     for i,l1 in enumerate(loci):

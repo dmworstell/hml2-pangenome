@@ -186,8 +186,8 @@ def display_locus_name(value: str) -> str:
     for suffix in ("_new", "_hg38"):
         label = label.removesuffix(suffix)
     return {
-        "acro_type1": "Acrocentric Type I",
-        "acro_type2": "Acrocentric Type II",
+        "acro_type1": "Telomeric Type I",
+        "acro_type2": "Telomeric Type II",
         "8p23.1_duplicate_group_unresolved": "8p23.1 duplicate group",
     }.get(label, label)
 
