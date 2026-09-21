@@ -1,0 +1,98 @@
+{
+  "age_interpretation_authorized": false,
+  "age_likelihood_contribution": "disabled",
+  "boundary_error_calibration_status": "not_versioned_production_blocker",
+  "correction": {
+    "complete_two_ltr_provirus_rows_added": 30,
+    "correction_receipt_file_sha256": "83fb9894ada90ebb3ea468e2c1a9b6340afb26fbb4121a1d01b38510486f9a2c",
+    "hg01352_h2_rejected_pair_removed": 1,
+    "locus": "HML-2_12q13.2",
+    "net_paired_accepted_change": 29
+  },
+  "cross_sample_tsd_discrepancy_correction": {
+    "fresh_junction_evidence_root": "historical_source/cluster/HML2_project/tsd_repair_20260808_0655/evidence_terminal_v9",
+    "short_fallback_rejected_physical_counts_by_locus": {
+      "HML-2_11q22.1": 27,
+      "HML-2_13p13": 1,
+      "HML-2_15p13b": 8
+    },
+    "short_fallback_rejected_physical_rows": 36,
+    "short_fallback_rejected_projected_counts_by_locus": {
+      "HML-2_11q22.1": 27,
+      "HML-2_13p13": 2,
+      "HML-2_15p13b": 16
+    },
+    "short_fallback_rejected_projected_rows": 45,
+    "single_terminal_raw6_physical_counts_by_locus": {
+      "HML-2_10q24.2": 584,
+      "HML-2_13p13": 231,
+      "HML-2_15p13b": 176,
+      "HML-2_16p11.2": 581,
+      "HML-2_19p12c": 266,
+      "HML-2_19p13.3": 152,
+      "HML-2_19q12": 589,
+      "HML-2_2q21.1": 104,
+      "HML-2_4q32.1": 589,
+      "HML-2_5q33.3": 1,
+      "HML-2_7q22.2": 588,
+      "HML-2_8q24.3a": 588
+    },
+    "single_terminal_raw6_physical_rows": 4449,
+    "single_terminal_raw6_projected_counts_by_locus": {
+      "HML-2_10q24.2": 584,
+      "HML-2_13p13": 462,
+      "HML-2_15p13b": 349,
+      "HML-2_16p11.2": 581,
+      "HML-2_19p12c": 266,
+      "HML-2_19p13.3": 152,
+      "HML-2_19q12": 589,
+      "HML-2_2q21.1": 104,
+      "HML-2_4q32.1": 589,
+      "HML-2_5q33.3": 1,
+      "HML-2_7q22.2": 588,
+      "HML-2_8q24.3a": 588
+    },
+    "single_terminal_raw6_projected_rows": 4853
+  },
+  "data_file": {
+    "fields": [
+      "Locus",
+      "ID_Full",
+      "5'_TSD",
+      "3'_TSD",
+      "mismatch_count",
+      "pair_admission",
+      "Strand",
+      "tsd_evidence_role",
+      "latent_insertion_tsd_relationship",
+      "presence_call",
+      "observation_state"
+    ],
+    "relative_path": "inputs/tsd_observations/paired_tsd_boundary_observations_v1.tsv",
+    "sha256": "f9b1505bc1ca46ea890b4df5f07a151c717c1da6a52099b2b27f1bd1fae035a9"
+  },
+  "observed_counts": {
+    "absent_noncarrier:UNAVAILABLE": 7574,
+    "physical_loci": 101,
+    "present:ONE_SIDED": 9055,
+    "present:PAIRED_ACCEPTED": 12531,
+    "present:UNAVAILABLE": 33087,
+    "rows": 63750,
+    "state_authority": {
+      "exact_copy_state_observation": 63140,
+      "exact_current_orf_result": 379,
+      "substituted_current_technical_cell": 231
+    },
+    "technical_missing:UNAVAILABLE": 1503
+  },
+  "schema": "hml2.paired-tsd-boundary-observations.v1",
+  "sources": {
+    "combined_tsd_authority": "inputs/orf_analysis/tsd_refresh_20260803/combined_hml2_orf_analysis.tsv",
+    "copy_state_observation_authority": "historical_source/cluster/HML2_project/runtime_deploys/tsd_repair_20260808_0655/combined_hml2_orf_analysis.CNV_WEIGHTED.v3r1.tsv",
+    "current_orf_results_root": "historical_source/cluster/HML2_project/orf_analysis_combined",
+    "fresh_junction_evidence_root": "historical_source/cluster/HML2_project/tsd_repair_20260808_0655/evidence_terminal_v9",
+    "raw_full_structure_correction_receipt": "inputs/orf_analysis/12q13_2_raw_full_structure_correction_v1.receipt.json"
+  },
+  "statistical_role": "raw_paired_boundary_measurements_only_no_age_interpretation",
+  "status": "cross_sample_tsd_discrepancy_correction_applied"
+}

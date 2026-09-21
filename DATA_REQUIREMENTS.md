@@ -1,8 +1,10 @@
 # Analysis inputs
 
-The version 0.3.0 derived-data archive is at https://doi.org/10.5281/zenodo.22783894.
+Use the derived-data asset matching the release version. Archived versions
+are available at https://doi.org/10.5281/zenodo.22759510. Version 0.4.0 is
+https://doi.org/10.5281/zenodo.22879194.
 It includes the corrected Rec catalog and complete testing families.
-Extract `HML2_derived_data_v0.3.0.zip` at the matching code repository root.
+Extract `HML2_derived_data_v0.4.0.zip` at the matching code repository root.
 Do not overwrite a later checkout with an older archive. Run
 `python scripts/restore_corrected_catalog.py` to extract both the current
 catalog and the preceding catalog used only for replay.
@@ -21,3 +23,7 @@ catalog and the preceding catalog used only for replay.
 Full sequence workflows additionally require MAFFT, minimap2, samtools, bedtools
 or odgi as specified by each workflow. R scripts declare their package imports.
 Python analysis dependencies are in `requirements-analysis.txt`.
+
+The September 21 revision includes compact sequence inputs under
+`analysis/september2026_revision/inputs/` and alignments in Tables S15–S17.
+See that analysis README for the tested commands and original extraction inputs.

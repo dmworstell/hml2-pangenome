@@ -1,0 +1,74 @@
+{
+  "S0001": [
+    "HG02818_pat_hprc_r2_v1.0.1_HML-2_12q24.33_MULTI_part2"
+  ],
+  "S0002": [
+    "HG03248_h1_HML-2_12q24.33_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0003": [
+    "HG03470_hap1_hprc_r2_v1.0.1_HML-2_12q24.33_MULTI_part4"
+  ],
+  "S0004": [
+    "NA19317_h1_HML-2_12q24.33_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "NA19384_h2_HML-2_12q24.33_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "NA19434_h2_HML-2_12q24.33_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0005": [
+    "HG03470_hap1_hprc_r2_v1.0.1_HML-2_12q24.33_MULTI_part2"
+  ],
+  "S0006": [
+    "NA20850_hap2_hprc_r2_v1.0.1_HML-2_12q24.33_MULTI_part2"
+  ],
+  "S0007": [
+    "HG02155_hap2_hprc_r2_v1.0.1_HML-2_12q24.33_MULTI_part2"
+  ],
+  "S0008": [
+    "HG00513_h1_HML-2_12q24.33_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0009": [
+    "HG01175_pat_hprc_r2_v1.0.1_HML-2_12q24.33_MULTI_part1"
+  ],
+  "S0010": [
+    "HG00731_h1_HML-2_12q24.33_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG01081_mat_hprc_r2_v1.0.1_HML-2_12q24.33_MULTI_part2"
+  ],
+  "S0011": [
+    "HG01255_mat_hprc_r2_v1.0.1_HML-2_12q24.33_MULTI_part2"
+  ],
+  "S0012": [
+    "NA19317_h1_HML-2_12q24.33_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "NA19384_h2_HML-2_12q24.33_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "NA19434_h2_HML-2_12q24.33_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0013": [
+    "HG03470_hap1_hprc_r2_v1.0.1_HML-2_12q24.33_MULTI_part1"
+  ],
+  "S0014": [
+    "HG02818_pat_hprc_r2_v1.0.1_HML-2_12q24.33_MULTI_part1"
+  ],
+  "S0015": [
+    "HG03248_h1_HML-2_12q24.33_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0016": [
+    "HG02155_hap2_hprc_r2_v1.0.1_HML-2_12q24.33_MULTI_part1"
+  ],
+  "S0017": [
+    "HG00513_h1_HML-2_12q24.33_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0018": [
+    "HG00731_h1_HML-2_12q24.33_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG01081_mat_hprc_r2_v1.0.1_HML-2_12q24.33_MULTI_part1"
+  ],
+  "S0019": [
+    "HG01255_mat_hprc_r2_v1.0.1_HML-2_12q24.33_MULTI_part1"
+  ],
+  "S0020": [
+    "HG01175_pat_hprc_r2_v1.0.1_HML-2_12q24.33_MULTI_part2"
+  ],
+  "S0021": [
+    "NA20850_hap2_hprc_r2_v1.0.1_HML-2_12q24.33_MULTI_part1"
+  ],
+  "S0022": [
+    "HG03470_hap1_hprc_r2_v1.0.1_HML-2_12q24.33_MULTI_part3"
+  ]
+}

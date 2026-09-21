@@ -38,3 +38,17 @@ project/manuscript/figures/comment_corrections_20260914/*
 !project/manuscript/figures/comment_corrections_20260914/Figure_3_restored_manifest.json
 !Supplementary_Data/Phylogeny/selected_sequence_clusters.fasta
 !project/results/acroc_resolved_20260914/phylogeny/selected_sequence_clusters.fasta
+
+# Retained sequence inputs for the September 2026 revision
+!Supplementary_Data/Table_S15/*.fa
+!Supplementary_Data/Table_S16/*.fa
+!Supplementary_Data/Table_S17/*.fa
+!Supplementary_Data/Table_S17/*.fasta
+!Supplementary_Data/Table_S14/phylogeny_review/*.fa
+!Supplementary_Data/Table_S14/phylogeny_review/*.fasta
+!analysis/september2026_revision/inputs/**/*.fa
+!analysis/september2026_revision/inputs/**/*.fasta
+!analysis/september2026_revision/inputs/**/*.gz
+
+# Private collaborator inputs stay in the local/Box manuscript package.
+Supplementary_Data/Panel_data/fiberseq_resolved/

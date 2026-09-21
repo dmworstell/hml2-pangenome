@@ -1,0 +1,388 @@
+{
+  "status": "PASS",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "groups": [
+    {
+      "group": "arrays",
+      "status": "PASS",
+      "checks": [
+        {
+          "file": "Table_S15_pairwise_nucleotide_differences.tsv",
+          "rows": 3048,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "Table_S15_array_summary.tsv",
+          "rows": 2312,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "Table_S15_variable_sites.tsv",
+          "rows": 1846,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "Table_S15_indel_runs.tsv",
+          "rows": 212,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "Table_S15_duplication_order.tsv",
+          "rows": 28,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "Table_S15_locus_summary.tsv",
+          "rows": 96,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "sequence_boundary_validation.tsv",
+          "rows": 617,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "Table_S15_site_frequencies.tsv",
+          "rows": 87,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "Table_S15_conditional_clock_sensitivity.tsv",
+          "rows": 381,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        }
+      ]
+    },
+    {
+      "group": "solo",
+      "status": "PASS",
+      "checks": [
+        {
+          "file": "solo_LTR_diversity_comparison.tsv",
+          "rows": 13,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "solo_LTR_diversity_exclusions.tsv",
+          "rows": 12,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "solo_comparison_LTR_boundaries.tsv",
+          "rows": 120,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "Table_S16B_expected_differences.tsv",
+          "rows": 10,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        }
+      ]
+    },
+    {
+      "group": "type1",
+      "status": "PASS",
+      "checks": [
+        {
+          "file": "window_pairwise_differences.tsv",
+          "rows": 5035,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "window_summary.tsv",
+          "rows": 28,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "window_callability.tsv",
+          "rows": 315,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "candidate_similarity_to_TypeI.tsv",
+          "rows": 44,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "nearest_type2_by_window.tsv",
+          "rows": 210,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "human_cassette_site_frequencies.tsv",
+          "rows": 5172,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "primate_species_counts.tsv",
+          "rows": 6,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "human_full_cassette_6000_7293.aligned.fa",
+          "comparison": "identical bytes"
+        },
+        {
+          "file": "primate_full_cassette_6000_7293.aligned.fa",
+          "comparison": "identical bytes"
+        },
+        {
+          "file": "human_1001bp_cassette_flanks.aligned.fa",
+          "comparison": "identical bytes"
+        },
+        {
+          "file": "human_cassette_consensus.fa",
+          "comparison": "identical bytes"
+        }
+      ]
+    },
+    {
+      "group": "phylogeny",
+      "status": "PASS",
+      "checks": [
+        {
+          "file": "bootstrap_splits.tsv",
+          "rows": 294,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "bootstrap_nearest_loci.tsv",
+          "rows": 64,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "bootstrap_nearest_loci_replicates.tsv",
+          "rows": 6000,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "pairwise_differences_by_region.tsv",
+          "rows": 41,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "pairwise_differences_network.tsv",
+          "rows": 13,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "tree_pairwise_distances.tsv",
+          "rows": 22494,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "focal_tree_distance_comparisons.tsv",
+          "rows": 1635,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "network_sequence_denominators.tsv",
+          "rows": 41,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        }
+      ]
+    },
+    {
+      "group": "tsd",
+      "status": "PASS",
+      "checks": [
+        {
+          "file": "Figure_S7_TSD_per_locus.tsv",
+          "rows": 103,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "Figure_S7_TSD_population_denominators.tsv",
+          "rows": 6,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "Figure_S7_TSD_sequence_pairs.tsv",
+          "rows": 33,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "Figure_S7_record_level_boundary_calls.tsv",
+          "rows": 59656,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "manuscript_terminal_boundary_measurements.tsv",
+          "rows": 61936,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "manuscript_TSD_unmatched_records.tsv",
+          "rows": 1453,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "comment90_current_boundary_disposition.tsv",
+          "rows": 5,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "comment90_retained_terminal_evidence.tsv",
+          "rows": 2385,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        },
+        {
+          "file": "Fiberseq_cell_type_roster.tsv",
+          "rows": 39,
+          "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+        }
+      ]
+    }
+  ],
+  "checked_outputs": 41,
+  "figures": [
+    {
+      "file": "arrays/Figure_S6_array_nucleotide_variation.pdf",
+      "pages": 1,
+      "readable_text_present": true
+    },
+    {
+      "file": "solo/Figure_S22_8q11_LTR_diversity.pdf",
+      "pages": 1,
+      "readable_text_present": true
+    },
+    {
+      "file": "type1/Figure_5_type1_persistent_recombining_cassette.pdf",
+      "pages": 1,
+      "readable_text_present": true
+    },
+    {
+      "file": "type1/Figure_S17_cassette_consensus_and_similarity.pdf",
+      "pages": 1,
+      "readable_text_present": true
+    },
+    {
+      "file": "type1/Supplementary_Alignment_1.pdf",
+      "pages": 24,
+      "readable_text_present": true
+    },
+    {
+      "file": "phylogeny/Figure_3.pdf",
+      "pages": 1,
+      "readable_text_present": true
+    },
+    {
+      "file": "tsd/Figure_S7_corrected.pdf",
+      "pages": 1,
+      "readable_text_present": true
+    },
+    {
+      "file": "tsd/Figure_S7A_corrected.pdf",
+      "pages": 1,
+      "readable_text_present": true
+    },
+    {
+      "file": "tsd/Figure_S7B_corrected.pdf",
+      "pages": 1,
+      "readable_text_present": true
+    }
+  ],
+  "mutable_runtime_gate": "PASS",
+  "command": "python analysis/september2026_revision/reproduce.py --figures --out <new-output-directory>",
+  "run_date": "2026-09-21",
+  "upstream_scope": "Retained biological sequence/observation inputs, not a rerun of original genome extraction or raw-read pipelines.",
+  "terminology_followup": {
+    "status": "PASS",
+    "scope": "Figure 3 group display labels and shared locus-name display mapping; no biological identifiers or numerical inputs changed",
+    "date": "2026-09-21",
+    "changed_group_labels": [
+      "Telomeric Type I",
+      "Telomeric Type II"
+    ],
+    "historical_ids_preserved": [
+      "acro_type1",
+      "acro_type2"
+    ],
+    "unchanged_numerical_input_files": 20,
+    "pdf_pages": 1,
+    "retained_tree_locus_counts": {
+      "LTR": 82,
+      "Pol": 70
+    },
+    "visual_inspection": "Full PNG inspected; complete tree labels, network connections and chromosome schematic retained",
+    "other_supplementary_pdfs_with_acrocentric_labels": [],
+    "mutable_runtime_gate": "PASS",
+    "assets": [
+      {
+        "file": "Supplementary_Data/Table_S14/phylogeny_review/Figure_3.png",
+        "sha256": "9abe9ab7c9e916a48e187b76c9d06b28636268028c16b45925110262db24560e"
+      },
+      {
+        "file": "Supplementary_Data/Table_S14/phylogeny_review/Figure_3.pdf",
+        "sha256": "2a50bc9d1ccb1c923d632149c8b332fbcabff6667fd68d196653670c2d54deed"
+      },
+      {
+        "file": "Supplementary_Data/Table_S14/phylogeny_review/Figure_3.svg",
+        "sha256": "abba41c5534d67695f4cef4c23f5c59886e945b76560223e21e4aa83911a97d3"
+      }
+    ],
+    "requirements": "Standalone Python 3.12 environment pinned to actually tested NumPy 2.3.5; root compact workflow NumPy 2.5.3 environment is explicitly separate"
+  },
+  "public_fiberseq_input_followup": {
+    "status": "PASS",
+    "date": "2026-09-21",
+    "input": "inputs/tsd/fiberseq_donor_ids.tsv",
+    "columns": [
+      "Individual_ID"
+    ],
+    "unique_donors": 39,
+    "bytes": 324,
+    "source_rows_before_projection": 754,
+    "excluded": "All collaborator locus, haplotype-count, actuation and coverage measurements",
+    "checks": [
+      {
+        "file": "Figure_S7_TSD_per_locus.tsv",
+        "rows": 103,
+        "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+      },
+      {
+        "file": "Figure_S7_TSD_population_denominators.tsv",
+        "rows": 6,
+        "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+      },
+      {
+        "file": "Figure_S7_TSD_sequence_pairs.tsv",
+        "rows": 33,
+        "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+      },
+      {
+        "file": "Figure_S7_record_level_boundary_calls.tsv",
+        "rows": 59656,
+        "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+      },
+      {
+        "file": "manuscript_terminal_boundary_measurements.tsv",
+        "rows": 61936,
+        "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+      },
+      {
+        "file": "manuscript_TSD_unmatched_records.tsv",
+        "rows": 1453,
+        "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+      },
+      {
+        "file": "comment90_current_boundary_disposition.tsv",
+        "rows": 5,
+        "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+      },
+      {
+        "file": "comment90_retained_terminal_evidence.tsv",
+        "rows": 2385,
+        "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+      },
+      {
+        "file": "Fiberseq_cell_type_roster.tsv",
+        "rows": 39,
+        "comparison": "all fields equal; float tolerance 1e-12 relative / 1e-14 absolute"
+      }
+    ],
+    "mutable_runtime_gate": "PASS",
+    "new_input_closure_scan": "No mean_haplotype_actuation, maximum_haplotype_actuation, total_fire_coverage or pooled_individual_actuation field signatures remain; the primate candidate-ledger query_union_coverage field is an unrelated genome-alignment metric.",
+    "input_manifest_entries_verified": 41
+  }
+}

@@ -1,0 +1,756 @@
+{
+  "S0001": [
+    "HG00741_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0002": [
+    "HG02554_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0003": [
+    "HG02559_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02984_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03453_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03470_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0004": [
+    "NA19331_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0005": [
+    "HG02587_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG02717_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03209_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03456_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "NA19129_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0006": [
+    "HG03041_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA19443_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0007": [
+    "HG02554_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0008": [
+    "HG00268_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0009": [
+    "NA19043_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0010": [
+    "HG02257_mat_hprc_r2_v1.1.0_HML-2_7p22.1_MULTI_part1",
+    "NA18522_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA19159_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA19384_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0011": [
+    "HG02647_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0012": [
+    "HG02280_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0013": [
+    "HG03009_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0014": [
+    "NA19347_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0015": [
+    "HG01596_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG02074_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA18967_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0016": [
+    "HG03732_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "NA20850_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0017": [
+    "NA19700_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0018": [
+    "HG01960_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02451_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA18508_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA19239_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "NA19338_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA19909_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0019": [
+    "NA20752_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0020": [
+    "HG03688_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA21106_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0021": [
+    "HG01596_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0022": [
+    "HG02976_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0023": [
+    "NA18952_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0024": [
+    "HG01346_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0025": [
+    "HG00232_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG00235_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG00290_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG00344_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG005_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG00513_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG00513_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG00514_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG00597_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG00609_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG00673_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG00706_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG00735_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG00864_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG01099_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01346_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01433_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01505_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG01530_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01784_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01786_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01884_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01943_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01969_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01975_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02004_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02056_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02080_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02080_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02145_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02155_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02165_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02273_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02293_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02293_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02391_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02486_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02492_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG02698_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02841_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03471_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03516_mat_hprc_r2_v1.1.0_HML-2_7p22.1_MULTI_part1",
+    "HG03654_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03704_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03784_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03784_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03831_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03831_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03927_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG04160_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG04187_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG04217_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG06807_mat_v1.0.genbank_HML-2_7p22.1_MULTI_part1",
+    "NA18565_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA18620_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA18620_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA18939_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "NA18944_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA18948_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA18952_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA18959_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA18960_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA18974_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA18976_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA20503_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA20509_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "NA20847_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0026": [
+    "NA18989_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0027": [
+    "NA18939_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0028": [
+    "HG01150_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02055_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02083_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02258_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02280_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02486_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02572_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02583_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02615_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02615_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02666_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG02668_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02717_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02723_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02769_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG02886_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03130_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03270_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03369_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03369_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03371_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG03521_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03579_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03583_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG04115_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA19043_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA19238_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "NA19239_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "NA19240_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA19240_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA19317_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "NA19331_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "NA19384_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "NA20282_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA20503_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0029": [
+    "HG01496_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02282_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG02630_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02886_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03065_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG03471_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03583_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA18906_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA19036_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA19434_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "NA20129_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0030": [
+    "HG00512_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG00514_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG02178_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0031": [
+    "HG00673_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02027_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA18976_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA19087_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0032": [
+    "HG03456_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0033": [
+    "HG02735_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0034": [
+    "HG00423_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0035": [
+    "NA21309_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0036": [
+    "HG01346_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0037": [
+    "HG00558_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0038": [
+    "HG03669_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03834_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA21110_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0039": [
+    "HG00738_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0040": [
+    "HG02011_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0041": [
+    "HG01243_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02258_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02809_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA20355_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0042": [
+    "HG03927_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0043": [
+    "HG00126_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG00323_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01258_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0044": [
+    "HG01940_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0045": [
+    "HG00268_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0046": [
+    "HG00099_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG00133_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG00140_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG00232_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG00438_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01074_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01106_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01106_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01109_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01150_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01167_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01252_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01358_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01358_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01505_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG01573_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG01928_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01940_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01943_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01952_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01975_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01978_pat_hprc_r2_v1.1.0_HML-2_7p22.1_MULTI_part2",
+    "HG01981_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01993_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01993_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02004_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02106_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG02148_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02148_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02273_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02300_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02300_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03732_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG04115_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA12329_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "NA18974_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA18989_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "NA19682_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA19682_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA19776_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA20762_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA20799_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA20806_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA20827_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA21102_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0047": [
+    "HG00609_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0048": [
+    "HG00099_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG00133_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG00232_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG00438_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG00609_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01074_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01106_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01106_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01150_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01167_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01252_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01358_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01358_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01457_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG01457_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG01457_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG01457_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part3",
+    "HG01457_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part4",
+    "HG01505_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG01573_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG01928_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01940_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01940_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01943_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01952_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01975_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01978_pat_hprc_r2_v1.1.0_HML-2_7p22.1_MULTI_part1",
+    "HG01981_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01993_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01993_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02004_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02106_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG02148_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02273_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02300_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02300_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02738_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG04115_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA12329_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "NA18974_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA18989_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "NA19682_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA19682_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA19776_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA20762_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA20799_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA20806_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA21102_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0049": [
+    "HG01960_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0050": [
+    "HG00126_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG00323_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01258_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0051": [
+    "NA20806_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0052": [
+    "HG03732_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0053": [
+    "HG02148_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0054": [
+    "NA21309_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0055": [
+    "HG01457_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0056": [
+    "HG00140_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01109_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA20827_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0057": [
+    "NA20806_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0058": [
+    "HG02257_mat_hprc_r2_v1.1.0_HML-2_7p22.1_MULTI_part2",
+    "NA18522_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA19159_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA19384_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0059": [
+    "HG02738_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0060": [
+    "HG02514_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0061": [
+    "HG02841_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part3",
+    "HG03471_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part4",
+    "HG03516_mat_hprc_r2_v1.1.0_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0062": [
+    "HG02841_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03471_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03471_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part3"
+  ],
+  "S0063": [
+    "HG03688_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0064": [
+    "HG02027_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0065": [
+    "HG03784_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0066": [
+    "NA20752_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0067": [
+    "NA18974_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0068": [
+    "HG00290_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0069": [
+    "HG00512_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part3",
+    "HG00514_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part3",
+    "HG02178_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part4",
+    "HG02514_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0070": [
+    "HG02698_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0071": [
+    "HG01975_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA20509_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0072": [
+    "HG00513_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG01530_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01786_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA21106_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0073": [
+    "HG00512_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG00514_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG02018_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG02040_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02059_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG02178_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02178_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part3",
+    "HG02293_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part3",
+    "NA18565_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0074": [
+    "HG02293_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0075": [
+    "NA18976_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0076": [
+    "HG005_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0077": [
+    "HG00232_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG00235_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG00344_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG00513_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG00514_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG00558_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG00558_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG00597_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG00609_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG00673_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG00864_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG01252_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01433_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01530_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01596_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG01596_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG01784_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01884_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01943_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01969_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02004_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02018_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part3",
+    "HG02040_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part3",
+    "HG02056_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02059_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part3",
+    "HG02074_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02080_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02080_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02145_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02165_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02273_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02391_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02492_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG02735_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03009_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG03654_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03784_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03831_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03831_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG04160_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG04217_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "NA18620_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA18620_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA18939_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "NA18944_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA18948_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA18952_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA18952_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA18960_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA18967_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA20847_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0078": [
+    "HG00423_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0079": [
+    "HG02293_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part4"
+  ],
+  "S0080": [
+    "NA18959_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0081": [
+    "HG00735_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG00741_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01099_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01346_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01505_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG01786_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG06807_mat_v1.0.genbank_HML-2_7p22.1_MULTI_part2",
+    "NA20503_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0082": [
+    "HG02155_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0083": [
+    "HG03732_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "NA20850_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0084": [
+    "HG00706_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0085": [
+    "HG03704_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0086": [
+    "HG00423_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG00673_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02027_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part3",
+    "NA18976_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA19087_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0087": [
+    "HG02486_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG04187_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0088": [
+    "HG02293_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0089": [
+    "NA18989_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0090": [
+    "NA18939_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0091": [
+    "HG01960_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0092": [
+    "HG01252_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0093": [
+    "HG03453_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03470_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0094": [
+    "HG03041_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "NA19443_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0095": [
+    "HG02559_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02587_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG02717_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02984_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03209_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG03456_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "NA19129_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "NA19331_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0096": [
+    "HG01530_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG01786_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0097": [
+    "HG01890_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG01891_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0098": [
+    "HG03371_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0099": [
+    "HG02055_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02280_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02486_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02615_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02666_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG02668_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02723_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02976_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03369_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03371_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG03456_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG03521_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03583_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA19043_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA19043_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA19238_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "NA19239_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "NA19240_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA19240_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA19317_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0100": [
+    "HG03130_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0101": [
+    "HG02769_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0102": [
+    "HG00321_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1"
+  ],
+  "S0103": [
+    "HG02583_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA19384_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0104": [
+    "NA19347_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "NA19700_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0105": [
+    "HG02258_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0106": [
+    "HG03371_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0107": [
+    "HG03834_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part3",
+    "NA21110_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part3"
+  ],
+  "S0108": [
+    "HG00321_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG00738_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01150_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02615_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02886_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03669_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part3",
+    "NA20282_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part3",
+    "NA20503_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0109": [
+    "HG04115_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part6"
+  ],
+  "S0110": [
+    "HG03669_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03834_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG04115_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG04115_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part3",
+    "HG04115_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part4",
+    "HG04115_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part5",
+    "NA20282_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA21110_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0111": [
+    "HG01890_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG01891_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02572_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02717_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03270_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03369_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03579_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA19331_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0112": [
+    "HG02083_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0113": [
+    "HG02451_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA18508_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0114": [
+    "HG02280_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0115": [
+    "HG01960_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA19239_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "NA19338_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA19909_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2"
+  ],
+  "S0116": [
+    "HG01243_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG01496_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02011_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part3",
+    "HG02258_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02282_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG02630_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02647_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02809_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG02886_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03065_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG03471_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "HG03583_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA18906_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA19036_hap1_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA19434_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "NA20129_pat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part2",
+    "NA20355_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0117": [
+    "HG02011_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ],
+  "S0118": [
+    "HG00423_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG00558_mat_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02018_h2_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG02040_hap2_hprc_r2_v1.0.1_HML-2_7p22.1_MULTI_part1",
+    "HG02059_h1_HML-2_7p22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ]
+}

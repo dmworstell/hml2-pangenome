@@ -1,0 +1,97 @@
+{
+  "callable_locus_fraction": 0.9,
+  "pairwise_overlap_fraction": 0.8,
+  "resamples": 2000,
+  "seed": 20260712,
+  "site_callable_TypeI_fraction": 0.8,
+  "windows": [
+    {
+      "key": "backbone_1000_2000",
+      "kind": "backbone_control",
+      "label": "B1",
+      "length": 1000,
+      "segments": [
+        [
+          1000,
+          2000
+        ]
+      ]
+    },
+    {
+      "key": "backbone_2000_3000",
+      "kind": "backbone_control",
+      "label": "B2",
+      "length": 1000,
+      "segments": [
+        [
+          2000,
+          3000
+        ]
+      ]
+    },
+    {
+      "key": "backbone_3000_4000",
+      "kind": "backbone_control",
+      "label": "B3",
+      "length": 1000,
+      "segments": [
+        [
+          3000,
+          4000
+        ]
+      ]
+    },
+    {
+      "key": "backbone_4000_5000",
+      "kind": "backbone_control",
+      "label": "B4",
+      "length": 1000,
+      "segments": [
+        [
+          4000,
+          5000
+        ]
+      ]
+    },
+    {
+      "key": "backbone_5000_6000",
+      "kind": "backbone_control",
+      "label": "B5",
+      "length": 1000,
+      "segments": [
+        [
+          5000,
+          6000
+        ]
+      ]
+    },
+    {
+      "key": "backbone_7293_8293",
+      "kind": "backbone_control",
+      "label": "B6",
+      "length": 1000,
+      "segments": [
+        [
+          7293,
+          8293
+        ]
+      ]
+    },
+    {
+      "key": "type1_cassette_flanks",
+      "kind": "type1_cassette_flanks",
+      "label": "Cass.",
+      "length": 1001,
+      "segments": [
+        [
+          6000,
+          6501
+        ],
+        [
+          6793,
+          7293
+        ]
+      ]
+    }
+  ]
+}

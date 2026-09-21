@@ -1,0 +1,254 @@
+{
+  "title": "Table S16. Solo-LTR diversity and simple divergence expectations at 8q11.23",
+  "A_solo_LTR_comparison": [
+    {
+      "locus": "3q13.2",
+      "n": "45",
+      "available_sequences_before_LTR_filter": "45",
+      "length": "968",
+      "common_callable_LTR_bases": "960",
+      "unique_sequences": "1",
+      "dominant_count": "45",
+      "different_base_pairs": "0",
+      "callable_base_pairs": "950400",
+      "pi": "0.0",
+      "mean_pairwise_differences": "0.0",
+      "gap_or_ambiguous_bases_excluded": "360"
+    },
+    {
+      "locus": "12q14.1",
+      "n": "241",
+      "available_sequences_before_LTR_filter": "241",
+      "length": "968",
+      "common_callable_LTR_bases": "968",
+      "unique_sequences": "6",
+      "dominant_count": "230",
+      "different_base_pairs": "2598",
+      "callable_base_pairs": "27994560",
+      "pi": "9.280374472754707e-05",
+      "mean_pairwise_differences": "0.08983402489626556",
+      "gap_or_ambiguous_bases_excluded": "0"
+    },
+    {
+      "locus": "8q11.23_new",
+      "n": "461",
+      "available_sequences_before_LTR_filter": "461",
+      "length": "968",
+      "common_callable_LTR_bases": "968",
+      "unique_sequences": "13",
+      "dominant_count": "432",
+      "different_base_pairs": "13250",
+      "callable_base_pairs": "102637040",
+      "pi": "0.00012909569488753767",
+      "mean_pairwise_differences": "0.12496463265113647",
+      "gap_or_ambiguous_bases_excluded": "0"
+    },
+    {
+      "locus": "1p31.1a",
+      "n": "45",
+      "available_sequences_before_LTR_filter": "45",
+      "length": "968",
+      "common_callable_LTR_bases": "963",
+      "unique_sequences": "3",
+      "dominant_count": "41",
+      "different_base_pairs": "170",
+      "callable_base_pairs": "953370",
+      "pi": "0.00017831482005936834",
+      "mean_pairwise_differences": "0.1717171717171717",
+      "gap_or_ambiguous_bases_excluded": "225"
+    },
+    {
+      "locus": "12q13.2",
+      "n": "74",
+      "available_sequences_before_LTR_filter": "74",
+      "length": "968",
+      "common_callable_LTR_bases": "968",
+      "unique_sequences": "5",
+      "dominant_count": "45",
+      "different_base_pairs": "1578",
+      "callable_base_pairs": "2614568",
+      "pi": "0.000603541388099296",
+      "mean_pairwise_differences": "0.5842280636801185",
+      "gap_or_ambiguous_bases_excluded": "0"
+    },
+    {
+      "locus": "5q11.2",
+      "n": "462",
+      "available_sequences_before_LTR_filter": "462",
+      "length": "968",
+      "common_callable_LTR_bases": "965",
+      "unique_sequences": "12",
+      "dominant_count": "308",
+      "different_base_pairs": "67676",
+      "callable_base_pairs": "102763815",
+      "pi": "0.0006585586570525822",
+      "mean_pairwise_differences": "0.6355091040557418",
+      "gap_or_ambiguous_bases_excluded": "1386"
+    },
+    {
+      "locus": "19p12d",
+      "n": "461",
+      "available_sequences_before_LTR_filter": "461",
+      "length": "968",
+      "common_callable_LTR_bases": "938",
+      "unique_sequences": "11",
+      "dominant_count": "214",
+      "different_base_pairs": "98228",
+      "callable_base_pairs": "99456140",
+      "pi": "0.0009876514411277172",
+      "mean_pairwise_differences": "0.9264170517777988",
+      "gap_or_ambiguous_bases_excluded": "13830"
+    },
+    {
+      "locus": "5q33.3",
+      "n": "24",
+      "available_sequences_before_LTR_filter": "24",
+      "length": "968",
+      "common_callable_LTR_bases": "958",
+      "unique_sequences": "4",
+      "dominant_count": "10",
+      "different_base_pairs": "280",
+      "callable_base_pairs": "266308",
+      "pi": "0.0010514141520344864",
+      "mean_pairwise_differences": "1.0144927536231885",
+      "gap_or_ambiguous_bases_excluded": "40"
+    },
+    {
+      "locus": "6q14.1",
+      "n": "67",
+      "available_sequences_before_LTR_filter": "67",
+      "length": "968",
+      "common_callable_LTR_bases": "960",
+      "unique_sequences": "7",
+      "dominant_count": "41",
+      "different_base_pairs": "2964",
+      "callable_base_pairs": "2122560",
+      "pi": "0.0013964269561284486",
+      "mean_pairwise_differences": "1.3405698778833106",
+      "gap_or_ambiguous_bases_excluded": "536"
+    },
+    {
+      "locus": "1p31.1b",
+      "n": "365",
+      "available_sequences_before_LTR_filter": "365",
+      "length": "968",
+      "common_callable_LTR_bases": "967",
+      "unique_sequences": "21",
+      "dominant_count": "151",
+      "different_base_pairs": "96361",
+      "callable_base_pairs": "64303876",
+      "pi": "0.0014985255321156691",
+      "mean_pairwise_differences": "1.4505645039891615",
+      "gap_or_ambiguous_bases_excluded": "1"
+    },
+    {
+      "locus": "11q22.1",
+      "n": "219",
+      "available_sequences_before_LTR_filter": "219",
+      "length": "968",
+      "common_callable_LTR_bases": "968",
+      "unique_sequences": "13",
+      "dominant_count": "146",
+      "different_base_pairs": "35526",
+      "callable_base_pairs": "23107128",
+      "pi": "0.001537447665499581",
+      "mean_pairwise_differences": "1.4882493402035943",
+      "gap_or_ambiguous_bases_excluded": "0"
+    },
+    {
+      "locus": "10p12.1",
+      "n": "22",
+      "available_sequences_before_LTR_filter": "22",
+      "length": "968",
+      "common_callable_LTR_bases": "968",
+      "unique_sequences": "5",
+      "dominant_count": "10",
+      "different_base_pairs": "375",
+      "callable_base_pairs": "223608",
+      "pi": "0.0016770419662981647",
+      "mean_pairwise_differences": "1.6233766233766234",
+      "gap_or_ambiguous_bases_excluded": "0"
+    },
+    {
+      "locus": "22q11.21",
+      "n": "22",
+      "available_sequences_before_LTR_filter": "22",
+      "length": "968",
+      "common_callable_LTR_bases": "968",
+      "unique_sequences": "6",
+      "dominant_count": "10",
+      "different_base_pairs": "436",
+      "callable_base_pairs": "223608",
+      "pi": "0.0019498407928159995",
+      "mean_pairwise_differences": "1.8874458874458875",
+      "gap_or_ambiguous_bases_excluded": "0"
+    }
+  ],
+  "B_968bp_pair_expectations": [
+    {
+      "time_years": 200000,
+      "pairwise_rate_per_site_per_My": 0.0024,
+      "expected_differences_968bp": 0.46463999999999994,
+      "probability_zero": 0.6283612745355488
+    },
+    {
+      "time_years": 200000,
+      "pairwise_rate_per_site_per_My": 0.0045,
+      "expected_differences_968bp": 0.8711999999999999,
+      "probability_zero": 0.4184491089130355
+    },
+    {
+      "time_years": 300000,
+      "pairwise_rate_per_site_per_My": 0.0024,
+      "expected_differences_968bp": 0.6969599999999999,
+      "probability_zero": 0.49809722006329177
+    },
+    {
+      "time_years": 300000,
+      "pairwise_rate_per_site_per_My": 0.0045,
+      "expected_differences_968bp": 1.3068,
+      "probability_zero": 0.2706848635185634
+    },
+    {
+      "time_years": 500000,
+      "pairwise_rate_per_site_per_My": 0.0024,
+      "expected_differences_968bp": 1.1616,
+      "probability_zero": 0.3129850040415837
+    },
+    {
+      "time_years": 500000,
+      "pairwise_rate_per_site_per_My": 0.0045,
+      "expected_differences_968bp": 2.178,
+      "probability_zero": 0.11326783993558948
+    },
+    {
+      "time_years": 1000000,
+      "pairwise_rate_per_site_per_My": 0.0024,
+      "expected_differences_968bp": 2.3232,
+      "probability_zero": 0.09795961275491015
+    },
+    {
+      "time_years": 1000000,
+      "pairwise_rate_per_site_per_My": 0.0045,
+      "expected_differences_968bp": 4.356,
+      "probability_zero": 0.01282960356367432
+    },
+    {
+      "time_years": 2000000,
+      "pairwise_rate_per_site_per_My": 0.0024,
+      "expected_differences_968bp": 4.6464,
+      "probability_zero": 0.009596085731091957
+    },
+    {
+      "time_years": 2000000,
+      "pairwise_rate_per_site_per_My": 0.0045,
+      "expected_differences_968bp": 8.712,
+      "probability_zero": 0.0001645987276010448
+    }
+  ],
+  "C_two_difference_example": {
+    "expected_differences": 2,
+    "probability_zero": 0.1353352832366127
+  },
+  "interpretation": "Within-human solo-LTR diversity and paired proviral LTR divergence use different pairs of sequences and different historical intervals. No insertion age or selection significance is inferred from these descriptive comparisons."
+}

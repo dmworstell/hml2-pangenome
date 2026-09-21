@@ -1,0 +1,44 @@
+{
+  "S0001": [
+    "HG04115_pat_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part1"
+  ],
+  "S0002": [
+    "HG03470_hap1_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part1"
+  ],
+  "S0003": [
+    "HG03470_hap1_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part2"
+  ],
+  "S0004": [
+    "HG01167_hap2_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part3",
+    "HG03009_h1_HML-2_1p31.1b_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part3"
+  ],
+  "S0005": [
+    "HG03732_h2_HML-2_1p31.1b_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0006": [
+    "HG00329_hap1_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part1",
+    "HG00329_hap1_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part2",
+    "HG00329_hap1_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part3",
+    "HG00329_hap1_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part4",
+    "HG01167_hap2_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part1",
+    "HG01167_hap2_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part2",
+    "HG03009_h1_HML-2_1p31.1b_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "HG03009_h1_HML-2_1p31.1b_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG03017_pat_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part1",
+    "HG03017_pat_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part2",
+    "HG03732_h2_HML-2_1p31.1b_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "HG04115_pat_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part2",
+    "NA21093_hap2_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part1",
+    "NA21093_hap2_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part2",
+    "NA21093_hap2_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part3",
+    "NA21106_hap2_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part1",
+    "NA21106_hap2_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part2",
+    "NA21106_hap2_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part3"
+  ],
+  "S0007": [
+    "HG03017_pat_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part3",
+    "HG04115_pat_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part3",
+    "NA21093_hap2_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part4",
+    "NA21106_hap2_hprc_r2_v1.0.1_HML-2_1p31.1b_MULTI_part4"
+  ]
+}

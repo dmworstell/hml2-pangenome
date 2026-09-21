@@ -1,0 +1,14 @@
+{
+  "S0001": [
+    "HG02647_mat_hprc_r2_v1.0.1_HML-2_11q22.1_MULTI_part2",
+    "NA19331_h1_HML-2_11q22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2",
+    "NA19338_hap2_hprc_r2_v1.0.1_HML-2_11q22.1_MULTI_part2"
+  ],
+  "S0002": [
+    "HG02647_mat_hprc_r2_v1.0.1_HML-2_11q22.1_MULTI_part1"
+  ],
+  "S0003": [
+    "NA19331_h1_HML-2_11q22.1_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1",
+    "NA19338_hap2_hprc_r2_v1.0.1_HML-2_11q22.1_MULTI_part1"
+  ]
+}

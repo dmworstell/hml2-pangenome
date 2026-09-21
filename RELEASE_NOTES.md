@@ -1,14 +1,17 @@
-# HML-2 pangenome v0.3.0
+# HML-2 pangenome v0.4.0
 
-Corrected manuscript code and derived data, including the 15 September review.
+Code and supporting data for the manuscript revision of 21 September 2026.
 
-- Corrected Rec exon boundary and a full replay of 36,073 Rec-bearing records.
-- Consistent short-product filtering and updated coding summaries for 292 donors.
-- Complete multiple-testing families and corrected-catalog functional refits.
-- Missing 7p22.1 genotype kept separate from zero-copy calls.
-- Regional tree comparisons restricted to shared taxa, and a Figure S17 label crosswalk.
-- Retained extracted HML-2 sequences, phylogenetic inputs and phenotype-analysis inputs.
-- Checksummed file manifests and regression tests.
-- MIT license for original code and CC BY 4.0 for original derived data.
+- Nucleotide and gap counts for 617 copies from 289 tandem arrays, with conditional duplication-time calculations.
+- Type I cassette comparisons using matched Type II subfamilies, human and ape alignments, and the complete supplementary sequence alignment.
+- Solo-LTR diversity comparisons and expected nucleotide differences.
+- Phylogenetic bootstrap support and nucleotide-difference quantification for the revised Figure 3.
+- Terminal-junction evidence with candidate TSD differences evaluated across 4–6-base lengths. The unsupported 3q12.3 paired-TSD population result is withdrawn.
+- The public ONT read-source index and updated provenance.
+- Portable reproduction commands and retained sequence inputs for the revised analyses.
 
-Code and derived-data archive: https://doi.org/10.5281/zenodo.22783894
+The corrected catalog and earlier review corrections are retained. This release adds no ORF-break dating analysis. Original code is MIT licensed. Original derived data are CC BY 4.0. Third-party sources retain their existing terms.
+
+Archive DOI: https://doi.org/10.5281/zenodo.22879194
+
+Final figure and table numbers are mapped in [FIGURE_TABLE_MAP.md](FIGURE_TABLE_MAP.md).

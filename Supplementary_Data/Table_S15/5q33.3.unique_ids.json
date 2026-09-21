@@ -1,0 +1,24 @@
+{
+  "S0001": [
+    "HG00290_hap2_hprc_r2_v1.0.1_HML-2_5q33.3_MULTI_part2",
+    "HG02738_pat_hprc_r2_v1.0.1_HML-2_5q33.3_MULTI_part2"
+  ],
+  "S0002": [
+    "HG00290_hap2_hprc_r2_v1.0.1_HML-2_5q33.3_MULTI_part3",
+    "HG01346_pat_hprc_r2_v1.0.1_HML-2_5q33.3_MULTI_part2",
+    "HG02738_pat_hprc_r2_v1.0.1_HML-2_5q33.3_MULTI_part3"
+  ],
+  "S0003": [
+    "HG01346_pat_hprc_r2_v1.0.1_HML-2_5q33.3_MULTI_part1"
+  ],
+  "S0004": [
+    "HG00290_hap2_hprc_r2_v1.0.1_HML-2_5q33.3_MULTI_part1",
+    "HG02738_pat_hprc_r2_v1.0.1_HML-2_5q33.3_MULTI_part1"
+  ],
+  "S0005": [
+    "NA19705_h1_HML-2_5q33.3_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part1"
+  ],
+  "S0006": [
+    "NA19705_h1_HML-2_5q33.3_graph_hgsvc3-2024-02-23-mc-chm13_MULTI_part2"
+  ]
+}

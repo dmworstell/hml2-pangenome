@@ -1,8 +1,9 @@
 # Structural polymorphism and population-variable coding capacity of HERV-K(HML-2) in human pangenomes
 
 Source code and result tables for the HML-2 pangenome manuscript. The current
-release 0.3.0 includes the manuscript-review corrections of 15 September 2026,
-including the corrected Rec stop-codon boundary.
+release 0.4.0 includes the manuscript revision of 21 September 2026. It adds
+array nucleotide comparisons, Type I cassette controls, solo-LTR diversity,
+phylogenetic bootstrap support and corrected terminal-junction evidence.
 
 The analysis covers structural variation, tandem-copy validation, coding
 potential, phylogenetic relationships, Type-I cassette variation, target-site
@@ -16,7 +17,6 @@ With Python 3.12, install `requirements.txt`, then run:
 python scripts/check_release.py
 python scripts/check_review_corrections.py
 python scripts/reproduce_compact_panels.py --output outputs/retained_panels
-python project/manuscript/restore_figure3_20260914.py
 python Supplementary_Data/Table_S13/analysis_code/type1_observed_loci_uniformity_20260914.py
 ```
 
@@ -25,18 +25,24 @@ structural-state tests, recovered NucFreq method, retained model formulas,
 deterministic model evidence, and Python syntax. The review-correction check
 reconstructs the reported multiple-testing families and checks the corrected
 short-ORF and missing-haplotype records. The compact-panel command
-regenerates Figure 7, Supplementary Figures S6 and S13, and supporting model
-plots. The Figure 3 command reproduces the current figure, including all-locus
-trees, exact nucleotide sharing and the chromosome-4 connection. Use this
-command for Figure 3, not the historical general-purpose compositor.
-The final command reproduces the 54 recurrent-conversion and drift scenarios
+regenerates retained panels for Figure 7 and Supplementary Figures S12, S15,
+S18 and S19, plus supporting model plots. The final command reproduces the 54 recurrent-conversion and drift scenarios
 in Table S13. These commands do not download data or run a cluster job.
+
+For the September 21 analyses and revised Figure 3, follow
+[`analysis/september2026_revision/README.md`](analysis/september2026_revision/README.md).
+That workflow uses retained sequence inputs and reproduces the revised tables.
+The older Figure 3 and TSD builders preserve their historical analyses.
+The current TSD measurements are in `Supplementary_Data/Figure_S7_boundary_evidence/`.
+
+See [FIGURE_TABLE_MAP.md](FIGURE_TABLE_MAP.md) for final manuscript numbering
+and the relationship to historical source filenames.
 
 ## Code map
 
 | Location | Analysis |
 |---|---|
-| `project/manuscript/` | Current figure builders, artifact filtering, functional refits, TSD analysis and conditional mechanism models |
+| `project/manuscript/` | Retained figure builders, artifact filtering, functional refits and mechanism models. Revised Figure 3, Figure 5C and Figures S6, S7, S17 and S22 use the September workflow below. |
 | `project/working/biological_orf_annotation_20260802/` | Host-flank-supported locus assignment and biological ORF annotation |
 | `project/working/cnv_copy_state_reinterpretation_v1/` | Copy-state calibration and depth evidence |
 | `project/cluster_workflows/cnv_*/` | Sources for the completed targeted ONT copy-validation workflows |
@@ -45,15 +51,16 @@ in Table S13. These commands do not download data or run a cluster job.
 | `manuscript_figures/python/analysis/` | Type-I cassette/backbone comparison and matched long-read/short-read comparison |
 | `manuscript_figures/R/` | Source for mutation, duplication, fusion-ORF and Fiber-seq panels |
 | `HML2_ProjectResources/cluster_pipeline_source/shared/` | Upstream ORF and flank-anchoring source |
-| `Supplementary_Data/` | Current manuscript source tables, alignments, trees, Table S13 analysis code and checksums |
+| `Supplementary_Data/` | Current manuscript source tables, alignments, trees, analysis code and checksums |
+| `analysis/september2026_revision/` | Reproduction of the revised array, solo-LTR, Type I, phylogeny and terminal-junction analyses |
 | `data/` | Additional compact model and copy-validation evidence |
 
 The current plot builders use 292 donor IDs.
 
 ## Full analysis inputs
 
-The [version 0.3.0 archive](https://doi.org/10.5281/zenodo.22783894),
-`HML2_derived_data_v0.3.0.zip`, contains the corrected catalog, extracted HML-2
+The [v0.4.0 archive](https://doi.org/10.5281/zenodo.22879194),
+`HML2_derived_data_v0.4.0.zip`, contains the corrected catalog, extracted HML-2
 sequences, supplementary tables and retained analysis inputs. Its
 `file_manifest.tsv` records every archived file identity.
 
@@ -96,10 +103,11 @@ allocation. Model assumptions and reproduction checks are in `MODEL_NOTES.md`.
 
 ## Provenance
 
-After v0.3.0, the figure builders label the short-arm HML-2 groups as
-"Telomeric Type I" and "Telomeric Type II" to match the revised manuscript.
-This is a display-label correction. Stored locus identifiers, analysis inputs,
-numerical results and the archived v0.3.0 release are unchanged.
+The figure builders label the short-arm HML-2 groups as "Telomeric Type I"
+and "Telomeric Type II". Historical filenames may retain earlier figure numbers.
+The September revision README maps each analysis to the final manuscript figures.
+Previous archived versions remain available through
+[Zenodo](https://doi.org/10.5281/zenodo.22759510).
 
 `source_inventory.tsv` records the source-file identity used for this snapshot.
 `CHANGES.md` lists the publication-specific corrections. The supplementary

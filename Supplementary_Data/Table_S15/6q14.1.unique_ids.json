@@ -1,0 +1,15 @@
+{
+  "S0001": [
+    "HG00738_pat_hprc_r2_v1.0.1_HML-2_6q14.1_MULTI_part2",
+    "HG01960_pat_hprc_r2_v1.0.1_HML-2_6q14.1_MULTI_part3",
+    "HG02055_pat_hprc_r2_v1.0.1_HML-2_6q14.1_MULTI_part2",
+    "NA20752_hap2_hprc_r2_v1.0.1_HML-2_6q14.1_MULTI_part2"
+  ],
+  "S0002": [
+    "HG00738_pat_hprc_r2_v1.0.1_HML-2_6q14.1_MULTI_part1",
+    "HG01960_pat_hprc_r2_v1.0.1_HML-2_6q14.1_MULTI_part1",
+    "HG01960_pat_hprc_r2_v1.0.1_HML-2_6q14.1_MULTI_part2",
+    "HG02055_pat_hprc_r2_v1.0.1_HML-2_6q14.1_MULTI_part1",
+    "NA20752_hap2_hprc_r2_v1.0.1_HML-2_6q14.1_MULTI_part1"
+  ]
+}

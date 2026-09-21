@@ -1,0 +1,90 @@
+{
+  "source_catalog": "source_worktree/project/results/rec_exon_boundary_correction_20260915/combined_hml2_orf_analysis.RESOLVED.REC_CORRECTED.tsv",
+  "sequence_root": "historical_source/Documents/HML2_project_data/processed_loci",
+  "LTR_reference": "source_worktree/project/inputs/references/ltr_detection_ref.fa",
+  "method": "Same retained sequence availability and n>=20 rule as current Figure 7 builder. Reference alignment also permits variable-length extractions. Unique sequences mapped by minimap2 asm20 to the 968-bp LTR detection reference to remove host flanks. ACGT pairs only at aligned reference positions. Insertions and gaps are excluded from the substitution-distance measure.",
+  "included_loci": 13,
+  "excluded_loci": 12,
+  "eightq": {
+    "locus": "8q11.23_new",
+    "n": 461,
+    "available_sequences_before_LTR_filter": 461,
+    "length": 968,
+    "common_callable_LTR_bases": 968,
+    "unique_sequences": 13,
+    "dominant_count": 432,
+    "different_base_pairs": 13250,
+    "callable_base_pairs": 102637040,
+    "pi": 0.00012909569488753767,
+    "mean_pairwise_differences": 0.12496463265113647,
+    "gap_or_ambiguous_bases_excluded": 0
+  },
+  "others_median_pi": 0.001019532796581102,
+  "others_min_pi": 0.0,
+  "others_max_pi": 0.0019498407928159995,
+  "others_pi_less_than_or_equal_eightq": 2,
+  "others_n": 12,
+  "illustrative_pairwise_expectations": [
+    {
+      "time_years": 200000,
+      "pairwise_rate_per_site_per_My": 0.0024,
+      "expected_differences_968bp": 0.46463999999999994,
+      "probability_zero": 0.6283612745355488
+    },
+    {
+      "time_years": 200000,
+      "pairwise_rate_per_site_per_My": 0.0045,
+      "expected_differences_968bp": 0.8711999999999999,
+      "probability_zero": 0.4184491089130355
+    },
+    {
+      "time_years": 300000,
+      "pairwise_rate_per_site_per_My": 0.0024,
+      "expected_differences_968bp": 0.6969599999999999,
+      "probability_zero": 0.49809722006329177
+    },
+    {
+      "time_years": 300000,
+      "pairwise_rate_per_site_per_My": 0.0045,
+      "expected_differences_968bp": 1.3068,
+      "probability_zero": 0.2706848635185634
+    },
+    {
+      "time_years": 500000,
+      "pairwise_rate_per_site_per_My": 0.0024,
+      "expected_differences_968bp": 1.1616,
+      "probability_zero": 0.3129850040415837
+    },
+    {
+      "time_years": 500000,
+      "pairwise_rate_per_site_per_My": 0.0045,
+      "expected_differences_968bp": 2.178,
+      "probability_zero": 0.11326783993558948
+    },
+    {
+      "time_years": 1000000,
+      "pairwise_rate_per_site_per_My": 0.0024,
+      "expected_differences_968bp": 2.3232,
+      "probability_zero": 0.09795961275491015
+    },
+    {
+      "time_years": 1000000,
+      "pairwise_rate_per_site_per_My": 0.0045,
+      "expected_differences_968bp": 4.356,
+      "probability_zero": 0.01282960356367432
+    },
+    {
+      "time_years": 2000000,
+      "pairwise_rate_per_site_per_My": 0.0024,
+      "expected_differences_968bp": 4.6464,
+      "probability_zero": 0.009596085731091957
+    },
+    {
+      "time_years": 2000000,
+      "pairwise_rate_per_site_per_My": 0.0045,
+      "expected_differences_968bp": 8.712,
+      "probability_zero": 0.0001645987276010448
+    }
+  ],
+  "interpretation": "Within-human diversity is separate from paired 5prime/3prime LTR divergence. This descriptive locus comparison does not test selection."
+}

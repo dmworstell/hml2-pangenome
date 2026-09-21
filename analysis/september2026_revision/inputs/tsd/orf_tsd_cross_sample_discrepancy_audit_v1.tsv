@@ -1,0 +1,30 @@
+Locus	historical_cross_sample_disagreement	direct_evidence_verdict	action
+HML-2_10p14	YES	Direct 6-bp pairs; one retained copy has one present-day substitution.	KEEP_CURRENT
+HML-2_10q24.2	YES	Single-terminal elements expose only the outward CAGGTG host boundary.	RESTORE_RAW6_ONE_SIDED
+HML-2_11p15.4b	NO_PRIORITY_AUDIT	Both resolved flanks TTTAGT/TGCCGC fail 6/5/4-bp admission; no paired TSD.	KEEP_NO_CALL
+HML-2_11q12.3	YES	Outward terminal support is absent; historical alternatives were boundary artifacts.	KEEP_NO_CALL
+HML-2_11q22.1	YES	The 27 four-base calls are fallback truncations; their fixed 5-bp boundaries differ at three positions.	REJECT_SHORT_FALLBACK
+HML-2_12q13.2	YES	Thirty raw-full proviruses are GCTAT/GCTAT; HG01352 h2 is a no-call, not GAAA/GCTA.	KEEP_AUTHENTICATED_RAW_FULL_CORRECTION
+HML-2_12q14.1	YES	TTGGCA/TTGGTA is a direct same-length one-substitution pair.	KEEP_BIOLOGICAL_SUBSTITUTION
+HML-2_13p13	YES	Full pairs are GAATTC/GAATTC; short pairs are fallback artifacts; fragments retain only raw outward GAATTC or CAATTC.	REJECT_SHORT_AND_RESTORE_RAW6_ONE_SIDED
+HML-2_14q32.33	NO_PRIORITY_AUDIT	Retained sequences contain an internal env fragment without a terminal LTR; no TSD is observable.	KEEP_NO_CALL
+HML-2_15p13b	YES	Full pairs are GAATTC/GAATTC; short pairs are fallback artifacts; fragments retain only raw outward GAATTC or CAATTC.	REJECT_SHORT_AND_RESTORE_RAW6_ONE_SIDED
+HML-2_19p12d	YES	The exceptional CAAAAC/CAAAAC pair is exact at both retained boundaries; the caller is correct, while same-copy identity requires separate review.	KEEP_DIRECT_PAIR_FLAG_COPY_IDENTITY
+HML-2_19p12e	YES	No terminal LTR support remains; historical pairs were internal-boundary artifacts.	KEEP_NO_CALL
+HML-2_19p13.3	YES	Resolved single-terminal fragments retain only the outward CAGGTC host boundary.	RESTORE_RAW6_ONE_SIDED
+HML-2_19q12	YES	Resolved single-terminal proviruses retain only the outward AGGTAT host boundary.	RESTORE_RAW6_ONE_SIDED
+HML-2_19q13.12b	YES	Only one host-facing boundary is resolved; historical paired/short calls were artifacts.	KEEP_ONE_SIDED
+HML-2_1p31.1a	YES	CATAT/CATGT is a direct same-length one-substitution pair.	KEEP_BIOLOGICAL_SUBSTITUTION
+HML-2_1p31.1b	YES	ATGGAA/ATGGAA is supported; discordant alternate boundaries are already censored.	KEEP_CURRENT
+HML-2_1p34.3	YES	No corroborated terminal LTR; no TSD is observable.	KEEP_NO_CALL
+HML-2_21q21.1	YES	Observed sequences are one-sided host boundaries and do not establish a paired TSD.	KEEP_ONE_SIDED
+HML-2_22q11.23	YES	Observed sequences are one-sided host boundaries; exceptional sequence is exact at its retained copy.	KEEP_ONE_SIDED
+HML-2_3p25.3	YES	Outward terminal support is absent; historical pairs were artifacts.	KEEP_NO_CALL
+HML-2_3q12.3	YES	Historical paired calls joined the element to a separate downstream LTR; current one-sided calls are correct.	KEEP_CORRECTED_ONE_SIDED
+HML-2_4q32.1	YES	The 4-bp TCTT call was selected using internal proviral sequence; outward host observation is GTTCTT.	RESTORE_RAW6_ONE_SIDED
+HML-2_5q11.2	YES	All alternatives are direct same-length 6-bp pairs with present-day substitutions.	KEEP_BIOLOGICAL_SUBSTITUTIONS
+HML-2_5q33.3	YES	One single-terminal record retains only raw outward CACTGC; paired records remain ACTGC/ACTGC.	RESTORE_RAW6_ONE_SIDED
+HML-2_6p22.1	YES	No corroborated terminal LTR; no TSD is observable.	KEEP_NO_CALL
+HML-2_6q14.1	YES	Exact ATATGC/ATATGC pairs are supported; discordant records remain no-call/one-sided.	KEEP_CURRENT
+HML-2_7p22.1	YES	GGTTTC/GGATTC is a direct same-length one-substitution pair.	KEEP_BIOLOGICAL_SUBSTITUTION
+HML-2_7q22.2	YES	Single-terminal fragments retain only the outward TTAGAG host boundary.	RESTORE_RAW6_ONE_SIDED

@@ -1,0 +1,178 @@
+hypothesis	locus	absent_probability	callable_endpoints	direct_type	expressed_gag_capsid_opportunity	insertion_carrier_probability	ltr_subfamily	median_fst_conditional	median_superpopulation_gap	propagation_sequence_composite	provirus_carrier_probability	representative_contrasts	solo_fraction_among_present
+H1_lower_host_cost	10p12.1	0.0		TypeI		1.0	LTR5Hs				0.957191780822		0.04280821917808219
+H1_lower_host_cost	10p14	0.0017123287671232876		TypeII		0.998287671233	LTR5Hs				0.996575342466		0.0017152658662092624
+H1_lower_host_cost	10q24.2	0.0		TypeII		1.0	LTR5Hs				0.996575342466		0.0
+H1_lower_host_cost	11p15.4	0.018835616438356163		TypeII		0.981164383562	LTR5A				0.981164383562		0.0
+H1_lower_host_cost	11q12.3	0.003424657534246575		TypeII		0.996575342466	LTR5Hs				0.650684931507		0.0
+H1_lower_host_cost	11q22.1	0.1095890410958904		TypeII		0.890410958904	LTR5Hs				0.369863013699		0.5846153846153846
+H1_lower_host_cost	11q23.3	0.0		TypeI		1.0	LTR5Hs				0.984589041096		0.015410958904109588
+H1_lower_host_cost	12p11.21	0.0		TypeII		1.0	LTR5A				1.0		0.0
+H1_lower_host_cost	12q13.2	0.3339041095890411		TypeI		0.666095890411	LTR5Hs				0.443493150685		0.3341902313624679
+H1_lower_host_cost	12q14.1	0.003424657534246575		TypeII		0.996575342466	LTR5Hs				0.470890410959		0.5274914089347079
+H1_lower_host_cost	19p12a	0.0		TypeII		1.0	LTR5B				1.0		0.0
+H1_lower_host_cost	19p12b	0.8647260273972602		TypeII		0.135273972603	LTR5Hs				0.135273972603		0.0
+H1_lower_host_cost	19p12c	0.5462328767123288		TypeI		0.453767123288	LTR5Hs				0.453767123288		0.0
+H1_lower_host_cost	19p12e	0.0		TypeI		1.0	LTR5Hs				0.0		0.003424657534246575
+H1_lower_host_cost	19q12	0.0017123287671232876		TypeII		0.998287671233	LTR5Hs				0.998287671233		0.0
+H1_lower_host_cost	19q13.12a	0.0		TypeII		1.0	LTR5Hs				0.0		0.0
+H1_lower_host_cost	19q13.12b	0.003424657534246575		TypeII		0.996575342466	LTR5Hs				0.996575342466		0.0
+H1_lower_host_cost	19q13.41	0.0017123287671232876		TypeII		0.998287671233	LTR5B				0.0		0.0
+H1_lower_host_cost	19q13.42	0.0017123287671232876		TypeII		0.998287671233	LTR5B				0.0		0.0
+H1_lower_host_cost	1p31.1a	0.0		TypeI		1.0	LTR5Hs				0.897260273973		0.10273972602739725
+H1_lower_host_cost	1p31.1b	0.0		TypeI		1.0	LTR5Hs				0.0		0.803082191780822
+H1_lower_host_cost	1p34.3	0.0		TypeII		1.0	LTR5Hs				0.0		0.0
+H1_lower_host_cost	1p36.21b	0.04452054794520548		TypeII		0.955479452055	LTR5B				0.955479452055		0.0
+H1_lower_host_cost	1p36.21c	0.0136986301369863		TypeII		0.986301369863	LTR5B				0.986301369863		0.0
+H1_lower_host_cost	1q22	0.0		TypeI		1.0	LTR5Hs				0.994863013699		0.005136986301369863
+H1_lower_host_cost	1q23.3	0.0		TypeI		1.0	LTR5Hs				1.0		0.0
+H1_lower_host_cost	1q24.1	0.0017123287671232876		TypeII		0.998287671233	LTR5B				0.0		0.0
+H1_lower_host_cost	1q32.2	0.0		TypeI		1.0	LTR5Hs				0.0		0.0
+H1_lower_host_cost	21q21.1	0.0		TypeI		1.0	LTR5Hs				0.998287671233		0.0017123287671232876
+H1_lower_host_cost	22q11.21	0.010273972602739725		TypeI		0.989726027397	LTR5Hs				0.946917808219		0.04325259515570934
+H1_lower_host_cost	3p12.3	0.017123287671232876		TypeII		0.982876712329	LTR5A				0.982876712329		0.0
+H1_lower_host_cost	3p25.3	0.0		TypeI		1.0	LTR5Hs				0.0		0.0
+H1_lower_host_cost	3q12.3	0.0		TypeI		1.0	LTR5Hs				0.981164383562		0.018835616438356163
+H1_lower_host_cost	3q13.2	0.0		TypeI		1.0	LTR5Hs				0.904109589041		0.0958904109589041
+H1_lower_host_cost	3q21.2	0.0017123287671232876		TypeII		0.998287671233	LTR5Hs				0.998287671233		0.0
+H1_lower_host_cost	3q27.2	0.0		TypeI		1.0	LTR5Hs				0.96404109589		0.03595890410958904
+H1_lower_host_cost	4p16.1a	0.005136986301369863		TypeII		0.994863013699	LTR5A				0.912671232877		0.0
+H1_lower_host_cost	4p16.1b	0.003424657534246575		TypeII		0.996575342466	LTR5A				0.996575342466		0.0
+H1_lower_host_cost	4p16.3a	0.773972602739726		TypeII		0.22602739726					0.0		0.08333333333333333
+H1_lower_host_cost	4p16.3c	0.0017123287671232876		TypeII		0.998287671233	LTR5A				0.998287671233		0.0
+H1_lower_host_cost	4q13.2	0.4623287671232877		TypeII		0.537671232877	LTR5A				0.0		0.0
+H1_lower_host_cost	4q32.3	0.0		TypeI		1.0	LTR5Hs				0.0		0.0
+H1_lower_host_cost	4q35.2_hg38	0.6866438356164384		TypeII		0.313356164384	LTR5A				0.0		0.0
+H1_lower_host_cost	5p12	0.00684931506849315		TypeI		0.993150684932	LTR5Hs				0.993150684932		0.0
+H1_lower_host_cost	5p13.3	0.0		TypeII		1.0	LTR5Hs				0.986301369863		0.0136986301369863
+H1_lower_host_cost	5q33.2	0.010273972602739725		TypeII		0.989726027397	LTR5A				0.989726027397		0.0
+H1_lower_host_cost	5q33.3	0.0017123287671232876		TypeI		0.998287671233	LTR5Hs				0.952054794521		0.04631217838765009
+H1_lower_host_cost	6p21.1	0.0		TypeII		1.0	LTR5B				1.0		0.0
+H1_lower_host_cost	6p22.1	0.0		TypeII		1.0	LTR5Hs				1.0		0.0
+H1_lower_host_cost	6q14.1	0.008561643835616438		TypeII		0.991438356164	LTR5Hs				0.832191780822		0.16062176165803108
+H1_lower_host_cost	7p22.1	0.0		TypeII		1.0	LTR5Hs				0.996575342466		0.003424657534246575
+H1_lower_host_cost	7q11.21	0.0		TypeII		1.0	LTR5B				0.0		0.003424657534246575
+H1_lower_host_cost	8p22	0.0		TypeII		1.0	not_applicable				0.993150684932		0.0
+H1_lower_host_cost	8p23.1a_hg38	0.928082191780822		TypeII		0.0719178082192	LTR5Hs				0.0719178082192		0.0
+H1_lower_host_cost	8p23.1b	0.5205479452054794		TypeII		0.479452054795	LTR5A				0.479452054795		0.0
+H1_lower_host_cost	8p23.1c	0.5753424657534246		TypeII		0.424657534247	LTR5A				0.424657534247		0.0
+H1_lower_host_cost	8p23.1d	0.4657534246575342		TypeII		0.534246575342	LTR5A				0.534246575342		0.0
+H1_lower_host_cost	8p23.1e	0.5		TypeII		0.5	LTR5A				0.5		0.0
+H1_lower_host_cost	8q11.21	0.0		TypeII		1.0	LTR5A				0.0		0.0
+H1_lower_host_cost	8q11.23_new	0.0		TypeI		1.0					0.00171232876712		0.9982876712328768
+H1_lower_host_cost	8q24.3c	0.010273972602739725		TypeII		0.989726027397	LTR5Hs				0.0		0.0
+H1_lower_host_cost	Xq21.33	0.9897260273972602		TypeII		0.0102739726027	LTR5Hs				0.0102739726027		0.0
+H1_lower_host_cost	Xq28a	0.6335616438356164		TypeII		0.366438356164	LTR5B				0.0		0.0
+H1_lower_host_cost	Yp11.2	0.785958904109589		TypeII		0.21404109589	LTR5A				0.0		0.0
+H2_selfish_propagation	10p12.1		7	TypeI			LTR5Hs			0.8358934971838572			
+H2_selfish_propagation	10p14		7	TypeII			LTR5Hs			0.0			
+H2_selfish_propagation	10q24.2		7	TypeII			LTR5Hs			0.618802160039257			
+H2_selfish_propagation	11q12.3		7	TypeII			LTR5Hs			0.14285714285714285			
+H2_selfish_propagation	11q22.1		7	TypeII			LTR5Hs			0.7900737759892571			
+H2_selfish_propagation	11q23.3		7	TypeI			LTR5Hs			0.5126928820308571			
+H2_selfish_propagation	12q13.2		7	TypeI			LTR5Hs			0.4163424124512857			
+H2_selfish_propagation	12q14.1		7	TypeII			LTR5Hs			0.6673618352451428			
+H2_selfish_propagation	19p12a		7	TypeII			LTR5B			0.0			
+H2_selfish_propagation	19p12b		7	TypeII			LTR5Hs			0.7576853526220001			
+H2_selfish_propagation	19p12c		7	TypeI			LTR5Hs			0.698652291105			
+H2_selfish_propagation	19q12		7	TypeII			LTR5Hs			0.6593596059113285			
+H2_selfish_propagation	19q13.12b		7	TypeII			LTR5Hs			0.0			
+H2_selfish_propagation	1p31.1a		7	TypeI			LTR5Hs			0.426932532095			
+H2_selfish_propagation	1q22		7	TypeI			LTR5Hs			0.871921182266			
+H2_selfish_propagation	1q23.3		7	TypeI			LTR5Hs			0.28473581213314286			
+H2_selfish_propagation	21q21.1		7	TypeI			LTR5Hs			0.27517765253614285			
+H2_selfish_propagation	22q11.21		7	TypeI			LTR5Hs			0.5476621028158657			
+H2_selfish_propagation	3q12.3		7	TypeI			LTR5Hs			0.0			
+H2_selfish_propagation	3q13.2		7	TypeI			LTR5Hs			0.7670748299318572			
+H2_selfish_propagation	3q21.2		7	TypeII			LTR5Hs			0.2786081842685714			
+H2_selfish_propagation	3q27.2		7	TypeI			LTR5Hs			0.9977081741787144			
+H2_selfish_propagation	5p12		7	TypeI			LTR5Hs			0.0			
+H2_selfish_propagation	5p13.3		7	TypeII			LTR5Hs			0.2849702380952857			
+H2_selfish_propagation	5q33.3		7	TypeI			LTR5Hs			0.8325569358177143			
+H2_selfish_propagation	6p22.1		7	TypeII			LTR5Hs			0.0			
+H2_selfish_propagation	6q14.1		7	TypeII			LTR5Hs			0.5898043864850001			
+H2_selfish_propagation	7p22.1		7	TypeII			LTR5Hs			0.8541488451669286			
+H2_selfish_propagation	8p23.1a_hg38		7	TypeII			LTR5Hs			1.0			
+H2_selfish_propagation	8q11.23_new		7	TypeI						0.7142857142857143			
+H2_selfish_propagation	Xq21.33		7	TypeII			LTR5Hs			0.8095238095238572			
+H2_selfish_propagation	11p15.4		6	TypeII			LTR5A			0.00029086678301333335			
+H2_selfish_propagation	12p11.21		6	TypeII			LTR5A			0.16666666666666666			
+H2_selfish_propagation	1p36.21b		6	TypeII			LTR5B			0.0			
+H2_selfish_propagation	1p36.21c		6	TypeII			LTR5B			0.0			
+H2_selfish_propagation	3p12.3		6	TypeII			LTR5A			0.0			
+H2_selfish_propagation	4p16.1a		6	TypeII			LTR5A			0.0053258145363333335			
+H2_selfish_propagation	4p16.1b		6	TypeII			LTR5A			0.00085910652921			
+H2_selfish_propagation	4p16.3c		6	TypeII			LTR5A			0.00028587764436833335			
+H2_selfish_propagation	5q33.2		6	TypeII			LTR5A			0.0			
+H2_selfish_propagation	6p21.1		5	TypeII			LTR5B			0.0			
+H2_selfish_propagation	8p22		6	TypeII			not_applicable			0.0			
+H2_selfish_propagation	8p23.1b		6	TypeII			LTR5A			0.0			
+H2_selfish_propagation	8p23.1c		6	TypeII			LTR5A			0.0			
+H2_selfish_propagation	8p23.1d		6	TypeII			LTR5A			0.0			
+H2_selfish_propagation	8p23.1e		6	TypeII			LTR5A			0.0			
+H3_host_protection_opportunity	10p12.1			TypeI	0		LTR5Hs						
+H3_host_protection_opportunity	10p14			TypeII	0		LTR5Hs						
+H3_host_protection_opportunity	10q24.2			TypeII	1		LTR5Hs						
+H3_host_protection_opportunity	11p15.4			TypeII	0		LTR5A						
+H3_host_protection_opportunity	11q12.3			TypeII	0		LTR5Hs						
+H3_host_protection_opportunity	11q22.1			TypeII	0		LTR5Hs						
+H3_host_protection_opportunity	11q23.3			TypeI	1		LTR5Hs						
+H3_host_protection_opportunity	12q13.2			TypeI	0		LTR5Hs						
+H3_host_protection_opportunity	12q14.1			TypeII	0		LTR5Hs						
+H3_host_protection_opportunity	19p12a			TypeII	0		LTR5B						
+H3_host_protection_opportunity	19p12b			TypeII	0		LTR5Hs						
+H3_host_protection_opportunity	19p12c			TypeI	0		LTR5Hs						
+H3_host_protection_opportunity	19q13.12b			TypeII	0		LTR5Hs						
+H3_host_protection_opportunity	1p31.1a			TypeI	0		LTR5Hs						
+H3_host_protection_opportunity	1p36.21c			TypeII	0		LTR5B						
+H3_host_protection_opportunity	1q22			TypeI	1		LTR5Hs						
+H3_host_protection_opportunity	1q23.3			TypeI	1		LTR5Hs						
+H3_host_protection_opportunity	21q21.1			TypeI	0		LTR5Hs						
+H3_host_protection_opportunity	22q11.21			TypeI	0		LTR5Hs						
+H3_host_protection_opportunity	3p12.3			TypeII	0		LTR5A						
+H3_host_protection_opportunity	3q12.3			TypeI	0		LTR5Hs						
+H3_host_protection_opportunity	3q13.2			TypeI	0		LTR5Hs						
+H3_host_protection_opportunity	3q21.2			TypeII	1		LTR5Hs						
+H3_host_protection_opportunity	3q27.2			TypeI	0		LTR5Hs						
+H3_host_protection_opportunity	4p16.1a			TypeII	0		LTR5A						
+H3_host_protection_opportunity	4p16.1b			TypeII	0		LTR5A						
+H3_host_protection_opportunity	5p12			TypeI	0		LTR5Hs						
+H3_host_protection_opportunity	5p13.3			TypeII	0		LTR5Hs						
+H3_host_protection_opportunity	5q33.2			TypeII	0		LTR5A						
+H3_host_protection_opportunity	5q33.3			TypeI	0		LTR5Hs						
+H3_host_protection_opportunity	6p22.1			TypeII	0		LTR5Hs						
+H3_host_protection_opportunity	6q14.1			TypeII	0		LTR5Hs						
+H3_host_protection_opportunity	8p22			TypeII	0		not_applicable						
+H3_host_protection_opportunity	8p23.1b			TypeII	0		LTR5A						
+H3_host_protection_opportunity	8p23.1c			TypeII	0		LTR5A						
+H3_host_protection_opportunity	8p23.1d			TypeII	0		LTR5A						
+H3_host_protection_opportunity	Xq21.33			TypeII	0		LTR5Hs						
+H4_population_differentiation	1q22			TypeI			LTR5Hs	0.253122945430638	0.387978142076503			5	
+H4_population_differentiation	5p13.3			TypeII			LTR5Hs	0.201967720180537	0.581531531531531			4	
+H4_population_differentiation	10p12.1			TypeI			LTR5Hs	0.0314007451578251	0.081081081081081			11	
+H4_population_differentiation	22q11.21			TypeI			LTR5Hs	0.1152067575402225	0.4479652065858965			8	
+H4_population_differentiation	5q33.3			TypeI			LTR5Hs	0.0621794712045877	0.164631604026446			7	
+H4_population_differentiation	19p12b			TypeII			LTR5Hs	0.096246748420661	0.17948717948718			5	
+H4_population_differentiation	6q14.1			TypeII			LTR5Hs	0.0377741333547263	0.072463768115942			7	
+H4_population_differentiation	3q13.2			TypeI			LTR5Hs	0.118682303166619	0.405844155844156			1	
+H4_population_differentiation	19q12			TypeII			LTR5Hs	0.0600868031908353	0.23281202401384948			6	
+H4_population_differentiation	12q13.2			TypeI			LTR5Hs	0.10015684319167495	0.17058823529411749			6	
+H4_population_differentiation	21q21.1			TypeI			LTR5Hs	0.048185872440536404	0.0945945945945946			2	
+H4_population_differentiation	3q21.2			TypeII			LTR5Hs	0.0601952682501811	0.108333333333333			1	
+H4_population_differentiation	11q22.1			TypeII			LTR5Hs	0.0196356496127396	0.0384615384615384			5	
+H4_population_differentiation	19p12c			TypeI			LTR5Hs	0.0578912472136755	0.1105392156862747			4	
+H4_population_differentiation	10q24.2			TypeII			LTR5Hs	0.0380870232526102	0.14087474571345554			2	
+H4_population_differentiation	4p16.1a			TypeII			LTR5A	0.0496335258525852	0.0833333333333333			1	
+H4_population_differentiation	8p23.1d			TypeII			LTR5A	0.0746631117724867	0.125			1	
+H4_population_differentiation	12q14.1			TypeII			LTR5Hs	0.0551209531209527	0.121212121212121			5	
+H4_population_differentiation	8p23.1e			TypeII			LTR5A	0.0713587487781037	0.0909090909090909			1	
+H4_population_differentiation	7p22.1			TypeII			LTR5Hs	0.0305488517884462	0.0648507462686567			12	
+H4_population_differentiation	3p12.3			TypeII			LTR5A	0.0243991960679258	0.194369369369369			1	
+H4_population_differentiation	3q12.3			TypeI			LTR5Hs	0.0230022935322385	0.0457142857142857			1	
+H4_population_differentiation	11q23.3			TypeI			LTR5Hs	0.0210631507416203	0.226425622140386			1	
+H4_population_differentiation	4p16.3c			TypeII			LTR5A	0.00653618446632423	0.102272727272727			3	
+H4_population_differentiation	1p31.1a			TypeI			LTR5Hs	0.012715930784876	0.0661933119560238			1	
+H4_population_differentiation	8p23.1b			TypeII			LTR5A	0.0192399501307547	0.1			1	
+H4_population_differentiation	Xq21.33			TypeII			LTR5Hs	0.0999999999999999	0.4			1	
+H4_population_differentiation	4p16.1b			TypeII			LTR5A	0.00520770423683047	0.0108108108108108			1	
+H4_population_differentiation	8p23.1a_hg38			TypeII			LTR5Hs	0.0471869328493642	0.137931034482759			1	
+H4_population_differentiation	11p15.4			TypeII			LTR5A	0.0038422953451043	0.00561797752808989			1	

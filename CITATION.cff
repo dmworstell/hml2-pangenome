@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "Please cite this archive when using the code or derived data."
 title: "Structural polymorphism and population-variable coding capacity of HERV-K(HML-2) in human pangenomes"
-version: 0.3.0
-date-released: 2026-09-16
-doi: 10.5281/zenodo.22783894
+version: 0.4.0
+date-released: 2026-09-21
+doi: 10.5281/zenodo.22879194
 repository-code: "https://github.com/dmworstell/hml2-pangenome"
 license: MIT
 authors:
@@ -13,6 +13,9 @@ authors:
     given-names: Michael
   - family-names: Minkina
     given-names: Anna
+  - family-names: Vollger
+    given-names: Mitchell R.
+    affiliation: "Department of Human Genetics and Utah Center for Genetic Discovery, University of Utah, Salt Lake City, UT, USA"
   - family-names: Stergachis
     given-names: Andrew B.
   - family-names: Coffin

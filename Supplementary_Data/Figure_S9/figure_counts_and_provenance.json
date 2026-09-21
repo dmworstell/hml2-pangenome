@@ -1,5 +1,5 @@
 {
-  "catalog": "project/results/resolved_manuscript_catalog_20260914/combined_hml2_orf_analysis.RESOLVED.tsv",
+  "catalog": "source_worktree/project/results/resolved_manuscript_catalog_20260914/combined_hml2_orf_analysis.RESOLVED.tsv",
   "catalog_sha256": "16ba52d4152be1f24edc5198dd5fc24bb1404b817dd0c32c961e21a4a81e9dc6",
   "scan": "historical_source/Library/Mobile Documents/com~apple~CloudDocs/Documents/Med_School/PostDoc/Manuscripts/HML2PopGenManuscript/_audit_2026-09-14/source_call_resolution/atypical_orf_repair/primary_longest_frame_scan.tsv",
   "scan_sha256": "451022ad8678b83a9faf0c9aa2d8bb582faa7c1a9c84c8921483c0bf21c272ba",

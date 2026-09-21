@@ -1,0 +1,207 @@
+[
+  {
+    "file": "inputs/figures/locus_inputs.tsv",
+    "bytes": 14382,
+    "sha256": "b8754b89ff3658adb5dd0e8573b8bcaa1923ea80a01dec433516fc1ed5dd22ea"
+  },
+  {
+    "file": "inputs/figures/model_comparison.tsv",
+    "bytes": 12287,
+    "sha256": "36199784925a59e0804e2f13f3c255365252f0116abcac23accb80eeeb53f413"
+  },
+  {
+    "file": "inputs/phylogeny/Figure_3B_exact_nucleotide_edges.tsv",
+    "bytes": 270,
+    "sha256": "c6515c7d1d0c575101b32a6216b3d2e3faeaa0b9d2314f931a97908ef80ebb19"
+  },
+  {
+    "file": "inputs/phylogeny/alignment_admission.tsv",
+    "bytes": 8767341,
+    "sha256": "e4c42fe2b3432e960af2808a729ff9ab8e2a85a7e3305762e860a35aac9b1b5a"
+  },
+  {
+    "file": "inputs/phylogeny/alignment_inputs.tsv",
+    "bytes": 1362,
+    "sha256": "ed9c899412555a0f86b778e1c63355e35a611a7e0af2c51dad686e8dd8011ca6"
+  },
+  {
+    "file": "inputs/phylogeny/alignments/13p13_carrier_kcon.aln.fa",
+    "bytes": 256186,
+    "sha256": "d7f271656de20e328364ca1c70436ae7e05d9de4e7e77699af209ea09c5dc950"
+  },
+  {
+    "file": "inputs/phylogeny/alignments/15p13a_carrier_kcon.aln.fa",
+    "bytes": 1091159,
+    "sha256": "506b7b54fa96b65f48da6a793effaa78817ab34832e29c7b6f83ae6aaf3fc795"
+  },
+  {
+    "file": "inputs/phylogeny/alignments/15p13b_carrier_kcon.aln.fa",
+    "bytes": 1072043,
+    "sha256": "846b94ae91aca016f422bc2391818a6c75e1b93b4c57caac8dd02836684b52a2"
+  },
+  {
+    "file": "inputs/phylogeny/alignments/1p36.21a_carrier_kcon.aln.fa",
+    "bytes": 3225291,
+    "sha256": "91c706cd257b17d6bfd654ad8baeeb2c780ffe6b0eb7c1940d9de88d49d20174"
+  },
+  {
+    "file": "inputs/phylogeny/alignments/1p36.21b_carrier_kcon.aln.fa",
+    "bytes": 3244271,
+    "sha256": "ce6685fa87e0bbad33478c39483cb930d7afd2cfc2928a3b4c5b1678fea15dd3"
+  },
+  {
+    "file": "inputs/phylogeny/alignments/1p36.21c_carrier_kcon.aln.fa",
+    "bytes": 3310674,
+    "sha256": "c9a292206401ab91357638468ac3a641722be7050d5b9d5a1ba70ee5ab96f3c4"
+  },
+  {
+    "file": "inputs/phylogeny/alignments/21p13_carrier_kcon.aln.fa",
+    "bytes": 1793399,
+    "sha256": "1b3d58f39cd9ffb283742acb066b4ee53cc580cfc124ab9c13428f14baddc8d2"
+  },
+  {
+    "file": "inputs/phylogeny/alignments/22p13_carrier_kcon.aln.fa",
+    "bytes": 882430,
+    "sha256": "c99e3a2ca906694bce21b5b2b47362e408975c6145e4940ea1df845b659e3081"
+  },
+  {
+    "file": "inputs/phylogeny/alignments/8p23.1b_carrier_kcon.aln.fa",
+    "bytes": 2229345,
+    "sha256": "c137436b7ca18a75b25922187c47556a65676f108002c2139b44b18543556661"
+  },
+  {
+    "file": "inputs/phylogeny/alignments/8p23.1c_carrier_kcon.aln.fa",
+    "bytes": 1963717,
+    "sha256": "6dce7a7ee266eb96c4045b7c43918816820b43ea75bfbe3456e62df81630e954"
+  },
+  {
+    "file": "inputs/phylogeny/alignments/8p23.1d_carrier_kcon.aln.fa",
+    "bytes": 2523426,
+    "sha256": "58bbd37738a073b8bea8a1e7a9aeac77feaba2fa1ed026f495e8c0907b532dae"
+  },
+  {
+    "file": "inputs/phylogeny/alignments/8p23.1e_carrier_kcon.aln.fa",
+    "bytes": 2703649,
+    "sha256": "d694adf6fe99e87aff6acb4be63a5affedc20cf98d52c80478549de56513a468"
+  },
+  {
+    "file": "inputs/phylogeny/alignments/typeII_KCON_projected_rows.tsv",
+    "bytes": 561468,
+    "sha256": "972899b4527e2c83e577f522c95332106ffa49f052b83d2d03ed242a9f130516"
+  },
+  {
+    "file": "inputs/phylogeny/expanded_ltr_subfamily_assignments.tsv",
+    "bytes": 2834,
+    "sha256": "17eeeb01d778d5e546e2b4310f75ead5e6dcaa47d0e85c27c8a7e515593a337c"
+  },
+  {
+    "file": "inputs/phylogeny/hml2_pan_ltr_expanded_tree.nwk",
+    "bytes": 10543,
+    "sha256": "9b0caf488caae0dcf8dfd979fa2e186178d7ffa0241d967c72c1ee8ae7c6915d"
+  },
+  {
+    "file": "inputs/phylogeny/hml2_pan_orf_pol_tree.nwk",
+    "bytes": 9144,
+    "sha256": "3c685e86d062ef6a46496c8392e28e1ce5be84f4597d0a4c2928e3d5415231a3"
+  },
+  {
+    "file": "inputs/phylogeny/locus_subfamily.tsv",
+    "bytes": 653,
+    "sha256": "b2a14985b0a41a80e4c4ae4bdfb2a7d2a6b17c0689cb9d4cdf1d21b7b3b15169"
+  },
+  {
+    "file": "inputs/phylogeny/region_observations.tsv",
+    "bytes": 22989170,
+    "sha256": "4ed4a0ae1a4095ec4293632ef7043712832f7fbee7e23c6946634d945d4c9a6f"
+  },
+  {
+    "file": "inputs/phylogeny/selected_sequence_clusters.tsv",
+    "bytes": 1304238,
+    "sha256": "678514767b839898e67fe7aaa749dd33332d9cf40834d3e48ca52d2e6705c035"
+  },
+  {
+    "file": "inputs/solo/ltr_detection_ref.fa",
+    "bytes": 979,
+    "sha256": "65df3552a200882ac627068fbe5f35ba4f075b39139d58a2200b29ae724d29b2"
+  },
+  {
+    "file": "inputs/solo/observation_sequences.fa",
+    "bytes": 202166,
+    "sha256": "56133a874f4135a64ee6b72cd4b3daf04decbc5aa885302d786b919348045777"
+  },
+  {
+    "file": "inputs/solo/observations.tsv",
+    "bytes": 570578,
+    "sha256": "7caeea02e954d62f302340c0f1e486b11e59004cb69e5864ddf87df47e0ff0a8"
+  },
+  {
+    "file": "inputs/tsd/candidate_tsd_direct_evidence_join.tsv",
+    "bytes": 12735233,
+    "sha256": "107b7de9579e63728ec56d9e66ab2de7722665ffc24aff6082a1c1773752495a"
+  },
+  {
+    "file": "inputs/tsd/catalog_columns.tsv",
+    "bytes": 16022364,
+    "sha256": "26a5c106f97f125102fb6dbef0a18f81da906af77fe12f238f373214c838eea2"
+  },
+  {
+    "file": "inputs/tsd/fiberseq_donor_ids.tsv",
+    "bytes": 324,
+    "sha256": "96c06b1728ce7009cb9c9494526fdb99b880c4d3b1499fdbf19996aec8cbe93b"
+  },
+  {
+    "file": "inputs/tsd/igsr_samples.tsv",
+    "bytes": 701086,
+    "sha256": "4fada515c9df221c29ffe5cdebbdca2457ef21a7594b4c6a55bb8dd2cec26535"
+  },
+  {
+    "file": "inputs/tsd/orf_tsd_cross_sample_discrepancy_audit_v1.tsv",
+    "bytes": 3719,
+    "sha256": "bd843052da0ef93aacc18779249a4709188a0cd3229d580bf99e6e2c3a0b1f18"
+  },
+  {
+    "file": "inputs/tsd/paired_tsd_boundary_observations_v1.json",
+    "bytes": 3604,
+    "sha256": "c1f5985a0907f442c4606450ae2be605ee3628cf63c51ca87929a520ee87457f"
+  },
+  {
+    "file": "inputs/tsd/paired_tsd_boundary_observations_v1.tsv",
+    "bytes": 10413200,
+    "sha256": "f9b1505bc1ca46ea890b4df5f07a151c717c1da6a52099b2b27f1bd1fae035a9"
+  },
+  {
+    "file": "inputs/type1/analysis_parameters.json",
+    "bytes": 1663,
+    "sha256": "5b7f8f9a8326b829c6f7edb79c56e6ba9382428c89ab31fc7a98be652f6203ff"
+  },
+  {
+    "file": "inputs/type1/ape_candidates_kcon_projection.fa",
+    "bytes": 799638,
+    "sha256": "2d5fc1851cb42e0bf49a649bb3d6079291b3697865588e192f0661217abdc8b5"
+  },
+  {
+    "file": "inputs/type1/candidate_ledger.tsv",
+    "bytes": 19629,
+    "sha256": "28fdf2487e3d7175af8b204202ba4c273377b65c5c16868a7236fb3406976f11"
+  },
+  {
+    "file": "inputs/type1/pairwise_divergence_summary.tsv",
+    "bytes": 4047,
+    "sha256": "74b669b32645d39b6d80bb230d1da68c6ae3d4f9f80631dd2384ef1f5120e068"
+  },
+  {
+    "file": "inputs/type1/representative_manifest.tsv",
+    "bytes": 9913,
+    "sha256": "0a606fd8eabe8bf02a62f61a558f9f953be7b2c02b744ab3adcf937ab1361dbd"
+  },
+  {
+    "file": "inputs/type1/representatives.mafft.fasta.gz",
+    "bytes": 101059,
+    "sha256": "e98ad953e977b3bfab22e6d4d7cbad88ca6f08780f47c7479b34a8d20f722a2a"
+  },
+  {
+    "file": "inputs/type1/subfamily_authority.tsv",
+    "bytes": 29009,
+    "sha256": "a99f036db874c38685e7adc9a829f20f38e9b3d1e3f0c0701837119f9272f3f6"
+  }
+]

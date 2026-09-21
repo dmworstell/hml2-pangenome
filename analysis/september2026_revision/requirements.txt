@@ -1,0 +1,9 @@
+# Standalone environment for the September revision (tested with Python 3.12).
+# Do not combine with the root requirements: its compact workflow uses NumPy 2.5.3.
+# These exact versions reproduced all 41 revised table/alignment outputs.
+numpy==2.3.5
+biopython==1.88
+matplotlib==3.11.2
+Pillow==12.3.0
+reportlab==4.4.9
+PyMuPDF==1.28.2

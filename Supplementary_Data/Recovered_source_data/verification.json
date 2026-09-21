@@ -63,8 +63,8 @@
   ],
   "source_replacements_sha256": "3497cef3392897eb14d421a191eee3bf89757447067dc71887a7f5d075c5fc97",
   "reference_bridge_sha256": "8514556a005a0b24053c9678f13ea6fdd5cf2e3676feb3bf4db44584a64e5ce9",
-  "orf_scan_owner": "hervk-hml2-age/manuscript_figures/python/figures/atypical_fusion_figure.py",
-  "cassette_classifier_owner": "project/generative/provirus_type_classifier.py",
+  "orf_scan_owner": "source_worktree/hervk-hml2-age/manuscript_figures/python/figures/atypical_fusion_figure.py",
+  "cassette_classifier_owner": "source_worktree/project/generative/provirus_type_classifier.py",
   "old_source_sequences_regenerated": false,
   "shared_catalog_or_figure_products_modified": false,
   "output_sha256": {

@@ -1,9 +1,9 @@
 {
   "inputs": {
-    "project/results/acroc_resolved_20260914/phylogeny/hml2_pan_ltr_expanded_tree.nwk": "9b0caf488caae0dcf8dfd979fa2e186178d7ffa0241d967c72c1ee8ae7c6915d",
-    "project/results/acroc_resolved_20260914/phylogeny/hml2_pan_orf_pol_tree.nwk": "3c685e86d062ef6a46496c8392e28e1ce5be84f4597d0a4c2928e3d5415231a3",
-    "project/results/acroc_resolved_20260914/Figure_3C_exact_nucleotide_edges.tsv": "c6515c7d1d0c575101b32a6216b3d2e3faeaa0b9d2314f931a97908ef80ebb19",
-    "project/results/acroc_resolved_20260914/phylogeny/locus_subfamily.tsv": "b2a14985b0a41a80e4c4ae4bdfb2a7d2a6b17c0689cb9d4cdf1d21b7b3b15169"
+    "source_worktree/project/results/acroc_resolved_20260914/phylogeny/hml2_pan_ltr_expanded_tree.nwk": "9b0caf488caae0dcf8dfd979fa2e186178d7ffa0241d967c72c1ee8ae7c6915d",
+    "source_worktree/project/results/acroc_resolved_20260914/phylogeny/hml2_pan_orf_pol_tree.nwk": "3c685e86d062ef6a46496c8392e28e1ce5be84f4597d0a4c2928e3d5415231a3",
+    "source_worktree/project/results/acroc_resolved_20260914/Figure_3C_exact_nucleotide_edges.tsv": "c6515c7d1d0c575101b32a6216b3d2e3faeaa0b9d2314f931a97908ef80ebb19",
+    "source_worktree/project/results/acroc_resolved_20260914/phylogeny/locus_subfamily.tsv": "b2a14985b0a41a80e4c4ae4bdfb2a7d2a6b17c0689cb9d4cdf1d21b7b3b15169"
   },
   "trees": {
     "LTR": {
@@ -246,7 +246,7 @@
     6.5,
     7.25
   ],
-  "panel_C": "Schematic cytoband positions, chromosomes scaled separately. Solid double-headed connections encode exact sequence sharing. A dashed connection links 4q35.2 with the acrocentric Type-II group on the basis of the LTR and Pol relationships, without assigning a duplication direction or exact-sequence edge.",
+  "panel_C": "Schematic cytoband positions, chromosomes scaled separately. Solid double-headed connections encode exact sequence sharing. A dashed connection links 4q35.2 with the telomeric Type-II group on the basis of the LTR and Pol relationships, without assigning a duplication direction or exact-sequence edge.",
   "comparison_loci": [
     "10p12.1",
     "10p14",
