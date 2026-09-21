@@ -40,9 +40,6 @@ def main():
     override = {n: (root/n).read_bytes() for n in tracked if n.startswith('Supplementary_Data/')}
     override[catalog_path] = catalog
     override['Supplementary_Data/Catalog/HML2_structural_and_ORF_catalog.tsv'] = catalog
-    supp_rows = [{'file': n.removeprefix('Supplementary_Data/'), 'bytes': len(raw), 'sha256': digest(raw)}
-                 for n, raw in sorted(override.items()) if n.startswith('Supplementary_Data/') and n != 'Supplementary_Data/source_manifest.tsv']
-    override['Supplementary_Data/source_manifest.tsv'] = table(supp_rows, ['file', 'bytes', 'sha256'])
     inputs = list(csv.DictReader((root/'external_inputs.tsv').open(), delimiter='\t'))
     for row in inputs:
         if row['path'] in tracked:
