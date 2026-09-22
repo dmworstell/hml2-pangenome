@@ -1,0 +1,16 @@
+feature	screen	n	N	percent
+gag	intact	1578	2514	62.8
+gag	combined	1855	2534	73.2
+gag_pro	intact	745	1555	47.9
+gag_pro	combined	745	1556	47.9
+gag_pro_pol	intact	0	294	0.0
+gag_pro_pol	combined	266	569	46.7
+env	intact	1583	1904	83.1
+env	combined	1623	1944	83.5
+type2_env	intact	1022	1124	90.9
+type2_env	combined	1062	1164	91.2
+type1_env	intact	561	780	71.9
+type1_env	combined	561	780	71.9
+provirus	structural	10173	10587	96.1
+multi_copy	structural	0	225	0.0
+solo_ltr	structural	455	2168	21.0

@@ -89,3 +89,7 @@ insertion-dating analysis is included.
 Four former displays (S3, S10, S11 and S12 in version 0.4.0) are omitted from the shortened supplement. Their data remain available. Telomeric assignment counts remain in `Figure_S5_assignment_resolution.tsv`, locus ORF frequencies in Table S10, and 7p22.1 donor categories in `Table_S8_7p22_donor_categories.tsv`. Historical data and script filenames are not final figure numbers.
 
 Supplementary tables are numbered by first citation in the final manuscript. Historical source filenames remain unchanged. `SUPPLEMENTARY_TABLE_NUMBERING.tsv` gives each final label and its retained source label.
+
+## Final Table 2 ORF screens
+
+Main Table 2 uses `Supplementary_Data/Table_S6/Table_2_reanalysis/Table_2_ORF_recovery.tsv`. The same directory supplies its reproduction script, per-locus counts and donor–locus observations. The physical Table_S6 path is retained for compatibility; it supports current Table S3 and main Table 2. The pooled Env values and original aggregate results remain available.

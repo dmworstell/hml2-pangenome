@@ -19,8 +19,20 @@ python manuscript_figures/python/analysis/longread_shortread_comparison/run_anal
   --output-dir outputs/short_read_comparison --bootstrap 2000 --skip-plots
 ```
 
-The results count one donor per locus and feature. Linked Gag–Pro–Pol annotations must occur on the same provirus. Missing data remain unknown. Env denotes the screened Env-region ORF, including the truncated Type-I frame. Structural recovery refers to the catalog annotations, not direct recovery of every symbolic structural-variant record in the VCF.
+The results count one donor per locus and feature. Linked Gag–Pro–Pol annotations must occur on the same provirus. Missing data remain unknown. The original pooled Env results combine Type-II Env and the theoretical N-terminally truncated Type-I Env annotation. Translation of that Type-I product has not been demonstrated. Structural recovery refers to the catalog annotations, not direct recovery of every symbolic structural-variant record in the VCF.
 
-Main Table 2 reports the seven `overall_workflow_recovery` rows as n/N (%). N includes all long-read-positive calls. The optional plot contains aggregate recovery counts only. No binary locus heat map is used in the manuscript.
+Main Table 2 now reports separate intact and combined ORF screens, and separates Type-II Env from theoretical Type-I Env. Its structural rows are unchanged. The results are in `Table_2_reanalysis/Table_2_ORF_recovery.tsv`; per-locus counts and the contributing donor–locus observations are supplied alongside it. N includes all long-read-positive calls under the stated criterion, and n counts those also positive in the VCF-derived catalog under the same criterion. The seven original aggregate totals are reproduced exactly; the original pooled Env results remain available in the data.
+
+The intact screen requires the caller's `Intact` classification. The combined screen also retains its stop-free altered-frame candidates. Each gene was scored in its annotated frame; the canonical programmed gag/pro/pol frame transitions were not counted as disruptive sequence mutations. Type-I Env intactness refers only to the residual reading frame, not a full-length Env protein.
+
+Run the new table calculation from any directory after extracting the archive:
+
+```sh
+python /path/to/Supplementary_Data/Table_S6/Table_2_reanalysis/recompute_table2.py \
+  --data /path/to/Supplementary_Data \
+  --out /path/to/reproduced_table_2
+```
+
+This script uses only the Python standard library. It reads the two frozen comparison inputs and the full retained catalog for the locus type. Every eligible locus has a single retained type; a mixed-type locus causes the script to stop rather than silently pool types. `provenance.json` records input hashes and the validation results. This Table 2 extension is included in the v0.4.2 code and derived-data archives. The frozen comparison inputs and the previous aggregate results are unchanged.
 
 Figure S1 uses `../Table_S6_short_read_vcf_locus_diagnostics.tsv`. Its plotted input is the Illumina ensemble callset `1KGP_3202.Illumina_ensemble_callset.freeze_V1.vcf.gz`, not a pool of the four VCF resources examined in the broader work. The figure builder reads the retained direction-corrected E2/E5 diagnostics from `project/working/short_read_direction_corrected_v4/results/bio5_direction_corrected_v4/short_read_numeric_authority_v1.json`. These diagnostics retain records compatible with the direction and reference state of the proposed structural change. Errors are averaged within each donor–locus combination before calculating the locus-level fraction. Each panel shows the 15 loci with the highest disagreement among those with at least ten matched combinations.

@@ -1,9 +1,10 @@
 # Structural polymorphism and population-variable coding capacity of HERV-K(HML-2) in human pangenomes
 
 Source code and result tables for the HML-2 pangenome manuscript. The current
-release 0.4.1 includes the manuscript revision of 22 September 2026. It adds
-array nucleotide comparisons, Type I cassette controls, solo-LTR diversity,
-phylogenetic bootstrap support and corrected terminal-junction evidence.
+release 0.4.2 includes the final Table 2 calculation for the manuscript revision
+of 22 September 2026. It separates intact and combined ORF screens and
+Type-II Env from the theoretical N-terminally truncated Type-I Env annotation.
+The prior scientific results and sequence inputs are retained.
 
 The analysis covers structural variation, tandem-copy validation, coding
 potential, phylogenetic relationships, Type-I cassette variation, target-site
@@ -58,8 +59,8 @@ The current plot builders use 292 donor IDs.
 
 ## Full analysis inputs
 
-The [v0.4.1 archive](https://doi.org/10.5281/zenodo.22888353),
-`HML2_derived_data_v0.4.1.zip`, contains the corrected catalog, extracted HML-2
+The [v0.4.2 archive](https://doi.org/10.5281/zenodo.22903723),
+`HML2_derived_data_v0.4.2.zip`, contains the corrected catalog, extracted HML-2
 sequences, supplementary tables and retained analysis inputs. Its
 `file_manifest.tsv` records every archived file identity.
 
@@ -119,7 +120,7 @@ Third-party sources retain their existing terms.
 
 ## Matched VCF-derived and long-read calls
 
-Main Table 2 and Table S3 compare annotations derived from the phased high-coverage 1000 Genomes VCF panel with long-read calls in 282 shared donors at 83 loci after artifact filtering. The phased variants were applied to hg38 and the resulting haplotype sequences were annotated for coding and structural states. The compact catalog inputs, complete results and reproduction command are in [Table S3](Supplementary_Data/Table_S6/README.md). The comparison retains missing data as unknown and requires linked coding genes on the same provirus.
+Main Table 2 and Table S3 compare annotations derived from short-read sequencing in the phased high-coverage 1000 Genomes VCF panel with long-read calls in 282 shared donors at 83 loci after artifact filtering. The phased variants were applied to hg38 and the resulting haplotype sequences were annotated for coding and structural states. The compact catalog inputs, complete results and reproduction command are in [Table S3](Supplementary_Data/Table_S6/README.md). The comparison retains missing data as unknown and requires linked coding genes on the same provirus.
 
 Figure S1 compares Illumina ensemble structural-variant calls with matched long-read assemblies. It uses that callset alone. Four VCF resources were examined in the broader work, including the phased panel used for the coding comparison. They are not four additional inputs to Table 2 or a pooled source for Figure S1.
 
@@ -130,3 +131,14 @@ Four redundant supplemental displays have been removed from the manuscript. Thei
 `Rscript scripts/reproduce_s4.R outputs/Figure_S4` uses the two retained tandem-array summary tables and the current `Duplication_Analysis.R` plotting blocks. It requires R with ggplot2, scales, dplyr, readr and stringr. Optional ragg and systemfonts packages control the graphics device and font selection.
 
 `python scripts/reproduce_s10.py --output outputs/Figure_S10` uses the root Python environment. It checks the annotation-tier and longest-frame counts against the retained record-level witness tables before rendering the current S10 palette. This is a replot of the retained result, not a new sequence scan or a reclassification with another catalog. The historical source directory remains `Supplementary_Data/Figure_S9/`.
+
+### Final Table 2
+
+After extracting the matching derived-data archive, run the following command from the repository root. It uses only the Python standard library.
+
+```sh
+python Supplementary_Data/Table_S6/Table_2_reanalysis/recompute_table2.py \
+  --data Supplementary_Data --out outputs/table2_reproduced
+```
+
+The output includes intact and combined ORF recovery, per-locus results and donor–locus observations. The normal programmed gag/pro/pol frame transitions are not treated as disruptive mutations. Type-I Env denotes a theoretical N-terminally truncated product whose translation has not been demonstrated. The original seven aggregate totals are checked exactly. See the [Table 2 and Table S3 README](Supplementary_Data/Table_S6/README.md) for definitions and input provenance.

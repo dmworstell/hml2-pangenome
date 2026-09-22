@@ -1,15 +1,14 @@
-# HML-2 pangenome v0.4.1
+# HML-2 pangenome v0.4.2
 
-This release accompanies the manuscript revision of 22 September 2026.
+This release accompanies the final Table 2 revision of 22 September 2026.
 
-- Restore the comparison of annotations derived from the phased 1000 Genomes VCF panel with matched long-read calls as main Table 2. The manuscript retains seven main figures. The analysis includes 282 donors and 83 loci after artifact filtering.
-- Preserve the catalog inclusion flag in the comparison and exclude rejected assembly records. Add a regression test for an excluded copy that would otherwise create a false coding carrier.
-- Include compact input catalogs and exact reproduction commands for Table S6.
-- Move the copy-count legend below the array panel (Figure 2B).
-- Give each category in the cassette figure a distinct color.
-- Complete missing population metadata for four donors in the 8q11.23 network. All 461 observations and 13 sequence haplotypes are unchanged. Restore the accepted two-panel design in the portable renderer.
-- Update final figure references after the restored main figure and removal of four redundant supplementary displays. Their source data remain available.
+- Add separate intact and combined ORF recovery counts for the matched 282-donor, 83-locus comparison of short-read VCF-derived annotations and long-read calls.
+- Separate Type-II Env from the theoretical N-terminally truncated Type-I Env annotation. Translation of the latter product has not been demonstrated.
+- Include a standard-library reproduction script, complete donor–locus observations, per-locus counts and input provenance. The original seven aggregate totals reproduce exactly. The frozen input catalogs are unchanged.
+- Include the post-v0.4.1 documentation corrections and Figure 6C palette correction already present on GitHub.
 
-All earlier scientific results are retained. No ORF-break dating is included. Private collaborator data and licensed BioRender artwork are excluded from the public archive.
+All earlier scientific results and public data files are retained. The normal programmed gag/pro/pol frame transitions are permitted by the intact screen. The combined screen additionally retains the caller's stop-free altered-frame candidates; sequence classification alone does not establish protein activity.
 
-Archive DOI: https://doi.org/10.5281/zenodo.22888353
+No ORF-break dating analysis, private collaborator source data or licensed BioRender artwork is added.
+
+Archive DOI: https://doi.org/10.5281/zenodo.22903723
