@@ -33,7 +33,7 @@ groups=[('Telomeric Type I',['13p13','15p13b'],'#197F75'),
         ('Telomeric Type II',['15p13a','21p13','22p13'],'#8762A6'),
         ('1p36.21',['1p36.21a','1p36.21b','1p36.21c'],'#3179A8'),
         ('8p23.1',['8p23.1b','8p23.1c','8p23.1d','8p23.1e'],'#C5701D'),
-        ('Xq28',['Xq28a','Xq28b'],'#B33C49')]
+        (r'Xq28 $\it{env}$',['Xq28a','Xq28b'],'#B33C49')]
 edges=list(csv.DictReader((PHY/'Figure_3B_exact_nucleotide_edges.tsv').open(), delimiter='\t'))
 edge_map={tuple(sorted((r['locus_1'],r['locus_2']))):float(r['percent_difference']) for r in csv.DictReader((OUT/'pairwise_differences_network.tsv').open(),delimiter='\t')}
 manifest={'inputs':{},'trees':{},'edges':edges}
@@ -95,6 +95,14 @@ def draw_tree(rect, region, filename):
     for c in tree.get_nonterminals():
         if c is not tree.root and c.confidence is not None and c.confidence >=70:
             ax.text(depths[c],ypos[c]+.52,str(round(c.confidence)),fontsize=4.4,ha='right',va='bottom',color='#333333',bbox={'fc':'white','ec':'none','pad':.03},zorder=6)
+    focal_tips={t.name for t in tips if t.name.split('__')[0] in {'19p12c','10q24.2'} and '__hap1__' in t.name}
+    neighbor_tips=set()
+    for focal in focal_tips:
+        candidates=[t for t in full.get_terminals() if t.name.split('__')[0] in shared_loci-{focal.split('__')[0]}]
+        distance=min(full.distance(focal,t) for t in candidates)
+        neighbor_tips.update(t.name for t in candidates if abs(full.distance(focal,t)-distance)<1e-10)
+    assert neighbor_tips.issubset({t.name for t in tips})
+    marked=focal_tips | neighbor_tips
     # Alternate label columns, retaining every locus rather than selecting a few.
     for i,tip in enumerate(tips):
         locus=tip.name.split('__')[0]
@@ -102,7 +110,7 @@ def draw_tree(rect, region, filename):
         ax.plot([depths[tip],target*.99],[ypos[tip],ypos[tip]],color='#CCCCCC',lw=.28)
         display=owner.display_locus_name(locus)
         if sum(t.name.split('__')[0]==locus for t in tips)>1:display+=' c'+tip.name.split('__hap')[1].split('__')[0]
-        ax.text(target,ypos[tip],display,fontsize=6.4,color=colors[subfamilies[locus]],va='center',fontweight='bold' if locus in ['19p12c','10q24.2','4q35.2_hg38'] else 'normal')
+        ax.text(target,ypos[tip],display,fontsize=6.4,color=colors[subfamilies[locus]],va='center',fontweight='bold' if tip.name in marked or locus=='4q35.2_hg38' else 'normal',bbox={'boxstyle':'round,pad=0.08','facecolor':'#FFF1CD','edgecolor':'#8A6824','linewidth':.65} if tip.name in marked else None)
     ax.set(xlim=(-.01*xmax,2.42*xmax),ylim=(-1,len(tips)))
     ax.set_title(f'{region}   {len(set(t.name.split("__")[0] for t in tips))} loci',fontsize=9,pad=5)
     ax.spines[['top','left','right']].set_visible(False)
@@ -111,7 +119,7 @@ def draw_tree(rect, region, filename):
     ax.set_xticks([0,round(xmax/2,2),round(xmax,2)])
     ax.tick_params(axis='x',labelsize=6.5,pad=1)
     ax.set_xlabel('Nucleotide differences per aligned base',fontsize=6.5,labelpad=1)
-    manifest['trees'][region]={'loci':len(set(t.name.split('__')[0] for t in tips)),'full_tree_tips':len(full.get_terminals()),'selected_tips':[t.name for t in tips], 'selection':'Most frequent exact sequence cluster at every locus, plus nearest other-locus neighbors of modal 19p12c and 10q24.2 clusters restricted to loci represented in both LTR and Pol trees. Distances and pruning use the existing full tree without refitting.'}
+    manifest['trees'][region]={'loci':len(set(t.name.split('__')[0] for t in tips)),'full_tree_tips':len(full.get_terminals()),'selected_tips':[t.name for t in tips], 'marked_focal_tips':sorted(focal_tips), 'marked_neighbor_tips':sorted(neighbor_tips), 'selection':'Most frequent exact sequence cluster at every locus, plus nearest other-locus neighbors of modal 19p12c and 10q24.2 clusters restricted to loci represented in both LTR and Pol trees. Distances and pruning use the existing full tree without refitting.'}
     return ax
 
 draw_tree([.035,.379,.455,.565],'LTR','hml2_pan_ltr_expanded_tree.nwk')
@@ -121,6 +129,7 @@ fig.text(.08,.325,'LTR5Hs',color=colors['LTR5_Hs'],fontsize=8)
 fig.text(.265,.325,'LTR5A',color=colors['LTR5A'],fontsize=8)
 fig.text(.425,.325,'LTR5B',color=colors['LTR5B'],fontsize=8)
 fig.text(.59,.325,'Unrooted trees',color=colors['non-LTR5'],fontsize=8)
+fig.text(.50,.978,'Boxed labels mark the focal loci and their compared nearest sequences',ha='center',fontsize=6.8,color='#665020')
 
 # Compact curved networks retain every validated edge and nucleotide count.
 ax=fig.add_axes([.03,.025,.47,.266]);ax.set(xlim=(0,1),ylim=(0,1));ax.axis('off')

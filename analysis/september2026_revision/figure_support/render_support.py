@@ -286,94 +286,59 @@ CYTOBANDS_HG38 = {
 }
 
 def draw_type_schematic(ax) -> None:
-    """Draw one HML-2 map with the operational cassette and Δ292 nested within it."""
+    """Show the exact windows used in panel C, excluding Δ292 from Cass."""
     ax.set_xlim(0, 9500)
-    ax.set_ylim(0, 10)
+    ax.set_ylim(-0.2, 10.5)
     ax.axis("off")
-    finding_title(ax, "A", "Type-I cassette")
+    finding_title(ax, "A", "Sequence comparison windows")
     genes = [
-        ("5′ LTR", 0, 968, 3.8, 2.0, "#8A949E"),
-        ("gag", 1111, 2001, 5.0, 1.65, GREEN),
-        ("pro", 2913, 1005, 5.0, 1.65, GOLD),
-        ("pol", 3878, 2871, 5.0, 1.65, PURPLE),
-        ("env", 6450, 2100, 2.75, 1.65, BLUE),
-        ("3′ LTR", 8504, 968, 3.8, 2.0, "#8A949E"),
+        ("5′ LTR", 0, 968, 8.8, "#8A949E"),
+        ("gag", 1111, 3112, 9.1, GREEN),
+        ("pro", 2913, 3918, 9.1, GOLD),
+        ("pol", 3878, 6749, 9.1, PURPLE),
+        ("env", 6450, 8550, 8.1, BLUE),
+        ("3′ LTR", 8504, 9472, 8.8, "#8A949E"),
     ]
-    ax.plot([970, 8530], [4.8, 4.8], color=INK, lw=1.0, zorder=0)
-    for gene, x, width, y, height, color in genes:
-        ax.add_patch(patches.Rectangle((x, y), width, height, color=color, alpha=0.9))
-        ax.text(
-            x + width / 2, y + height / 2, gene, ha="center", va="center",
-            color="white", fontsize=9.0, fontweight="bold",
-        )
+    ax.plot([968, 8504], [8.9, 8.9], color=INK, lw=0.7, zorder=0)
+    for label, start, end, y, color in genes:
+        ax.add_patch(patches.Rectangle((start, y), end-start, .78, color=color))
+        ax.text((start+end)/2, y+.39, label, ha="center", va="center",
+                color="white", fontsize=8, fontweight="bold")
+    # Every backbone interval is exactly 1,000 KCON positions.
+    for index, start in enumerate((1000, 2000, 3000, 4000, 5000, 7293), 1):
+        ax.add_patch(patches.Rectangle((start, 6.6), 1000, .65,
+                                      facecolor="#E9EAEC", edgecolor="#5B6369", lw=.7))
+        ax.text(start+500, 6.925, f"B{index}", ha="center", va="center", fontsize=8)
+    for start, end in ((6000, 6501), (6793, 7293)):
+        ax.add_patch(patches.Rectangle((start, 6.6), end-start, .65,
+                                      facecolor=TYPE_I, edgecolor=TYPE_I, lw=.7))
+    ax.add_patch(patches.Rectangle((6501, 6.6), 292, .65,
+                                  facecolor="white", edgecolor=RED, hatch="////", lw=.8))
+    ax.text(6646.5, 7.55, "Cass.", ha="center", va="center", fontsize=8, color=TYPE_I)
+    ax.text(1000, 5.9, "1000", ha="center", fontsize=6.5)
+    ax.text(6000, 5.9, "6000", ha="right", fontsize=6.5)
+    ax.text(7293, 5.9, "7293", ha="left", fontsize=6.5)
+    ax.text(8293, 5.9, "8293", ha="center", fontsize=6.5)
+    # Enlarge the same interval to make the two included flanks explicit.
+    zoom_left, zoom_right = 1500, 8000
+    zoom = lambda p: zoom_left + (p-6000)/(7293-6000)*(zoom_right-zoom_left)
+    for source, target in ((6000, zoom_left), (7293, zoom_right)):
+        ax.plot([source, target], [5.55, 4.25], color="#A9AFB3", lw=.65, ls="--")
+    for start, end, label in ((6000, 6501, "501 bp"), (6793, 7293, "500 bp")):
+        ax.add_patch(patches.Rectangle((zoom(start), 2.8), zoom(end)-zoom(start), 1.1,
+                                      facecolor=TYPE_I, edgecolor=TYPE_I, lw=.8))
+        ax.text((zoom(start)+zoom(end))/2, 3.35, label, ha="center", va="center",
+                fontsize=8.5, color="white", fontweight="bold")
+    ax.add_patch(patches.Rectangle((zoom(6501), 2.8), zoom(6793)-zoom(6501), 1.1,
+                                  facecolor="white", edgecolor=RED, hatch="////", lw=1))
+    ax.text(zoom(6647), 4.45, "Δ292", ha="center", fontsize=8.5, color=RED)
+    for coordinate in (6000, 6501, 6793, 7293):
+        ax.text(zoom(coordinate), 2.15, str(coordinate), ha="center", fontsize=7)
+    ax.text(4750, 1.05, "Cass. comparison = 501 bp + 500 bp (Δ292 excluded)",
+            ha="center", fontsize=8, color=TYPE_I)
+    ax.text(4750, .15, "KCON coordinates are zero-based, half-open",
+            ha="center", fontsize=7, color=INK)
 
-    cassette_start, deletion_start, deletion_end, cassette_end = 6000, 6501, 6793, 7293
-    cassette_polygon = [
-        (cassette_start, 2.42),
-        (cassette_start + 90, 3.05),
-        (cassette_start, 3.68),
-        (cassette_start + 90, 4.31),
-        (cassette_start, 4.94),
-        (cassette_start + 90, 5.57),
-        (cassette_start, 6.20),
-        (cassette_start + 90, 6.97),
-        (cassette_end - 90, 6.97),
-        (cassette_end, 6.20),
-        (cassette_end - 90, 5.57),
-        (cassette_end, 4.94),
-        (cassette_end - 90, 4.31),
-        (cassette_end, 3.68),
-        (cassette_end - 90, 3.05),
-        (cassette_end, 2.42),
-    ]
-    ax.add_patch(
-        patches.Polygon(
-            cassette_polygon,
-            closed=True,
-            facecolor="#D9E7E5",
-            edgecolor=TYPE_I,
-            linewidth=1.4,
-            alpha=0.55,
-        )
-    )
-    ax.add_patch(
-        patches.Rectangle(
-            (deletion_start, 2.22),
-            deletion_end - deletion_start,
-            4.95,
-            facecolor="white",
-            edgecolor=RED,
-            linewidth=1.7,
-            hatch="////",
-        )
-    )
-    ax.annotate(
-        "",
-        xy=(cassette_start, 7.4),
-        xytext=(cassette_end, 7.4),
-        arrowprops=dict(arrowstyle="|-|", color=TYPE_I, lw=1.5),
-    )
-    ax.text(
-        (cassette_start + cassette_end) / 2,
-        8.0,
-        "Cassette",
-        ha="center",
-        va="bottom",
-        color=TYPE_I,
-        fontsize=9.0,
-        fontweight="normal",
-    )
-    ax.annotate(
-        "Δ292",
-        xy=((deletion_start + deletion_end) / 2, 2.18),
-        xytext=((deletion_start + deletion_end) / 2, 1.15),
-        ha="center",
-        va="top",
-        arrowprops=dict(arrowstyle="-|>", color=RED, lw=1.1),
-        color=RED,
-        fontsize=9.0,
-        fontweight="normal",
-    )
 
 def build_figure_5() -> Path:
     divergence = read_tsv(MECHANISM / "pairwise_divergence_summary.tsv")
@@ -399,8 +364,8 @@ def build_figure_5() -> Path:
     effect_rows.sort(key=lambda row: float(row["source_opportunity_cv"]))
 
     apply_style()
-    fig = plt.figure(figsize=(7.1, 4.75), constrained_layout=True)
-    gs = fig.add_gridspec(2, 3, height_ratios=[0.72, 0.80])
+    fig = plt.figure(figsize=(7.1, 5.55), constrained_layout=True)
+    gs = fig.add_gridspec(2, 3, height_ratios=[1.02, 0.80])
     draw_type_schematic(fig.add_subplot(gs[0, :]))
 
     ax_b = fig.add_subplot(gs[1, 0])
