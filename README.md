@@ -1,7 +1,7 @@
 # Structural polymorphism and population-variable coding capacity of HERV-K(HML-2) in human pangenomes
 
 Source code and result tables for the HML-2 pangenome manuscript. The current
-release 0.4.0 includes the manuscript revision of 21 September 2026. It adds
+release 0.4.1 includes the manuscript revision of 22 September 2026. It adds
 array nucleotide comparisons, Type I cassette controls, solo-LTR diversity,
 phylogenetic bootstrap support and corrected terminal-junction evidence.
 
@@ -25,14 +25,13 @@ structural-state tests, recovered NucFreq method, retained model formulas,
 deterministic model evidence, and Python syntax. The review-correction check
 reconstructs the reported multiple-testing families and checks the corrected
 short-ORF and missing-haplotype records. The compact-panel command
-regenerates retained panels for Figure 7 and Supplementary Figures S12, S15,
-S18 and S19, plus supporting model plots. The final command reproduces the 54 recurrent-conversion and drift scenarios
+regenerates retained panels for Figure 7 and Supplementary Figures S11, S14 and S15, plus supporting model plots. The final command reproduces the 54 recurrent-conversion and drift scenarios
 in Table S13. These commands do not download data or run a cluster job.
 
 For the September 21 analyses and revised Figure 3, follow
 [`analysis/september2026_revision/README.md`](analysis/september2026_revision/README.md).
 That workflow uses retained sequence inputs and reproduces the revised tables.
-The older Figure 3 and TSD builders preserve their historical analyses.
+The older Figure 4 and TSD builders preserve their historical analyses.
 The current TSD measurements are in `Supplementary_Data/Figure_S7_boundary_evidence/`.
 
 See [FIGURE_TABLE_MAP.md](FIGURE_TABLE_MAP.md) for final manuscript numbering
@@ -42,7 +41,7 @@ and the relationship to historical source filenames.
 
 | Location | Analysis |
 |---|---|
-| `project/manuscript/` | Retained figure builders, artifact filtering, functional refits and mechanism models. Revised Figure 3, Figure 5C and Figures S6, S7, S17 and S22 use the September workflow below. |
+| `project/manuscript/` | Retained figure builders, artifact filtering, functional refits and mechanism models. Revised Figure 3, Figure 5C and Figures S5, S6, S13 and S18 use the September workflow below. |
 | `project/working/biological_orf_annotation_20260802/` | Host-flank-supported locus assignment and biological ORF annotation |
 | `project/working/cnv_copy_state_reinterpretation_v1/` | Copy-state calibration and depth evidence |
 | `project/cluster_workflows/cnv_*/` | Sources for the completed targeted ONT copy-validation workflows |
@@ -59,8 +58,8 @@ The current plot builders use 292 donor IDs.
 
 ## Full analysis inputs
 
-The [v0.4.0 archive](https://doi.org/10.5281/zenodo.22879194),
-`HML2_derived_data_v0.4.0.zip`, contains the corrected catalog, extracted HML-2
+The [v0.4.1 archive](https://doi.org/10.5281/zenodo.22888353),
+`HML2_derived_data_v0.4.1.zip`, contains the corrected catalog, extracted HML-2
 sequences, supplementary tables and retained analysis inputs. Its
 `file_manifest.tsv` records every archived file identity.
 
@@ -117,3 +116,13 @@ not changed by that normalization.
 
 Original code is MIT-licensed and original derived data are CC BY 4.0.
 Third-party sources retain their existing terms.
+
+## Matched short-read reconstruction
+
+Main Table 2 and Table S3 compare 282 shared donors at 83 loci after artifact filtering. The compact catalog inputs, complete results and reproduction command are in [Table S3](Supplementary_Data/Table_S6/README.md). The comparison retains missing data as unknown and requires linked coding genes on the same provirus. Four redundant supplemental displays have been removed from the manuscript. Their data remain in this archive. See the figure map for the current seven main and eighteen supplemental figures.
+
+### Retained supplementary panels S4 and S10
+
+`Rscript scripts/reproduce_s4.R outputs/Figure_S4` uses the two retained tandem-array summary tables and the current `Duplication_Analysis.R` plotting blocks. It requires R with ggplot2, scales, dplyr, readr and stringr. Optional ragg and systemfonts packages control the graphics device and font selection.
+
+`python scripts/reproduce_s10.py --output outputs/Figure_S10` uses the root Python environment. It checks the annotation-tier and longest-frame counts against the retained record-level witness tables before rendering the current S10 palette. This is a replot of the retained result, not a new sequence scan or a reclassification with another catalog. The historical source directory remains `Supplementary_Data/Figure_S9/`.

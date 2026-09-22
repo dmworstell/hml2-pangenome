@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "Please cite this archive when using the code or derived data."
 title: "Structural polymorphism and population-variable coding capacity of HERV-K(HML-2) in human pangenomes"
-version: 0.4.0
-date-released: 2026-09-21
-doi: 10.5281/zenodo.22879194
+version: 0.4.1
+date-released: 2026-09-22
+doi: 10.5281/zenodo.22888353
 repository-code: "https://github.com/dmworstell/hml2-pangenome"
 license: MIT
 authors:

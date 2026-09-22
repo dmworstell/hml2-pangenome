@@ -31,7 +31,7 @@ def fasta(name):
     return d
 groups=['Type I','Type II LTR5Hs','Type II other']
 colors={'A':'#29894A','C':'#2874AE','G':'#BC8014','T':'#C94343'}
-gcolors={'Type I':'#356F6A','Type II LTR5Hs':'#A76D20','Type II other':'#765A78'}
+gcolors={'Type I':'#163B75','Type II LTR5Hs':'#BE3329','Type II other':'#735324'}
 sites={(r['group'],int(r['kcon_0based'])):r for r in rows('human_cassette_site_frequencies.tsv')}
 font=FontProperties(family='DejaVu Sans',weight='bold')
 glyphs={b:TextPath((0,0),b,size=1,prop=font) for b in 'ACGT'}
@@ -77,8 +77,8 @@ ax.spines[['top','right']].set_visible(False)
 from matplotlib.patches import Patch
 ax.legend(handles=[Patch(color=gcolors[g],label=g) for g in groups[:2]],loc='upper right',frameon=False,fontsize=8)
 fig.subplots_adjust(left=.16,right=.97,bottom=.07,top=.94)
-fig.savefig(OUT/'Figure_S17_cassette_consensus_and_similarity.png',dpi=300)
-fig.savefig(OUT/'Figure_S17_cassette_consensus_and_similarity.pdf')
+fig.savefig(OUT/'Figure_S13_cassette_consensus_and_similarity.png',dpi=300)
+fig.savefig(OUT/'Figure_S13_cassette_consensus_and_similarity.pdf')
 plt.close(fig)
 
 # Reuse the current Figure-5 builder. Only panel C is replaced at save time.
@@ -88,10 +88,10 @@ module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
 summ=rows('window_summary.tsv')
 def save_main(fig,path):
     ax=fig.axes[2];ax.clear();order=['B1','B2','B3','B4','B5','B6','Cass.']
-    for group,label,color,marker in [('Type I','Type I','#356F6A','o'),('Type II LTR5Hs','Type II LTR5Hs','#A76D20','^'),('Type II all','Type II all','#765A78','s')]:
+    for group,label,color,marker in [('Type I','Type I','#163B75','o'),('Type II LTR5Hs','Type II LTR5Hs','#BE3329','^'),('Type II all','Type II all','#735324','s')]:
         lookup={r['window']:r for r in summ if r['group']==group}
         ax.plot(order,[float(lookup[w]['mean_p_distance']) for w in order],color=color,marker=marker,lw=1.5,label=label)
-    ax.axvspan(5.55,6.45,color='#ECE8DF',zorder=-2)
+    ax.axvspan(5.55,6.45,color='#F3E1ED',zorder=-2)
     ax.set_ylabel('Nucleotide difference');ax.set_xlabel('Genome window');ax.set_ylim(.02,.16)
     ax.legend(loc='upper right',fontsize=7.7,frameon=False,handlelength=1.0)
     module.finding_title(ax,'C','Regional divergence');module.finish_axis(ax,grid='y')
@@ -198,7 +198,7 @@ for start in starts:
 c.save();(OUT/'alignment_pages.json').write_text(json.dumps(page_meta,indent=2)+'\n')
 
 qa=OUT/'qa';qa.mkdir(exist_ok=True)
-for name in ['Figure_S17_cassette_consensus_and_similarity','Figure_5_type1_persistent_recombining_cassette','Supplementary_Alignment_1']:
+for name in ['Figure_S13_cassette_consensus_and_similarity','Figure_5_type1_persistent_recombining_cassette','Supplementary_Alignment_1']:
     doc=fitz.open(OUT/(name+'.pdf'))
     for i,p in enumerate(doc):p.get_pixmap(matrix=fitz.Matrix(1.4,1.4),alpha=False).save(qa/f'{name}_{i+1:02}.png')
     print(name,len(doc))

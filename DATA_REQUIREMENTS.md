@@ -1,10 +1,10 @@
 # Analysis inputs
 
 Use the derived-data asset matching the release version. Archived versions
-are available at https://doi.org/10.5281/zenodo.22759510. Version 0.4.0 is
-https://doi.org/10.5281/zenodo.22879194.
+are available at https://doi.org/10.5281/zenodo.22759510. Version 0.4.1 is
+https://doi.org/10.5281/zenodo.22888353.
 It includes the corrected Rec catalog and complete testing families.
-Extract `HML2_derived_data_v0.4.0.zip` at the matching code repository root.
+Extract `HML2_derived_data_v0.4.1.zip` at the matching code repository root.
 Do not overwrite a later checkout with an older archive. Run
 `python scripts/restore_corrected_catalog.py` to extract both the current
 catalog and the preceding catalog used only for replay.

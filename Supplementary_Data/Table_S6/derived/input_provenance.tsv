@@ -1,0 +1,3 @@
+role	path_basename	bytes	sha256	retained_rows	shared_people	shared_loci
+long_read_catalog	combined_hml2_orf_analysis.RESOLVED.REC_CORRECTED.tsv	185066468	b4ee09e576208177a51d3fa10594ef64781e1972f94822fec86af455922914f0	59656	282	83
+short_read_catalog	combined_1kgp_hml2_orf_analysis.tsv	1030110706	4cf6c2f579356be88f34d27e4aaaff797b2d97b108bffc0289afa0c334922872	46812	282	83

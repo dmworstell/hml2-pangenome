@@ -6,7 +6,7 @@ from collections import Counter
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from matplotlib.patches import Rectangle, Wedge
+from matplotlib.patches import Rectangle, Wedge, Circle
 import numpy as np
 
 
@@ -43,15 +43,15 @@ def draw_eightq_network(source_table, path):
     ax.text(5, 8.7, '1 provirus / 583 solo-LTRs', ha='center', fontsize=11)
     ax.plot([.8, 9.2], [7.8, 7.8], color='#999999', lw=6)
     for x in [.8, 8.6]:
-        ax.add_patch(Rectangle((x, 7.3), .6, 1, color='#978248'))
+        ax.add_patch(Rectangle((x, 7.3), .6, 1, color='#62666A'))
         ax.text(x+.3, 7.8, 'LTR', ha='center', va='center', color='white', fontsize=8)
     for x in [.35, 9.65]:
         ax.text(x, 7.35, 'CACAC', ha='center', va='center', fontsize=8, color='#5E6065')
     for label, x, w, y, color in [
         ('gag', 1.4, 2.7, 6.2, '#507EA1'), ('pro', 3.2, 1.6, 5., '#619A54'),
-        ('pol', 3.9, 3.9, 3.8, '#DAB345'), ('env', 6.8, 2., 2.6, '#D56464'),
+        ('pol', 3.9, 3.9, 3.8, '#DAB345'), ('Δenv', 6.8, 2., 2.6, '#D56464'),
         ('np9', 6.85, 1.15, 1.4, '#8C729F')]:
-        ax.add_patch(Rectangle((x, y), w, .5, color=color))
+        ax.add_patch(Rectangle((x, y), w, .5, color='#62666A'))
         ax.text(x+w/2, y+.25, label, ha='center', va='center', color='white', fontsize=10)
     for x, y, label in [(2.8, 6.7, 'stop'), (5.65, 4.3, 'stop'),
                         (6.15, 3.8, 'FS'), (7.6, 1.4, 'stop')]:
@@ -65,8 +65,8 @@ def draw_eightq_network(source_table, path):
     net.axis('off')
     net.text(-1.72, 1.61, 'B', fontsize=15, weight='bold')
     net.text(0, 1.61, 'Solo-LTR haplotype network', ha='center', fontsize=15)
-    palette = {'AFR': '#E68A39', 'AMR': '#8E63A8', 'EAS': '#6A9F63',
-               'EUR': '#5583AF', 'SAS': '#D8BD4D', 'Unknown': '#888888'}
+    palette = {'AFR': '#0072B2', 'AMR': '#E69F00', 'EAS': '#7A5195',
+               'EUR': '#009E73', 'SAS': '#CC79A7', 'Unknown': '#888888'}
     angles = np.linspace(0, 2*np.pi, len(network)-1, endpoint=False)
     for i, row in enumerate(network):
         center = (0, 0) if i == 0 else (1.24*np.cos(angles[i-1]), 1.24*np.sin(angles[i-1]))
@@ -79,18 +79,24 @@ def draw_eightq_network(source_table, path):
             net.text(center[0]*.69, center[1]*.69, str(row['substitutions_from_dominant']),
                 ha='center', va='center', fontsize=8,
                 bbox={'facecolor': 'white', 'edgecolor': 'none', 'pad': .2})
+        if i == 0:
+            # All spokes terminate on the boundary of the whole sequence node.
+            net.add_patch(Circle(center, radius + .055, facecolor='white',
+                edgecolor='#777777', linewidth=1.1, zorder=1))
         theta = 0
         for pop, color in palette.items():
             theta2 = theta + 360*int(row[pop])/count
             if theta2 > theta:
                 net.add_patch(Wedge(center, radius, theta, theta2, facecolor=color,
-                    edgecolor='white', linewidth=.3))
+                    edgecolor='white', linewidth=.3, zorder=2))
             theta = theta2
         net.text(*center, str(count), ha='center', va='center', fontsize=10 if i == 0 else 8,
             bbox={'facecolor': 'white', 'edgecolor': 'none', 'pad': .5})
-    net.legend(handles=[Rectangle((0,0), 1, 1, facecolor=c, label=k) for k,c in palette.items()],
+    net.legend(handles=[Rectangle((0,0), 1, 1, facecolor=c, label=k) for k,c in palette.items()
+        if any(int(row[k]) for row in network)],
         loc='lower center', bbox_to_anchor=(.5, -.07), ncol=3, frameon=False, fontsize=8)
     return save(fig, path)
+
 
 
 def draw_type_state_counts(source_table, path):
@@ -103,14 +109,14 @@ def draw_type_state_counts(source_table, path):
     fig, ax = plt.subplots(figsize=(8.5, 6.1), layout='constrained')
     counts = [int(r['callable_typeI']) for r in rows]
     y = np.arange(len(rows))
-    ax.barh(y, counts, color='#326E69')
+    ax.barh(y, counts, color='#163B75')
     ax.set_yticks(y, [r['locus'].removesuffix('_new') for r in rows], fontsize=10)
     ax.invert_yaxis()
     ax.set_xlim(0, 630)
     for yy, n in zip(y, counts):
         ax.text(n+5, yy, str(n), va='center', fontsize=9)
     ax.set_xlabel('Callable internal-bearing alleles, all Type I', fontsize=11)
-    ax.set_title('Type calls at 20 Type-I loci', fontsize=15)
+    ax.set_title('Type calls at twenty loci with Type-I alleles', fontsize=15)
     ax.text(.98, .05, 'Retained Type II: 0 at every locus', transform=ax.transAxes, ha='right', fontsize=10)
     ax.spines[['top', 'right']].set_visible(False)
     return save(fig, path)

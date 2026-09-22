@@ -128,11 +128,12 @@ TYPE1_LOCUS_AUDIT = (
     PROJECT / "working/type1_causal_explanation_v1/typeI_locus_type_audit.tsv"
 )
 
-TYPE_I = "#356F6A"
-TYPE_II = "#765A78"
-TREE_LTR5HS = "#0072B2"
-TREE_LTR5A = "#7A5195"
-TREE_LTR5B = "#D55E00"
+TYPE_I = "#163B75"
+CASSETTE = "#B44787"
+TYPE_II = "#735324"
+TREE_LTR5HS = "#007F73"
+TREE_LTR5A = "#CEAA36"
+TREE_LTR5B = "#D7733F"
 PUBLIC_ID = re.compile(r"^(?:HG|NA)\d+$")
 COMPATIBLE = {"Intact", "Frameshift_at_end", "Intact_FS_End"}
 PROVIRUS = {"Provirus", "Provirus_from_Multi"}
@@ -469,9 +470,7 @@ def build_figure_2(rows, roster) -> Path:
     for index, locus in enumerate(order):
         carrier_cn = np.array([cn for cn in per_locus[locus] if cn > 0])
         x = index + rng.uniform(-0.18, 0.18, size=len(carrier_cn))
-        color = TYPE_I if locus.endswith("7p22.1") else (
-            GREEN if locus.endswith("1p31.1b") else BLUE
-        )
+        color = "#555555"
         ax_a.scatter(
             x, carrier_cn, s=8, color=color, alpha=0.28, linewidths=0
         )
@@ -497,7 +496,7 @@ def build_figure_2(rows, roster) -> Path:
     ax_b = fig.add_axes([0.075, 0.145, 0.515, 0.225], sharex=ax_b_high)
     x = np.arange(len(order))
     bottom = np.zeros(len(order))
-    palette = {2: SKY, 3: GREEN, 4: GOLD, 5: ORANGE, 6: TYPE_II}
+    palette = {2: "#D9D9D9", 3: "#B3B3B3", 4: "#8C8C8C", 5: "#666666", 6: "#404040"}
     for cn in range(2, 7):
         values = np.array([
             sum(value == cn for value in per_locus[locus]) / len(roster)
@@ -537,7 +536,16 @@ def build_figure_2(rows, roster) -> Path:
         ha="right",
     )
     ax_b.set_ylabel("Frequency")
-    ax_b_high.legend(title="Copies", ncol=5, loc="upper right")
+    copy_handles, copy_labels = ax_b_high.get_legend_handles_labels()
+    fig.legend(
+        handles=copy_handles,
+        labels=copy_labels,
+        title="Copies",
+        ncol=5,
+        loc="upper center",
+        bbox_to_anchor=(0.3325, 0.018),
+        frameon=False,
+    )
     finding_title(ax_b_high, "B", "Expanded haplotype frequency")
     finish_axis(ax_b_high, grid="y")
     finish_axis(ax_b, grid="y")
@@ -555,8 +563,8 @@ def build_figure_2(rows, roster) -> Path:
         "env": "Env",
     }
     variation_colors = {
-        "orf_state": "#5D7684",
-        "sequence_only": "#A48A63",
+        "orf_state": "#163B75",
+        "sequence_only": "#BE3329",
     }
     for feature_index, feature in enumerate(features):
         axis = fig.add_axes(variation_positions[feature_index])
@@ -2656,10 +2664,10 @@ def draw_type_schematic(ax) -> None:
     finding_title(ax, "A", "Sequence comparison windows")
     genes = [
         ("5′ LTR", 0, 968, 8.8, "#8A949E"),
-        ("gag", 1111, 3112, 9.1, GREEN),
-        ("pro", 2913, 3918, 9.1, GOLD),
-        ("pol", 3878, 6749, 9.1, PURPLE),
-        ("env", 6450, 8550, 8.1, BLUE),
+        ("gag", 1111, 3112, 9.1, "#527F4C"),
+        ("pro", 2913, 3918, 9.1, "#444C56"),
+        ("pol", 3878, 6749, 9.1, "#735394"),
+        ("env", 6450, 8550, 8.1, "#519AC4"),
         ("3′ LTR", 8504, 9472, 8.8, "#8A949E"),
     ]
     ax.plot([968, 8504], [8.9, 8.9], color=INK, lw=0.7, zorder=0)
@@ -2674,10 +2682,10 @@ def draw_type_schematic(ax) -> None:
         ax.text(start+500, 6.925, f"B{index}", ha="center", va="center", fontsize=8)
     for start, end in ((6000, 6501), (6793, 7293)):
         ax.add_patch(patches.Rectangle((start, 6.6), end-start, .65,
-                                      facecolor=TYPE_I, edgecolor=TYPE_I, lw=.7))
+                                      facecolor=CASSETTE, edgecolor=CASSETTE, lw=.7))
     ax.add_patch(patches.Rectangle((6501, 6.6), 292, .65,
-                                  facecolor="white", edgecolor=RED, hatch="////", lw=.8))
-    ax.text(6646.5, 7.55, "Cass.", ha="center", va="center", fontsize=8, color=TYPE_I)
+                                  facecolor="white", edgecolor=INK, hatch="////", lw=.8))
+    ax.text(6646.5, 7.55, "Cass.", ha="center", va="center", fontsize=8, color=CASSETTE)
     ax.text(1000, 5.9, "1000", ha="center", fontsize=6.5)
     ax.text(6000, 5.9, "6000", ha="right", fontsize=6.5)
     ax.text(7293, 5.9, "7293", ha="left", fontsize=6.5)
@@ -2689,16 +2697,16 @@ def draw_type_schematic(ax) -> None:
         ax.plot([source, target], [5.55, 4.25], color="#A9AFB3", lw=.65, ls="--")
     for start, end, label in ((6000, 6501, "501 bp"), (6793, 7293, "500 bp")):
         ax.add_patch(patches.Rectangle((zoom(start), 2.8), zoom(end)-zoom(start), 1.1,
-                                      facecolor=TYPE_I, edgecolor=TYPE_I, lw=.8))
+                                      facecolor=CASSETTE, edgecolor=CASSETTE, lw=.8))
         ax.text((zoom(start)+zoom(end))/2, 3.35, label, ha="center", va="center",
                 fontsize=8.5, color="white", fontweight="bold")
     ax.add_patch(patches.Rectangle((zoom(6501), 2.8), zoom(6793)-zoom(6501), 1.1,
-                                  facecolor="white", edgecolor=RED, hatch="////", lw=1))
-    ax.text(zoom(6647), 4.45, "Δ292", ha="center", fontsize=8.5, color=RED)
+                                  facecolor="white", edgecolor=INK, hatch="////", lw=1))
+    ax.text(zoom(6647), 4.45, "Δ292", ha="center", fontsize=8.5, color=INK)
     for coordinate in (6000, 6501, 6793, 7293):
         ax.text(zoom(coordinate), 2.15, str(coordinate), ha="center", fontsize=7)
     ax.text(4750, 1.05, "Cass. comparison = 501 bp + 500 bp (Δ292 excluded)",
-            ha="center", fontsize=8, color=TYPE_I)
+            ha="center", fontsize=8, color=CASSETTE)
     ax.text(4750, .15, "KCON coordinates are zero-based, half-open",
             ha="center", fontsize=7, color=INK)
 
@@ -2735,7 +2743,7 @@ def build_figure_5() -> Path:
     type_order = ["TypeI", "TypeII"]
     display = ["Type I", "Type II"]
     bottom = np.zeros(2)
-    palette = {"LTR5Hs": TYPE_I, "LTR5A": GOLD, "LTR5B": ORANGE}
+    palette = {"LTR5Hs": "#007F73", "LTR5A": "#CEAA36", "LTR5B": "#D7733F"}
     for subfamily in ("LTR5Hs", "LTR5A", "LTR5B"):
         values = [lineage_counts[type_name][subfamily] for type_name in type_order]
         ax_b.bar(display, values, bottom=bottom, color=palette[subfamily], label=subfamily)
@@ -2748,8 +2756,8 @@ def build_figure_5() -> Path:
     ax_c = fig.add_subplot(gs[1, 1])
     order = ["B1", "B2", "B3", "B4", "B5", "B6", "Cass."]
     for contrast, label, color, marker in (
-        ("within_TypeI", "Type I", TYPE_I, "o"),
-        ("within_TypeII", "Type II", TYPE_II, "s"),
+        ("within_TypeI", "Type I", "#163B75", "o"),
+        ("within_TypeII", "Type II", "#735324", "s"),
         ("between_TypeI_TypeII", "Between", GOLD, "D"),
     ):
         selected = {r["window_label"]: r for r in divergence if r["contrast"] == contrast}
@@ -2782,7 +2790,7 @@ def build_figure_5() -> Path:
         float(row["likelihood_ratio_effect_vs_source_only"])
         for row in effect_rows
     ])
-    ax_d.plot(x, y, color=TYPE_I, marker="o", lw=1.8, ms=4)
+    ax_d.plot(x, y, color=INK, marker="o", lw=1.8, ms=4)
     ax_d.axhline(1, color=INK, lw=0.9, ls="--")
     ax_d.set_yscale("log")
     ax_d.set_xscale("log")
@@ -2859,7 +2867,7 @@ def build_figure_6() -> Path:
         effects,
         yerr=errors,
         fmt="o",
-        color=TYPE_I,
+        color="#356F6A",
         markersize=6,
         capsize=3,
         lw=1.4,

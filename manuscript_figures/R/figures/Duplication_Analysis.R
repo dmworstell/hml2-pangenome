@@ -152,13 +152,11 @@ locus_order_fig1 <- figure1_plot_data %>%
   arrange(desc(total_freq)) %>%
   pull(locus)
 
-# Create a consistent, colour-blind-safe palette for all possible duplication sizes.
-# Array size is an ordered discrete class (2x..6x) -> Okabe-Ito categorical palette.
+# Array-size counts use an ordered grayscale, distinct from gene identities.
 all_categories <- c("2x", "3x", "4x", "5x", "6x")
 present_categories <- intersect(all_categories, unique(figure1_plot_data$category))
-oi_seq <- unname(okabe_ito[c("sky_blue", "bluish_green", "orange", "vermillion", "reddish_purple")])
-color_palette <- oi_seq[seq_along(present_categories)]
-names(color_palette) <- present_categories
+size_palette <- c(`2x` = "#D9D9D9", `3x` = "#B0B0B0", `4x` = "#808080", `5x` = "#555555", `6x` = "#252525")
+color_palette <- size_palette[present_categories]
 
 # Split data for a faceted plot approach
 data_fig1_top <- figure1_plot_data %>%
@@ -290,9 +288,8 @@ plot_positional <- positional_freq_summary %>%
   facet_wrap(~ locus, labeller = labeller(locus = function(x) str_replace(x, "HML-2_", ""))) +
   scale_y_continuous(labels = scales::percent_format(), limits = c(0, 1)) +
   scale_color_manual(name = "ORF", values = c(
-    gag = okabe_ito[["blue"]], pro = okabe_ito[["orange"]], pol = okabe_ito[["bluish_green"]],
-    env = okabe_ito[["vermillion"]], np9 = okabe_ito[["reddish_purple"]],
-    `K-rev` = okabe_ito[["sky_blue"]])) +
+    gag = "#527F4C", pro = "#444C56", pol = "#735394",
+    env = "#519AC4", np9 = "#A75A37", `K-rev` = "#7D4C76")) +
   theme_pub(base_size = 11) +
   theme(legend.position = "bottom", strip.text = element_text(size = 11),
         axis.text = element_text(size = 10)) +
@@ -308,7 +305,7 @@ plot_relsize <- relative_freq_data %>%
   mutate(locus = factor(locus, levels = locus_order_fig1)) %>%
   ggplot(aes(x = locus, y = relative_frequency, fill = category)) +
   geom_col(width = 0.7) +
-  scale_y_continuous(labels = scales::percent_format(), limits = c(0, 1),
+  scale_y_continuous(labels = scales::percent_format(), limits = c(0, 1), oob = scales::squish,
                      expand = expansion(mult = c(0, 0.01))) +
   scale_x_discrete(limits = rev(locus_order_fig1), labels = function(x) {
     counts <- total_duplicated_haplotypes$total_duplicated[match(x, total_duplicated_haplotypes$locus)]
@@ -321,7 +318,8 @@ plot_relsize <- relative_freq_data %>%
     x = NULL,
     y = "Fraction of array-bearing haplotypes"
   ) +
-  theme(legend.position = "bottom", axis.text = element_text(size = 10))
+  theme(legend.position = "bottom", axis.text = element_text(size = 10),
+        plot.margin = margin(5.5, 14, 5.5, 5.5))
 
 # --- 9. Save all figures (PNG + PDF) ---
 save_fig(plot_fig1,      "hml2_duplication_landscape_ONLY",     width = 14, height = 8)

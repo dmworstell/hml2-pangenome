@@ -16,6 +16,9 @@ args=parser.parse_args()
 OUT=args.out.resolve();OUT.mkdir(parents=True,exist_ok=True)
 PHY=ROOT/'Supplementary_Data/Phylogeny'
 owner.PHY=PHY
+owner.TREE_LTR5HS="#007F73"
+owner.TREE_LTR5A="#CEAA36"
+owner.TREE_LTR5B="#D7733F"
 owner.SUBFAMILY_AUTHORITY=Path(__file__).resolve().parent/'inputs/type1/subfamily_authority.tsv'
 count_authority=json.loads((PHY/'count_authority.json').read_text())
 # Page geometry matches the retained supplemental rendering in
@@ -30,7 +33,7 @@ renderer=renderer.replace('    ax.set_xlim(-0.065 * x_tree, x_tree * 1.45)','   
 renderer=renderer.replace('    path = PHY / output_name', '''    fig.subplots_adjust(top=0.956, bottom=0.095)
     fig.text(0.51, 0.046, 'Boxed labels mark the loci discussed in the regional tree comparison', ha='center', fontsize=7, color='#665020')
     fig.text(0.51, 0.024, 'n = retained source-bound sequences; up to two modal clusters per locus', ha='center', va='bottom', fontsize=7)
-    fig.text(0.51, 0.006, 'Blue: LTR5Hs   Purple: LTR5A   Orange: LTR5B; HML-11 comparators excluded', ha='center', va='bottom', fontsize=7)
+    fig.text(0.51, 0.006, 'Teal: LTR5Hs   Gold: LTR5A   Orange: LTR5B; HML-11 comparators excluded', ha='center', va='bottom', fontsize=7)
     marked=[]
     for text in ax.texts:
         if text.get_text().split(' (n=')[0] in MARKED_LOCI:
@@ -48,11 +51,11 @@ renderer=renderer.replace('    path = PHY / output_name', '''    fig.subplots_ad
 renderer=renderer.replace('    plt.close(fig)\n    return path','    fig.savefig(path.with_suffix(".svg"), facecolor="white")\n    fig.savefig(path.with_suffix(".pdf"), facecolor="white")\n    plt.close(fig)\n    return path')
 owner.OUTPUT=OUT;owner.RENDER_QA=[]
 exec(compile(renderer,'retained_supplemental_tree_renderer','exec'),owner.__dict__)
-panels=[('gag','Gag','Figure_S8A',{'19p12c','8p23.1a'}),
-        ('pro','Pro','Figure_S8B',{'19p12c','7p22.1'}),
-        ('LTR','LTR','Figure_S9A',{'19p12c','10q24.2','12q14.1'}),
-        ('env','Env','Figure_S9B',{'19p12c','10p12.1'}),
-        ('pol','Pol','Figure_S9C',{'19p12c','10q24.2','22q11.21','6q14.1'})]
+panels=[('gag','Gag','Figure_S7A',{'19p12c','8p23.1a'}),
+        ('pro','Pro','Figure_S7B',{'19p12c','7p22.1'}),
+        ('LTR','LTR','Figure_S8A',{'19p12c','10q24.2','12q14.1'}),
+        ('env','Env','Figure_S8B',{'19p12c','10p12.1'}),
+        ('pol','Pol','Figure_S8C',{'19p12c','10q24.2','22q11.21','6q14.1'})]
 inputs={}
 for region,title,name,marked in panels:
  filename='hml2_pan_ltr_expanded_tree.nwk' if region=='LTR' else f'hml2_pan_orf_{region}_tree.nwk'

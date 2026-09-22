@@ -1,0 +1,28 @@
+# Replot final Figure S4 from its retained numerical summaries.
+args <- commandArgs(trailingOnly=TRUE)
+if (length(args) > 1) stop('Usage: Rscript scripts/reproduce_s4.R [output_directory]')
+script <- sub('^--file=', '', grep('^--file=', commandArgs(), value=TRUE))
+stopifnot(length(script)==1)
+root <- dirname(dirname(normalizePath(script)))
+source(file.path(root,'manuscript_figures/R/config.R'))
+suppressPackageStartupMessages({library(dplyr);library(readr);library(stringr)})
+base <- file.path(root,'Supplementary_Data/Panel_data/tandem_resolved')
+out <- if (length(args)) args[[1]] else file.path(root,'outputs','Figure_S4')
+dir.create(out,recursive=TRUE,showWarnings=FALSE)
+HML2_FIG_DIR <- normalizePath(out)
+positional_freq_summary <- read_tsv(file.path(base,'hml2_tandem_positional_orf_summary.tsv'),show_col_types=FALSE)
+relative_freq_data <- read_tsv(file.path(base,'hml2_tandem_relative_size_summary.tsv'),show_col_types=FALSE)
+total_duplicated_haplotypes <- relative_freq_data %>% distinct(locus,total_duplicated)
+locus_order_fig1 <- total_duplicated_haplotypes %>% arrange(desc(total_duplicated),locus) %>% pull(locus)
+loci_with_duplications <- locus_order_fig1
+all_categories <- c('2x','3x','4x','5x','6x')
+present_categories <- intersect(all_categories,unique(relative_freq_data$category))
+size_palette <- c(`2x`='#D9D9D9',`3x`='#B0B0B0',`4x`='#808080',`5x`='#555555',`6x`='#252525')
+color_palette <- size_palette[present_categories]
+source_lines <- readLines(file.path(root,'manuscript_figures/R/figures/Duplication_Analysis.R'))
+start <- grep('^# Figure 2: Positional ORF',source_lines)
+end <- grep('^# --- 9\\. Save',source_lines)-1
+stopifnot(length(start)==1,length(end)==1)
+eval(parse(text=source_lines[start:end]))
+save_fig(plot_positional,'Figure_S4A',width=7.1,height=5.4,dpi=450)
+save_fig(plot_relsize,'Figure_S4B',width=7.1,height=4.8,dpi=450)

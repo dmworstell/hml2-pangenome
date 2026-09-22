@@ -250,5 +250,44 @@
     "expected_differences": 2,
     "probability_zero": 0.1353352832366127
   },
-  "interpretation": "Within-human solo-LTR diversity and paired proviral LTR divergence use different pairs of sequences and different historical intervals. No insertion age or selection significance is inferred from these descriptive comparisons."
+  "interpretation": "Within-human solo-LTR diversity and paired proviral LTR divergence use different pairs of sequences and different historical intervals. No insertion age or selection significance is inferred from these descriptive comparisons.",
+  "C_population_metadata": [
+    {
+      "sample_id": "HG005",
+      "population_description": "Chinese",
+      "population_abbreviation": "",
+      "display_group": "EAS",
+      "source_url": "https://catalog.coriell.org/0/Sections/Search/Sample_Detail.aspx?Ref=GM24631&product=CC",
+      "source_location": "span#lblEthnicity (saved HTML line 1716)",
+      "identity_source_url": "https://www.ncbi.nlm.nih.gov/biosample/SAMN03283350"
+    },
+    {
+      "sample_id": "HG02109",
+      "population_description": "African Caribbean in Barbados",
+      "population_abbreviation": "ACB",
+      "display_group": "AFR",
+      "source_url": "https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/5a939042026331a823a6307fe36a3d7e0188a6e0/data_tables/sample/hprc_release2_sample_metadata.csv",
+      "source_location": "line 224",
+      "identity_source_url": "https://www.ncbi.nlm.nih.gov/biosample/SAMN13958415"
+    },
+    {
+      "sample_id": "HG06807",
+      "population_description": "African Americans living in St. Louis, Missouri",
+      "population_abbreviation": "ASL",
+      "display_group": "AFR",
+      "source_url": "https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/5a939042026331a823a6307fe36a3d7e0188a6e0/data_tables/sample/hprc_release2_sample_metadata.csv",
+      "source_location": "line 2",
+      "identity_source_url": "https://www.ncbi.nlm.nih.gov/biosample/SAMN33621959"
+    },
+    {
+      "sample_id": "NA21309",
+      "population_description": "Maasai in Kinyawa, Kenya",
+      "population_abbreviation": "MKK",
+      "display_group": "AFR",
+      "source_url": "https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/5a939042026331a823a6307fe36a3d7e0188a6e0/data_tables/sample/hprc_release2_sample_metadata.csv",
+      "source_location": "line 228",
+      "identity_source_url": "https://www.ncbi.nlm.nih.gov/biosample/SAMN11308573"
+    }
+  ],
+  "C_population_metadata_provenance": "../Figure_8_population_metadata_sources/README.md"
 }

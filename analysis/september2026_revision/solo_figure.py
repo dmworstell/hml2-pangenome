@@ -42,7 +42,7 @@ ax.legend(loc='upper left',fontsize=8,frameon=False)
 ax.text(-.25,1.075,'B',transform=ax.transAxes,fontsize=12,fontweight='bold')
 ax.text(0,1.075,'Expectations for 968 bp',transform=ax.transAxes,fontsize=11,fontweight='bold')
 for ext in ['png','pdf','svg']:
-    fig.savefig(P/f'Figure_S22_8q11_LTR_diversity.{ext}',dpi=300,bbox_inches='tight',facecolor='white')
+    fig.savefig(P/f'Figure_S18_8q11_LTR_diversity.{ext}',dpi=300,bbox_inches='tight',facecolor='white')
 plt.close(fig)
 
 table={'title':'Table S16. Solo-LTR diversity and simple divergence expectations at 8q11.23',
@@ -52,4 +52,4 @@ table={'title':'Table S16. Solo-LTR diversity and simple divergence expectations
 (P/'Table_S16.json').write_text(json.dumps(table,indent=2)+'\n')
 with (P/'Table_S16B_expected_differences.tsv').open('w') as f:
     w=csv.DictWriter(f,fieldnames=list(table['B_968bp_pair_expectations'][0]),delimiter='\t');w.writeheader();w.writerows(table['B_968bp_pair_expectations'])
-print('Figure S22 and Table S16 are restricted to the 8q11.23 diversity comparison.')
+print('Figure S18 and Table S16 are restricted to the 8q11.23 diversity comparison.')

@@ -28,12 +28,12 @@ ax.text(.02,.025,'One point per array\nBlack line marks the median',transform=ax
 ax=fig.add_subplot(gs[0,1]);gsites=defaultdict(set)
 for r in variants:
  if r['locus']=='7p22.1':gsites[int(r['kcon_position1'])].add(r['array'])
-for pos,units in gsites.items():ax.vlines(pos,0,len(units)/247,color='#3c708f',lw=1.2)
+for pos,units in gsites.items():ax.vlines(pos,0,len(units)/247,color='#222222',lw=1.2)
 ig=defaultdict(set)
 for r in indels:
  if r['locus']=='7p22.1':ig[int(r['start_kcon1'])].add(r['array'])
-ax.scatter(list(ig),[len(s)/247 for s in ig.values()],marker='v',s=35,color='#ae673b',label='Indel tract',zorder=3)
-ax.plot([],[],color='#3c708f',lw=1.5,label='Substitution site');ax.set_xlim(968,8504);ax.set_ylim(-.02,.82);ax.set_xlabel('Position in KCON');ax.set_ylabel('Fraction of arrays differing among copies');ax.set_yticks([0,.2,.4,.6,.8],['0','0.2','0.4','0.6','0.8']);ax.set_title('B  Difference frequencies at 7p22.1',loc='left',fontweight='bold',pad=12);ax.legend(frameon=False,fontsize=8,loc='upper right');ax.text(3280,.71,'1-bp C gap\n167/247 arrays',fontsize=8,color='#874a27');ax.spines[['top','right']].set_visible(False)
+ax.scatter(list(ig),[len(s)/247 for s in ig.values()],marker='v',s=35,color='#222222',label='Indel tract',zorder=3)
+ax.plot([],[],color='#222222',lw=1.5,label='Substitution site');ax.set_xlim(968,8504);ax.set_ylim(-.02,.82);ax.set_xlabel('Position in KCON');ax.set_ylabel('Fraction of arrays differing among copies');ax.set_yticks([0,.2,.4,.6,.8],['0','0.2','0.4','0.6','0.8']);ax.set_title('B  Difference frequencies at 7p22.1',loc='left',fontweight='bold',pad=12);ax.legend(frameon=False,fontsize=8,loc='upper right');ax.text(3280,.71,'1-bp C gap\n167/247 arrays',fontsize=8,color='#222222');ax.spines[['top','right']].set_visible(False)
 ax=fig.add_subplot(gs[1,0]);x=[r for r in pairs if r['locus']=='7p22.1' and r['sample']=='HG04115' and r['haplotype']=='pat'];m=np.zeros((6,6))
 for r in x:a,b=int(r['copy_a'])-1,int(r['copy_b'])-1;m[a,b]=m[b,a]=int(r['substitution_differences'])
 ax.imshow(m,cmap=ListedColormap(['#f4f4f4','#5584a1']),vmin=0,vmax=10)
@@ -56,4 +56,4 @@ mat=np.array([[len(set(v.split('/')))>1 for v in row] for row in vals]);ax.imsho
 for i,row in enumerate(vals):
  for j,val in enumerate(row):ax.text(j,i,val,ha='center',va='center',fontsize=8)
 ax.set_xticks([0,1,2],['2298\nGag','2360–2361\nGag','8300\nEnv']);ax.set_yticks(range(len(labels)),labels,fontsize=8);ax.set_xlabel('KCON position');ax.set_title('D  Three differences at 1p31.1b',loc='left',fontweight='bold',pad=12);ax.spines[:].set_visible(False);ax.text(0,-.23,'Bases are listed in copy order. “--” is the 2-bp gap.\nShading marks a difference within the array.',transform=ax.transAxes,fontsize=8,va='top')
-fig.savefig(P/'Figure_S6_array_nucleotide_variation.png',dpi=300,bbox_inches='tight');fig.savefig(P/'Figure_S6_array_nucleotide_variation.pdf',bbox_inches='tight');fig.savefig(P/'Figure_S6_array_nucleotide_variation.svg',bbox_inches='tight')
+fig.savefig(P/'Figure_S5_array_nucleotide_variation.png',dpi=300,bbox_inches='tight');fig.savefig(P/'Figure_S5_array_nucleotide_variation.pdf',bbox_inches='tight');fig.savefig(P/'Figure_S5_array_nucleotide_variation.svg',bbox_inches='tight')

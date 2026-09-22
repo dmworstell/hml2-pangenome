@@ -1,17 +1,15 @@
-# HML-2 pangenome v0.4.0
+# HML-2 pangenome v0.4.1
 
-Code and supporting data for the manuscript revision of 21 September 2026.
+This release accompanies the manuscript revision of 22 September 2026.
 
-- Nucleotide and gap counts for 617 copies from 289 tandem arrays, with conditional duplication-time calculations.
-- Type I cassette comparisons using matched Type II subfamilies, human and ape alignments, and the complete supplementary sequence alignment.
-- Solo-LTR diversity comparisons and expected nucleotide differences.
-- Phylogenetic bootstrap support and nucleotide-difference quantification for the revised Figure 3.
-- Terminal-junction evidence with candidate TSD differences evaluated across 4–6-base lengths. The unsupported 3q12.3 paired-TSD population result is withdrawn.
-- The public ONT read-source index and updated provenance.
-- Portable reproduction commands and retained sequence inputs for the revised analyses.
+- Restore the matched short-read reconstruction comparison as main Table 2. The manuscript retains seven main figures. The analysis includes 282 donors and 83 loci after artifact filtering.
+- Preserve the catalog inclusion flag in the comparison and exclude rejected assembly records. Add a regression test for an excluded copy that would otherwise create a false coding carrier.
+- Include compact input catalogs and exact reproduction commands for Table S6.
+- Move the copy-count legend below the array panel (Figure 2B).
+- Give each category in the cassette figure a distinct color.
+- Complete missing population metadata for four donors in the 8q11.23 network. All 461 observations and 13 sequence haplotypes are unchanged. Restore the accepted two-panel design in the portable renderer.
+- Update final figure references after the restored main figure and removal of four redundant supplementary displays. Their source data remain available.
 
-The corrected catalog and earlier review corrections are retained. This release adds no ORF-break dating analysis. Original code is MIT licensed. Original derived data are CC BY 4.0. Third-party sources retain their existing terms.
+All earlier scientific results are retained. No ORF-break dating is included. Private collaborator data and licensed BioRender artwork are excluded from the public archive.
 
-Archive DOI: https://doi.org/10.5281/zenodo.22879194
-
-Final figure and table numbers are mapped in [FIGURE_TABLE_MAP.md](FIGURE_TABLE_MAP.md).
+Archive DOI: https://doi.org/10.5281/zenodo.22888353

@@ -26,12 +26,12 @@ OUT.mkdir(exist_ok=True)
 plt.rcParams.update({'font.family':'Arial', 'font.size':7, 'svg.fonttype':'none', 'pdf.fonttype':42})
 owner.PHY = PHY
 subfamilies = owner.load_subfamily_authority()
-colors={'LTR5_Hs':'#1673AF','LTR5A':'#855BA7','LTR5B':'#C76B16','non-LTR5':'#444444'}
-groups=[('Acrocentric Type I',['13p13','15p13b'],'#197F75'),
-        ('Acrocentric Type II',['15p13a','21p13','22p13'],'#8762A6'),
-        ('1p36.21',['1p36.21a','1p36.21b','1p36.21c'],'#3179A8'),
-        ('8p23.1',['8p23.1b','8p23.1c','8p23.1d','8p23.1e'],'#C5701D'),
-        ('Xq28',['Xq28a','Xq28b'],'#B33C49')]
+colors={'LTR5_Hs':'#007F73','LTR5A':'#CEAA36','LTR5B':'#D7733F','non-LTR5':'#444444'}
+groups=[('Acrocentric Type I',['13p13','15p13b'],'#444444'),
+        ('Acrocentric Type II',['15p13a','21p13','22p13'],'#444444'),
+        ('1p36.21',['1p36.21a','1p36.21b','1p36.21c'],'#444444'),
+        ('8p23.1',['8p23.1b','8p23.1c','8p23.1d','8p23.1e'],'#444444'),
+        ('Xq28',['Xq28a','Xq28b'],'#444444')]
 edges=list(csv.DictReader((INPUT/'Figure_3C_exact_nucleotide_edges.tsv').open(), delimiter='\t'))
 edge_map={tuple(sorted((r['locus_1'],r['locus_2']))):float(r['percent_difference']) for r in csv.DictReader((OUT/'pairwise_differences_network.tsv').open(),delimiter='\t')}
 manifest={'inputs':{},'trees':{},'edges':edges}
@@ -187,14 +187,14 @@ for x,label in zip(xs.values(),['1p36.21','4q35.2','8p23.1','Xq28','13p13','15p1
 # gene-sequence identity is the criterion for panel B, not for family membership.
 # Current LTR and Pol trees place 4q35.2 nearest to acrocentric Type-II sequences.
 four_y=bottom+.014
-ax.plot([xs['4']-.03,xs['4']+.03],[four_y,four_y],color='#8762A6',lw=1.4)
+ax.plot([xs['4']-.03,xs['4']+.03],[four_y,four_y],color='#444444',lw=1.4)
 # Bracket the Type-II group, rather than asserting a particular source chromosome.
 group_y=.813
 for chrom in ['15','21','22']:
-    ax.plot([xs[chrom],xs[chrom]],[top+.018,group_y],color='#8762A6',lw=.8,ls='--')
-ax.plot([xs['15'],.995],[group_y,group_y],color='#8762A6',lw=.9,ls='--')
+    ax.plot([xs[chrom],xs[chrom]],[top+.018,group_y],color='#444444',lw=.8,ls='--')
+ax.plot([xs['15'],.995],[group_y,group_y],color='#444444',lw=.9,ls='--')
 ax.plot([xs['4']+.025,xs['4']+.047,xs['4']+.047,.995,.995],
-        [four_y,four_y,.014,.014,group_y],color='#8762A6',lw=1.0,ls='--',clip_on=False)
+        [four_y,four_y,.014,.014,group_y],color='#444444',lw=1.0,ls='--',clip_on=False)
 # Resolve collisions between bootstrap numerals and preserve focal underlines.
 fig.canvas.draw()
 renderer=fig.canvas.get_renderer()

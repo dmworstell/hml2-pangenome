@@ -72,9 +72,9 @@ def main() -> None:
     reg22 = register["REG-022"]["effect_uncertainty_or_power"]
     reg52 = register["REG-052"]["effect_uncertainty_or_power"]
     nulls = [
-        ("1q22 Gag → growth\n(n=34)", extract(r"beta=([^;]+)", reg21), extract(r"se_hc3=([^;]+)", reg21), BLUE, "P=0.61"),
-        ("1q22 Gag → EBV load\n(n=116)", extract(r"beta=([^;]+)", reg22), extract(r"se_hc3=([^;]+)", reg22), BLUE, "P=0.41"),
-        ("7p22.1 copy no. → EBV load\n(n=116)", extract(r"E3_total_cn: beta=([^,]+)", reg52), extract(r"se_hc3=([^,]+)", reg52), PURPLE, "P=0.92"),
+        ("1q22 Gag → growth\n(n=34)", extract(r"beta=([^;]+)", reg21), extract(r"se_hc3=([^;]+)", reg21), INK, "P=0.61"),
+        ("1q22 Gag → EBV load\n(n=116)", extract(r"beta=([^;]+)", reg22), extract(r"se_hc3=([^;]+)", reg22), INK, "P=0.41"),
+        ("7p22.1 copy no. → EBV load\n(n=116)", extract(r"E3_total_cn: beta=([^,]+)", reg52), extract(r"se_hc3=([^,]+)", reg52), INK, "P=0.92"),
     ]
 
     # The association panels are already present in main Figure 6.  Keep only

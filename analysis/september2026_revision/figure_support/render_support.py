@@ -88,9 +88,10 @@ TYPE1_HYPOTHESES = (
 
 SOURCE_EFFECT = PROJECT / "manuscript/delta292_source_vs_effect_v1"
 
-TYPE_I = "#356F6A"
+TYPE_I = "#163B75"
+CASSETTE = "#B44787"
 
-TYPE_II = "#765A78"
+TYPE_II = "#735324"
 
 def read_tsv(path: Path) -> list[dict[str, str]]:
     with path.open(newline="") as handle:
@@ -293,10 +294,10 @@ def draw_type_schematic(ax) -> None:
     finding_title(ax, "A", "Sequence comparison windows")
     genes = [
         ("5′ LTR", 0, 968, 8.8, "#8A949E"),
-        ("gag", 1111, 3112, 9.1, GREEN),
-        ("pro", 2913, 3918, 9.1, GOLD),
-        ("pol", 3878, 6749, 9.1, PURPLE),
-        ("env", 6450, 8550, 8.1, BLUE),
+        ("gag", 1111, 3112, 9.1, "#527F4C"),
+        ("pro", 2913, 3918, 9.1, "#444C56"),
+        ("pol", 3878, 6749, 9.1, "#735394"),
+        ("env", 6450, 8550, 8.1, "#519AC4"),
         ("3′ LTR", 8504, 9472, 8.8, "#8A949E"),
     ]
     ax.plot([968, 8504], [8.9, 8.9], color=INK, lw=0.7, zorder=0)
@@ -311,10 +312,10 @@ def draw_type_schematic(ax) -> None:
         ax.text(start+500, 6.925, f"B{index}", ha="center", va="center", fontsize=8)
     for start, end in ((6000, 6501), (6793, 7293)):
         ax.add_patch(patches.Rectangle((start, 6.6), end-start, .65,
-                                      facecolor=TYPE_I, edgecolor=TYPE_I, lw=.7))
+                                      facecolor=CASSETTE, edgecolor=CASSETTE, lw=.7))
     ax.add_patch(patches.Rectangle((6501, 6.6), 292, .65,
-                                  facecolor="white", edgecolor=RED, hatch="////", lw=.8))
-    ax.text(6646.5, 7.55, "Cass.", ha="center", va="center", fontsize=8, color=TYPE_I)
+                                  facecolor="white", edgecolor=INK, hatch="////", lw=.8))
+    ax.text(6646.5, 7.55, "Cass.", ha="center", va="center", fontsize=8, color=CASSETTE)
     ax.text(1000, 5.9, "1000", ha="center", fontsize=6.5)
     ax.text(6000, 5.9, "6000", ha="right", fontsize=6.5)
     ax.text(7293, 5.9, "7293", ha="left", fontsize=6.5)
@@ -326,16 +327,16 @@ def draw_type_schematic(ax) -> None:
         ax.plot([source, target], [5.55, 4.25], color="#A9AFB3", lw=.65, ls="--")
     for start, end, label in ((6000, 6501, "501 bp"), (6793, 7293, "500 bp")):
         ax.add_patch(patches.Rectangle((zoom(start), 2.8), zoom(end)-zoom(start), 1.1,
-                                      facecolor=TYPE_I, edgecolor=TYPE_I, lw=.8))
+                                      facecolor=CASSETTE, edgecolor=CASSETTE, lw=.8))
         ax.text((zoom(start)+zoom(end))/2, 3.35, label, ha="center", va="center",
                 fontsize=8.5, color="white", fontweight="bold")
     ax.add_patch(patches.Rectangle((zoom(6501), 2.8), zoom(6793)-zoom(6501), 1.1,
-                                  facecolor="white", edgecolor=RED, hatch="////", lw=1))
-    ax.text(zoom(6647), 4.45, "Δ292", ha="center", fontsize=8.5, color=RED)
+                                  facecolor="white", edgecolor=INK, hatch="////", lw=1))
+    ax.text(zoom(6647), 4.45, "Δ292", ha="center", fontsize=8.5, color=INK)
     for coordinate in (6000, 6501, 6793, 7293):
         ax.text(zoom(coordinate), 2.15, str(coordinate), ha="center", fontsize=7)
     ax.text(4750, 1.05, "Cass. comparison = 501 bp + 500 bp (Δ292 excluded)",
-            ha="center", fontsize=8, color=TYPE_I)
+            ha="center", fontsize=8, color=CASSETTE)
     ax.text(4750, .15, "KCON coordinates are zero-based, half-open",
             ha="center", fontsize=7, color=INK)
 
@@ -372,7 +373,7 @@ def build_figure_5() -> Path:
     type_order = ["TypeI", "TypeII"]
     display = ["Type I", "Type II"]
     bottom = np.zeros(2)
-    palette = {"LTR5Hs": TYPE_I, "LTR5A": GOLD, "LTR5B": ORANGE}
+    palette = {"LTR5Hs": "#007F73", "LTR5A": "#CEAA36", "LTR5B": "#D7733F"}
     for subfamily in ("LTR5Hs", "LTR5A", "LTR5B"):
         values = [lineage_counts[type_name][subfamily] for type_name in type_order]
         ax_b.bar(display, values, bottom=bottom, color=palette[subfamily], label=subfamily)
@@ -385,8 +386,8 @@ def build_figure_5() -> Path:
     ax_c = fig.add_subplot(gs[1, 1])
     order = ["B1", "B2", "B3", "B4", "B5", "B6", "Cass."]
     for contrast, label, color, marker in (
-        ("within_TypeI", "Type I", TYPE_I, "o"),
-        ("within_TypeII", "Type II", TYPE_II, "s"),
+        ("within_TypeI", "Type I", "#163B75", "o"),
+        ("within_TypeII", "Type II", "#735324", "s"),
         ("between_TypeI_TypeII", "Between", GOLD, "D"),
     ):
         selected = {r["window_label"]: r for r in divergence if r["contrast"] == contrast}
@@ -419,7 +420,7 @@ def build_figure_5() -> Path:
         float(row["likelihood_ratio_effect_vs_source_only"])
         for row in effect_rows
     ])
-    ax_d.plot(x, y, color=TYPE_I, marker="o", lw=1.8, ms=4)
+    ax_d.plot(x, y, color=INK, marker="o", lw=1.8, ms=4)
     ax_d.axhline(1, color=INK, lw=0.9, ls="--")
     ax_d.set_yscale("log")
     ax_d.set_xscale("log")

@@ -52,3 +52,6 @@ project/manuscript/figures/comment_corrections_20260914/*
 
 # Private collaborator inputs stay in the local/Box manuscript package.
 Supplementary_Data/Panel_data/fiberseq_resolved/
+
+# Compact public benchmark inputs
+!Supplementary_Data/Table_S6/inputs/*.tsv.gz

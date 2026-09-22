@@ -189,12 +189,12 @@ ax.text(.5, .20, "CCTTT / CCTTT", ha="center", va="center", fontsize=12, family=
 ax.text(.5, .07, "Identical in all 42 pairs", ha="center", fontsize=9)
 fig.subplots_adjust(left=.13, right=.98, bottom=.19, top=.83)
 for ext in ("png", "pdf", "svg"):
-    fig.savefig(OUT / f"Figure_S7_corrected.{ext}", dpi=450, facecolor="white")
+    fig.savefig(OUT / f"Figure_S6_corrected.{ext}", dpi=450, facecolor="white")
 fig.canvas.draw()
 for letter, panel in zip(("A", "B"), fig.axes):
     bbox = panel.get_tightbbox(fig.canvas.get_renderer()).transformed(fig.dpi_scale_trans.inverted()).expanded(1.05, 1.06)
     for ext in ("png", "pdf", "svg"):
-        fig.savefig(OUT / f"Figure_S7{letter}_corrected.{ext}", dpi=450, facecolor="white", bbox_inches=bbox)
+        fig.savefig(OUT / f"Figure_S6{letter}_corrected.{ext}", dpi=450, facecolor="white", bbox_inches=bbox)
 plt.close(fig)
 
 ids = sorted({r["Individual_ID"] for r in read(FIBER)})

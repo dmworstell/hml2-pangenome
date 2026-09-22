@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import gzip
 import hashlib
 import math
 import re
@@ -181,7 +182,7 @@ def add_row(cell: Cell, row: dict[str, str]) -> None:
 
 
 def iter_rows(path: Path) -> Iterable[dict[str, str]]:
-    with path.open(newline="") as handle:
+    with (gzip.open(path, "rt", newline="") if path.suffix == ".gz" else path.open(newline="")) as handle:
         reader = csv.DictReader(handle, delimiter="\t")
         if reader.fieldnames is None:
             raise RuntimeError(f"Input has no header: {path}")
@@ -202,6 +203,8 @@ def load_catalog(
     loci: set[str] = set()
     retained_rows = 0
     for row in iter_rows(path):
+        if "analysis_include" in row and row["analysis_include"] != "1":
+            continue
         person = (row.get("ID") or "").strip()
         if not PERSON_RE.fullmatch(person):
             continue
@@ -452,95 +455,35 @@ def analyze(
 
 
 def make_figure(metrics: Sequence[dict], per_locus: Sequence[dict], output_base: Path) -> None:
+    """Optional aggregate plot; the manuscript reports these counts in Table 2."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
-    from matplotlib.colors import LinearSegmentedColormap
 
-    coding = [
-        row for row in metrics
-        if row["domain"] == "coding_product" and row["metric"] == "overall_workflow_recovery"
-    ]
-    structural = [
-        row for row in metrics
-        if row["domain"] == "carrier_structural_state" and row["metric"] == "overall_workflow_recovery"
-    ]
-    exemplar_loci = (
-        "HML-2_7p22.1", "HML-2_1q22", "HML-2_3q12.3",
-        "HML-2_12q13.2", "HML-2_22q11.21", "HML-2_19p12b",
-    )
-    by_key = {(row["locus"], row["feature"]): row for row in per_locus}
-
-    blue, orange = "#0072B2", "#D55E00"
-    fig = plt.figure(figsize=(11.2, 7.2))
-    grid = fig.add_gridspec(2, 2, height_ratios=(0.9, 1.15), hspace=0.46, wspace=0.34)
-    ax_a = fig.add_subplot(grid[0, 0])
-    ax_b = fig.add_subplot(grid[0, 1])
-    ax_c = fig.add_subplot(grid[1, :])
-
-    def recovery_panel(ax, rows, title):
-        """Show the observed matched-panel proportions without pseudo-precision.
-
-        Person-by-locus bootstrap intervals are retained in summary_metrics.tsv
-        and reported in the legend/supplement.  They are intentionally omitted
-        from the main display because strong locus heterogeneity makes them very
-        wide and visually obscures the descriptive matched-panel result.
-        """
+    coding = [row for row in metrics if row["domain"] == "coding_product"
+              and row["metric"] == "overall_workflow_recovery"]
+    structural = [row for row in metrics if row["domain"] == "carrier_structural_state"
+                  and row["metric"] == "overall_workflow_recovery"]
+    fig, axes = plt.subplots(1, 2, figsize=(11.2, 4.0))
+    for ax, rows, title, letter in zip(
+        axes, (coding, structural), ("Coding sequences", "Structural states"), ("A", "B")
+    ):
         x = np.arange(len(rows))
-        y = np.array([row["estimate"] for row in rows]) * 100
-        ax.vlines(x, 0, y, color=blue, linewidth=1.7, alpha=0.85)
-        ax.scatter(x, y, s=52, color=blue, zorder=3)
-        ax.set_xticks(x, [row["label"] for row in rows])
-        ax.set_ylim(0, 103)
-        ax.set_ylabel("Overall workflow recovery (%)")
+        y = np.array([float(row["estimate"]) for row in rows]) * 100
+        ax.vlines(x, 0, y, color="#333333", linewidth=1.5)
+        ax.scatter(x, y, s=40, color="#333333", zorder=3)
+        ax.set_xticks(x, [row["label"] for row in rows], fontsize=8)
+        ax.set_ylim(0, 118)
+        ax.set_yticks([0, 25, 50, 75, 100])
+        ax.set_ylabel("Recovered by short reads (%)")
         ax.set_title(title, loc="left", fontsize=11)
         ax.grid(axis="y", color="#E5E5E5", linewidth=0.7)
         ax.spines[["top", "right"]].set_visible(False)
+        ax.text(-0.16, 1.07, letter, transform=ax.transAxes, fontsize=14, fontweight="bold")
         for i, row in enumerate(rows):
-            label_y = min(y[i] + 4.5, 99.0)
-            ax.text(i, label_y, f"{y[i]:.0f}%", ha="center", va="bottom", fontsize=8.5)
-
-    recovery_panel(ax_a, coding, "Coding-product recovery")
-    recovery_panel(ax_b, structural, "Carrier-level structural-state recovery")
-
-    matrix = np.full((len(exemplar_loci), len(PRODUCTS)), np.nan)
-    annotations = [["" for _ in PRODUCTS] for _ in exemplar_loci]
-    for row_index, locus in enumerate(exemplar_loci):
-        for column_index, product in enumerate(PRODUCTS):
-            row = by_key[(locus, product)]
-            callable_n = int(row["sr_callable_lr_positive_people"])
-            if callable_n >= 3:
-                value = float(row["conditional_positive_concordance"])
-                matrix[row_index, column_index] = value * 100
-                annotations[row_index][column_index] = f"{value * 100:.0f}%"
-    cmap = LinearSegmentedColormap.from_list("hml2_recovery", [orange, "#F7F7F7", blue])
-    image = ax_c.imshow(matrix, aspect="auto", vmin=0, vmax=100, cmap=cmap)
-    for row_index in range(matrix.shape[0]):
-        for column_index in range(matrix.shape[1]):
-            if not annotations[row_index][column_index]:
-                continue
-            value = matrix[row_index, column_index]
-            color = "white" if value < 18 or value > 82 else "#20252A"
-            ax_c.text(column_index, row_index, annotations[row_index][column_index],
-                      ha="center", va="center", fontsize=9, color=color,
-                      fontweight="bold")
-    ax_c.set_yticks(np.arange(len(exemplar_loci)),
-                    [locus.replace("HML-2_", "") for locus in exemplar_loci])
-    ax_c.set_xticks(np.arange(len(PRODUCTS)),
-                    ["Gag", "Gag-Pro", "Gag-Pro-Pol", "Env-region ORF"])
-    ax_c.set_title("Locus- and feature-specific positive concordance", loc="left", fontsize=11)
-    ax_c.tick_params(axis="both", length=0, labelsize=9.5)
-    for spine in ax_c.spines.values():
-        spine.set_visible(False)
-    colorbar = fig.colorbar(image, ax=ax_c, fraction=0.025, pad=0.025)
-    colorbar.set_label("Conditional concordance (%)", fontsize=9)
-    colorbar.ax.tick_params(labelsize=8)
-
-    fig.text(0.01, 0.985, "A", fontsize=15, fontweight="bold", va="top")
-    fig.text(0.505, 0.985, "B", fontsize=15, fontweight="bold", va="top")
-    fig.text(0.01, 0.49, "C", fontsize=15, fontweight="bold", va="top")
-    fig.subplots_adjust(top=0.94, left=0.13, right=0.98, bottom=0.10)
-
+            ax.text(i, y[i] + 3, f"{y[i]:.1f}%\n{int(row['numerator']):,}/{int(row['denominator']):,}",
+                    ha="center", va="bottom", fontsize=8)
+    fig.subplots_adjust(top=0.87, left=0.08, right=0.99, bottom=0.16, wspace=0.32)
     output_base.parent.mkdir(parents=True, exist_ok=True)
     for extension in ("png", "pdf", "svg"):
         fig.savefig(output_base.with_suffix(f".{extension}"), dpi=300, bbox_inches="tight", facecolor="white")
@@ -562,7 +505,7 @@ def main() -> None:
 
     if args.plot_only:
         def read_result(path: Path) -> list[dict]:
-            with path.open(newline="") as handle:
+            with (gzip.open(path, "rt", newline="") if path.suffix == ".gz" else path.open(newline="")) as handle:
                 return list(csv.DictReader(handle, delimiter="\t"))
 
         metrics = read_result(args.output_dir / "results" / "summary_metrics.tsv")

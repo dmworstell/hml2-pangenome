@@ -654,7 +654,7 @@ def build_apparent_copy_review_figure() -> Path:
     if len(baseline) != 1:
         raise ValueError("Inconsistent sample-wide depth baseline")
     x = np.arange(2)
-    ax_c.bar(x - .17, body, .34, label="HML-2 body", color=GREEN)
+    ax_c.bar(x - .17, body, .34, label="HML-2 body", color=BLUE)
     ax_c.bar(x + .17, flank, .34, label="Host flank", color=GOLD)
     ax_c.axhline(baseline.pop(), color=INK, ls="--", label="Sample baseline")
     ax_c.set_xticks(x, ["Retained copy", "Excluded copy"], rotation=12, ha="right")

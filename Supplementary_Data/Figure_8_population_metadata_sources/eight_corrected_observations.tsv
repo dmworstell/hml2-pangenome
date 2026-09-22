@@ -1,0 +1,9 @@
+sample_id	haplotype	ID_Full	haplotype_rank	catalog_line	fasta_sha256	original_superpopulation	corrected_recorded_population	corrected_display_group
+HG005	mat	HG005_mat_hprc_r2_v1.0.1_HML-2_8q11.23_new	1	53631	ca4771ba2e52c27ab93582247aebb9d289f599bc8bcf3cefb4e0662e36088feb	Unknown	Chinese	EAS
+HG005	pat	HG005_pat_hprc_r2_v1.0.1_HML-2_8q11.23_new	1	53632	f739435d05c2d699ca69d08f5a64fe68907f22c5b3ed3e6218f20284dd31b48b	Unknown	Chinese	EAS
+HG02109	mat	HG02109_mat_hprc_r2_v1.0.1_HML-2_8q11.23_new	1	53789	68778248a9f61adf4abbc87415016bc2238002292e2265b5e99170f83c5ed868	Unknown	African Caribbean in Barbados	AFR
+HG02109	pat	HG02109_pat_hprc_r2_v1.0.1_HML-2_8q11.23_new	10	53790	303361c1ddcfa55e16554d80d26d3c885312004ae333dbd2fa1923add99219de	Unknown	African Caribbean in Barbados	AFR
+HG06807	mat	HG06807_mat_v1.0.genbank_HML-2_8q11.23_new	1	53999	8b08c012cb143dcb80b61c0e35dae5dc2872ff8a29f2fc9377ef8ae11510fb30	Unknown	African Americans living in St. Louis, Missouri	AFR
+HG06807	pat	HG06807_pat_v1.0.genbank_HML-2_8q11.23_new	1	54000	f85c4b9228359df922f3562137c5864f90589f9bb09ba2584a7eb271cd74518c	Unknown	African Americans living in St. Louis, Missouri	AFR
+NA21309	mat	NA21309_mat_hprc_r2_v1.0.1_HML-2_8q11.23_new	1	54157	5f1bf87aa6ed7e3c2d3773ae48dea4ae80f7a50c79e2d25af3198b7e69cb1ebb	Unknown	Maasai in Kinyawa, Kenya	AFR
+NA21309	pat	NA21309_pat_hprc_r2_v1.0.1_HML-2_8q11.23_new	1	54158	03a0f52563d7bc3914f142401efe9bce6e424bc38d050be5d760b18b1f2dd2e0	Unknown	Maasai in Kinyawa, Kenya	AFR
