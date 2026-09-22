@@ -2,7 +2,7 @@
 
 This release accompanies the manuscript revision of 22 September 2026.
 
-- Restore the matched short-read reconstruction comparison as main Table 2. The manuscript retains seven main figures. The analysis includes 282 donors and 83 loci after artifact filtering.
+- Restore the comparison of annotations derived from the phased 1000 Genomes VCF panel with matched long-read calls as main Table 2. The manuscript retains seven main figures. The analysis includes 282 donors and 83 loci after artifact filtering.
 - Preserve the catalog inclusion flag in the comparison and exclude rejected assembly records. Add a regression test for an excluded copy that would otherwise create a false coding carrier.
 - Include compact input catalogs and exact reproduction commands for Table S6.
 - Move the copy-count legend below the array panel (Figure 2B).
