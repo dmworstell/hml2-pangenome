@@ -2896,11 +2896,11 @@ def build_figure_6() -> Path:
 
     ax_c = fig.add_subplot(gs[0, 2])
     contexts = [
-        ("Ofatumumab + serum", "Ofat_serum", RED),
-        ("Obinutuzumab + serum", "Obin_serum", ORANGE),
-        ("Rituximab + serum", "Ritux_serum", GOLD),
+        ("Ofatumumab + serum", "Ofat_serum", BLUE),
+        ("Obinutuzumab + serum", "Obin_serum", BLUE),
+        ("Rituximab + serum", "Ritux_serum", BLUE),
         ("Ofatumumab + media", "Ofat_media", BLUE),
-        ("Obinutuzumab + media", "Obin_media", PURPLE),
+        ("Obinutuzumab + media", "Obin_media", BLUE),
     ]
     context_rows = []
     for label, outcome, color in contexts:

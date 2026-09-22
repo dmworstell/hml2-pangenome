@@ -117,9 +117,13 @@ not changed by that normalization.
 Original code is MIT-licensed and original derived data are CC BY 4.0.
 Third-party sources retain their existing terms.
 
-## Matched short-read reconstruction
+## Matched VCF-derived and long-read calls
 
-Main Table 2 and Table S3 compare 282 shared donors at 83 loci after artifact filtering. The compact catalog inputs, complete results and reproduction command are in [Table S3](Supplementary_Data/Table_S6/README.md). The comparison retains missing data as unknown and requires linked coding genes on the same provirus. Four redundant supplemental displays have been removed from the manuscript. Their data remain in this archive. See the figure map for the current seven main and eighteen supplemental figures.
+Main Table 2 and Table S3 compare annotations derived from the phased high-coverage 1000 Genomes VCF panel with long-read calls in 282 shared donors at 83 loci after artifact filtering. The phased variants were applied to hg38 and the resulting haplotype sequences were annotated for coding and structural states. The compact catalog inputs, complete results and reproduction command are in [Table S3](Supplementary_Data/Table_S6/README.md). The comparison retains missing data as unknown and requires linked coding genes on the same provirus.
+
+Figure S1 compares Illumina ensemble structural-variant calls with matched long-read assemblies. It uses that callset alone. Four VCF resources were examined in the broader work, including the phased panel used for the coding comparison. They are not four additional inputs to Table 2 or a pooled source for Figure S1.
+
+Four redundant supplemental displays have been removed from the manuscript. Their data remain in this archive. See the figure map for the current seven main and eighteen supplemental figures.
 
 ### Retained supplementary panels S4 and S10
 

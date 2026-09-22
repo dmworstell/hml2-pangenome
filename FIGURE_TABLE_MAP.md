@@ -30,13 +30,13 @@ BioRender artwork and collaborator Fiber-seq source data are not redistributed.
 | Final label | Content | Source |
 |---|---|---|
 | Table 1 | Cohorts and denominators | Retained donor roster and the listed comparison cohorts. |
-| Table 2 | Coding sequences and structural states recovered by short reads | `Supplementary_Data/Table_S6/results/summary_metrics.tsv`, rows for `overall_workflow_recovery`. Counts include all long-read-positive calls, not only callable short-read records. |
+| Table 2 | Coding sequences and structural states recovered from phased 1000 Genomes VCF calls | `Supplementary_Data/Table_S6/results/summary_metrics.tsv`, rows for `overall_workflow_recovery`. The annotations were derived by applying phased VCF variants to hg38. Counts include all long-read-positive calls, not only callable VCF-derived annotations. |
 
 ## Supplementary figures
 
 | Final label | Content | Source data and analysis |
 |---|---|---|
-| Figure S1 | Matched short-read and long-read structural calls | `Supplementary_Data/Table_S6_short_read_vcf_locus_diagnostics.tsv`. This is the published-VCF comparison, distinct from the reconstruction benchmark in main Table 2. Historical plotting function `build_short_read_figure` in `project/manuscript/build_artifact_filtered_catalog_figures.py` writes a filename beginning `Figure_2`. |
+| Figure S1 | Illumina ensemble structural-variant calls compared with matched long-read assemblies | `Supplementary_Data/Table_S6_short_read_vcf_locus_diagnostics.tsv`. The plotted calls come from the Illumina ensemble callset alone. Main Table 2 instead uses annotations derived from the phased 1000 Genomes VCF panel. Historical plotting function `build_short_read_figure` in `project/manuscript/build_artifact_filtered_catalog_figures.py` writes a filename beginning `Figure_2`. |
 | Figure S2 | Telomeric Type-II LTR and host-flank trees | `Supplementary_Data/Table_S14/telomeric_phylogeny/`, including `reference_LTRs.aln.fa.nwk`, `B_flank_tree.nwk`, `C_flank_tree.nwk`, bootstrap tables and `precision_figure.py`. |
 | Figure S3 | Review of apparent extra copies | `Supplementary_Data/Table_S4_CNV_assembly_artifact_qc.tsv` and `Table_S4_NucFreq_region_summary.tsv`; `build_apparent_copy_review_figure` in `project/manuscript/build_artifact_filtered_catalog_figures.py` writes `Figure_S9_apparent_extra_copy_review`. |
 | Figure S4 | Positional ORF retention and array sizes | `Supplementary_Data/Panel_data/tandem_resolved/`; `manuscript_figures/R/figures/Duplication_Analysis.R`. Replot the retained summaries with `Rscript scripts/reproduce_s4.R outputs/Figure_S4`. The original plotting blocks are internally labelled Figure 2 and Figure 3. |
@@ -61,7 +61,7 @@ BioRender artwork and collaborator Fiber-seq source data are not redistributed.
 |---|---|---|
 | Table S1 | Structural-analysis catalog | `Supplementary_Data/Table_S1_structural_observations_corrected.tsv`; complete corrected catalog is restored from `data/` as described in the root README. |
 | Table S2 | Candidate additional-copy review and read sources | `Supplementary_Data/Table_S4_CNV_assembly_artifact_qc.tsv`, `Table_S4_NucFreq_region_summary.tsv`, `Table_S4_raw_read_source_index.tsv`. |
-| Table S3 | Short-read reconstruction and published-VCF comparisons | `Supplementary_Data/Table_S6/` supplies main Table 2. `Table_S6_short_read_vcf_locus_diagnostics.tsv` supplies Figure S1. |
+| Table S3 | VCF-derived coding and structural calls compared with long reads | `Supplementary_Data/Table_S6/` supplies the phased-panel annotation comparison in main Table 2. `Table_S6_short_read_vcf_locus_diagnostics.tsv` supplies the Illumina ensemble structural-variant diagnostics in Figure S1. |
 | Table S4 | Solo-LTR diversity and expected differences | `Supplementary_Data/Table_S16/`. Supports Figure S18. |
 | Table S5 | Structural-state source table | `Supplementary_Data/Table_S5_artifact_filtered_structural_spectrum.tsv`; `Figure_1_structural_observation_cells.tsv` provides the underlying observation summary. |
 | Table S6 | Array copy-number distributions and calls | `Supplementary_Data/Table_S7_array_copy_number_distributions.tsv`, `Table_S7_haplotype_copy_number_calls.tsv`. |
