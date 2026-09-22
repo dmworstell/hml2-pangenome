@@ -55,7 +55,7 @@ BioRender artwork and collaborator Fiber-seq source data are not redistributed.
 | Figure S17 | Fiber-seq chromatin accessibility | `manuscript_figures/R/analysis/Fiberseq_haplotype_reanalysis.R` and `Supplementary_Data/Figure_S17_locus_crosswalk.tsv`. The latter's S17 label is historical. Collaborator source data and artwork are not included in this public release. |
 | Figure S18 | Solo-LTR diversity and illustrative substitution expectations | `Supplementary_Data/Table_S16/`; retained `make_Figure_S21.py` has a historical filename. Use the September revision workflow. This comparison does not estimate an insertion or coalescence date. |
 
-## Supplementary tables and alignment
+## Supplementary tables and alignment data
 
 | Final label | Content | Public source |
 |---|---|---|
@@ -69,21 +69,21 @@ BioRender artwork and collaborator Fiber-seq source data are not redistributed.
 | Table S8 | Nucleotide variation within arrays | `Supplementary_Data/Table_S15/`. Supports Figure S5, including conditional substitution-clock sensitivity and sequence-based closest-pair ties. |
 | Table S9 | Phylogenetic and host-flank relationships | `Supplementary_Data/Table_S14/4q_acrocentric_relationship/`, `telomeric_phylogeny/`, `phylogeny_review/`. Supports Figure 3 and Figure S2. |
 | Table S10 | Combined ORF-screen counts and 7p22.1 donor categories | `Supplementary_Data/Table_S8_artifact_filtered_orf_coding_potential.tsv` and `Table_S8_7p22_donor_categories.tsv`. |
-| Table S11 | Type-I cassette comparisons | `Supplementary_Data/Table_S17/`. Supports Figure 5C, Figures S12–S13 and Supplementary Alignment 1. |
+| Table S11 | Type-I cassette comparisons | `Supplementary_Data/Table_S17/`. Supports Figure 5C and Figures S12–S13. Includes the complete human/primate aligned FASTA files, sequence manifests and nucleotide-frequency tables. |
 | Table S12 | Direct type-state audit | `Supplementary_Data/Table_S11_direct_TypeI_locus_calls.tsv` and `Table_S11/`. |
 | Table S13 | Recurrent conversion and within-locus Type-I/II polymorphism | `Supplementary_Data/Table_S13/`, including frozen input, 54-scenario results, numerical checks and `analysis_code/`. |
 | Table S14 | Functional association results and full testing families | `Supplementary_Data/Table_S10a_functional_237_model_results.tsv`, `Table_S10b_functional_51_refitted_models.tsv`, `Table_S10c_SLC44A5_disjoint_cohort_estimates.tsv`, `Table_S10d_anti_CD20_adjusted_state_models.tsv`, `Table_S10e_MAGE_complete_discovery_family.tsv.gz`, `Table_S10f_MAGE_candidate_eligibility_and_aliases.tsv`, `Table_S10g_GEUVADIS_complete_SLC44A5_followup_family.tsv`, `Table_S10h_MAGE_SLC44A5_HC3_sensitivity_models.tsv`. |
 | Table S15 | Corrected 1q22 Gag state | `Supplementary_Data/Table_S9_1q22_Gag_artifact_corrected_truth.tsv`. |
 | Table S16 | Archaic 8q11.23 junction reads and ape empty-site evidence | `Supplementary_Data/Table_S12/`. |
 | Table S17 | GRCh38-disrupted annotations that pass in other alleles | Table embedded in the manuscript supplement. Source is the corrected record-level catalog, using the combined Intact/Intact_FS_End screen and 292 donors. There is no separate file named Table_S2 in this release. |
-| Supplementary Alignment 1 | Complete cassette logos and aligned human/primate sequences | `Supplementary_Data/Table_S17/human_full_cassette_6000_7293.aligned.fa`, `primate_full_cassette_6000_7293.aligned.fa`, `human_1001bp_cassette_flanks.aligned.fa`, manifests and base-frequency table. `build_visuals.py` records the original 24-page PDF rendering. Follow the September revision README for release reproduction. |
+| Table S11 alignment data | Complete cassette logos and aligned human/primate sequences | `Supplementary_Data/Table_S17/human_full_cassette_6000_7293.aligned.fa`, `primate_full_cassette_6000_7293.aligned.fa`, `human_1001bp_cassette_flanks.aligned.fa`, manifests and base-frequency table. The separate 24-page alignment PDF is omitted from the submission. `build_visuals.py` retains its historical rendering, and all sequence and frequency data remain available. Follow the September revision README for release reproduction. |
 
 ## Reproduction labels
 
 `scripts/reproduce_compact_panels.py` uses final labels Figure 7, S11, S14
 and S15. Its additional `Type_I_lesion_context` plot is supporting context, not
 a numbered manuscript figure. The September revision workflow covers the
-revised Figure 3, Figure 5C, S5, S6, S7, S8, S13, S18 and Alignment 1. No ORF-break
+revised Figure 3, Figure 5C, S5, S6, S7, S8, S13, S18 and Table S11 alignment data. No ORF-break
 insertion-dating analysis is included.
 
 Four former displays (S3, S10, S11 and S12 in version 0.4.0) are omitted from the shortened supplement. Their data remain available. Telomeric assignment counts remain in `Figure_S5_assignment_resolution.tsv`, locus ORF frequencies in Table S10, and 7p22.1 donor categories in `Table_S8_7p22_donor_categories.tsv`. Historical data and script filenames are not final figure numbers.

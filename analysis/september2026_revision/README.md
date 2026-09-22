@@ -23,11 +23,13 @@ Use `--only arrays`, `--only solo`, `--only type1`, `--only phylogeny`, or `--on
 | --- | --- | --- | --- |
 | Tandem-array nucleotide differences and conditional clock sensitivity | `arrays_analyze.py`, `arrays_sites.py`, `arrays_clock.py`, `arrays_figure.py` | `Supplementary_Data/Table_S15` | S5 |
 | Within-locus solo-LTR diversity and illustrative substitution expectations | `solo_compare.py`, `solo_figure.py` | `Supplementary_Data/Table_S16` | S18 |
-| Human cassette comparisons, LTR5Hs-matched controls, and primate alignments | `type1_analyze.py`, `type1_figures.py` | `Supplementary_Data/Table_S17` | Main 5 (panel C revised), S13, Supplementary Alignment 1 |
+| Human cassette comparisons, LTR5Hs-matched controls, and primate alignments | `type1_analyze.py`, `type1_figures.py` | `Supplementary_Data/Table_S17` | Main 5 (panel C revised), S13, Table S11 alignment data |
 | LTR/Pol bootstrap and exact-sharing network nucleotide differences | `phylogeny_analyze.py`, `phylogeny_tables.py`, `phylogeny_figure.py` | `Supplementary_Data/Table_S14/phylogeny_review` | Main 3 |
 | Corrected paired terminal-boundary observations | `tsd_rebuild.py` | `Supplementary_Data/Figure_S7_boundary_evidence` | S6 |
 
 The portable scripts output `Figure_S5_array_nucleotide_variation.*` and `Figure_S18_8q11_LTR_diversity.*`. The archived source scripts retain earlier S20/S21 filenames. Those names predate the final manuscript order. Table S15 is the source of final Figure S5, and Table S16 is the source of final Figure S18. Main Figure 5 and supplemental Figure S13 retain their final numbers. The corrected boundary tables in `Supplementary_Data/Figure_S7_boundary_evidence/` supply final Figure S6. The older `Figure_S10_TSD_per_locus.tsv` table does not supply that figure.
+
+The complete cassette aligned FASTA files and sequence/frequency tables are retained as Table S11 supporting data under the historical path `Supplementary_Data/Table_S17/`. The separate 24-page alignment PDF is omitted from the submission. The renderer retains that historical output for reproducibility.
 
 ## Retained inputs and limits
 

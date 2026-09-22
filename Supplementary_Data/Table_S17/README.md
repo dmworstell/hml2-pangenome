@@ -1,12 +1,12 @@
-# Table S17 — Type-I cassette comparisons
+# Table S11 — Type-I cassette comparisons (retained source path Table_S17)
 
-These are the source data for the final Figure 5C, Figure S17 and Supplementary Alignment 1 in the manuscript revision of 21 September 2026. Figure S16 also uses the nonhuman primate cassette comparison. Final numbering is recorded in [FIGURE_TABLE_MAP.md](../../FIGURE_TABLE_MAP.md).
+These are the Table S11 source data for final Figure 5C and Figure S13 in the manuscript revision of 22 September 2026. Figure S12 also uses the nonhuman primate cassette comparison. Final numbering is recorded in [FIGURE_TABLE_MAP.md](../../FIGURE_TABLE_MAP.md).
 
 For portable release reproduction, use [the September revision workflow](../../analysis/september2026_revision/README.md). The scripts retained in this folder record the original analysis and rendering. Their original workspace paths and output names are historical provenance, not the release entry point.
 
 ## Manuscript outputs
 
-Figure 5C compares Type I, LTR5Hs Type II and pooled Type II. Figure S17 shows diagnostic frequency logos and descriptive similarity rankings. Supplementary Alignment 1 contains 24 pages. Pages 1–4 contain complete human frequency logos. Pages 5–11 contain all 45 human sequence rows. Pages 12–24 contain all 83 nonhuman primate rows. The aligned FASTA files and exact source tables are supplied here.
+Figure 5C compares Type I, LTR5Hs Type II and pooled Type II. Figure S13 shows diagnostic frequency logos and descriptive similarity rankings. The complete 45-human and 83-nonhuman-primate aligned FASTA files, sequence manifests and nucleotide-frequency tables are supplied here as Table S11 supporting data. The separate 24-page alignment PDF is omitted from the submission. The historical renderer and page manifest remain available for reproducibility.
 
 ## Numerical data
 
