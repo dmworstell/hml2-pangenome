@@ -10,7 +10,7 @@ For the revised analyses, use
 The older scripts in `project/manuscript/` and `manuscript_figures/` retain their
 original figure names and layouts. They are analysis provenance, and running
 all of them does not assemble the final manuscript. In particular, the older
-Figure 4, Figure 5C and TSD builders do not reproduce the September 21 revision.
+Figure 3, Figure 5C and TSD builders do not reproduce the September 21 revision.
 BioRender artwork and collaborator Fiber-seq source data are not redistributed.
 
 ## Main figures
