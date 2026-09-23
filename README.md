@@ -1,9 +1,10 @@
 # Structural polymorphism and population-variable coding capacity of HERV-K(HML-2) in human pangenomes
 
 Source code, curated result tables and public figure exports for the HML-2
-pangenome manuscript. This code/data revision, prepared for v0.4.3, contains the corrected
+pangenome manuscript. This v0.4.3 code/data release contains the corrected
 native variant comparison, complete 8q11.23 solo-LTR sequence set and revised
-Type-I model inputs. The successor archive is not published and has no reserved DOI. The
+Type-I model inputs. The matching archive is assigned DOI
+[10.5281/zenodo.22907293](https://doi.org/10.5281/zenodo.22907293). The
 [published v0.4.2 archive](https://doi.org/10.5281/zenodo.22903723) remains an
 immutable historical snapshot and does not contain these corrections.
 
@@ -129,9 +130,11 @@ outputs must not replace the corrected subtrees above.
 | `analysis/september2026_revision/` | Earlier revision workflows and retained inputs; observe the current-result limits above |
 | `data/` | Compact catalog, model and copy-validation evidence retained from the published archive |
 
-The v0.4.2 `HML2_derived_data_v0.4.2.zip` contains that release's catalog,
-sequences, supplementary tables and retained inputs. Use matching code and
-data archives to reproduce historical releases. Do not overwrite the current
+Download `HML2_code_v0.4.3.zip` and `HML2_derived_data_v0.4.3.zip`
+from the matching Zenodo release and extract both into the same directory. The
+derived-data archive contains the corrected catalog, sequences, current supplementary
+tables and retained public inputs. Use matching code and data archives to reproduce
+historical releases. Do not overwrite the current
 GitHub snapshot with an older archive. The compact-panel runner retains
 historical mechanism/helper plots under explicit `Historical_` output names.
 The release checks and individual plot runners do not constitute a complete

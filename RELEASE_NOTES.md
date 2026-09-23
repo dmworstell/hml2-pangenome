@@ -1,4 +1,4 @@
-# HML-2 pangenome v0.4.3 preparation
+# HML-2 pangenome v0.4.3
 
 This repository revision contains the corrected public code, data and Figures 2–7 for the 22 September 2026 manuscript revision.
 
@@ -12,4 +12,4 @@ The prior v0.4.2 release remains available at https://doi.org/10.5281/zenodo.229
 
 The main manuscript, private collaborator Fiber-seq inputs, cover letters, reviewer/contact documents and licensed BioRender artwork are excluded. No ONT or Dating production pipeline was run for this release.
 
-Archive status: prepared locally; no new Zenodo draft or DOI exists. The public v0.4.2 archive remains unchanged.
+Matching archive DOI: https://doi.org/10.5281/zenodo.22907293. The public v0.4.2 archive remains unchanged.
