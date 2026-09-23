@@ -1,8 +1,8 @@
 # Manuscript figure and table map
 
 This map follows the manuscript and supplement revised on 22 September 2026:
-seven main figures and Figures S1–S17. It describes the corrected code/data revision prepared for v0.4.3.
-The successor archive is not published and has no reserved DOI. The published
+seven main figures and Figures S1–S17. It describes the corrected v0.4.3 code/data release.
+The matching archive DOI is 10.5281/zenodo.22907293. The published
 v0.4.2 DOI archive remains an immutable historical snapshot.
 
 Paths are relative to the repository root. Retained source filenames often use

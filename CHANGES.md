@@ -5,7 +5,7 @@
 - Update the deletion-class model to a conservative count of 16 and inclusive count of 17 Delta292-bearing insertions. Retain the earlier helper/mechanism code as historical analyses.
 - Include reviewed Figures 2–7. Correct Figure 7C to relative viability and the Figure S13 label recipe.
 - Normalize local path prefixes in new text provenance; preserve source and distributed hashes. Native VCF bytes retain their original public-source retrieval headers.
-- Preserve the published v0.4.2 archive. The corrected v0.4.3 archives are prepared separately; no new archive DOI exists.
+- Preserve the published v0.4.2 archive. The matching corrected v0.4.3 archive is assigned DOI 10.5281/zenodo.22907293.
 
 # HML-2 pangenome v0.4.2
 
