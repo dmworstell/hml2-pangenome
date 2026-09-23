@@ -66,7 +66,7 @@ selected.sort(key=lambda r:float(r['mean_p_distance_to_TypeI']))
 for y,r in enumerate(selected):
     ax.barh(y,float(r['mean_p_distance_to_TypeI'])*100,color=gcolors[r['group']],height=.7)
     ax.text(float(r['mean_p_distance_to_TypeI'])*100+.02,y,f"{float(r['mean_p_distance_to_TypeI'])*100:.3f}%",va='center',fontsize=7)
-ax.invert_yaxis();ax.set_yticks(range(len(selected)),[r['candidate_locus'].replace('_hg38',' (hg38)').replace('_new',' (new)') for r in selected],fontsize=8)
+ax.invert_yaxis();ax.set_yticks(range(len(selected)),[r['candidate_locus'].replace('_hg38','').replace('_new',' (new)') for r in selected],fontsize=8)
 ax.set_xlim(0,3);ax.set_xlabel('Mean cassette difference from Type-I representatives (%)',fontsize=9)
 ax.set_title('B  Closest sampled representatives',loc='left',weight='bold',fontsize=11,pad=10)
 ax.spines[['top','right']].set_visible(False)

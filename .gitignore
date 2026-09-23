@@ -55,3 +55,12 @@ Supplementary_Data/Panel_data/fiberseq_resolved/
 
 # Compact public benchmark inputs
 !Supplementary_Data/Table_S6/inputs/*.tsv.gz
+
+# Current public native-genotype inputs and reviewed figure assets
+!Supplementary_Data/Table_S3/ORF_variant_comparison/**/*.gz
+!Supplementary_Data/Table_S3/ORF_variant_comparison/**/*.fa
+!Supplementary_Data/Table_S16/8q11_23_source_sequences/*.fa
+!Supplementary_Data/TypeI_deletion_models/figures/*.png
+!Supplementary_Data/TypeI_deletion_models/figures/*.pdf
+!Figures/Figure_[2-7].png
+!Figures/Figure_[2-7].pdf

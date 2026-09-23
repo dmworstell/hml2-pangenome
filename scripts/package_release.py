@@ -64,10 +64,10 @@ def main():
         put('README.txt', (
             f'HML-2 pangenome code and derived data, version {version}\n\nCode commit: {commit}\n\n'
             f'Extract HML2_code_v{version}.zip and this derived-data ZIP into the same directory. '
-            'The code archive contains the new September revision inputs and reproduction commands. '
+            'The code archive contains the native-genotype comparison, corrected solo-LTR and deletion-class analyses, and reviewed Figures 2–7. '
             'This data archive retains the complete corrected catalog, extracted sequences, '
             'phylogenetic inputs, testing families and phenotype-analysis inputs from the previous public release, '
-            'with the current supplementary tables. See analysis/september2026_revision/README.md '
+            'with the current supplementary tables. The prior consensus-derived Table 2 workflow is superseded. See README.md '
             'for revised tables and figure reproduction.\n\n'
             'file_manifest.tsv records the relative path, size and SHA-256 of every other file. '
             'The manuscript catalog is Supplementary_Data/Catalog/HML2_structural_and_ORF_catalog.tsv. '

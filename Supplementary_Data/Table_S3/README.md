@@ -1,0 +1,1 @@
+Table 2 and the ORF-associated variant part of Table S3 are in ORF_variant_comparison/. Figure S1 retains the separate Illumina ensemble structural-variant diagnostics in ../Table_S6_short_read_vcf_locus_diagnostics.tsv.

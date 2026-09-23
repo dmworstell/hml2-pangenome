@@ -1,0 +1,24 @@
+{
+  "locus": "4q13.2",
+  "region": "chr4:68598250-68603522",
+  "source": "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000G_2504_high_coverage/working/20201028_3202_raw_GT_with_annot/20201028_CCDG_14151_B01_GRM_WGS_2020-08-05_chr4.recalibrated_variants.vcf.gz",
+  "coordinate_authority": "GRCh38_reference_slice_header:historical_source/HML2_project_data/processed_loci/HML-2_4q13.2/GCA_000001405.15_GRCh38_no_alt_analysis_set.PanSN_HML-2_4q13.2.fa",
+  "status": "restored",
+  "file": "historical_source/ORF_variant_comparison/Data/raw_gt/4q13.2.vcf.gz",
+  "sha256": "d6ce539b99c2bccbcfa50aadd3706fb1344e7604585a68becdf722eaaf73ef86",
+  "bytes": 201393,
+  "records": 155,
+  "donors": 282,
+  "command": [
+    "/usr/local/bin/bcftools",
+    "view",
+    "-r",
+    "chr4:68598250-68603522",
+    "-S",
+    "historical_source/ORF_variant_comparison/Data/donors.txt",
+    "-Oz",
+    "-o",
+    "historical_source/ORF_variant_comparison/Data/raw_gt/4q13.2.vcf.partial.gz",
+    "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000G_2504_high_coverage/working/20201028_3202_raw_GT_with_annot/20201028_CCDG_14151_B01_GRM_WGS_2020-08-05_chr4.recalibrated_variants.vcf.gz"
+  ]
+}

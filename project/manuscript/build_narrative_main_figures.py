@@ -2911,7 +2911,7 @@ def build_figure_6() -> Path:
             float(row["hc3_se"]),
             color,
         ))
-    forest(ax_c, context_rows, "Difference in live-cell fraction")
+    forest(ax_c, context_rows, "Difference in relative viability")
     finding_title(ax_c, "C", "Anti-CD20 survival", letter_x=-0.20)
     path = OUT / "Figure_6_functional_association_leads.png"
     save_figure(fig, path)

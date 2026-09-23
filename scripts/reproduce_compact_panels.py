@@ -18,10 +18,10 @@ def main():
     out=args.output.resolve()
     out.mkdir(parents=True,exist_ok=True)
     data=ROOT/'Supplementary_Data'
-    retained_panels.draw_eightq_network(data/'Figure_7_solo_LTR_haplotype_counts.tsv',out/'Figure_7.png')
+    retained_panels.draw_eightq_network(data/'Figure_7_solo_LTR_haplotype_counts.tsv',out/'Figure_6.png')
     retained_panels.draw_sevenp_donors(data/'Figure_S6_donor_categories.tsv',out/'Sevenp_donor_categories.png')
     retained_panels.draw_type_state_counts(data/'Table_S11_direct_TypeI_locus_calls.tsv',out/'Figure_S11.png')
-    for module,name in [(helper,'Figure_S15'),(mechanisms,'Figure_S14'),(lesions,'Type_I_lesion_context')]:
+    for module,name in [(helper,'Historical_helper_equilibrium'),(mechanisms,'Historical_mechanism_ranking'),(lesions,'Historical_Type_I_lesion_context')]:
         module.OUT=out
         module.PNG=out/(name+'.png')
         module.PDF=out/(name+'.pdf')

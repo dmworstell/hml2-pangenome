@@ -30,9 +30,9 @@ def save(fig, path):
 
 def draw_eightq_network(source_table, path):
     network = read_tsv(source_table)
-    if len(network) != 13 or sum(int(r['observations']) for r in network) != 461:
+    if len(network) != 14 or sum(int(r['observations']) for r in network) != 583:
         raise ValueError('Unexpected 8q11.23 sequence denominator or haplotype count')
-    if int(network[0]['observations']) != 432:
+    if int(network[0]['observations']) != 547:
         raise ValueError('Unexpected dominant 8q11.23 haplotype count')
     fig, (ax, net) = plt.subplots(1, 2, figsize=(10, 4.9),
         gridspec_kw={'width_ratios': [1, 1.15]}, layout='constrained')

@@ -5,5 +5,3 @@ The 617 extracted copy sequences, locus alignments, KCON coordinate mappings and
 Table_S15_pairwise_nucleotide_differences.tsv and Table_S15_indel_runs.tsv give substitutions and contiguous gap tracts separately. Clock tables apply the manuscript's two published pairwise substitution rates to the internal sequences as a conditional sensitivity analysis. Copy sequence provenance includes source checksums and exact extraction boundaries.
 
 Scripts record the original analysis and require the source workspace and its dependencies. Source paths use portable labels. The supplied FASTA files and alignments contain the sequence inputs used for the tabulated comparisons.
-
-Final manuscript labels are Table S15 and Figure S6 (21 September 2026). See ../../FIGURE_TABLE_MAP.md. Portable release reproduction is documented in ../../analysis/september2026_revision/README.md. The scripts retained in this folder preserve original analysis provenance. Statements above about original-workspace requirements describe those historical scripts, not the portable release workflow.

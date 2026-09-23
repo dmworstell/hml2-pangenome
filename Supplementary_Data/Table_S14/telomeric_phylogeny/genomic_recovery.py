@@ -10,7 +10,7 @@ from Bio.Align import PairwiseAligner
 from Bio.Phylo.TreeConstruction import DistanceTreeConstructor, DistanceMatrix
 
 OUT=Path(__file__).resolve().parent
-PROJECT=Path('/Users/Daniel/Documents/HML-2 manuscript work/project')
+PROJECT=Path('historical_source/HML-2_manuscript_work/project')
 PHY=PROJECT/'results/acroc_resolved_20260914/phylogeny'
 CAT=PROJECT/'results/rec_exon_boundary_correction_20260915/combined_hml2_orf_analysis.RESOLVED.REC_CORRECTED.tsv'
 REF=PROJECT/'results/type2_insertion_ancestry_audit_20260802/sequences'
@@ -46,7 +46,7 @@ catalog={r['ID_Full']:r for r in rows(CAT) if r['Locus'].removeprefix('HML-2_') 
 sources={};metadata={};excluded=[]
 for i,r in enumerate(admissions):
     cr=catalog[r['ID_Full']]
-    paths=[Path(cr['source_record_path_v3']),Path('/Users/Daniel/Documents/HML2_project_data/processed_loci')/cr['orig_Locus']/f"{r['ID_Full']}.fa"]
+    paths=[Path(cr['source_record_path_v3']),Path('historical_source/HML2_project_data/processed_loci')/cr['orig_Locus']/f"{r['ID_Full']}.fa"]
     candidates=[p for p in paths if p.is_file() and p.suffix.lower() in {'.fa','.fasta','.fna'}]
     if not candidates:
         excluded.append({'ID_Full':r['ID_Full'],'reason':'raw_source_not_local'});continue

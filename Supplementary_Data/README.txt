@@ -1,3 +1,7 @@
+Final manuscript numbering, 22 September 2026.
+
+Most numbered source filenames retain their original labels. Use SUPPLEMENTARY_TABLE_NUMBERING.tsv to match these source labels to the final manuscript tables. Final Table S3 and main Table 2 use Table_S3/ORF_variant_comparison/. The separate Table_S6_short_read_vcf_locus_diagnostics.tsv file supplies the structural-variant diagnostics in Figure S1; the retired Table_S6/ consensus-comparison folder is not distributed. Source Table_S15 is final Table S8 (array nucleotide comparisons), and source Table_S10 is final Table S15 (functional analyses).
+
 Supporting data for the corrected working manuscript, 21 September 2026.
 
 The catalog contains all source records and explicit analysis-inclusion flags. The HML-2 analysis includes 59,656 retained records from 292 donors. HML11 comparators, duplicate intervals, the 8q24.3b alias and unsupported assembly records are excluded from analyses. Fragment_Intact includes translated products shorter than 60% of the reference protein, whether initially classified as Intact or Intact_FS_End. The correction table identifies every changed catalog call.
@@ -12,6 +16,10 @@ The phylogeny comparison uses the 64 loci shared by LTR and Pol trees, or 46 for
 
 The manifest records the SHA-256 checksum and byte length of each file. This supplement includes the current manuscript revision tables.
 
-Local computer paths in provenance fields are replaced by portable source labels. The manifest retains the original source checksum as well as the distributed checksum. Biological and statistical fields are unchanged.
+Older provenance tables use portable source labels. The new Table_S3/ORF_variant_comparison subtree runs from its packaged inputs and relative-path reference manifest. Original source paths retained in its audit fields document provenance and are not required for the frozen-input comparison. The manifest records the distributed checksum and preserves original source-checksum lineage.
 
 The September 21 revision adds the public ONT source index for Table S4, nucleotide counts and conditional duplication times for Table S15, and solo-LTR diversity comparisons for Table S16. Table S17 contains the Type I comparisons and complete cassette alignments. Table S14/phylogeny_review contains the Figure 3 bootstrap and pairwise-divergence tables. Figure_S7_boundary_evidence supplies corrected terminal-boundary observations. These measurements are separate from the catalog's historical TSD annotations, which remain unchanged. The earlier 3q12.3 paired-TSD population result was withdrawn because its second junction was not supported. Candidate differences are now evaluated across all 4–6-base lengths, with the 42 length-ambiguous 8p23.1a pairs kept separate. Figure numbers in legacy source filenames may predate the manuscript's final figure order. Biological identities and sequence coordinates are unchanged.
+
+22 September author review. The 8q11.23 section now precedes the functional and chromatin sections. SUPPLEMENTARY_TABLE_NUMBERING.tsv gives the current table order; retained source filenames are unchanged. FIGURE_SOURCE_NUMBERING.tsv identifies the affected figure-data files.
+
+The 8q11.23 solo-LTR calculation now includes all 583 retained donor-haplotypes, including 122 graph-derived sequences omitted by the earlier assembly-only lookup. There are 14 sequence haplotypes, including 547 copies of the dominant sequence. The twelve comparison loci retain their validated sequence sets. Table_S16 contains the corrected alignment, all 583 source FASTAs, source checksums, and a self-contained verification script.

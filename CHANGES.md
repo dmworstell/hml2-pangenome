@@ -1,3 +1,12 @@
+# v0.4.3 manuscript corrections, 22 September 2026
+
+- Replace the consensus-derived coding recovery calculation with the native ORF-associated variant comparison and its public inputs. Missing or inadequate genotypes remain unresolved.
+- Include all 583 retained 8q11.23 solo-LTR haplotypes and their reference-aligned sequences. The dominant haplotype contains 547 observations.
+- Update the deletion-class model to a conservative count of 16 and inclusive count of 17 Delta292-bearing insertions. Retain the earlier helper/mechanism code as historical analyses.
+- Include reviewed Figures 2–7. Correct Figure 7C to relative viability and the Figure S13 label recipe.
+- Normalize local path prefixes in new text provenance; preserve source and distributed hashes. Native VCF bytes retain their original public-source retrieval headers.
+- Preserve the published v0.4.2 archive. The corrected v0.4.3 archives are prepared separately; no new archive DOI exists.
+
 # HML-2 pangenome v0.4.2
 
 This release accompanies the final Table 2 revision of 22 September 2026.

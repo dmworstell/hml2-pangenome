@@ -75,8 +75,8 @@ def main():
         'Four intact ORFs, no Y195C':7,'Four intact ORFs, with Y195C':259,
         'No observed copy meeting either criterion':26}
     eight=read_tsv(ROOT/'Supplementary_Data/Figure_7_solo_LTR_haplotype_counts.tsv')
-    assert len(eight)==13 and sum(int(r['observations']) for r in eight)==461
-    assert int(eight[0]['observations'])==432
+    assert len(eight)==14 and sum(int(r['observations']) for r in eight)==583
+    assert int(eight[0]['observations'])==547
     provirus=json.loads((ROOT/'data/8q11_23_provirus_annotation.json').read_text())
     assert provirus['5_prime_TSD']==provirus['3_prime_TSD']=='CACAC'
     type1=[r for r in read_tsv(ROOT/'Supplementary_Data/Table_S11_direct_TypeI_locus_calls.tsv') if r['locus']!='TOTAL']
@@ -115,9 +115,9 @@ def main():
         assert len(saved)==len(computed)
         for a,b in zip(saved,computed):
             assert math.isclose(float(a[key]),b[key],rel_tol=1e-12,abs_tol=1e-14)
-    model=load_module('source_effect',ROOT/'project/manuscript/build_delta292_source_vs_effect_simulation.py')
+    model=load_module('source_effect',ROOT/'Supplementary_Data/TypeI_deletion_models/reproduce_source_model.py')
     assert model.ALPHAS==(.1,.25,.5,1.,2.,5.,20.)
-    assert model.N_CLASSES==7 and model.OBSERVATIONS==(('orthology_aware_floor',10),('inclusive_ceiling',17))
+    assert model.N_CLASSES==7 and model.OBSERVATIONS==(('orthology_aware_floor',16),('inclusive_ceiling',17))
     comparisons=read_tsv(ROOT/'Supplementary_Data/Figure_5_source_effect_model_comparison.tsv')
     for row in comparisons:
         alpha=float(row['dirichlet_alpha_per_lesion'])

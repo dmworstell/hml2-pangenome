@@ -7,7 +7,7 @@ from Bio.Seq import Seq
 from Bio.Phylo.TreeConstruction import DistanceTreeConstructor,DistanceMatrix
 
 OUT=Path(__file__).resolve().parent
-PROJECT=Path('/Users/Daniel/Documents/HML-2 manuscript work/project')
+PROJECT=Path('historical_source/HML-2_manuscript_work/project')
 REF=PROJECT/'results/type2_insertion_ancestry_audit_20260802/sequences'
 LOCI=['4q35.2_hg38','15p13a','21p13','22p13']
 def write(name,rows):

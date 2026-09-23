@@ -1,144 +1,156 @@
 # Structural polymorphism and population-variable coding capacity of HERV-K(HML-2) in human pangenomes
 
-Source code and result tables for the HML-2 pangenome manuscript. The current
-release 0.4.2 includes the final Table 2 calculation for the manuscript revision
-of 22 September 2026. It separates intact and combined ORF screens and
-Type-II Env from the theoretical N-terminally truncated Type-I Env annotation.
-The prior scientific results and sequence inputs are retained.
+Source code, curated result tables and public figure exports for the HML-2
+pangenome manuscript. This code/data revision, prepared for v0.4.3, contains the corrected
+native variant comparison, complete 8q11.23 solo-LTR sequence set and revised
+Type-I model inputs. The successor archive is not published and has no reserved DOI. The
+[published v0.4.2 archive](https://doi.org/10.5281/zenodo.22903723) remains an
+immutable historical snapshot and does not contain these corrections.
 
-The analysis covers structural variation, tandem-copy validation, coding
-potential, phylogenetic relationships, Type-I cassette variation, target-site
-duplications, short-read comparisons, and exploratory functional associations.
+The analyses cover structural variation, tandem-copy validation, coding
+potential, regional phylogenies, Type-I cassette variation, target-site
+duplications, short-read comparisons and exploratory functional associations.
+The retained HML-2 catalog includes 59,656 analysis records from 292 donors.
 
-## Reproduce the compact results
+## Current results and inputs
 
-With Python 3.12, install `requirements.txt`, then run:
+- Main Table 2 and the ORF-associated variant part of Table S3 use
+  [`Supplementary_Data/Table_S3/ORF_variant_comparison/`](Supplementary_Data/Table_S3/ORF_variant_comparison/README.md).
+  Native short-read genotypes replace the superseded consensus-derived
+  coding/structural recovery calculation. The current comparison tests selected
+  variants; it does not reconstruct complete ORFs.
+- The corrected 8q11.23 analysis includes all 583 solo-LTR donor-haplotypes:
+  461 assembly-derived and 122 graph-derived sequences. There are 14 sequence
+  haplotypes, including 547 observations of the dominant sequence. The data and
+  verification script are in
+  [`Supplementary_Data/Table_S16/`](Supplementary_Data/Table_S16/README.txt),
+  which supplies current Table S4, Figure 6B and Figure S15.
+- The current Type-I deletion-class model uses 16 resolved ancestral
+  Δ292-bearing insertions and one possible additional insertion. Its
+  conservative count vector is `[16,1,1,1,1,1,1]`; the inclusive vector is
+  `[17,1,1,1,1,1,1]`. Inputs and reproduction code are in
+  [`Supplementary_Data/TypeI_deletion_models/`](Supplementary_Data/TypeI_deletion_models/README.md).
+  These results replace the earlier lower-count analysis. The former
+  helper-population and mechanism-ranking results are not current manuscript
+  results.
+- Main Figure 6 describes 8q11.23. Main Figure 7 describes cellular phenotypes;
+  panel C reports adjusted differences in relative viability. Public rendered
+  figures are stored in `Figures/`, including `Figure_7.png` and `Figure_7.pdf`.
+
+See [FIGURE_TABLE_MAP.md](FIGURE_TABLE_MAP.md) for the seven main figures,
+Figures S1–S17 and their historical source filenames. The public collection
+excludes the main manuscript, BioRender artwork and private collaborator
+Fiber-seq source data.
+
+## Native ORF-associated variant comparison
+
+The shared catalog panel contains 282 donors and 83 loci. Native regional
+genotypes were recovered for the 79 loci that have mapped hg38 element
+intervals. The selected target set contains 564 normalized alleles at 36 loci
+and 20,500 donor–locus–variant observations. It includes single-nucleotide
+premature-stop gains/losses in canonical reading frames and indels shorter than
+50 bp whose length changes are not divisible by three. Programmed Gag/Pro/Pol
+frame transitions are not sequence defects. Type-I Env denotes a theoretical
+N-terminally truncated product whose translation has not been demonstrated.
+
+Passing calls require complete GT, DP ≥10, GQ ≥20 and passing site/sample
+filters. The results contain 13,717 supported alternate calls, 118 supported
+reference calls, 10 other alternate calls and 6,655 unresolved observations.
+Concordance is 99.0755% among 13,845 callable pairs; 32.4634% of the selected
+panel remains unresolved. Absent records and inadequate calls are unresolved,
+not reference calls. These unphased carrier states establish neither linkage
+across an ORF nor callability at unreported bases.
+
+The intact-copy analysis keeps tested and untested observations separate.
+Among 2,330 exact-`Intact` copy–gene observations carrying targeted variants,
+2,166 have at least one unresolved call. Another 10,934 intact copy–gene
+observations have no qualifying target and are untested by this panel.
+
+From `Supplementary_Data/Table_S3/ORF_variant_comparison/`, use Python 3.10+
+with pysam and Biopython:
 
 ```sh
-python scripts/check_release.py
-python scripts/check_review_corrections.py
-python scripts/reproduce_compact_panels.py --output outputs/retained_panels
-python Supplementary_Data/Table_S13/analysis_code/type1_observed_loci_uniformity_20260914.py
+python compare_variant_genotypes.py --targets Data/orf_variant_targets.tsv --raw-dir Data/raw_gt --reference-manifest Data/reference_manifest.tsv --out-prefix reproduced_variant_comparison
+python -m unittest -v test_variant_genotypes.py
+python quantify_intact_orf_evidence_gaps.py
 ```
 
-The release check verifies the bundled tables, chromosome denominators,
-structural-state tests, recovered NucFreq method, retained model formulas,
-deterministic model evidence, and Python syntax. The review-correction check
-reconstructs the reported multiple-testing families and checks the corrected
-short-ORF and missing-haplotype records. The compact-panel command
-regenerates retained panels for Figure 7 and Supplementary Figures S11, S14 and S15, plus supporting model plots. The final command reproduces the 54 recurrent-conversion and drift scenarios
-in Table S13. These commands do not download data or run a cluster job.
+The subtree includes the frozen targets, native sequences, regional VCFs,
+reference mappings and call-level results. Its README describes target
+rediscovery and the upstream provenance scripts. The old consensus-derived
+whole-ORF recovery percentages and zero multi-copy/21% solo-LTR statements are
+superseded. The separate Illumina ensemble structural-variant diagnostics in
+`Supplementary_Data/Table_S6_short_read_vcf_locus_diagnostics.tsv` still supply
+Figure S1; they are not inputs to the current main Table 2.
 
-For the September 21 analyses and revised Figure 3, follow
-[`analysis/september2026_revision/README.md`](analysis/september2026_revision/README.md).
-That workflow uses retained sequence inputs and reproduces the revised tables.
-The older Figure 4 and TSD builders preserve their historical analyses.
-The current TSD measurements are in `Supplementary_Data/Figure_S7_boundary_evidence/`.
+## Other current reproduction entry points
 
-See [FIGURE_TABLE_MAP.md](FIGURE_TABLE_MAP.md) for final manuscript numbering
-and the relationship to historical source filenames.
+From `Supplementary_Data/Table_S16/`, run the standard-library verification:
 
-## Code map
+```sh
+python3 verify_8q11_23_diversity.py
+```
 
-| Location | Analysis |
+It recalculates diversity from the supplied 583-sequence alignment and checks
+the summary, comparison row and haplotype counts. The former assembly-only
+script is historical provenance and does not reproduce the corrected result.
+
+From `Supplementary_Data/TypeI_deletion_models/`, use Python with NumPy:
+
+```sh
+python reproduce_source_model.py
+```
+
+The model supplies Figure 5D and Figure S14. Its weights describe relative
+cumulative contributions of deletion classes, not individual ancestral source
+loci or their active periods. The model does not estimate ancient
+viral-population frequencies.
+
+For Table S13, the retained recurrent-conversion analysis is documented in
+`Supplementary_Data/Table_S13/`. For regional phylogenies, tandem-array
+nucleotide variation, cassette alignments and terminal-junction measurements,
+consult [`analysis/september2026_revision/README.md`](analysis/september2026_revision/README.md)
+and the current supplementary source readmes. That workflow retains earlier
+numbering and inputs for some panels; it is not an end-to-end reproducer of
+this snapshot. In particular, its older solo-LTR inputs and source-model
+outputs must not replace the corrected subtrees above.
+
+## Code and archive provenance
+
+| Location | Contents |
 |---|---|
-| `project/manuscript/` | Retained figure builders, artifact filtering, functional refits and mechanism models. Revised Figure 3, Figure 5C and Figures S5, S6, S13 and S18 use the September workflow below. |
+| `Supplementary_Data/` | Current manuscript tables, retained sequences, alignments, trees, focused reproduction code and file manifests |
+| `Figures/` | Public figure exports; see the figure map for content and source identities |
+| `project/manuscript/` | Retained figure builders, artifact filtering, functional refits and historical mechanism models |
 | `project/working/biological_orf_annotation_20260802/` | Host-flank-supported locus assignment and biological ORF annotation |
-| `project/working/cnv_copy_state_reinterpretation_v1/` | Copy-state calibration and depth evidence |
-| `project/cluster_workflows/cnv_*/` | Sources for the completed targeted ONT copy-validation workflows |
-| `project/working/direct_*` and `onep31b_slc44a5_followup_v1/` | EBV/LCL outcomes and expression follow-up |
-| `project/working/hml2_functional_evidence_synthesis_claude_v2/` | Donor-disjoint SLC44A5 effect synthesis |
-| `manuscript_figures/python/analysis/` | Type-I cassette/backbone comparison and matched long-read/short-read comparison |
-| `manuscript_figures/R/` | Source for mutation, duplication, fusion-ORF and Fiber-seq panels |
+| `project/working/cnv_copy_state_reinterpretation_v1/` and `project/cluster_workflows/cnv_*/` | Copy-state calibration and targeted ONT copy-validation sources |
+| `manuscript_figures/python/analysis/` and `manuscript_figures/R/` | Retained analysis and plotting sources; filenames can predate the current figure order |
 | `HML2_ProjectResources/cluster_pipeline_source/shared/` | Upstream ORF and flank-anchoring source |
-| `Supplementary_Data/` | Current manuscript source tables, alignments, trees, analysis code and checksums |
-| `analysis/september2026_revision/` | Reproduction of the revised array, solo-LTR, Type I, phylogeny and terminal-junction analyses |
-| `data/` | Additional compact model and copy-validation evidence |
+| `analysis/september2026_revision/` | Earlier revision workflows and retained inputs; observe the current-result limits above |
+| `data/` | Compact catalog, model and copy-validation evidence retained from the published archive |
 
-The current plot builders use 292 donor IDs.
+The v0.4.2 `HML2_derived_data_v0.4.2.zip` contains that release's catalog,
+sequences, supplementary tables and retained inputs. Use matching code and
+data archives to reproduce historical releases. Do not overwrite the current
+GitHub snapshot with an older archive. The compact-panel runner retains
+historical mechanism/helper plots under explicit `Historical_` output names.
+The release checks and individual plot runners do not constitute a complete
+reproduction of every current manuscript result or figure.
 
-## Full analysis inputs
+`scripts/restore_corrected_catalog.py` restores the two catalog versions
+bundled in `data/`. `REC_CORRECTED` includes the complete Rec stop codon;
+`SHORT_ORF_CORRECTED` is the retained input to that documented correction.
+`scripts/check_rec_boundary.py` replays that catalog-boundary correction. These
+catalog operations do not recreate the current native genotype comparison.
 
-The [v0.4.2 archive](https://doi.org/10.5281/zenodo.22903723),
-`HML2_derived_data_v0.4.2.zip`, contains the corrected catalog, extracted HML-2
-sequences, supplementary tables and retained analysis inputs. Its
-`file_manifest.tsv` records every archived file identity.
-
-For full-input reproduction, extract the matching code and derived-data ZIPs
-into the same directory, preserving their relative paths. If using a later
-GitHub revision, do not overwrite its files with an older archive.
-Run `python scripts/restore_corrected_catalog.py` to extract the two catalogs
-bundled in `data/` for the Rec replay. The current figure and functional
-refit builders read that corrected catalog. Complete discovery/follow-up
-testing families, including all 1,289,856 MAGE discovery tests, are in
-`Supplementary_Data/Table_S10*`.
-
-The current catalog is `REC_CORRECTED`, which includes the complete Rec stop
-codon. The older `SHORT_ORF_CORRECTED` catalog is retained only as the input to
-the documented correction. After extracting both catalogs, run
-`python scripts/check_rec_boundary.py` to reproduce all 36,073 Rec-bearing
-records from the retained alignment slices and compare the resulting catalog
-byte-for-byte with the current distribution. This replay also checks paired
-call files for three alignments regenerated after the older catalog snapshot.
-
-Three historical source-provenance fields in the distributed catalog use
-neutral `historical_source/` prefixes instead of local or cluster paths. These
-labels identify provenance, not additional bundled files. The catalog
-verification record retains both the original and distributed checksums.
-Biological calls and numerical fields are unchanged by this normalization.
-Historical paths in supplementary table provenance are likewise shortened to
-relative or neutral historical-source labels. The supplementary manifest records
-the original package checksum and the distributed checksum for each file.
-
-See `DATA_REQUIREMENTS.md` for workflow inputs and `DATA_SOURCES.md` for
-the source datasets and accessions.
-
-Additional Python packages for full-input analyses are in
-`requirements-analysis.txt`. The R sources declare their own package imports.
-External executables such as MAFFT, minimap2, samtools, bedtools and odgi are
-required by the relevant sequence workflows, not by the compact reproduction.
-
-The targeted CNV workflows use input manifests and a configured compute
-allocation. Model assumptions and reproduction checks are in `MODEL_NOTES.md`.
-
-## Provenance
-
-The figure builders label the short-arm HML-2 groups as "Telomeric Type I"
-and "Telomeric Type II". Historical filenames may retain earlier figure numbers.
-The September revision README maps each analysis to the final manuscript figures.
-Previous archived versions remain available through
+`DATA_REQUIREMENTS.md`, `DATA_SOURCES.md` and `MODEL_NOTES.md` describe retained
+workflow inputs, source datasets and model provenance. Historical commands and
+model interpretations in those documents must be read against the current
+source readmes above. `source_inventory.tsv`, `CHANGES.md` and supplementary
+manifests record the distributed source identities and corrections. Neutral
+`historical_source/` labels identify provenance, not additional bundled files.
+Older archived versions remain available through
 [Zenodo](https://doi.org/10.5281/zenodo.22759510).
-
-`source_inventory.tsv` records the source-file identity used for this snapshot.
-`CHANGES.md` lists the publication-specific corrections. The supplementary
-manifest records both the original source checksum and the distributed checksum
-where line endings or local-path metadata were normalized. Numeric values were
-not changed by that normalization.
 
 Original code is MIT-licensed and original derived data are CC BY 4.0.
 Third-party sources retain their existing terms.
-
-## Matched VCF-derived and long-read calls
-
-Main Table 2 and Table S3 compare annotations derived from short-read sequencing in the phased high-coverage 1000 Genomes VCF panel with long-read calls in 282 shared donors at 83 loci after artifact filtering. The phased variants were applied to hg38 and the resulting haplotype sequences were annotated for coding and structural states. The compact catalog inputs, complete results and reproduction command are in [Table S3](Supplementary_Data/Table_S6/README.md). The comparison retains missing data as unknown and requires linked coding genes on the same provirus.
-
-Figure S1 compares Illumina ensemble structural-variant calls with matched long-read assemblies. It uses that callset alone. Four VCF resources were examined in the broader work, including the phased panel used for the coding comparison. They are not four additional inputs to Table 2 or a pooled source for Figure S1.
-
-Four redundant supplemental displays have been removed from the manuscript. Their data remain in this archive. See the figure map for the current seven main and eighteen supplemental figures.
-
-### Retained supplementary panels S4 and S10
-
-`Rscript scripts/reproduce_s4.R outputs/Figure_S4` uses the two retained tandem-array summary tables and the current `Duplication_Analysis.R` plotting blocks. It requires R with ggplot2, scales, dplyr, readr and stringr. Optional ragg and systemfonts packages control the graphics device and font selection.
-
-`python scripts/reproduce_s10.py --output outputs/Figure_S10` uses the root Python environment. It checks the annotation-tier and longest-frame counts against the retained record-level witness tables before rendering the current S10 palette. This is a replot of the retained result, not a new sequence scan or a reclassification with another catalog. The historical source directory remains `Supplementary_Data/Figure_S9/`.
-
-### Final Table 2
-
-After extracting the matching derived-data archive, run the following command from the repository root. It uses only the Python standard library.
-
-```sh
-python Supplementary_Data/Table_S6/Table_2_reanalysis/recompute_table2.py \
-  --data Supplementary_Data --out outputs/table2_reproduced
-```
-
-The output includes intact and combined ORF recovery, per-locus results and donor–locus observations. The normal programmed gag/pro/pol frame transitions are not treated as disruptive mutations. Type-I Env denotes a theoretical N-terminally truncated product whose translation has not been demonstrated. The original seven aggregate totals are checked exactly. See the [Table 2 and Table S3 README](Supplementary_Data/Table_S6/README.md) for definitions and input provenance.

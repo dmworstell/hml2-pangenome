@@ -8,7 +8,7 @@ from Bio.Seq import Seq
 from Bio.Phylo.TreeConstruction import DistanceTreeConstructor,DistanceMatrix
 
 OUT=Path(__file__).resolve().parent
-PROJECT=Path('/Users/Daniel/Documents/HML-2 manuscript work/project')
+PROJECT=Path('historical_source/HML-2_manuscript_work/project')
 LOCI=['4q35.2_hg38','4p16.3a','15p13a','21p13','22p13']
 def rows(p):
     with p.open() as f:return list(csv.DictReader(f,delimiter='\t'))
